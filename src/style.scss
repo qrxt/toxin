@@ -1,0 +1,14 @@
+// vendors
+
+@import "~normalize.css";
+
+// global
+
+@import "./scss/vars";
+@import "./scss/fonts";
+@import "./scss/mixins";
+@import "./scss/base";
+
+//pages
+
+@import "./scss/main";
