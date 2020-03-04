@@ -1,0 +1,7 @@
+.colors-list__item {
+  display: flex;
+}
+
+.colors-list__item:not(:last-child) {
+  margin-bottom: 20px;
+}

@@ -1,0 +1,11 @@
+include ../color/color
+
+mixin colors-list(className, colors)
+  ul.colors-list(class=className)
+    each color in colors
+      +color({
+        tag: "li",
+        className: "colors-list__item",
+        colorObj: color
+      })
+

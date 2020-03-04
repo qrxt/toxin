@@ -8,6 +8,7 @@ const OptimizeCssAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
 const PugPlugin = require("html-webpack-pug-plugin");
 const SpriteLoader = require("svg-sprite-loader/plugin");
+const Copy = require("copy-webpack-plugin");
 
 module.exports = (_, options) => {
   const isDev = options.mode === "development";
@@ -142,18 +143,17 @@ module.exports = (_, options) => {
 
         {
           test: /\.(png|jpg|gif)$/,
-          use: [
-            "file-loader"
-          ]
-        },
-        {
-          test: /\.(woff2|woff|eot|ttf)$/,
-          // use: [
-          //   "file-loader"
-          // ]
           loader: "file-loader",
           options: {
-            name: "fonts/[path][name].[ext]"
+            name: "[path][name].[ext]"
+          }
+        },
+        {
+          test: /\.(woff2|woff|eot|ttf|svg)$/,
+          include: /fonts/,
+          loader: "file-loader",
+          options: {
+            name: "[path][name].[ext]"
           }
         },
 
@@ -164,18 +164,19 @@ module.exports = (_, options) => {
 
         {
           test: /\.svg$/,
+          exclude: /fonts/,
           use: [
             {
               loader: "svg-sprite-loader",
               options: {
                 extract: true,
-                publicPath: '/'
+                publicPath: "/assets/img/"
               }
             },
             "svg-transform-loader",
             "svgo-loader"
           ]
-        }
+        },
       ]
     },
 

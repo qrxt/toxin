@@ -8,7 +8,11 @@
 @import "./scss/fonts";
 @import "./scss/mixins";
 @import "./scss/base";
+@import "./scss/headers";
 
-//pages
+// components
 
-@import "./scss/main";
+@import "./components/uikit-header/uikit-header";
+@import "./components/uikit-colors/uikit-colors";
+@import "./components/colors-list/colors-list";
+@import "./components/color/color";

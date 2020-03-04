@@ -1,0 +1,55 @@
+.color__sample {
+  width: 70px;
+  height: 70px;
+  margin-right: 40px;
+
+  background-color: rgba($color: #1f2041, $alpha: 1.0);
+  border-radius: 7px;
+
+  &--color-darkshade100 {
+    background-color: rgba($color: #1f2041, $alpha: 1.0);
+  }
+
+  &--color-darkshade75 {
+    background-color: rgba($color: #1f2041, $alpha: 0.75);
+  }
+
+  &--color-darkshade50 {
+    background-color: rgba($color: #1f2041, $alpha: 0.5);
+  }
+
+  &--color-darkshade25 {
+    background-color: rgba($color: #1f2041, $alpha: 0.25);
+  }
+
+  &--color-darkshade5 {
+    background-color: rgba($color: #1f2041, $alpha: 0.05);
+  }
+
+  &--color-purple {
+    background-color: #bc9cff;
+  }
+
+  &--color-green {
+    background-color: #6fcf97;
+  }
+}
+
+.color__text-wrapper {
+  padding-top: 10px;
+}
+
+.color__title {
+  margin: 0 0 8px;
+
+  text-transform: capitalize;
+}
+
+.color__hex {
+  margin: 0;
+
+  font-family: $font-secondary;
+  font-size: 19px;
+  line-height: 21px;
+  text-transform: uppercase;
+}

@@ -1,6 +1,120 @@
 extends pug/layout
 
+include components/uikit-header/uikit-header
+include components/colors-list/colors-list
+
+block variables
+  -
+    const colors = [
+      {
+        colorName: "Dark Shade",
+        intensity: "100%",
+        mod: "darkshade100",
+        hex: "#1F2041",
+      },
+
+      {
+        colorName: "Dark Shade",
+        intensity: "75%",
+        mod: "darkshade75",
+        hex: "#1F2041",
+      },
+
+      {
+        colorName: "Dark Shade",
+        intensity: "50%",
+        mod: "darkshade50",
+        hex: "#1F2041",
+      },
+
+      {
+        colorName: "Dark Shade",
+        intensity: "25%",
+        mod: "darkshade25",
+        hex: "#1F2041",
+      },
+
+      {
+        colorName: "Dark Shade",
+        intensity: "5%",
+        mod: "darkshade5",
+        hex: "#1F2041",
+      },
+
+      {
+        colorName: "Purple",
+        intensity: null,
+        mod: "purple",
+        hex: "#BC9CFF",
+      },
+
+      {
+        colorName: "Green",
+        intensity: null,
+        mod: "green",
+        hex: "#6FCF97",
+      }
+    ]
+
 block content
-  section.waymark
-    .wrapper.waymark__inner
-      h1 Цвета
+  section.uikit-colors
+    .wrapper.uikit-colors__inner
+      h1.visually-hidden
+        | UI-Kit Colors & Type
+
+      .uikit-colors__content
+        +colors-list("uikit-colors__list", colors)
+
+        .uikit-colors__type
+          dl.uikit-colors__types
+            .uikit-colors__type-wrapper
+              dt(
+                class="uikit-colors__type-name"
+                class="uikit-colors__type-name--h1"
+              )
+                | h1
+              dd(
+                class="h1"
+                class="uikit-colors__type-sample"
+              )
+                | This one is the sub-section or widget title
+
+            .uikit-colors__type-wrapper
+              dt(
+                class="uikit-colors__type-name"
+                class="uikit-colors__type-name--h2"
+              )
+                | h2
+              dd(
+                class="h2"
+                class="uikit-colors__type-sample"
+                class="uikit-colors__type-sample--h2"
+              )
+                | Next one is the item title inside widgets
+
+            .uikit-colors__type-wrapper
+              dt(
+                class="uikit-colors__type-name"
+                class="uikit-colors__type-name--h3"
+              )
+                | h3
+              dd(
+                class="h3"
+                class="uikit-colors__type-sample"
+                class="uikit-colors__type-sample--h3"
+              )
+                | This is a label or CTA text
+
+            .uikit-colors__type-wrapper
+              dt(
+                class="uikit-colors__type-name"
+                class="uikit-colors__type-name--body"
+              )
+                | body
+              dd(
+                class="uikit-colors__type-sample"
+                class="uikit-colors__type-sample--body"
+              )
+                | This is the body text which is used for most
+                | of the design, like paragraphs, lists, etc.
+

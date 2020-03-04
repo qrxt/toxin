@@ -1,0 +1,24 @@
+//- args =>
+//-   {
+//-     tag // "li"
+//-     className // ""
+//-     colorObj {
+//-       colorName
+//-       insensity
+//-       hex
+//-     }
+//-   }
+
+mixin color(colorProps)
+  - const { tag, className, colorObj } = colorProps
+  - const { colorName, intensity, mod, hex } = colorObj
+  - const classMod = `color__sample--color-${ mod }`
+  #{ tag }.color(class=className)
+    .color__sample(class=classMod)
+    .color__text-wrapper
+      h2.h2.color__title
+        | #{ colorName }
+        | #{ intensity }
+
+      p.color__hex
+        | #{ hex }
