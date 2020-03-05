@@ -1,0 +1,21 @@
+include ../../pug/mixins
+
+block variables
+  -
+    const defaultLogoObj = {
+      className: "",
+      isFull: false,
+      link: "/"
+    }
+
+mixin logo(logoObj)
+  - const { className, isFull, link } = logoObj
+  if isFull
+    a.logo__link(class=className, href=link)
+      img(
+        src="assets/img/logo-text.png"
+        alt="Логотип Toxin"
+      )
+  else
+    a.logo__link(class=className, href=link)
+      +svg("logo-toxin", 45, 45)

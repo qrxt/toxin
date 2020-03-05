@@ -1,7 +1,12 @@
 include ../../pug/mixins
 
+include ../logo/logo
+include ../svg-gradients/svg-gradients
+
 block header
+  +svg-gradients()
   header.uikit-header
     .uikit-header__inner
-      .uikit-header__icon
-        +svg("logo-toxin", 45, 45)
+      +logo({
+        isFull: false
+      })

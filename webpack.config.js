@@ -163,7 +163,7 @@ module.exports = (_, options) => {
         },
 
         {
-          test: /\.svg$/,
+          test: /\.svg(\?.*)?$/, // /\.svg$/,
           exclude: /fonts/,
           use: [
             {
@@ -173,8 +173,19 @@ module.exports = (_, options) => {
                 publicPath: "/assets/img/"
               }
             },
-            "svg-transform-loader",
-            "svgo-loader"
+            // "svg-transform-loader",
+            {
+              loader: "svgo-loader",
+              options: {
+                plugins: [
+                  // { removeNonInheritableGroupAttrs: true },
+                  // { collapseGroups: true },
+                  { removeUselessDefs: false },
+                  { cleanupIDs: false },
+                  { removeAttrs: { attrs: "(fill|stroke|fill-opacity)" } },
+                ]
+              }
+            }
           ]
         },
       ]

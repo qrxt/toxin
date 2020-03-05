@@ -1,5 +1,9 @@
 extends pug/layout
 
+include components/uikit-header/uikit-header
+
+include components/logo/logo
+
 block content
   section.waymark
     .wrapper.waymark__inner
@@ -17,11 +21,11 @@ block content
           li
             a(href="uikit-colors.html")
               | Colors &amp; Type
-              | 🚧
+              | ✔️
           li
             a(href="#")
               | Form Elements
-              | ❌
+              | 🚧
           li
             a(href="#")
               | Cards
@@ -31,7 +35,7 @@ block content
               | Headers &amp; Footers
               | ❌
 
-      .waymark__ui-kit
+      .waymark__pages
         h2 Основные страницы
 
         ul
@@ -51,4 +55,6 @@ block content
             a(href="#")
               | Registration &amp; Sign in
               | ❌
+
+        //- +logo()
 

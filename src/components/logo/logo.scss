@@ -1,0 +1,18 @@
+.logo {
+
+}
+
+.logo__link {
+
+}
+
+.logo__link svg {
+  width: 47px;
+  height: 47px;
+
+  fill: rgba($color: $black, $alpha: 0.2);
+}
+
+.logo__link:hover svg {
+  fill: url("#gradient-purple");
+}
