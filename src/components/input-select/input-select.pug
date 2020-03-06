@@ -1,0 +1,16 @@
+mixin input-select(inputSelectObj)
+  -
+    const {
+      type,
+      className,
+      label,
+      rightLabel,
+    } = inputSelectObj
+
+  <select class="selectmenu" name="selectmenu">
+    <option value="50">50px</option>
+    <option value="100">100px</option>
+    <option value="150" selected="selected">150px</option>
+    <option value="200">200px</option>
+    <option value="250">250px</option>
+  </select>

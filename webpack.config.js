@@ -95,6 +95,10 @@ module.exports = (_, options) => {
     },
 
     resolve: {
+      alias: {
+        "jquery-ui": "jquery-ui/jquery-ui.js",
+        modules: path.join(__dirname, "node_modules"),
+      },
       extensions: [
         ".js",
         ".css", ".scss",
@@ -192,8 +196,9 @@ module.exports = (_, options) => {
     },
 
     plugins: [
-      getHtmlPlugin("./index.pug", "index.html"),
+      getHtmlPlugin("./page-index.pug", "index.html"),
       getHtmlPlugin("./page-uikit-colors.pug", "uikit-colors.html"),
+      getHtmlPlugin("./page-uikit-forms.pug", "uikit-forms.html"),
 
       new PugPlugin(),
 
@@ -208,6 +213,12 @@ module.exports = (_, options) => {
 
       new SpriteLoader({
         plainSprite: true
+      }),
+
+      new webpack.ProvidePlugin({
+        "$": "jquery",
+        "jQuery": "jquery",
+        "window.jQuery": "jquery"
       })
     ]
   };

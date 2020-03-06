@@ -1,0 +1,28 @@
+mixin input-text(textInputObj)
+  -
+    const {
+      type,
+      className,
+      label,
+      rightLabel,
+      placeholder,
+      inputmode,
+      value
+    } = textInputObj
+
+  p.input-text(class=className)
+    label.input-text__label
+      span.cta
+        | #{ label }
+      if rightLabel
+        span.input-text__status
+          | #{ rightLabel }
+      input.input-text__input(
+        type=type || "text",
+        placeholder=placeholder,
+        inputmode=inputmode,
+        value=value
+      )
+
+
+

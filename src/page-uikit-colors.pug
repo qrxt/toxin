@@ -56,65 +56,69 @@ block variables
       }
     ]
 
+block header
+  +uikit-header({ headerLink: "/" })
+
 block content
-  section.uikit-colors
-    .wrapper.uikit-colors__inner
-      h1.visually-hidden
-        | UI-Kit Colors & Type
+  main.page-main
+    section.uikit-colors
+      .wrapper.uikit-colors__inner
+        h1.visually-hidden
+          | UI-Kit Colors & Type
 
-      .uikit-colors__content
-        +colors-list("uikit-colors__list", colors)
+        .uikit-colors__content
+          +colors-list("uikit-colors__list", colors)
 
-        .uikit-colors__type
-          dl.uikit-colors__types
-            .uikit-colors__type-wrapper
-              dt(
-                class="uikit-colors__type-name"
-                class="uikit-colors__type-name--h1"
-              )
-                | h1
-              dd(
-                class="h1"
-                class="uikit-colors__type-sample"
-              )
-                | This one is the sub-section or widget title
+          .uikit-colors__type
+            dl.uikit-colors__types
+              .uikit-colors__type-wrapper
+                dt(
+                  class="uikit-colors__type-name"
+                  class="uikit-colors__type-name--h1"
+                )
+                  | h1
+                dd(
+                  class="h1"
+                  class="uikit-colors__type-sample"
+                )
+                  | This one is the sub-section or widget title
 
-            .uikit-colors__type-wrapper
-              dt(
-                class="uikit-colors__type-name"
-                class="uikit-colors__type-name--h2"
-              )
-                | h2
-              dd(
-                class="h2"
-                class="uikit-colors__type-sample"
-                class="uikit-colors__type-sample--h2"
-              )
-                | Next one is the item title inside widgets
+              .uikit-colors__type-wrapper
+                dt(
+                  class="uikit-colors__type-name"
+                  class="uikit-colors__type-name--h2"
+                )
+                  | h2
+                dd(
+                  class="h2"
+                  class="uikit-colors__type-sample"
+                  class="uikit-colors__type-sample--h2"
+                )
+                  | Next one is the item title inside widgets
 
-            .uikit-colors__type-wrapper
-              dt(
-                class="uikit-colors__type-name"
-                class="uikit-colors__type-name--h3"
-              )
-                | h3
-              dd(
-                class="h3"
-                class="uikit-colors__type-sample"
-                class="uikit-colors__type-sample--h3"
-              )
-                | This is a label or CTA text
+              .uikit-colors__type-wrapper
+                dt(
+                  class="uikit-colors__type-name"
+                  class="uikit-colors__type-name--h3"
+                )
+                  | h3
+                dd(
+                  class="h3"
+                  class="uikit-colors__type-sample"
+                  class="uikit-colors__type-sample--h3"
+                )
+                  | This is a label or CTA text
 
-            .uikit-colors__type-wrapper
-              dt(
-                class="uikit-colors__type-name"
-                class="uikit-colors__type-name--body"
-              )
-                | body
-              dd(
-                class="uikit-colors__type-sample"
-                class="uikit-colors__type-sample--body"
-              )
-                | This is the body text which is used for most
-                | of the design, like paragraphs, lists, etc.
+              .uikit-colors__type-wrapper
+                dt(
+                  class="uikit-colors__type-name"
+                  class="uikit-colors__type-name--body"
+                )
+                  | body
+                dd(
+                  class="uikit-colors__type-sample"
+                  class="uikit-colors__type-sample--body"
+                )
+                  | This is the body text which is used for most
+                  | of the design, like paragraphs, lists, etc.
 

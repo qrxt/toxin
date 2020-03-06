@@ -3,10 +3,11 @@ include ../../pug/mixins
 include ../logo/logo
 include ../svg-gradients/svg-gradients
 
-block header
-  +svg-gradients()
-  header.uikit-header
-    .uikit-header__inner
-      +logo({
-        isFull: false
-      })
+mixin uikit-header(uikitHeaderObj)
+  - const { headerLink } = uikitHeaderObj
+    header.uikit-header
+      .uikit-header__inner
+        +logo({
+          isFull: false,
+          link: headerLink || "/"
+        })

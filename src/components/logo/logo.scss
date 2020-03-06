@@ -1,18 +1,26 @@
-.logo {
-
-}
-
 .logo__link {
-
+  &:focus {
+    outline: none;
+  }
 }
 
 .logo__link svg {
   width: 47px;
   height: 47px;
 
-  fill: rgba($color: $black, $alpha: 0.2);
+  fill: url("#gradient-purple");
 }
 
-.logo__link:hover svg {
-  fill: url("#gradient-purple");
+.logo__link .svg-gradients__purple stop {
+  @include transition(stop-color);
+}
+
+.logo__link:focus .svg-gradients__purple stop:first-child,
+.logo__link:hover .svg-gradients__purple stop:first-child {
+  stop-color: #8ba4f9;
+}
+
+.logo__link:focus .svg-gradients__purple stop:last-child,
+.logo__link:hover .svg-gradients__purple stop:last-child {
+  stop-color: #bc9cff;
 }

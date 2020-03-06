@@ -8,13 +8,23 @@
 @import "./scss/fonts";
 @import "./scss/mixins";
 @import "./scss/base";
-@import "./scss/headers";
+@import "./scss/type";
 
 // components
 
 @import "./components/svg-gradients/svg-gradients";
-@import "./components/uikit-header/uikit-header";
-@import "./components/uikit-colors/uikit-colors";
-@import "./components/colors-list/colors-list";
-@import "./components/color/color";
 @import "./components/logo/logo";
+@import "./components/input-text/input-text";
+@import "./components/input-select/input-select";
+
+// layouts
+@import "./components/uikit-header/uikit-header";
+
+// pages
+
+// uikit colors & type
+@import "./components/uikit-colors/uikit-colors";
+  @import "./components/colors-list/colors-list";
+  @import "./components/color/color";
+
+@import "./components/uikit-forms/uikit-forms";
