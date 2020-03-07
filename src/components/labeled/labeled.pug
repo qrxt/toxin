@@ -1,0 +1,9 @@
+mixin labeled(labeledObj)
+  - const { label, rightLabel } = labeledObj
+  label.input-text__label
+    span.cta.input-text__label-text
+      | #{ label }
+    if rightLabel
+      span.input-text__status
+        | #{ rightLabel }
+    block

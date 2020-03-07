@@ -1,8 +1,8 @@
 const importAll = r =>
   r.keys().map(r);
 
-require('webpack-jquery-ui');
-require('webpack-jquery-ui/css');
+import "jquery-ui-bundle";
+import "jquery-ui-bundle/jquery-ui.min.css";
 
 import "./style";
 

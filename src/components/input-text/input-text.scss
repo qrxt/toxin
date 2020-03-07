@@ -26,7 +26,7 @@
   &:focus {
     outline: none;
 
-    border: 1px solid opacify($input-text-border-color, 0.3);
+    border: 1px solid $input-text-border-color--dark;
   }
 
   &::placeholder {

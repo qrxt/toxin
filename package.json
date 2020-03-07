@@ -44,10 +44,14 @@
     "webpack": "^4.42.0",
     "webpack-cli": "^3.3.11",
     "webpack-dev-server": "^3.10.3",
-    "webpack-jquery-ui": "^2.0.1",
     "webpack-svgstore-plugin": "^4.1.0"
   },
   "dependencies": {
+    "air-datepicker": "^2.2.3",
+    "jquery": "^3.4.1",
+    "jquery-date-range-picker": "^1.0.4",
+    "jquery-ui-bundle": "^1.12.1-migrate",
+    "jquery.maskedinput": "^1.4.1",
     "normalize.css": "^8.0.1"
   }
 }

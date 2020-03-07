@@ -1,0 +1,42 @@
+include ../input-text/input-text
+include ../input-accordion/input-accordion
+
+main.page-main
+  section.uikit-forms
+    .wrapper.uikit-forms__inner
+      h1.visually-hidden
+        | UI-Kit Forms
+
+      form.uikit-forms__form(action="#")
+        .uikit-forms__form-wrapper
+          +input-text({
+            className: "uikit-forms__input",
+            type: "email",
+            label: "Text Field",
+            rightLabel: "Default",
+            placeholder: "Email",
+          })
+
+          +input-text({
+            className: "input-text--focused uikit-forms__input",
+            type: "email",
+            label: "Text Field",
+            rightLabel: "Hover / Focus",
+            placeholder: "Email",
+            value: "This is pretty awesome"
+          })
+
+          +input-accordion({
+            className: "uikit-forms__select js-uikit-forms-guests",
+            label: "Dropdown",
+            rightLabel: "Default"
+          })
+            span Lorem ipsum dolor sit amet.
+
+          +input-text({
+            className: "uikit-forms__input js-uikit-forms-date",
+            type: "text",
+            label: "Masked Text Field",
+            rightLabel: "Default",
+            placeholder: "ДД.ММ.ГГГГ",
+          })

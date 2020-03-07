@@ -2,40 +2,8 @@ extends pug/layout
 
 include components/uikit-header/uikit-header
 
-include components/input-text/input-text
-include components/input-select/input-select
-
 block header
   +uikit-header({ headerLink: "/" })
 
 block content
-  main.page-main
-    section.uikit-forms
-      .wrapper.uikit-forms__inner
-        h1.visually-hidden
-          | UI-Kit Forms
-
-        form.uikit-forms__form(action="#")
-          .uikit-forms__form-wrapper
-            +input-text({
-              className: "uikit-forms__input",
-              type: "email",
-              label: "Text Field",
-              rightLabel: "Default",
-              placeholder: "Email",
-            })
-
-            +input-text({
-              className: "input-text--focused uikit-forms__input",
-              type: "email",
-              label: "Text Field",
-              rightLabel: "Hover / Focus",
-              placeholder: "Email",
-              value: "This is pretty awesome"
-            })
-
-            +input-select({
-              className: "uikit-forms__select",
-              label: "asd",
-              rightLabel: "asd"
-            })
+  include components/page-uikit-forms/page-uikit-forms

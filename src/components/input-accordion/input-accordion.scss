@@ -1,0 +1,61 @@
+.input-accordion__label {
+  width: 100%;
+  text-align: left;
+
+  border: 1px solid $input-text-border-color;
+  border-radius: 4px;
+
+  @include transition(border);
+
+  &:hover,
+  &:focus {
+    outline: none;
+
+    border: 1px solid $input-text-border-color--dark;
+  }
+}
+
+.input-accordion__accordion .ui-accordion-header {
+  padding: 12px 15px;
+
+  background-color: $white;
+
+  font-family: $font-primary;
+  font-size: 14px;
+  line-height: 16px;
+}
+
+.input-accordion__accordion .ui-accordion-header.ui-state-active {
+  color: $black;
+}
+
+.input-accordion__accordion .ui-accordion-header .ui-icon {
+  width: 15px;
+  height: 12px;
+  position: absolute;
+  top: calc(50%);
+  right: 12px;
+
+  background-image: none;
+
+  &::before {
+    content: "";
+
+    display: block;
+    width: 10px;
+    height: 10px;
+
+    position: absolute;
+    top: -5px;
+    left: calc(50% - 5px);
+    transform: rotate(45deg);
+
+    border: 2px solid rgba($color: $black, $alpha: 0.3);
+  }
+}
+
+.input-accordion__accordion .ui-accordion-content {
+  border-left: 1px solid $input-text-border-color--dark;
+  border-bottom: 1px solid $input-text-border-color--dark;
+  border-right: 1px solid $input-text-border-color--dark;
+}
