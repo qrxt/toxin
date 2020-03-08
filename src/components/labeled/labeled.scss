@@ -1,0 +1,16 @@
+.labeled__label {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.labeled__status {
+  margin-bottom: 6px;
+
+  font-family: $font-primary;
+  font-size: 11.5px;
+  line-height: 14px;
+  text-transform: uppercase;
+  color: rgba($color: $black, $alpha: 0.4);
+}

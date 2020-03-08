@@ -1,9 +1,9 @@
 mixin labeled(labeledObj)
-  - const { label, rightLabel } = labeledObj
-  label.input-text__label
-    span.cta.input-text__label-text
+  - const { className, label, rightLabel } = labeledObj
+  label.labeled__label(class=className)
+    span.cta.labeled__label-text
       | #{ label }
     if rightLabel
-      span.input-text__status
+      span.labeled__status
         | #{ rightLabel }
     block

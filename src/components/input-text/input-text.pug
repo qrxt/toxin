@@ -4,6 +4,7 @@ mixin input-text(textInputObj)
   -
     const {
       type,
+      interactLike,
       className,
       label,
       rightLabel,
@@ -12,13 +13,15 @@ mixin input-text(textInputObj)
       value
     } = textInputObj
 
-  p.input-text(class=className)
+  p.input-text.js-input-text(class=className)
     +labeled({
+      className: "input-text",
       label: label,
       rightLabel: rightLabel
     })
-      input.input-text__input(
+      input(
         type=type || "text",
+        data-interact=interactLike,
         placeholder=placeholder,
         inputmode=inputmode,
         value=value

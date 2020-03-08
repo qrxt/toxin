@@ -1,5 +1,6 @@
 include ../input-text/input-text
 include ../input-accordion/input-accordion
+include ../input-wrapper/input-wrapper
 
 main.page-main
   section.uikit-forms
@@ -27,16 +28,34 @@ main.page-main
           })
 
           +input-accordion({
-            className: "uikit-forms__select js-uikit-forms-guests",
+            className: "uikit-forms__select",
             label: "Dropdown",
             rightLabel: "Default"
           })
             span Lorem ipsum dolor sit amet.
 
           +input-text({
-            className: "uikit-forms__input js-uikit-forms-date",
-            type: "text",
+            className: "uikit-forms__input",
+            type: "date",
+            interactLike: "date",
             label: "Masked Text Field",
             rightLabel: "Default",
             placeholder: "ДД.ММ.ГГГГ",
           })
+
+          //- +input-wrapper({
+          //-   className: "uikit-forms__double",
+          //-   itemsQuantity: 2
+          //- })
+          //-   +input-text({
+          //-     className: "uikit-forms__input-half",
+          //-     type: "email",
+          //-     label: "Text Field",
+          //-     placeholder: "Email",
+          //-   })
+          //-   +input-text({
+          //-     className: "uikit-forms__input-half",
+          //-     type: "email",
+          //-     label: "Text Field",
+          //-     placeholder: "Email",
+          //-   })

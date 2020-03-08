@@ -98,6 +98,9 @@ module.exports = (_, options) => {
       alias: {
         "jquery-ui": "jquery-ui/jquery-ui.js",
         modules: path.join(__dirname, "node_modules"),
+
+        "@": path.join(__dirname, "src"),
+        "@components": path.join(__dirname, "src", "components")
       },
       extensions: [
         ".js",

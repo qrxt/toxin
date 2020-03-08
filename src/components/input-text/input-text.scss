@@ -2,14 +2,7 @@
   margin: 0;
 }
 
-.input-text__label {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  flex-wrap: wrap;
-}
-
-.input-text__label input {
+.input-text input {
   width: 100%;
   padding: 12px 14px;
 
@@ -44,12 +37,4 @@
   border: 1px solid opacify($input-text-border-color, 0.3);
 }
 
-.input-text__status {
-  margin-bottom: 6px;
 
-  font-family: $font-primary;
-  font-size: 11.5px;
-  line-height: 14px;
-  text-transform: uppercase;
-  color: rgba($color: $black, $alpha: 0.4);
-}

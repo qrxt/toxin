@@ -8,7 +8,7 @@ mixin input-accordion(inputSelectObj)
       rightLabel,
     } = inputSelectObj
 
-  .input-accordion(class=className)
+  .input-accordion.js-input-accordion(class=className)
     +labeled({ label, rightLabel })
     .input-accordion__accordion
       h3.visually-hidden.input-accordion__title
