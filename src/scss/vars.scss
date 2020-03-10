@@ -19,5 +19,5 @@ $white: #ffffff;
 $blue: #8ba4f9;
 $purple: #bc9cff;
 
-$input-text-border-color: rgba($color: $black, $alpha: 0.2);
-$input-text-border-color--dark: opacify($input-text-border-color, 0.3);
+$text-field-border-color: rgba($color: $black, $alpha: 0.2);
+$text-field-border-color--dark: opacify($text-field-border-color, 0.3);

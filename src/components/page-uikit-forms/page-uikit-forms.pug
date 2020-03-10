@@ -1,6 +1,7 @@
-include ../input-text/input-text
-include ../input-accordion/input-accordion
+include ../text-field/text-field
+include ../dropdown/dropdown
 include ../input-wrapper/input-wrapper
+include ../date-dropdown/date-dropdown
 
 main.page-main
   section.uikit-forms
@@ -8,34 +9,37 @@ main.page-main
       h1.visually-hidden
         | UI-Kit Forms
 
-      form.uikit-forms__form(action="#")
+      form.uikit-forms__form(method="post" action="http://echo.htmlacademy.ru")
         .uikit-forms__form-wrapper
-          +input-text({
+          +text-field({
             className: "uikit-forms__input",
             type: "email",
+            name: "user-email",
             label: "Text Field",
             rightLabel: "Default",
             placeholder: "Email",
+            required: true
           })
 
-          +input-text({
-            className: "input-text--focused uikit-forms__input",
-            type: "email",
+          +text-field({
+            className: "text-field--focused uikit-forms__input",
+            type: "text",
             label: "Text Field",
             rightLabel: "Hover / Focus",
             placeholder: "Email",
             value: "This is pretty awesome"
           })
 
-          +input-accordion({
-            className: "uikit-forms__select",
+          +dropdown({
+            title: "Сколько гостей",
+            header: "Количество гостей",
+            className: "uikit-forms__select js-uikit-forms-dropdown-example",
             label: "Dropdown",
             rightLabel: "Default"
           })
-            span Lorem ipsum dolor sit amet.
 
-          +input-text({
-            className: "uikit-forms__input",
+          +text-field({
+            className: "uikit-forms__input js-uikit-forms-masked-date",
             type: "date",
             interactLike: "date",
             label: "Masked Text Field",
@@ -43,19 +47,21 @@ main.page-main
             placeholder: "ДД.ММ.ГГГГ",
           })
 
-          //- +input-wrapper({
-          //-   className: "uikit-forms__double",
-          //-   itemsQuantity: 2
-          //- })
-          //-   +input-text({
-          //-     className: "uikit-forms__input-half",
-          //-     type: "email",
-          //-     label: "Text Field",
-          //-     placeholder: "Email",
-          //-   })
-          //-   +input-text({
-          //-     className: "uikit-forms__input-half",
-          //-     type: "email",
-          //-     label: "Text Field",
-          //-     placeholder: "Email",
-          //-   })
+          +input-wrapper({
+            className: "uikit-forms__double",
+            itemsQuantity: 2
+          })
+            +date-dropdown({
+              className: "js-uikit-forms-date-dropdown",
+              label: "Date Dropdown"
+            })
+            //- +dropdown({
+            //-   title: "ДД.ММ.ГГГГ",
+            //-   header: "Дата",
+            //-   className: "uikit-forms__input-half js-uikit-forms-date-dropdown",
+            //-   label: "Date Dropdown",
+            //- })
+            //-   input(type="text")
+
+          button(type="submit")
+            | go go go

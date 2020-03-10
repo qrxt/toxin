@@ -1,0 +1,18 @@
+include ../labeled/labeled
+
+mixin date-dropdown(dateDropdownObj)
+  -
+    const {
+      className,
+      label,
+      rightlabel,
+    } = dateDropdownObj
+
+  +labeled({
+    className: `date-dropdown ${ className }`,
+    label: label,
+    rightLabel: rightLabel
+  })
+    p.date-dropdown__text
+      | sadsads
+    input.visually-hidden--always

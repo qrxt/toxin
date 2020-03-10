@@ -55,8 +55,7 @@ img {
 }
 
 .visually-hidden:not(:focus):not(:active),
-.form input[type="radio"],
-.form input[type="checkbox"] {
+.visually-hidden--always {
   position: absolute;
   width: 1px;
   height: 1px;

@@ -1,13 +1,13 @@
-.input-text {
+.text-field {
   margin: 0;
 }
 
-.input-text input {
+.text-field input {
   width: 100%;
   padding: 12px 14px;
 
   border-radius: 4px;
-  border: 1px solid $input-text-border-color;
+  border: 1px solid $text-field-border-color;
 
   color: rgba($color: $black, $alpha: 0.75);
   font-size: 14px;
@@ -19,7 +19,7 @@
   &:focus {
     outline: none;
 
-    border: 1px solid $input-text-border-color--dark;
+    border: 1px solid $text-field-border-color--dark;
   }
 
   &::placeholder {
@@ -33,8 +33,8 @@
   }
 }
 
-.input-text--focused input {
-  border: 1px solid opacify($input-text-border-color, 0.3);
+.text-field--focused input {
+  border: 1px solid opacify($text-field-border-color, 0.3);
 }
 
 

@@ -1,30 +1,34 @@
 include ../labeled/labeled
 
-mixin input-text(textInputObj)
+mixin text-field(textInputObj)
   -
     const {
       type,
+      name,
       interactLike,
       className,
       label,
       rightLabel,
       placeholder,
       inputmode,
-      value
+      value,
+      required
     } = textInputObj
 
-  p.input-text.js-input-text(class=className)
+  p.text-field.js-text-field(class=className)
     +labeled({
-      className: "input-text",
+      className: "text-field",
       label: label,
       rightLabel: rightLabel
     })
       input(
         type=type || "text",
+        name=name,
         data-interact=interactLike,
         placeholder=placeholder,
         inputmode=inputmode,
-        value=value
+        value=value,
+        required=required
       )
 
 

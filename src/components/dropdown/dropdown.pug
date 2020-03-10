@@ -1,0 +1,21 @@
+include ../labeled/labeled
+
+mixin dropdown(inputSelectObj)
+  -
+    const {
+      className,
+      label,
+      rightLabel,
+      header,
+      title
+    } = inputSelectObj
+
+  .dropdown(class=className)
+    +labeled({ label, rightLabel })
+    .dropdown__accordion
+      h3.visually-hidden.dropdown__title
+        | #{ header || "Выпадающий список" }
+      p.dropdown__label
+        | #{ title || "Выпадающий список" }
+      .dropdown__inner
+        block
