@@ -39,7 +39,7 @@ main.page-main
           })
 
           +text-field({
-            className: "uikit-forms__input js-uikit-forms-masked-date",
+            className: "uikit-forms__input uikit-forms__masked-date js-uikit-forms-masked-date",
             type: "date",
             interactLike: "date",
             label: "Masked Text Field",
@@ -52,16 +52,22 @@ main.page-main
             itemsQuantity: 2
           })
             +date-dropdown({
-              className: "js-uikit-forms-date-dropdown",
-              label: "Date Dropdown"
+              className: "uikit-forms__input-half js-uikit-forms-date-dropdown-first",
+              label: "Date Dropdown",
+              name: "user-date-first"
             })
-            //- +dropdown({
-            //-   title: "ДД.ММ.ГГГГ",
-            //-   header: "Дата",
-            //-   className: "uikit-forms__input-half js-uikit-forms-date-dropdown",
-            //-   label: "Date Dropdown",
-            //- })
-            //-   input(type="text")
+
+            +date-dropdown({
+              className: "uikit-forms__input-half js-uikit-forms-date-dropdown-second",
+              label: "Date Dropdown",
+              name: "user-date-second"
+            })
+
+          +date-dropdown({
+            className: "uikit-forms__input-75 js-uikit-forms-date-dropdown-range",
+            label: "Filter Date Dropdown",
+            name: "user-date-range"
+          })
 
           button(type="submit")
             | go go go

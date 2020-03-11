@@ -1,3 +1,65 @@
 .date-dropdown {
-  outline: 1px solid;
+
+}
+
+.date-dropdown__text {
+  width: 100%;
+  margin: 5px 0 0;
+  padding: 12px 15px;
+  position: relative;
+
+  border: 1px solid $text-field-border-color;
+  border-radius: 4px;
+
+  font-size: 14px;
+  line-height: 18px;
+
+  cursor: pointer;
+
+  @include transition(border);
+
+  &:hover {
+    outline: none;
+
+    border: 1px solid $text-field-border-color--dark;
+  }
+
+  &::selection {
+    background-color: rgba($color: $blue, $alpha: 0.5)
+  }
+
+  &::before,
+  &::after {
+    content: "";
+
+    display: block;
+    margin: auto;
+    width: 10px;
+    height: 10px;
+    position: absolute;
+  }
+
+  &::before {
+    top: 0;
+    bottom: 0;
+    right: 15px;
+
+    border: 2px solid rgba($color: $black, $alpha: 0.3);
+    transform: rotate(-45deg);
+  }
+
+  &::after {
+    width: 15px;
+    height: 15px;
+    top: 0;
+    bottom: 16px;
+    right: 12px;
+    background-color: $white;
+  }
+}
+
+.date-dropdown input:focus + .date-dropdown__text {
+  outline: none;
+
+  border: 1px solid $text-field-border-color--dark;
 }

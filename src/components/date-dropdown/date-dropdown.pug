@@ -6,6 +6,8 @@ mixin date-dropdown(dateDropdownObj)
       className,
       label,
       rightlabel,
+      name,
+      startValue
     } = dateDropdownObj
 
   +labeled({
@@ -13,6 +15,9 @@ mixin date-dropdown(dateDropdownObj)
     label: label,
     rightLabel: rightLabel
   })
+    input.visually-hidden--always(
+      name=name,
+      value=startValue
+    )
     p.date-dropdown__text
-      | sadsads
-    input.visually-hidden--always
+      | #{ startValue || "ДД.ММ.ГГГГ" }

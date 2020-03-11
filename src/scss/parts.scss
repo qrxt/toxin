@@ -1,0 +1,14 @@
+@mixin corner {
+  content: "";
+
+  display: block;
+  width: 10px;
+  height: 10px;
+
+  position: absolute;
+  top: -5px;
+  left: calc(50% - 5px);
+  transform: rotate(45deg);
+
+  border: 2px solid rgba($color: $black, $alpha: 0.3);
+}

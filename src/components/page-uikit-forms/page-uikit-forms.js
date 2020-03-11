@@ -3,7 +3,7 @@ import Dropdown from "@components/dropdown/dropdown";
 import DateDropdown from "@components/date-dropdown/date-dropdown";
 
 const maskedDateTextFieldElem = $(".js-uikit-forms-masked-date");
-if (maskedDateTextFieldElem.length > 0) {
+if (maskedDateTextFieldElem.length) {
   const node = maskedDateTextFieldElem.get(0);
   node.addEventListener("keydown", evt => {
     if (evt.key === "Enter") {
@@ -23,7 +23,7 @@ if (maskedDateTextFieldElem.length > 0) {
 }
 
 const dropdownExampleElem = $(".js-uikit-forms-dropdown-example");
-if (dropdownExampleElem.length > 0) {
+if (dropdownExampleElem.length) {
   const dropdownOptions = {
     header: "p",
     collapsible: true,
@@ -33,11 +33,22 @@ if (dropdownExampleElem.length > 0) {
   const dropdownExample = new Dropdown(dropdownExampleElem, dropdownOptions);
 }
 
-const dateDropdownElem = $(".js-uikit-forms-date-dropdown");
-if (dateDropdownElem.length > 0) {
-  const dropdownOptions = {
-    offset: dateDropdownElem.get(0).scrollHeight
-  };
+const dateDropdownElemFirst = $(".js-uikit-forms-date-dropdown-first");
+const dateDropdownElemSecond = $(".js-uikit-forms-date-dropdown-second");
 
-  const dropdownExample = new DateDropdown(dateDropdownElem, dropdownOptions);
+if (dateDropdownElemFirst.length && dateDropdownElemSecond.length) {
+  const dropdownExampleFirst = new DateDropdown(dateDropdownElemFirst, {});
+  const dropdownExampleSecond = new DateDropdown(dateDropdownElemSecond, {
+    startDate: new Date("August 19, 2019")
+  });
+}
+
+const dateDropdownRangeElem = $(".js-uikit-forms-date-dropdown-range");
+if (dateDropdownRangeElem.length) {
+  const dropdownRange = new DateDropdown(dateDropdownRangeElem, {
+    range: true,
+    multipleDatesSeparator: " - ",
+    dateFormat: "dd M",
+    startDateRange: "19 авг - 23 авг"
+  });
 }
