@@ -1,0 +1,61 @@
+.input-quantity {
+  display: flex;
+  justify-content: space-between;
+}
+
+.input-quantity input {
+  width: 35px;
+  text-align: center;
+
+  border: none;
+
+  @include transition(color);
+
+  &:hover {
+    color: rgba($color: $black, $alpha: 0.6);
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &::selection {
+    background-color: $selection-color;
+  }
+}
+
+.input-quantity__label {
+  font-family: $font-primary;
+  font-size: 13px;
+  font-weight: 700;
+  color: $black;
+  text-transform: uppercase;
+}
+
+.input-quantity__wrapper {
+  display: flex;
+}
+
+.input-quantity__btn {
+  display: block;
+  width: 30px;
+  height: 30px;
+
+  color: rgba($color: $black, $alpha: 0.5);
+  padding: 5px 10px;
+
+  border-radius: 50%;
+  border: 1px solid $text-field-border-color;
+  background-color: transparent;
+
+  cursor: pointer;
+
+  @include transition(border);
+
+  &:hover,
+  &:focus {
+    outline: none;
+
+    border: 1px solid $text-field-border-color--dark;
+  }
+}

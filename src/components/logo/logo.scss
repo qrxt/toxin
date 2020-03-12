@@ -1,26 +1,26 @@
-.logo__link {
+.logo {
   &:focus {
     outline: none;
   }
 }
 
-.logo__link svg {
+.logo svg {
   width: 47px;
   height: 47px;
 
-  fill: url("#gradient-purple");
+  fill: url("#gradient-purple-animation");
 }
 
-.logo__link .svg-gradients__purple stop {
+.logo .svg-gradients__purple-animation stop {
   @include transition(stop-color);
 }
 
-.logo__link:focus .svg-gradients__purple stop:first-child,
-.logo__link:hover .svg-gradients__purple stop:first-child {
+.logo:focus .svg-gradients__purple-animation stop:first-child,
+.logo:hover .svg-gradients__purple-animation stop:first-child {
   stop-color: #8ba4f9;
 }
 
-.logo__link:focus .svg-gradients__purple stop:last-child,
-.logo__link:hover .svg-gradients__purple stop:last-child {
+.logo:focus .svg-gradients__purple-animation stop:last-child,
+.logo:hover .svg-gradients__purple-animation stop:last-child {
   stop-color: #bc9cff;
 }

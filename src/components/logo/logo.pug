@@ -11,12 +11,12 @@ block variables
 mixin logo(logoObj)
   - const { className, isFull, link } = logoObj
   if isFull
-    a.logo__link(class=className, href=link)
+    a.logo(class=className, href=link)
       img(
         src="assets/img/logo-text.png"
         alt="Логотип Toxin"
       )
   else
-    a.logo__link(class=className, href=link)
-      +svg("logo-toxin", 45, 45)
+    a.logo(class=className, href=link)
       +svg-gradients()
+      +svg("logo-toxin", 45, 45)

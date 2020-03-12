@@ -1,0 +1,22 @@
+include ../text-field/text-field
+include ../../pug/mixins
+
+mixin subscription-field(subscriptionFieldObj)
+  -
+    const {
+      className,
+      placeholder,
+      name,
+      label,
+      rightLabel
+    } = subscriptionFieldObj
+
+  +text-field({
+    className: `subscription-field ${className}`,
+    placeholder: placeholder,
+    name: name,
+    label: label,
+    rightLabel: rightLabel
+  })
+    button.subscription-field__btn
+      +svg("arrow_forward", 18, 18)

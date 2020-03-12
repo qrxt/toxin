@@ -1,35 +1,32 @@
-include ../labeled/labeled
+//- include ../labeled/labeled
 
-mixin input-text(textInputObj)
-  -
-    const {
-      type,
-      name,
-      interactLike,
-      className,
-      label,
-      rightLabel,
-      placeholder,
-      inputmode,
-      value,
-      required
-    } = textInputObj
+//- mixin input-text(textInputObj)
+//-   -
+//-     const {
+//-       type,
+//-       name,
+//-       interactLike,
+//-       className,
+//-       label,
+//-       rightLabel,
+//-       placeholder,
+//-       inputmode,
+//-       value,
+//-       required
+//-     } = textInputObj
 
-  p.input-text(class=className)
-    +labeled({
-      className: "input-text",
-      label: label,
-      rightLabel: rightLabel
-    })
-      input(
-        type=type || "text",
-        name=name,
-        data-interact=interactLike,
-        placeholder=placeholder,
-        inputmode=inputmode,
-        value=value,
-        required=required
-      )
-
-
-
+//-   p.input-text(class=className)
+//-     +labeled({
+//-       className: "input-text",
+//-       label: label,
+//-       rightLabel: rightLabel
+//-     })
+//-       input(
+//-         type=type || "text",
+//-         name=name,
+//-         data-interact=interactLike,
+//-         placeholder=placeholder,
+//-         inputmode=inputmode,
+//-         value=value,
+//-         required=required
+//-       )

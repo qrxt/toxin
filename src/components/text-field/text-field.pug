@@ -5,7 +5,6 @@ mixin text-field(textInputObj)
     const {
       type,
       name,
-      interactLike,
       className,
       label,
       rightLabel,
@@ -24,12 +23,11 @@ mixin text-field(textInputObj)
       input(
         type=type || "text",
         name=name,
-        data-interact=interactLike,
         placeholder=placeholder,
         inputmode=inputmode,
         value=value,
         required=required
       )
-
+      block
 
 

@@ -1,6 +1,6 @@
 mixin labeled(labeledObj)
   - const { className, label, rightLabel } = labeledObj
-  label.labeled__label(class=className)
+  label.labeled(class=className)
     span.cta.labeled__label-text
       | #{ label }
     if rightLabel

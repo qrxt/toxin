@@ -1,0 +1,40 @@
+.subscription-field {
+  position: relative;
+}
+
+.subscription-field input {
+  margin-top: 4px;
+}
+
+.subscription-field__btn {
+  margin: auto;
+  padding: 0;
+  width: 18px;
+  height: 18px;
+  position: absolute;
+  top: 20px;
+  bottom: 0;
+  right: 12px;
+
+  border: none;
+  background-color: transparent;
+
+  cursor: pointer;
+
+  @include transition(opacity);
+
+  &:hover,
+  &:focus {
+    outline: none;
+
+    opacity: 0.6;
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
+}
+
+.subscription-field__btn svg {
+  fill: url("#gradient-purple");
+}

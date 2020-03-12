@@ -1,0 +1,24 @@
+mixin input-quantity(inputQuantityObj)
+  -
+    const {
+      className,
+      initialValue,
+      label,
+      name
+    } = inputQuantityObj
+
+  p.input-quantity(class=className)
+    span.input-quantity__label
+      | #{ label }
+
+    span.input-quantity__wrapper
+      button(type="button").input-quantity__btn.js-btn-dec
+        | -
+
+      input.input-quantity__value(
+        value=initialValue,
+        name=name
+      )
+
+      button(type="button").input-quantity__btn.js-btn-inc
+        | +

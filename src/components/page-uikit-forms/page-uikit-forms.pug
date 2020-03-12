@@ -2,6 +2,9 @@ include ../text-field/text-field
 include ../dropdown/dropdown
 include ../input-wrapper/input-wrapper
 include ../date-dropdown/date-dropdown
+include ../subscription-field/subscription-field
+include ../input-quantity/input-quantity
+include ../dropdown-guests/dropdown-guests
 
 main.page-main
   section.uikit-forms
@@ -64,10 +67,26 @@ main.page-main
             })
 
           +date-dropdown({
-            className: "uikit-forms__input-75 js-uikit-forms-date-dropdown-range",
+            className: "uikit-forms__input-75 uikit-forms__date-range js-uikit-forms-date-dropdown-range",
             label: "Filter Date Dropdown",
             name: "user-date-range"
           })
+
+          +subscription-field({
+            label: "Subscription Text Field",
+            className: "uikit-forms__input-75 uikit-forms__email-subscription",
+            placeholder: "Email",
+            name: "user-email-subscription"
+          })
+
+          +dropdown-guests({
+
+          })
+            +input-quantity({
+              className: "js-uikit-forms-input-quantity",
+              label: "Ванные комнаты",
+              initialValue: 2
+            })
 
           button(type="submit")
             | go go go

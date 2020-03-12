@@ -29,7 +29,7 @@
   }
 
   &::selection {
-    background-color: rgba($color: $blue, $alpha: 0.5)
+    background-color: $selection-color;
   }
 }
 

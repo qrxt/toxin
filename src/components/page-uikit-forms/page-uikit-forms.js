@@ -1,6 +1,7 @@
 import TextFieldMasked from "@components/text-field/text-field-masked";
 import Dropdown from "@components/dropdown/dropdown";
 import DateDropdown from "@components/date-dropdown/date-dropdown";
+import InputQuantity from "@components/input-quantity/input-quantity";
 
 const maskedDateTextFieldElem = $(".js-uikit-forms-masked-date");
 if (maskedDateTextFieldElem.length) {
@@ -51,4 +52,9 @@ if (dateDropdownRangeElem.length) {
     dateFormat: "dd M",
     startDateRange: "19 авг - 23 авг"
   });
+}
+
+const exampleInputQuantityElem = $(".js-uikit-forms-input-quantity");
+if (exampleInputQuantityElem.length) {
+  const inputQuantity = new InputQuantity(exampleInputQuantityElem);
 }

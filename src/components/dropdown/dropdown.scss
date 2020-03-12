@@ -13,6 +13,10 @@
 
     border: 1px solid $text-field-border-color--dark;
   }
+
+  &::selection {
+    background-color: $selection-color;
+  }
 }
 
 .dropdown__accordion .ui-accordion-header {
