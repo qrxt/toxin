@@ -1,0 +1,14 @@
+include ../dropdown/dropdown
+
+mixin dropdown-rooms(dropdownRoomsObj)
+  -
+    const {
+      className,
+      label,
+      rightLabel,
+      header,
+      title
+    } = dropdownRoomsObj
+
+  +dropdown(dropdownRoomsObj)
+    block

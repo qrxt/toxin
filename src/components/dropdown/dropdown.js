@@ -8,8 +8,15 @@ export default class Dropdown {
 
   constructor(node, options) {
     this.node = node;
+    this.nodeText = this.node;
     this.options = options;
 
     this.init();
+  }
+
+  setText(text) {
+    this.node
+      .find(".dropdown__label")
+      .text(text);
   }
 }

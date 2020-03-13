@@ -1,5 +1,6 @@
 import TextFieldMasked from "@components/text-field/text-field-masked";
 import Dropdown from "@components/dropdown/dropdown";
+import DropdownRooms from "@components/dropdown-rooms/dropdown-rooms";
 import DateDropdown from "@components/date-dropdown/date-dropdown";
 import InputQuantity from "@components/input-quantity/input-quantity";
 
@@ -54,7 +55,20 @@ if (dateDropdownRangeElem.length) {
   });
 }
 
-const exampleInputQuantityElem = $(".js-uikit-forms-input-quantity");
-if (exampleInputQuantityElem.length) {
-  const inputQuantity = new InputQuantity(exampleInputQuantityElem);
+const inputQuantityBathroomsElem = $(".js-uikit-forms-bathrooms-quantity");
+const inputQuantityBedsElem = $(".js-uikit-forms-beds-quantity");
+if (inputQuantityBathroomsElem.length && inputQuantityBedsElem) {
+  const inputQuantityBaths = new InputQuantity(inputQuantityBathroomsElem);
+  const inputQuantityBeds = new InputQuantity(inputQuantityBedsElem);
+}
+
+const roomsDropdownElem = $(".js-uikit-forms-dropdown-rooms");
+if (roomsDropdownElem.length) {
+  const dropdownOptions = {
+    header: "p.dropdown__label",
+    collapsible: true,
+    active: false
+  };
+
+  const roomsDropdown = new DropdownRooms(roomsDropdownElem, dropdownOptions);
 }

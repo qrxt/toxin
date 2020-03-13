@@ -4,7 +4,7 @@ include ../input-wrapper/input-wrapper
 include ../date-dropdown/date-dropdown
 include ../subscription-field/subscription-field
 include ../input-quantity/input-quantity
-include ../dropdown-guests/dropdown-guests
+include ../dropdown-rooms/dropdown-rooms
 
 main.page-main
   section.uikit-forms
@@ -79,13 +79,21 @@ main.page-main
             name: "user-email-subscription"
           })
 
-          +dropdown-guests({
-
+          +dropdown-rooms({
+            className: "js-uikit-forms-dropdown-rooms",
+            label: "Dropdown",
+            rightLabel: "Default"
           })
             +input-quantity({
-              className: "js-uikit-forms-input-quantity",
+              className: "js-uikit-forms-bathrooms-quantity",
               label: "Ванные комнаты",
               initialValue: 2
+            })
+
+            +input-quantity({
+              className: "js-uikit-forms-beds-quantity",
+              label: "Кровати",
+              initialValue: 1
             })
 
           button(type="submit")
