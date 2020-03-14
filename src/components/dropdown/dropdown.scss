@@ -48,7 +48,12 @@
 }
 
 .dropdown__accordion .ui-accordion-content {
-  border-left: 1px solid $text-field-border-color--dark;
-  border-bottom: 1px solid $text-field-border-color--dark;
-  border-right: 1px solid $text-field-border-color--dark;
+  padding: 5px 6px 8px 14px;
+}
+
+.dropdown__accordion .ui-state-hover ~ .ui-accordion-content,
+.dropdown__accordion .ui-state-focus ~ .ui-accordion-content {
+  @include transition(border-color);
+
+  border-color: $text-field-border-color--dark;
 }

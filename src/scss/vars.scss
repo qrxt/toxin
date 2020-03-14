@@ -19,7 +19,13 @@ $white: #ffffff;
 $blue: #8ba4f9;
 $purple: #bc9cff;
 
-$text-field-border-color: rgba($color: $black, $alpha: 0.2);
-$text-field-border-color--dark: opacify($text-field-border-color, 0.3);
+$dark-shade: rgba($color: $black, $alpha: 1.0);
+$dark-shade-75: rgba($color: $black, $alpha: 0.75);
+$dark-shade-50: rgba($color: $black, $alpha: 0.5);
+$dark-shade-25: rgba($color: $black, $alpha: 0.25);
+$dark-shade-5: rgba($color: $black, $alpha: 0.05);
+
+$text-field-border-color: $dark-shade-25;
+$text-field-border-color--dark: $dark-shade-50;
 
 $selection-color: rgba($color: $blue, $alpha: 0.5);

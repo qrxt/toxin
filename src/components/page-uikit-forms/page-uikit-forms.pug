@@ -5,6 +5,7 @@ include ../date-dropdown/date-dropdown
 include ../subscription-field/subscription-field
 include ../input-quantity/input-quantity
 include ../dropdown-rooms/dropdown-rooms
+include ../checkbox/checkbox
 
 main.page-main
   section.uikit-forms
@@ -80,21 +81,68 @@ main.page-main
           })
 
           +dropdown-rooms({
-            className: "js-uikit-forms-dropdown-rooms",
+            className: "uikit-forms__input-75 uikit-forms__dropdown-rooms js-uikit-forms-dropdown-rooms",
+            title: "Сколько комнат",
             label: "Dropdown",
             rightLabel: "Default"
           })
             +input-quantity({
-              className: "js-uikit-forms-bathrooms-quantity",
-              label: "Ванные комнаты",
-              initialValue: 2
+              className: "uikit-forms__quantity-input",
+              label: "Спальни",
+              initialValue: 2,
+              min: 1,
+              max: 3
             })
 
             +input-quantity({
-              className: "js-uikit-forms-beds-quantity",
+              className: "uikit-forms__quantity-input",
               label: "Кровати",
-              initialValue: 1
+              initialValue: 2,
+              min: 1,
+              max: 3
             })
+
+            +input-quantity({
+              className: "uikit-forms__quantity-input",
+              label: "Ванные комнаты",
+              initialValue: 0,
+              max: 2
+            })
+
+          +dropdown-rooms({
+            className: "uikit-forms__input-75 uikit-forms__dropdown-rooms-expanded js-uikit-forms-dropdown-rooms-expanded",
+            title: "Сколько комнат",
+            label: "Dropdown",
+            rightLabel: "Expanded"
+          })
+            +input-quantity({
+              className: "uikit-forms__quantity-input",
+              label: "Спальни",
+              initialValue: 2,
+              min: 1,
+              max: 3
+            })
+
+            +input-quantity({
+              className: "uikit-forms__quantity-input",
+              label: "Кровати",
+              initialValue: 2,
+              min: 1,
+              max: 3
+            })
+
+            +input-quantity({
+              className: "uikit-forms__quantity-input",
+              label: "Ванные комнаты",
+              initialValue: 0,
+              max: 2
+            })
+
+          .uikit-forms__input
+            +checkbox({
+              labelText: "Завтрак"
+            })
+
 
           button(type="submit")
             | go go go

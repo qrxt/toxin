@@ -4,6 +4,15 @@
 
 .subscription-field input {
   margin-top: 4px;
+
+  @include transition(border);
+
+  &:hover,
+  &:focus-within {
+    outline: none;
+
+    border: 1px solid $text-field-border-color--dark;
+  }
 }
 
 .subscription-field__btn {

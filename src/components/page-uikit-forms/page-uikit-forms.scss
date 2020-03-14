@@ -39,3 +39,19 @@
 .uikit-forms__email-subscription {
   margin-bottom: 100px;
 }
+
+.uikit-forms__dropdown-rooms {
+  margin-bottom: 20px;
+}
+
+.uikit-forms__dropdown-rooms-expanded {
+  margin-bottom: 149px; //55px
+}
+
+.uikit-forms__quantity-input {
+  margin: 0;
+}
+
+.uikit-forms__quantity-input:not(:last-child) {
+  margin-bottom: 8px;
+}

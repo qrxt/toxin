@@ -4,7 +4,11 @@ mixin input-quantity(inputQuantityObj)
       className,
       initialValue,
       label,
-      name
+      name,
+      min,
+      max,
+      inputmode,
+      type
     } = inputQuantityObj
 
   p.input-quantity(class=className)
@@ -17,7 +21,12 @@ mixin input-quantity(inputQuantityObj)
 
       input.input-quantity__value(
         value=initialValue,
-        name=name
+        name=name,
+        min=min || 0,
+        max=max || 999,
+        type=type || "number",
+        inputmode=inputmode || "numeric",
+        placeholder=min || 0
       )
 
       button(type="button").input-quantity__btn.js-btn-inc

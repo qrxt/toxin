@@ -2,8 +2,18 @@ import $ from "jquery";
 
 export default class Dropdown {
   init() {
+    const options = {
+      header: "p.dropdown__label",
+      collapsible: true,
+
+      autoHeight: false,
+      clearStyle: true,
+
+      ...this.options,
+    };
+
     this.node
-      .accordion(this.options);
+      .accordion(options);
   }
 
   constructor(node, options) {

@@ -2,37 +2,56 @@ import Dropdown from "../dropdown/dropdown";
 
 export default class DropdownRooms extends Dropdown {
   init() {
+    const options = {
+      header: "p.dropdown__label",
+      collapsible: true,
+
+      ...this.options,
+    };
+
+    const inputValues = this._getInputValues();
+
     this.node
-      .accordion(this.options);
-
-    if (this.controlWrappers) {
-      this.controlWrappers
-        .on("click input", () => {
-          this._setLabelText(
-            this._constructStatusString()
-          )
-        });
-    }
-  }
-
-  _constructStatusString() {
-    const inputValues = $.map(this.inputs, input => {
-      const inputValue = $(input).val();
-      return Number(inputValue);
-    });
+      .accordion(options);
 
     const labels = $.map(this.inputLabels, label => {
       return $(label).text();
     });
 
+    if (this.controlWrappers) {
+      this.controlWrappers
+        .on("click input", () => {
+          this._setLabelText(
+            this._constructStatusString(labels, this._getInputValues(), 2)
+          );
+        });
+    }
+
+    if (inputValues.some(inputValue => inputValue !== 0)) {
+      this._setLabelText(
+        this._constructStatusString(labels, inputValues, 2)
+      );
+    }
+  }
+
+  _getInputValues() {
+    return $.map(this.inputs, input => {
+      const inputValue = $(input).val();
+      return Number(inputValue);
+    });
+  }
+
+  _constructStatusString(labels, inputValues, elementsQuantity = 2) {
     const statusString = labels
+      .slice(0, elementsQuantity)
       .reduce((acc, labelText, index) => {
         return [
           ...acc,
-          `${ labelText }: ${ inputValues[index] }`
+          `${ inputValues[index] } ${ labelText }`
         ];
       }, [])
-      .join(", ");
+      .join(", ")
+      .concat("...");
 
     return statusString;
   }

@@ -65,10 +65,27 @@ if (inputQuantityBathroomsElem.length && inputQuantityBedsElem) {
 const roomsDropdownElem = $(".js-uikit-forms-dropdown-rooms");
 if (roomsDropdownElem.length) {
   const dropdownOptions = {
-    header: "p.dropdown__label",
-    collapsible: true,
     active: false
   };
 
   const roomsDropdown = new DropdownRooms(roomsDropdownElem, dropdownOptions);
+
+  const inputs = roomsDropdownElem.find(".input-quantity");
+  if (inputs.length) {
+    inputs.each((_, input) => {
+      const inputQuantity = new InputQuantity($(input));
+    });
+  }
+};
+
+const roomsDropdownExpandedElem = $(".js-uikit-forms-dropdown-rooms-expanded");
+if (roomsDropdownExpandedElem.length) {
+  const roomsDropdownExpanded = new DropdownRooms(roomsDropdownExpandedElem, {});
+
+  const inputs = roomsDropdownExpandedElem.find(".input-quantity");
+  if (inputs.length) {
+    inputs.each((_, input) => {
+      const inputQuantity = new InputQuantity($(input));
+    });
+  }
 }

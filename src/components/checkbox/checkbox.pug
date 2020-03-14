@@ -1,0 +1,14 @@
+mixin checkbox(checkboxObj)
+  -
+    const {
+      className,
+      labelText,
+      checked
+    } = checkboxObj
+
+  label(class=className).checkbox
+    | #{ labelText }
+    input.visually-hidden--always(
+      type="checkbox",
+      checked=checked || false
+    )

@@ -10,6 +10,8 @@
 
   border: none;
 
+  appearance: none;
+
   @include transition(color);
 
   &:hover {
@@ -23,11 +25,17 @@
   &::selection {
     background-color: $selection-color;
   }
+
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
 }
 
 .input-quantity__label {
   font-family: $font-primary;
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 700;
   color: $black;
   text-transform: uppercase;
