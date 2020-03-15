@@ -1,27 +1,43 @@
 .checkbox {
   padding-left: 30px;
+  position: relative;
 
   color: $dark-shade-25;
   font-size: 14px;
 
   cursor: pointer;
-
-  &::before {
-    content: "";
-    display: block;
-    position: absolute;
-
-    width: 20px;
-    height: 20px;
-
-    border: 1px solid $dark-shade-25;
-    border-radius: 4px;
-
-    @include transition(border);
-  }
 }
 
-.checkbox:hover::before,
-.checkbox:focus-within::before {
+.checkbox__box {
+  display: block;
+
+  width: 20px;
+  height: 20px;
+  margin: 0;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+
+  border: 1px solid $dark-shade-25;
+  border-radius: 4px;
+
+  @include transition(border);
+}
+
+.checkbox__box svg {
+  opacity: 0;
+
+  fill: url("#gradient-purple-reversed");
+
+  @include transition(opacity);
+}
+
+.checkbox:hover .checkbox__box,
+.checkbox input:focus ~ .checkbox__box {
   border: 1px solid $purple;
+}
+
+.checkbox input:checked ~ .checkbox__box svg {
+  opacity: 1;
 }

@@ -1,3 +1,6 @@
+//- include ../svg-gradients/svg-gradients
+include ../../pug/mixins
+
 mixin checkbox(checkboxObj)
   -
     const {
@@ -12,3 +15,5 @@ mixin checkbox(checkboxObj)
       type="checkbox",
       checked=checked || false
     )
+    span.checkbox__box
+      +svg("checkbox-tick", 15, 15)

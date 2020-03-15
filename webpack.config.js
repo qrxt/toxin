@@ -100,7 +100,9 @@ module.exports = (_, options) => {
         modules: path.join(__dirname, "node_modules"),
 
         "@": path.join(__dirname, "src"),
-        "@components": path.join(__dirname, "src", "components")
+        "@components": path.join(__dirname, "src", "components"),
+
+        "@assets": path.join(__dirname, "src", "assets")
       },
       extensions: [
         ".js",
@@ -155,6 +157,9 @@ module.exports = (_, options) => {
             name: "[path][name].[ext]"
           }
         },
+        // {
+        //   test: /\.svg
+        // },
         {
           test: /\.(woff2|woff|eot|ttf|svg)$/,
           include: /fonts/,
@@ -222,7 +227,14 @@ module.exports = (_, options) => {
         "$": "jquery",
         "jQuery": "jquery",
         "window.jQuery": "jquery"
-      })
+      }),
+
+      new Copy([
+        {
+          from: path.resolve(__dirname, "src/assets/img"),
+          to: path.resolve(__dirname, "dist/assets/img")
+        }
+      ])
     ]
   };
 
