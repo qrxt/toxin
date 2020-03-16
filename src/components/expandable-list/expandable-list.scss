@@ -1,0 +1,43 @@
+.expandable-list .ui-accordion-header .ui-icon {
+  width: 15px;
+  height: 7px;
+  position: absolute;
+  top: calc(50%);
+  right: 12px;
+
+  background-image: none;
+  transform: rotate(0deg);
+
+  @include transition(transform);
+
+  &::before {
+    @include corner;
+  }
+}
+
+.expandable-list .ui-accordion-header {
+  margin: 0;
+  padding: 0;
+
+  color: $black;
+  font-family: $font-primary;
+  font-size: 12px;
+  line-height: 15px;
+  text-transform: uppercase;
+  font-weight: 700;
+
+  background-color: transparent;
+  border: none;
+}
+
+.expandable-list .ui-accordion-content {
+  display: flex;
+  flex-direction: column;
+  padding: 15px 0;
+
+  border: none;
+}
+
+.expandable-list .ui-state-active .ui-icon {
+  transform: rotate(-180deg);
+}

@@ -3,8 +3,9 @@ import $ from "jquery";
 export default class Dropdown {
   init() {
     const options = {
-      header: "p.dropdown__label",
+      header: ".dropdown__label",
       collapsible: true,
+      active: false,
 
       autoHeight: false,
       clearStyle: true,

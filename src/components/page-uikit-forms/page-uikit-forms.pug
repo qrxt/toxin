@@ -6,6 +6,7 @@ include ../subscription-field/subscription-field
 include ../input-quantity/input-quantity
 include ../dropdown-rooms/dropdown-rooms
 include ../checkbox/checkbox
+include ../expandable-list/expandable-list
 
 main.page-main
   section.uikit-forms
@@ -138,11 +139,40 @@ main.page-main
               max: 2
             })
 
-          .uikit-forms__input
-            +checkbox({
-              labelText: "Завтрак",
-              name: "example-checkbox"
+
+          .uikit-forms__input-75
+            +expandable-list({
+              className: "uikit-forms__expandable-checkbox-list js-uikit-forms-expandable-closed",
+              header: "Expandable Checkbox List"
             })
+              +checkbox({
+                className: "uikit-forms__expandable-checkbox-list__item",
+                labelText: "Завтрак",
+                name: "example-checkbox-breakfast"
+              })
+
+              +checkbox({
+                className: "uikit-forms__expandable-checkbox-list__item",
+                labelText: "Обед",
+                name: "example-checkbox-dinner"
+              })
+
+          .uikit-forms__input-75
+            +expandable-list({
+              className: "uikit-forms__expandable-checkbox-list js-uikit-forms-expandable-opened",
+              header: "Expandable Checkbox List"
+            })
+              +checkbox({
+                className: "uikit-forms__expandable-checkbox-list__item",
+                labelText: "Завтрак",
+                name: "example-checkbox-breakfast"
+              })
+
+              +checkbox({
+                className: "uikit-forms__expandable-checkbox-list__item",
+                labelText: "Обед",
+                name: "example-checkbox-dinner"
+              })
 
 
           button(type="submit")

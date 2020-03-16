@@ -3,6 +3,7 @@ import Dropdown from "@components/dropdown/dropdown";
 import DropdownRooms from "@components/dropdown-rooms/dropdown-rooms";
 import DateDropdown from "@components/date-dropdown/date-dropdown";
 import InputQuantity from "@components/input-quantity/input-quantity";
+import ExpandableList from "@components/expandable-list/expandable-list";
 
 const maskedDateTextFieldElem = $(".js-uikit-forms-masked-date");
 if (maskedDateTextFieldElem.length) {
@@ -88,4 +89,16 @@ if (roomsDropdownExpandedElem.length) {
       const inputQuantity = new InputQuantity($(input));
     });
   }
+}
+
+const expandableCheckboxListElem = $(".js-uikit-forms-expandable-closed");
+if (expandableCheckboxListElem.length) {
+  const expandableList = new ExpandableList(expandableCheckboxListElem, {});
+}
+
+const expandableCheckboxListOpenedElem = $(".js-uikit-forms-expandable-opened");
+if (expandableCheckboxListOpenedElem.length) {
+  const expandableList = new ExpandableList(expandableCheckboxListOpenedElem, {
+    active: 0
+  });
 }

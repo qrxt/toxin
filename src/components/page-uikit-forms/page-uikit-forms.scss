@@ -45,7 +45,7 @@
 }
 
 .uikit-forms__dropdown-rooms-expanded {
-  margin-bottom: 149px; //55px
+  margin-bottom: 55px;
 }
 
 .uikit-forms__quantity-input {
@@ -54,4 +54,12 @@
 
 .uikit-forms__quantity-input:not(:last-child) {
   margin-bottom: 8px;
+}
+
+.uikit-forms__expandable-checkbox-list {
+  margin-bottom: 50px;
+}
+
+.uikit-forms__expandable-checkbox-list__item:not(:last-child) {
+  margin-bottom: 14px;
 }

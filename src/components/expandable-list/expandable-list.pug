@@ -1,0 +1,13 @@
+mixin expandable-list(inputSelectObj)
+  -
+    const {
+      className,
+      header
+    } = inputSelectObj
+
+  .expandable-list(class=className)
+    .expandable-list__accordion
+      h3.cta.expandable-list__title.js-expandable-list-title
+        | #{ header || "Раскрывающийся список" }
+      .expandable-list__inner
+        block
