@@ -6,7 +6,8 @@ mixin checkbox(checkboxObj)
     const {
       className,
       labelText,
-      checked
+      checked,
+      name
     } = checkboxObj
 
   label(class=className).checkbox
@@ -14,6 +15,7 @@ mixin checkbox(checkboxObj)
     input.visually-hidden--always(
       type="checkbox",
       checked=checked || false
+      name=name
     )
     span.checkbox__box
       +svg("checkbox-tick", 15, 15)

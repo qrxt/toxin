@@ -6,6 +6,12 @@
   font-size: 14px;
 
   cursor: pointer;
+
+  @include transition(color);
+
+  &:focus-within {
+    color: $dark-shade-50;
+  }
 }
 
 .checkbox__box {
@@ -26,6 +32,12 @@
 }
 
 .checkbox__box svg {
+  position: absolute;
+  margin: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+
   opacity: 0;
 
   fill: url("#gradient-purple-reversed");
@@ -35,6 +47,12 @@
 
 .checkbox:hover .checkbox__box,
 .checkbox input:focus ~ .checkbox__box {
+  border: 1px solid $purple;
+}
+
+.checkbox input:checked ~ .checkbox__box {
+  @include transition(opacity);
+
   border: 1px solid $purple;
 }
 
