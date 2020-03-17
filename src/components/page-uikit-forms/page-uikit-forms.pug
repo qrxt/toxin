@@ -7,6 +7,63 @@ include ../input-quantity/input-quantity
 include ../dropdown-rooms/dropdown-rooms
 include ../checkbox/checkbox
 include ../expandable-list/expandable-list
+include ../feature/feature
+
+-
+  const expandableCheckboxList = [
+    {
+      className: "uikit-forms__expandable-checkbox-list__item",
+      labelText: "Завтрак",
+      name: "example-checkbox-breakfast"
+    },
+
+    {
+      className: "uikit-forms__expandable-checkbox-list__item",
+      labelText: "Письменный стол",
+      name: "example-checkbox-table",
+      checked: true
+    },
+
+    {
+      className: "uikit-forms__expandable-checkbox-list__item",
+      labelText: "Стул для кормления",
+      name: "example-checkbox-chair",
+      checked: true
+    },
+
+    {
+      className: "uikit-forms__expandable-checkbox-list__item",
+      labelText: "Кроватка",
+      name: "example-checkbox-cot",
+      checked: true
+    },
+
+    {
+      className: "uikit-forms__expandable-checkbox-list__item",
+      labelText: "Телевизор",
+      name: "example-checkbox-tv"
+    },
+
+    {
+      className: "uikit-forms__expandable-checkbox-list__item",
+      labelText: "Шампунь",
+      name: "example-checkbox-shampoo"
+    },
+
+    {
+      className: "uikit-forms__expandable-checkbox-list__item",
+      labelText: "Телевизор",
+      name: "example-checkbox-tv-again"
+    },
+
+    {
+      className: "uikit-forms__expandable-checkbox-list__item",
+      labelText: "Шампунь",
+      name: "example-checkbox-shampoo-again"
+    }
+  ]
+
+
 
 main.page-main
   section.uikit-forms
@@ -145,35 +202,31 @@ main.page-main
               className: "uikit-forms__expandable-checkbox-list js-uikit-forms-expandable-closed",
               header: "Expandable Checkbox List"
             })
-              +checkbox({
-                className: "uikit-forms__expandable-checkbox-list__item",
-                labelText: "Завтрак",
-                name: "example-checkbox-breakfast"
-              })
-
-              +checkbox({
-                className: "uikit-forms__expandable-checkbox-list__item",
-                labelText: "Обед",
-                name: "example-checkbox-dinner"
-              })
+              each checkbox in expandableCheckboxList
+                +checkbox(checkbox)
 
           .uikit-forms__input-75
             +expandable-list({
-              className: "uikit-forms__expandable-checkbox-list js-uikit-forms-expandable-opened",
+              className: "uikit-forms__expandable-checkbox-list uikit-forms__expandable-checkbox-list--second js-uikit-forms-expandable-opened",
               header: "Expandable Checkbox List"
             })
-              +checkbox({
-                className: "uikit-forms__expandable-checkbox-list__item",
-                labelText: "Завтрак",
-                name: "example-checkbox-breakfast"
-              })
+              each checkbox in expandableCheckboxList
+                +checkbox(checkbox)
 
-              +checkbox({
-                className: "uikit-forms__expandable-checkbox-list__item",
-                labelText: "Обед",
-                name: "example-checkbox-dinner"
-              })
+          .uikit-forms__input-75
+            +feature({
+              className: "uikit-forms__feature",
+              iconName: "icon-smile",
+              title: "Комфорт",
+              labelText: "Шумопоглощающие стены"
+            })
 
+            +feature({
+              className: "uikit-forms__feature",
+              iconName: "icon-city",
+              title: "Удобство",
+              labelText: "Окно в каждой из спален"
+            })
 
-          button(type="submit")
-            | go go go
+          //- button(type="submit")
+          //-   | go go go

@@ -57,9 +57,17 @@
 }
 
 .uikit-forms__expandable-checkbox-list {
-  margin-bottom: 50px;
+  margin-bottom: 47px;
+}
+
+.uikit-forms__expandable-checkbox-list--second {
+  margin-bottom: 22px;
 }
 
 .uikit-forms__expandable-checkbox-list__item:not(:last-child) {
-  margin-bottom: 14px;
+  margin-bottom: 10px;
+}
+
+.uikit-forms__feature:not(:last-child) {
+  margin-bottom: 20px;
 }

@@ -30,7 +30,7 @@ if (dropdownExampleElem.length) {
   const dropdownOptions = {
     header: "p",
     collapsible: true,
-    active: false
+    // active: false
   };
 
   const dropdownExample = new Dropdown(dropdownExampleElem, dropdownOptions);
@@ -66,7 +66,7 @@ if (inputQuantityBathroomsElem.length && inputQuantityBedsElem) {
 const roomsDropdownElem = $(".js-uikit-forms-dropdown-rooms");
 if (roomsDropdownElem.length) {
   const dropdownOptions = {
-    active: false
+    collapsible: true
   };
 
   const roomsDropdown = new DropdownRooms(roomsDropdownElem, dropdownOptions);

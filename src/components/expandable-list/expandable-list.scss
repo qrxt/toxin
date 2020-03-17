@@ -28,12 +28,21 @@
 
   background-color: transparent;
   border: none;
+
+  @include transition(opacity);
+
+  &:focus,
+  &:hover {
+    outline: none;
+
+    opacity: 0.6;
+  }
 }
 
 .expandable-list .ui-accordion-content {
   display: flex;
   flex-direction: column;
-  padding: 15px 0;
+  padding: 18px 0;
 
   border: none;
 }

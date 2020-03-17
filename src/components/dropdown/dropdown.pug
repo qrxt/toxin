@@ -16,6 +16,7 @@ mixin dropdown(inputSelectObj)
       h3.visually-hidden.dropdown__title
         | #{ header || "Выпадающий список" }
       p.dropdown__label
-        | #{ title || "Выпадающий список" }
+        span.dropdown__label-text
+          | #{ title || "Выпадающий список" }
       .dropdown__inner
         block

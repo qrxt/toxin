@@ -57,8 +57,7 @@ export default class DropdownRooms extends Dropdown {
   }
 
   _setLabelText(text) {
-    this.label
-      .text(text);
+    this.labelText.text(text);
   }
 
   constructor(node, options) {
@@ -68,6 +67,8 @@ export default class DropdownRooms extends Dropdown {
       .find(".dropdown__label");
     this.inputQuantities = this.node
       .find(".input-quantity");
+    this.labelText = this.label
+      .find(".dropdown__label-text");
 
     this.controlWrappers = this.node.find(".input-quantity__wrapper");
     this.inputs = this.node.find("input");

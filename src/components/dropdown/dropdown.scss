@@ -35,12 +35,14 @@
 
 .dropdown__accordion .ui-accordion-header .ui-icon {
   width: 15px;
-  height: 12px;
+  height: 7px;
   position: absolute;
   top: calc(50%);
   right: 12px;
 
   background-image: none;
+
+  @include transition(transform);
 
   &::before {
     @include corner;
@@ -56,4 +58,8 @@
   @include transition(border-color);
 
   border-color: $text-field-border-color--dark;
+}
+
+.dropdown__accordion .ui-accordion-header.ui-state-active .ui-icon {
+  transform: rotate(-180deg);
 }

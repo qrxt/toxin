@@ -1,0 +1,18 @@
+include ../../pug/mixins
+
+mixin feature(featureObj)
+  -
+    const {
+      className,
+      iconName,
+      title,
+      labelText
+    } = featureObj
+
+  article(class=className).feature
+    .feature__wrapper
+      h3.feature__title
+        | #{ title }
+      p.feature__label
+        | #{ labelText }
+    +svg(iconName, 48, 48)
