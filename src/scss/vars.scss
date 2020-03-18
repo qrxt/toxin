@@ -29,3 +29,14 @@ $text-field-border-color: $dark-shade-25;
 $text-field-border-color--dark: $dark-shade-50;
 
 $selection-color: rgba($color: $blue, $alpha: 0.5);
+
+$gradient-purple-blue: linear-gradient(
+  180deg,
+  rgba(188,156,255,1) 0%,
+  rgba(139,164,249,1) 100%
+);
+
+// animations
+
+$transition-delay: 200ms;
+$transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1.000)

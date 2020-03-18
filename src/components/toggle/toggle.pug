@@ -1,0 +1,18 @@
+mixin toggle(toggleObj)
+
+  -
+    const {
+      className,
+      labelText,
+      checked,
+      name
+    } = toggleObj
+
+  label(class=className).toggle
+    | #{ labelText }
+    input.visually-hidden--always(
+      type="checkbox",
+      checked=checked || false
+      name=name
+    )
+    span.toggle__box

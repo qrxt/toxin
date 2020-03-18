@@ -1,0 +1,20 @@
+mixin radio(radioObj)
+  -
+    const {
+      className,
+      name,
+      label,
+      checked,
+      value
+    } = radioObj
+
+  label(class=className).radio
+    input.visually-hidden--always(
+      type="radio",
+      checked=checked || false
+      name=name,
+      value=value
+    )
+    span.radio__box
+    span.radio__text
+      | #{ label }

@@ -5,6 +5,7 @@ export default class DropdownRooms extends Dropdown {
     const options = {
       header: "p.dropdown__label",
       collapsible: true,
+      active: false,
 
       ...this.options,
     };

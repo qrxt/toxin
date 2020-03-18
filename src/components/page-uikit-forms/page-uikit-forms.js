@@ -81,7 +81,9 @@ if (roomsDropdownElem.length) {
 
 const roomsDropdownExpandedElem = $(".js-uikit-forms-dropdown-rooms-expanded");
 if (roomsDropdownExpandedElem.length) {
-  const roomsDropdownExpanded = new DropdownRooms(roomsDropdownExpandedElem, {});
+  const roomsDropdownExpanded = new DropdownRooms(roomsDropdownExpandedElem, {
+    active: 0
+  });
 
   const inputs = roomsDropdownExpandedElem.find(".input-quantity");
   if (inputs.length) {

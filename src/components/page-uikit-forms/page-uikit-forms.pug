@@ -8,56 +8,58 @@ include ../dropdown-rooms/dropdown-rooms
 include ../checkbox/checkbox
 include ../expandable-list/expandable-list
 include ../feature/feature
+include ../radio/radio
+include ../toggle/toggle
 
 -
   const expandableCheckboxList = [
     {
-      className: "uikit-forms__expandable-checkbox-list__item",
+      className: "uikit-forms__expandable-checkbox-list-item",
       labelText: "Завтрак",
       name: "example-checkbox-breakfast"
     },
 
     {
-      className: "uikit-forms__expandable-checkbox-list__item",
+      className: "uikit-forms__expandable-checkbox-list-item",
       labelText: "Письменный стол",
       name: "example-checkbox-table",
       checked: true
     },
 
     {
-      className: "uikit-forms__expandable-checkbox-list__item",
+      className: "uikit-forms__expandable-checkbox-list-item",
       labelText: "Стул для кормления",
       name: "example-checkbox-chair",
       checked: true
     },
 
     {
-      className: "uikit-forms__expandable-checkbox-list__item",
+      className: "uikit-forms__expandable-checkbox-list-item",
       labelText: "Кроватка",
       name: "example-checkbox-cot",
       checked: true
     },
 
     {
-      className: "uikit-forms__expandable-checkbox-list__item",
+      className: "uikit-forms__expandable-checkbox-list-item",
       labelText: "Телевизор",
       name: "example-checkbox-tv"
     },
 
     {
-      className: "uikit-forms__expandable-checkbox-list__item",
+      className: "uikit-forms__expandable-checkbox-list-item",
       labelText: "Шампунь",
       name: "example-checkbox-shampoo"
     },
 
     {
-      className: "uikit-forms__expandable-checkbox-list__item",
+      className: "uikit-forms__expandable-checkbox-list-item",
       labelText: "Телевизор",
       name: "example-checkbox-tv-again"
     },
 
     {
-      className: "uikit-forms__expandable-checkbox-list__item",
+      className: "uikit-forms__expandable-checkbox-list-item",
       labelText: "Шампунь",
       name: "example-checkbox-shampoo-again"
     }
@@ -191,60 +193,150 @@ include ../feature/feature
     }
   ];
 
+  const checkboxButtonsList = [
+    {
+      className: "uikit-forms__checkbox-buttons-item",
+      labelText: "Можно курить",
+      name: "example-checkbox-buttons-smoke"
+    },
+
+    {
+      className: "uikit-forms__checkbox-buttons-item",
+      labelText: "Можно с питомцами",
+      name: "example-checkbox-buttons-pets",
+      checked: true
+    },
+
+    {
+      className: "uikit-forms__checkbox-buttons-item",
+      labelText: "Можно пригласить гостей (до 10 человек)",
+      name: "example-checkbox-buttons-guests",
+      checked: true
+    },
+  ];
+
+  const radios = [
+    {
+      className: "uikit-forms__radio-button",
+      name: "example",
+      label: "Мужчина",
+      value: "male",
+      checked: true
+    },
+
+    {
+      className: "uikit-forms__radio-button",
+      name: "example",
+      label: "Женщина",
+      value: "female"
+    }
+  ];
+
+  const toggles = [
+    {
+      className: "uikit-forms__toggle",
+      labelText: "Получать спецпредложения",
+      checked: true,
+      name: "user-specials"
+    },
+
+    {
+      className: "uikit-forms__toggle",
+      labelText: "Получать спецпредложения",
+      checked: false,
+      name: "user-specials-again"
+    }
+  ]
+
+mixin first-column()
+  .uikit-forms__column
+    +text-field(emailTextField)
+
+    +text-field(textFieldfocused)
+
+    +dropdown(guestsDropdown)
+      //- guests dropdown
+
+    +text-field(maskedTextField)
+
+    +input-wrapper({
+      className: "uikit-forms__double",
+      itemsQuantity: 2
+    })
+      +date-dropdown(dateDropdownFirst)
+
+      +date-dropdown(dateDropdownSecond)
+
+    +date-dropdown(dateRangeDropdown)
+
+    +subscription-field(subscriptionField)
+
+    +dropdown-rooms(roomsDropdown)
+      each inputQuantity in inputQuantities
+        +input-quantity(inputQuantity)
+
+    +dropdown-rooms(roomsDropdownExpanded)
+      each inputQuantity in inputQuantities
+        +input-quantity(inputQuantity)
+
+
+    .uikit-forms__input-75
+      +expandable-list(expandableList)
+        each checkbox in expandableCheckboxList
+          +checkbox(checkbox)
+
+    .uikit-forms__input-75
+      +expandable-list(expandableListExpanded)
+        each checkbox in expandableCheckboxList
+          +checkbox(checkbox)
+
+    .uikit-forms__input-75
+      each feature in features
+        +feature(feature)
+
+mixin second-column()
+  .uikit-forms__column
+    .uikit-forms__input-75.uikit-forms__check-buttons
+      +labeled({
+        className: "uikit-forms__check-buttons-label",
+        label: "Checkbox Buttons",
+        tagName: "p"
+      })
+      .uikit-forms__checkbox-buttons
+        each checkboxButton in checkboxButtonsList
+          +checkbox(checkboxButton)
+
+    .uikit-forms__input-75.uikit-forms__radios
+      +labeled({
+        className: "uikit-forms__radio-buttons-label",
+        label: "Radio Buttons",
+        tagName: "p"
+      })
+      .uikit-forms__radio-buttons
+        each radio in radios
+          +radio(radio)
+
+    .uikit-forms__input-75.uikit-forms__toggles
+      +labeled({
+        className: "uikit-forms__radio-buttons-label",
+        label: "Toggle",
+        tagName: "p"
+      })
+      each toggle in toggles
+        +toggle(toggle)
+
+
 main.page-main
   section.uikit-forms
     .wrapper.uikit-forms__inner
       h1.visually-hidden
         | UI-Kit Forms
-
-      form.uikit-forms__form(
+      form.uikit-form__wrapper(
         method="post"
         action="http://echo.htmlacademy.ru"
       )
-        .uikit-forms__form-wrapper
-          +text-field(emailTextField)
-
-          +text-field(textFieldfocused)
-
-          +dropdown(guestsDropdown)
-            //- guests dropdown
-
-          +text-field(maskedTextField)
-
-          +input-wrapper({
-            className: "uikit-forms__double",
-            itemsQuantity: 2
-          })
-            +date-dropdown(dateDropdownFirst)
-
-            +date-dropdown(dateDropdownSecond)
-
-          +date-dropdown(dateRangeDropdown)
-
-          +subscription-field(subscriptionField)
-
-          +dropdown-rooms(roomsDropdown)
-            each inputQuantity in inputQuantities
-              +input-quantity(inputQuantity)
-
-          +dropdown-rooms(roomsDropdownExpanded)
-            each inputQuantity in inputQuantities
-              +input-quantity(inputQuantity)
-
-
-          .uikit-forms__input-75
-            +expandable-list(expandableList)
-              each checkbox in expandableCheckboxList
-                +checkbox(checkbox)
-
-          .uikit-forms__input-75
-            +expandable-list(expandableListExpanded)
-              each checkbox in expandableCheckboxList
-                +checkbox(checkbox)
-
-          .uikit-forms__input-75
-            each feature in features
-              +feature(feature)
+        +first-column()
+        +second-column()
 
           //- button(type="submit")
           //-   | go go go
