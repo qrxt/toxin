@@ -61,9 +61,135 @@ include ../feature/feature
       labelText: "Шампунь",
       name: "example-checkbox-shampoo-again"
     }
-  ]
+  ];
 
+  const emailTextField = {
+    className: "uikit-forms__input",
+    type: "email",
+    name: "user-email",
+    label: "Text Field",
+    rightLabel: "Default",
+    placeholder: "Email",
+    required: true
+  };
 
+  const textFieldfocused = {
+    className: "text-field--focused uikit-forms__input",
+    type: "text",
+    label: "Text Field",
+    rightLabel: "Hover / Focus",
+    placeholder: "Email",
+    value: "This is pretty awesome"
+  };
+
+  const guestsDropdown = {
+    title: "Сколько гостей",
+    header: "Количество гостей",
+    className: "uikit-forms__select js-uikit-forms-dropdown-example",
+    label: "Dropdown",
+    rightLabel: "Default"
+  };
+
+  const maskedTextField = {
+    className: "uikit-forms__input uikit-forms__masked-date js-uikit-forms-masked-date",
+    type: "date",
+    interactLike: "date",
+    label: "Masked Text Field",
+    rightLabel: "Default",
+    placeholder: "ДД.ММ.ГГГГ",
+  };
+
+  const dateDropdownFirst = {
+    className: "uikit-forms__input-half js-uikit-forms-date-dropdown-first",
+    label: "Date Dropdown",
+    name: "user-date-first"
+  };
+
+  const dateDropdownSecond = {
+    className: "uikit-forms__input-half js-uikit-forms-date-dropdown-second",
+    label: "Date Dropdown",
+    name: "user-date-second"
+  };
+
+  const dateRangeDropdown = {
+    className: "uikit-forms__input-75 uikit-forms__date-range js-uikit-forms-date-dropdown-range",
+    label: "Filter Date Dropdown",
+    name: "user-date-range"
+  };
+
+  const subscriptionField = {
+    label: "Subscription Text Field",
+    className: "uikit-forms__input-75 uikit-forms__email-subscription",
+    placeholder: "Email",
+    name: "user-email-subscription"
+  };
+
+  const roomsDropdown = {
+    className: "uikit-forms__input-75 uikit-forms__dropdown-rooms js-uikit-forms-dropdown-rooms",
+    title: "Сколько комнат",
+    label: "Dropdown",
+    rightLabel: "Default"
+  };
+
+  const roomsDropdownExpanded = {
+    className: "uikit-forms__input-75 uikit-forms__dropdown-rooms-expanded js-uikit-forms-dropdown-rooms-expanded",
+    title: "Сколько комнат",
+    label: "Dropdown",
+    rightLabel: "Expanded"
+  };
+
+  const inputQuantities = [
+    {
+      className: "uikit-forms__quantity-input",
+      label: "Спальни",
+      initialValue: 2,
+      min: 1,
+      max: 3
+    },
+
+    {
+      className: "uikit-forms__quantity-input",
+      label: "Кровати",
+      initialValue: 2,
+      min: 1,
+      max: 3
+    },
+
+    {
+      className: "uikit-forms__quantity-input",
+      label: "Ванные комнаты",
+      initialValue: 0,
+      max: 2
+    }
+  ];
+
+  const expandableList = {
+    className: "uikit-forms__expandable-checkbox-list js-uikit-forms-expandable-closed",
+    header: "Expandable Checkbox List"
+  };
+
+  const expandableListExpanded = {
+    className: `uikit-forms__expandable-checkbox-list
+    uikit-forms__expandable-checkbox-list--second
+    js-uikit-forms-expandable-opened`,
+    header: "Expandable Checkbox List"
+  };
+
+  const features = [
+    {
+      className: "uikit-forms__feature",
+      iconName: "icon-smile",
+      title: "Комфорт",
+      labelText: "Шумопоглощающие стены"
+    },
+
+    {
+      className: "uikit-forms__feature",
+      iconName: "icon-city",
+      title: "Удобство",
+      labelText: "Окно в каждой из спален"
+    }
+  ];
 
 main.page-main
   section.uikit-forms
@@ -71,162 +197,54 @@ main.page-main
       h1.visually-hidden
         | UI-Kit Forms
 
-      form.uikit-forms__form(method="post" action="http://echo.htmlacademy.ru")
+      form.uikit-forms__form(
+        method="post"
+        action="http://echo.htmlacademy.ru"
+      )
         .uikit-forms__form-wrapper
-          +text-field({
-            className: "uikit-forms__input",
-            type: "email",
-            name: "user-email",
-            label: "Text Field",
-            rightLabel: "Default",
-            placeholder: "Email",
-            required: true
-          })
+          +text-field(emailTextField)
 
-          +text-field({
-            className: "text-field--focused uikit-forms__input",
-            type: "text",
-            label: "Text Field",
-            rightLabel: "Hover / Focus",
-            placeholder: "Email",
-            value: "This is pretty awesome"
-          })
+          +text-field(textFieldfocused)
 
-          +dropdown({
-            title: "Сколько гостей",
-            header: "Количество гостей",
-            className: "uikit-forms__select js-uikit-forms-dropdown-example",
-            label: "Dropdown",
-            rightLabel: "Default"
-          })
+          +dropdown(guestsDropdown)
+            //- guests dropdown
 
-          +text-field({
-            className: "uikit-forms__input uikit-forms__masked-date js-uikit-forms-masked-date",
-            type: "date",
-            interactLike: "date",
-            label: "Masked Text Field",
-            rightLabel: "Default",
-            placeholder: "ДД.ММ.ГГГГ",
-          })
+          +text-field(maskedTextField)
 
           +input-wrapper({
             className: "uikit-forms__double",
             itemsQuantity: 2
           })
-            +date-dropdown({
-              className: "uikit-forms__input-half js-uikit-forms-date-dropdown-first",
-              label: "Date Dropdown",
-              name: "user-date-first"
-            })
+            +date-dropdown(dateDropdownFirst)
 
-            +date-dropdown({
-              className: "uikit-forms__input-half js-uikit-forms-date-dropdown-second",
-              label: "Date Dropdown",
-              name: "user-date-second"
-            })
+            +date-dropdown(dateDropdownSecond)
 
-          +date-dropdown({
-            className: "uikit-forms__input-75 uikit-forms__date-range js-uikit-forms-date-dropdown-range",
-            label: "Filter Date Dropdown",
-            name: "user-date-range"
-          })
+          +date-dropdown(dateRangeDropdown)
 
-          +subscription-field({
-            label: "Subscription Text Field",
-            className: "uikit-forms__input-75 uikit-forms__email-subscription",
-            placeholder: "Email",
-            name: "user-email-subscription"
-          })
+          +subscription-field(subscriptionField)
 
-          +dropdown-rooms({
-            className: "uikit-forms__input-75 uikit-forms__dropdown-rooms js-uikit-forms-dropdown-rooms",
-            title: "Сколько комнат",
-            label: "Dropdown",
-            rightLabel: "Default"
-          })
-            +input-quantity({
-              className: "uikit-forms__quantity-input",
-              label: "Спальни",
-              initialValue: 2,
-              min: 1,
-              max: 3
-            })
+          +dropdown-rooms(roomsDropdown)
+            each inputQuantity in inputQuantities
+              +input-quantity(inputQuantity)
 
-            +input-quantity({
-              className: "uikit-forms__quantity-input",
-              label: "Кровати",
-              initialValue: 2,
-              min: 1,
-              max: 3
-            })
-
-            +input-quantity({
-              className: "uikit-forms__quantity-input",
-              label: "Ванные комнаты",
-              initialValue: 0,
-              max: 2
-            })
-
-          +dropdown-rooms({
-            className: "uikit-forms__input-75 uikit-forms__dropdown-rooms-expanded js-uikit-forms-dropdown-rooms-expanded",
-            title: "Сколько комнат",
-            label: "Dropdown",
-            rightLabel: "Expanded"
-          })
-            +input-quantity({
-              className: "uikit-forms__quantity-input",
-              label: "Спальни",
-              initialValue: 2,
-              min: 1,
-              max: 3
-            })
-
-            +input-quantity({
-              className: "uikit-forms__quantity-input",
-              label: "Кровати",
-              initialValue: 2,
-              min: 1,
-              max: 3
-            })
-
-            +input-quantity({
-              className: "uikit-forms__quantity-input",
-              label: "Ванные комнаты",
-              initialValue: 0,
-              max: 2
-            })
+          +dropdown-rooms(roomsDropdownExpanded)
+            each inputQuantity in inputQuantities
+              +input-quantity(inputQuantity)
 
 
           .uikit-forms__input-75
-            +expandable-list({
-              className: "uikit-forms__expandable-checkbox-list js-uikit-forms-expandable-closed",
-              header: "Expandable Checkbox List"
-            })
+            +expandable-list(expandableList)
               each checkbox in expandableCheckboxList
                 +checkbox(checkbox)
 
           .uikit-forms__input-75
-            +expandable-list({
-              className: "uikit-forms__expandable-checkbox-list uikit-forms__expandable-checkbox-list--second js-uikit-forms-expandable-opened",
-              header: "Expandable Checkbox List"
-            })
+            +expandable-list(expandableListExpanded)
               each checkbox in expandableCheckboxList
                 +checkbox(checkbox)
 
           .uikit-forms__input-75
-            +feature({
-              className: "uikit-forms__feature",
-              iconName: "icon-smile",
-              title: "Комфорт",
-              labelText: "Шумопоглощающие стены"
-            })
-
-            +feature({
-              className: "uikit-forms__feature",
-              iconName: "icon-city",
-              title: "Удобство",
-              labelText: "Окно в каждой из спален"
-            })
+            each feature in features
+              +feature(feature)
 
           //- button(type="submit")
           //-   | go go go
