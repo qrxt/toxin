@@ -4,6 +4,7 @@ import DropdownRooms from "@components/dropdown-rooms/dropdown-rooms";
 import DateDropdown from "@components/date-dropdown/date-dropdown";
 import InputQuantity from "@components/input-quantity/input-quantity";
 import ExpandableList from "@components/expandable-list/expandable-list";
+import LikeButton from "@components/btn/btn--like";
 
 const maskedDateTextFieldElem = $(".js-uikit-forms-masked-date");
 if (maskedDateTextFieldElem.length) {
@@ -102,5 +103,12 @@ const expandableCheckboxListOpenedElem = $(".js-uikit-forms-expandable-opened");
 if (expandableCheckboxListOpenedElem.length) {
   const expandableList = new ExpandableList(expandableCheckboxListOpenedElem, {
     active: 0
+  });
+}
+
+const likeBtnElems = $(".js-like-btn");
+if (likeBtnElems.length) {
+  const likeBtns = likeBtnElems.each((_, likeBtnElem) => {
+    const likeBtn = new LikeButton(likeBtnElem);
   });
 }

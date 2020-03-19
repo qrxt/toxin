@@ -1,0 +1,43 @@
+include ../../pug/mixins
+
+mixin btn(btnObj)
+
+  -
+    const {
+      className,
+      isLink,
+      type,
+      href,
+    } = btnObj
+
+  if isLink
+    a.btn(
+      class=className
+      href=href
+    )
+      block
+  if !isLink
+    button.btn(
+      class=className
+      type=type
+    )
+      block
+
+mixin btn-like(btnLikeObj)
+  -
+    const {
+      className,
+      initialValue,
+      toggled
+    } = btnLikeObj
+
+    const classList = toggled
+      ? `btn--bordered btn--active btn--like ${ className }`
+      : `btn--bordered btn--like ${ className }`;
+
+  +btn({
+    className: classList,
+    type: "button"
+  })
+    +svg("icon-favorite", 20, 20)
+    | #{ initialValue }

@@ -23,7 +23,11 @@
   border-radius: 10px;
   border: 1px solid $text-field-border-color;
 
-  @include transition(border);
+  // @include transition(border);
+
+  transition:
+    border $transition-delay $transition-timing-function,
+    opacity $transition-delay $transition-timing-function;
 
   &::before {
     content: "";
@@ -38,10 +42,13 @@
     border-radius: 50%;
     background-color: $dark-shade-25;
 
-    transition:
-      background $transition-delay $transition-timing-function,
-      left $transition-delay $transition-timing-function;
+    @include transition(left);
   }
+}
+
+.toggle__box:hover,
+.toggle input:focus ~ .toggle__box {
+  opacity: 0.6;
 }
 
 .toggle input:checked ~ .toggle__box::before {

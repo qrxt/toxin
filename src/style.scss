@@ -10,6 +10,7 @@
 @import "./scss/base";
 @import "./scss/type";
 @import "./scss/parts";
+@import "./scss/animations";
 
 // components
 
@@ -27,6 +28,7 @@
 @import "./components/feature/feature";
 @import "./components/radio/radio";
 @import "./components/toggle/toggle";
+@import "./components/btn/btn";
 
 // layouts
 @import "./components/uikit-header/uikit-header";

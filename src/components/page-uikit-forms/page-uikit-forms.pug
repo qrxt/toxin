@@ -10,6 +10,7 @@ include ../expandable-list/expandable-list
 include ../feature/feature
 include ../radio/radio
 include ../toggle/toggle
+include ../btn/btn
 
 -
   const expandableCheckboxList = [
@@ -246,6 +247,19 @@ include ../toggle/toggle
       checked: false,
       name: "user-specials-again"
     }
+  ];
+
+  const likeBtns = [
+    {
+      className: "uikit-forms__like-button js-like-btn",
+      initialValue: 2,
+    },
+
+    {
+      className: "uikit-forms__like-button js-like-btn",
+      initialValue: 12,
+      toggled: true
+    }
   ]
 
 mixin first-column()
@@ -325,6 +339,18 @@ mixin second-column()
       each toggle in toggles
         +toggle(toggle)
 
+    .uikit-forms__input-75.uikit-forms__like-buttons
+      +labeled({
+        className: "uikit-forms__like-buttons-label",
+        label: "Like Button",
+        tagName: "p"
+      })
+        .uikit-forms__like-buttons-wrapper
+          each likeBtn in likeBtns
+            +btn-like(likeBtn)
+
+mixin third-column()
+  .uikit-forms__column
 
 main.page-main
   section.uikit-forms
@@ -337,6 +363,7 @@ main.page-main
       )
         +first-column()
         +second-column()
+        +third-column()
 
           //- button(type="submit")
           //-   | go go go

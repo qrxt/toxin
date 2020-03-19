@@ -35,6 +35,11 @@ $gradient-purple-blue: linear-gradient(
   rgba(188,156,255,1) 0%,
   rgba(139,164,249,1) 100%
 );
+$gradient-gray: linear-gradient(
+  180deg,
+  $dark-shade-25,
+  $dark-shade-25
+);
 
 // animations
 

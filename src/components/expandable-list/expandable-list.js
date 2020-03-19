@@ -10,8 +10,6 @@ export default class ExpandableList extends Dropdown {
       ...options
     }
 
-    console.log(dropdownOptions)
-
     super(node, dropdownOptions);
 
     this.init();

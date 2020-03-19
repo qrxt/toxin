@@ -125,3 +125,26 @@
 .uikit-forms__toggle:not(:last-child) {
   margin-bottom: 14px;
 }
+
+.uikit-forms__toggles {
+  margin-bottom: 40px;
+}
+
+.uikit-forms__like-buttons-label {
+  display: block;
+  margin: 0 0 15px;
+}
+
+.uikit-forms__like-buttons-wrapper {
+  display: flex;
+
+  margin-bottom: 42px;
+}
+
+.uikit-forms__like-button {
+  width: 40px;
+}
+
+.uikit-forms__like-button:not(:last-child) {
+  margin-right: 12px;
+}
