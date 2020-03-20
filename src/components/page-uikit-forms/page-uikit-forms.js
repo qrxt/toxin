@@ -5,6 +5,9 @@ import DateDropdown from "@components/date-dropdown/date-dropdown";
 import InputQuantity from "@components/input-quantity/input-quantity";
 import ExpandableList from "@components/expandable-list/expandable-list";
 import LikeButton from "@components/btn/btn--like";
+import Rating from "@components/rating/rating";
+
+import $ from "jquery";
 
 const maskedDateTextFieldElem = $(".js-uikit-forms-masked-date");
 if (maskedDateTextFieldElem.length) {
@@ -111,4 +114,9 @@ if (likeBtnElems.length) {
   const likeBtns = likeBtnElems.each((_, likeBtnElem) => {
     const likeBtn = new LikeButton(likeBtnElem);
   });
+}
+
+const starRatingElem = $(".js-uikit-forms-rating");
+if (starRatingElem.length) {
+  const starRating = new Rating(starRatingElem);
 }

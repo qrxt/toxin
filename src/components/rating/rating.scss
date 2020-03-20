@@ -1,0 +1,38 @@
+.rating {
+  display: flex;
+  position: relative;
+
+  width: 100%;
+  height: em(24);
+}
+
+.rating__item {
+  display: block;
+
+  width: em(18);
+  height: em(18);
+}
+
+.rating__item:not(:last-child) {
+  margin-right: 6px;
+}
+
+.rating input {
+  appearance: none;
+  -webkit-appearance: none; //!
+
+  position: absolute;
+}
+
+.rating svg {
+  width: em(18);
+  height: em(18);
+
+  fill: transparent;
+  stroke: url("#gradient-purple");
+  stroke-width: 2px;
+}
+
+.rating svg:hover {
+  fill: url("#gradient-purple");
+}

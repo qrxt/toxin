@@ -1,0 +1,25 @@
+include ../../pug/mixins
+
+mixin rating(ratingObj)
+  -
+    const {
+      className,
+      initialValue,
+      name,
+      labels = [
+        "Ужасно", "Плохо", "Средне", "Хорошо", "Отлично"
+      ]
+    } = ratingObj
+
+  .rating(
+    class=className
+  )
+    each label in labels
+      label.rating__item
+        input(
+          type="radio"
+          name=name,
+          value=idx,
+          aria-label=label
+        )
+        +svg("icon-star", 20, 20)

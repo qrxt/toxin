@@ -1,13 +1,13 @@
 .h1 {
   font-family: $font-secondary;
-  font-size: 24px;
+  font-size: em(24);
   line-height: 30px;
   font-weight: 700;
 }
 
 .h2 {
   font-family: $font-secondary;
-  font-size: 19px;
+  font-size: em(19);
   line-height: 21px;
   font-weight: 700;
 }
@@ -15,7 +15,7 @@
 .h3,
 .cta {
   font-family: $font-primary;
-  font-size: 12px;
+  font-size: em(12);
   line-height: 15px;
   text-transform: uppercase;
   font-weight: 700;

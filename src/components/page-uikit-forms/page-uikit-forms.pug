@@ -11,6 +11,7 @@ include ../feature/feature
 include ../radio/radio
 include ../toggle/toggle
 include ../btn/btn
+include ../rating/rating
 
 -
   const expandableCheckboxList = [
@@ -348,6 +349,19 @@ mixin second-column()
         .uikit-forms__like-buttons-wrapper
           each likeBtn in likeBtns
             +btn-like(likeBtn)
+
+      .uikit-forms__input-75.uikit-forms__ratings
+        +labeled({
+          className: "uikit-forms__rating-label",
+          label: "Rate Button",
+          tagName: "p"
+        })
+          .uikit-forms__ratings-wrapper
+            +rating({
+              className: "uikit-forms__rating js-uikit-forms-rating",
+              initialValue: 4,
+              name: "rating-example"
+            })
 
 mixin third-column()
   .uikit-forms__column

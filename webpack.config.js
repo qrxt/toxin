@@ -185,7 +185,7 @@ module.exports = (_, options) => {
                 publicPath: "/assets/img/"
               }
             },
-            // "svg-transform-loader",
+            "svg-transform-loader",
             {
               loader: "svgo-loader",
               options: {
