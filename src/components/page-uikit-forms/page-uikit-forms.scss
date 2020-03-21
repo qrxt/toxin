@@ -156,9 +156,17 @@
 .uikit-forms__rating {
   height: em(24);
   padding-left: 2px;
-  width: 100%;
+  width: 120px;
+}
+
+.uikit-forms__rating:not(:last-child) {
+  margin-right: 20px;
 }
 
 .uikit-forms__rating-label {
   margin: 0 0 18px;
+}
+
+.uikit-forms__ratings-wrapper {
+  display: flex;
 }

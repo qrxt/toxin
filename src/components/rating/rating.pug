@@ -1,4 +1,4 @@
-include ../../pug/mixins
+include ../../pug/mixins.pug
 
 mixin rating(ratingObj)
   -
@@ -12,14 +12,15 @@ mixin rating(ratingObj)
     } = ratingObj
 
   .rating(
-    class=className
-  )
-    each label in labels
+    class=className)
+    each label, idx in labels
+      - const isChecked = idx + 1 === initialValue
+
       label.rating__item
         input(
           type="radio"
-          name=name,
-          value=idx,
+          name=name
+          value=idx
           aria-label=label
-        )
+          checked=isChecked)
         +svg("icon-star", 20, 20)

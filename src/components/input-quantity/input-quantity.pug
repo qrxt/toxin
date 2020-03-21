@@ -16,18 +16,17 @@ mixin input-quantity(inputQuantityObj)
       | #{ label }
 
     span.input-quantity__wrapper
-      button(type="button").input-quantity__btn.js-btn-dec
+      button.input-quantity__btn.js-btn-dec(type="button")
         | -
 
       input.input-quantity__value(
-        value=initialValue,
-        name=name,
-        min=min || 0,
-        max=max || 999,
-        type=type || "number",
-        inputmode=inputmode || "numeric",
-        placeholder=min || 0
-      )
+        value=initialValue
+        name=name
+        min=min || 0
+        max=max || 999
+        type=type || "number"
+        inputmode=inputmode || "numeric"
+        placeholder=min || 0)
 
-      button(type="button").input-quantity__btn.js-btn-inc
+      button.input-quantity__btn.js-btn-inc(type="button")
         | +

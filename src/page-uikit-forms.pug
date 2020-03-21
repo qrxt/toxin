@@ -1,9 +1,9 @@
-extends pug/layout
+extends pug/layout.pug
 
-include components/uikit-header/uikit-header
+include components/uikit-header/uikit-header.pug
 
 block header
   +uikit-header({ headerLink: "/" })
 
 block content
-  include components/page-uikit-forms/page-uikit-forms
+  include components/page-uikit-forms/page-uikit-forms.pug

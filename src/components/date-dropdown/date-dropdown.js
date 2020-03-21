@@ -1,12 +1,14 @@
 import $ from "jquery";
 
 export default class DateDropdown {
-  _setDate(dateStr) {
-    this.nodeInput.val(dateStr)
-    this.nodeText.text(dateStr);
+  constructor (node, options) {
+    this.node = node;
+    this.nodeInput = $(node).find("input");
+    this.nodeText = $(node).find(".date-dropdown__text");
+    this.options = options;
   }
 
-  init() {
+  init () {
     const yOffset = this.node.get(0).scrollHeight + 7;
     const { startDate, startDateRange } = this.options;
 
@@ -16,8 +18,7 @@ export default class DateDropdown {
         ? `0${ startDate.getMonth() + 1 }`
         : String(startDate.getMonth() + 1);
       const currentFullYear = startDate.getFullYear();
-      const formattedDate =
-        `${ currentDay }.${ currentMonth }.${ currentFullYear }`;
+      const formattedDate = `${ currentDay }.${ currentMonth }.${ currentFullYear }`;
 
       this._setDate(formattedDate);
     }
@@ -26,7 +27,7 @@ export default class DateDropdown {
       this._setDate(startDateRange);
     }
 
-    const datepicker = this.nodeInput
+    this.nodeInput
       .datepicker({
         ...this.options,
 
@@ -45,12 +46,8 @@ export default class DateDropdown {
       });
   }
 
-  constructor(node, options) {
-    this.node = node;
-    this.nodeInput = $(node).find("input");
-    this.nodeText = $(node).find(".date-dropdown__text");
-    this.options = options;
-
-    this.init();
+  _setDate (dateStr) {
+    this.nodeInput.val(dateStr);
+    this.nodeText.text(dateStr);
   }
-};
+}

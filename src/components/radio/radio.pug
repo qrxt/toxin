@@ -8,13 +8,12 @@ mixin radio(radioObj)
       value
     } = radioObj
 
-  label(class=className).radio
+  label.radio(class=className)
     input.visually-hidden--always(
-      type="radio",
+      type="radio"
       checked=checked || false
-      name=name,
-      value=value
-    )
+      name=name
+      value=value)
     span.radio__box
     span.radio__text
       | #{ label }

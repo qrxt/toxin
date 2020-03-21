@@ -13,8 +13,8 @@ mixin dropdown-guests(dropdownGuestsObj)
     rightLabel: rightLabel
   })
     input.visually-hidden.visually-hidden--always(
-      name=name,
-      value=startValue
-    )
+      type="text"
+      name=name
+      value=startValue)
     p.date-dropdown__text
       | #{ startValue || "ДД.ММ.ГГГГ" }

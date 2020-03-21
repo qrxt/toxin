@@ -1,4 +1,4 @@
-include ../../pug/mixins
+include ../../pug/mixins.pug
 
 block variables
   -
@@ -14,8 +14,7 @@ mixin logo(logoObj)
     a.logo(class=className, href=link)
       img(
         src="assets/img/logo-text.png"
-        alt="Логотип Toxin"
-      )
+        alt="Логотип Toxin")
   else
     a.logo(class=className, href=link)
       +svg-gradients()

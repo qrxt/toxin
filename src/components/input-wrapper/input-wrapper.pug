@@ -1,10 +1,7 @@
 mixin input-wrapper(inputWrapperObj)
-  -const { className, itemsQuantity } = inputWrapperObj
+  - const { className, itemsQuantity } = inputWrapperObj
   if items === 1
     block
   else
     .input-wrapper(class=className)
       block
-
-
-

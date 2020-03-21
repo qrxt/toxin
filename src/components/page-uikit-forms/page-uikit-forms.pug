@@ -1,17 +1,17 @@
-include ../text-field/text-field
-include ../dropdown/dropdown
-include ../input-wrapper/input-wrapper
-include ../date-dropdown/date-dropdown
-include ../subscription-field/subscription-field
-include ../input-quantity/input-quantity
-include ../dropdown-rooms/dropdown-rooms
-include ../checkbox/checkbox
-include ../expandable-list/expandable-list
-include ../feature/feature
-include ../radio/radio
-include ../toggle/toggle
-include ../btn/btn
-include ../rating/rating
+include ../text-field/text-field.pug
+include ../dropdown/dropdown.pug
+include ../input-wrapper/input-wrapper.pug
+include ../date-dropdown/date-dropdown.pug
+include ../subscription-field/subscription-field.pug
+include ../input-quantity/input-quantity.pug
+include ../dropdown-rooms/dropdown-rooms.pug
+include ../checkbox/checkbox.pug
+include ../expandable-list/expandable-list.pug
+include ../feature/feature.pug
+include ../radio/radio.pug
+include ../toggle/toggle.pug
+include ../btn/btn.pug
+include ../rating/rating.pug
 
 -
   const expandableCheckboxList = [
@@ -294,7 +294,6 @@ mixin first-column()
       each inputQuantity in inputQuantities
         +input-quantity(inputQuantity)
 
-
     .uikit-forms__input-75
       +expandable-list(expandableList)
         each checkbox in expandableCheckboxList
@@ -363,6 +362,12 @@ mixin second-column()
               name: "rating-example"
             })
 
+            +rating({
+              className: "uikit-forms__rating js-uikit-forms-rating-full",
+              initialValue: 5,
+              name: "rating-example-again"
+            })
+
 mixin third-column()
   .uikit-forms__column
 
@@ -373,8 +378,8 @@ main.page-main
         | UI-Kit Forms
       form.uikit-form__wrapper(
         method="post"
-        action="http://echo.htmlacademy.ru"
-      )
+        action="http://echo.htmlacademy.ru")
+
         +first-column()
         +second-column()
         +third-column()

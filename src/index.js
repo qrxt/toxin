@@ -1,27 +1,29 @@
-const importAll = r =>
-  r.keys().map(r);
-
 import "jquery-ui-bundle";
 import "jquery-ui-bundle/jquery-ui.min.css";
 
 import "./style";
 
-// javascripts
-const js = importAll(
-  require.context('./components/', true, /\.js$/)
+const importAll = req =>
+  req
+    .keys()
+    .map(module => req(module));
+
+// Javascripts
+importAll(
+  require.context("./components/", true, /\.js$/u)
 );
 
-// pug pages
-const pugs = importAll(
-  require.context('raw-loader!./', false, /\.pug$/)
+// Pug pages
+importAll(
+  require.context("raw-loader!./", false, /\.pug$/u)
 );
 
-// svg assets
-const svgs = importAll(
-  require.context('./assets/img/', false, /\.svg$/)
+// Svg assets
+importAll(
+  require.context("./assets/img/", false, /\.svg$/u)
 );
 
-// images
-const images = importAll(
-  require.context('./assets/img/', false, /\.(png|jpe?g|svg)$/)
+// Images
+importAll(
+  require.context("./assets/img/", false, /\.(?:png|jpe?g|svg)$/u)
 );

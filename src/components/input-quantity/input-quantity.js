@@ -1,5 +1,14 @@
 export default class inputQuantity {
-  init() {
+  constructor (node) {
+    this.node = node;
+
+    this.decBtn = this.node.find(".js-btn-dec");
+    this.incBtn = this.node.find(".js-btn-inc");
+
+    this.inputNode = this.node.find("input");
+  }
+
+  init () {
     const { incBtn, decBtn, inputNode } = this;
 
     incBtn.on("click", () => {
@@ -17,30 +26,19 @@ export default class inputQuantity {
     });
   }
 
-  constructor(node) {
-    this.node = node;
-
-    this.decBtn = this.node.find(".js-btn-dec");
-    this.incBtn = this.node.find(".js-btn-inc");
-
-    this.inputNode = this.node.find("input");
-
-    this.init();
-  }
-
-  inc() {
+  inc () {
     const currentValue = Number(this.inputNode.val());
 
     this._setInputVal(currentValue + 1);
   }
 
-  dec() {
+  dec () {
     const currentValue = Number(this.inputNode.val());
 
     this._setInputVal(currentValue - 1);
   }
 
-  _setInputVal(val) {
+  _setInputVal (val) {
     const inputMin = Number(this.inputNode.attr("min"));
     const inputMax = Number(this.inputNode.attr("max"));
 

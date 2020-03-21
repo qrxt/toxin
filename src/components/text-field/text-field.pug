@@ -1,4 +1,4 @@
-include ../labeled/labeled
+include ../labeled/labeled.pug
 
 mixin text-field(textInputObj)
   -
@@ -21,13 +21,10 @@ mixin text-field(textInputObj)
       rightLabel: rightLabel
     })
       input(
-        type=type || "text",
-        name=name,
-        placeholder=placeholder,
-        inputmode=inputmode,
-        value=value,
-        required=required
-      )
+        type=type || "text"
+        name=name
+        placeholder=placeholder
+        inputmode=inputmode
+        value=value
+        required=required)
       block
-
-

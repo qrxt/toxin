@@ -23,8 +23,6 @@
   border-radius: 10px;
   border: 1px solid $text-field-border-color;
 
-  // @include transition(border);
-
   transition:
     border $transition-delay $transition-timing-function,
     opacity $transition-delay $transition-timing-function;
@@ -59,5 +57,3 @@
 .toggle input:checked ~ .toggle__box {
   border: 1px solid $purple;
 }
-
-

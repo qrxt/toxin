@@ -1,5 +1,4 @@
-//- include ../svg-gradients/svg-gradients
-include ../../pug/mixins
+include ../../pug/mixins.pug
 
 mixin checkbox(checkboxObj)
   -
@@ -10,12 +9,11 @@ mixin checkbox(checkboxObj)
       name
     } = checkboxObj
 
-  label(class=className).checkbox
+  label.checkbox(class=className)
     | #{ labelText }
     input.visually-hidden--always(
-      type="checkbox",
+      type="checkbox"
       checked=checked || false
-      name=name
-    )
+      name=className)
     span.checkbox__box
       +svg("checkbox-tick", 15, 15)

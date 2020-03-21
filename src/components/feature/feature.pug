@@ -1,4 +1,4 @@
-include ../../pug/mixins
+include ../../pug/mixins.pug
 
 mixin feature(featureObj)
   -
@@ -9,7 +9,7 @@ mixin feature(featureObj)
       labelText
     } = featureObj
 
-  article(class=className).feature
+  article.feature(class=className)
     .feature__wrapper
       h3.feature__title
         | #{ title }

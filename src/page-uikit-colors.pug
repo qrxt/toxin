@@ -1,7 +1,7 @@
-extends pug/layout
+extends pug/layout.pug
 
-include components/uikit-header/uikit-header
-include components/colors-list/colors-list
+include components/uikit-header/uikit-header.pug
+include components/colors-list/colors-list.pug
 
 block variables
   -
@@ -72,53 +72,26 @@ block content
           .uikit-colors__type
             dl.uikit-colors__types
               .uikit-colors__type-wrapper
-                dt(
-                  class="uikit-colors__type-name"
-                  class="uikit-colors__type-name--h1"
-                )
+                dt.uikit-colors__type-name.uikit-colors__type-name--h1
                   | h1
-                dd(
-                  class="h1"
-                  class="uikit-colors__type-sample"
-                )
+                dd.h1.uikit-colors__type-sample
                   | This one is the sub-section or widget title
 
               .uikit-colors__type-wrapper
-                dt(
-                  class="uikit-colors__type-name"
-                  class="uikit-colors__type-name--h2"
-                )
+                dt.uikit-colors__type-name.uikit-colors__type-name--h2
                   | h2
-                dd(
-                  class="h2"
-                  class="uikit-colors__type-sample"
-                  class="uikit-colors__type-sample--h2"
-                )
+                dd.h2.uikit-colors__type-sample.uikit-colors__type-sample--h2
                   | Next one is the item title inside widgets
 
               .uikit-colors__type-wrapper
-                dt(
-                  class="uikit-colors__type-name"
-                  class="uikit-colors__type-name--h3"
-                )
+                dt.uikit-colors__type-name.uikit-colors__type-name--h3
                   | h3
-                dd(
-                  class="h3"
-                  class="uikit-colors__type-sample"
-                  class="uikit-colors__type-sample--h3"
-                )
+                dd.h3.uikit-colors__type-sample.uikit-colors__type-sample--h3
                   | This is a label or CTA text
 
               .uikit-colors__type-wrapper
-                dt(
-                  class="uikit-colors__type-name"
-                  class="uikit-colors__type-name--body"
-                )
+                dt.uikit-colors__type-name.uikit-colors__type-name--body
                   | body
-                dd(
-                  class="uikit-colors__type-sample"
-                  class="uikit-colors__type-sample--body"
-                )
+                dd.uikit-colors__type-sample.uikit-colors__type-sample--body
                   | This is the body text which is used for most
                   | of the design, like paragraphs, lists, etc.
-

@@ -45,13 +45,13 @@ img {
   margin-right: auto;
   padding: 0;
 
-  @include tablet {
+  // @include tablet {
 
-  }
+  // }
 
-  @include mobile {
+  // @include mobile {
 
-  }
+  // }
 }
 
 .visually-hidden:not(:focus):not(:active),

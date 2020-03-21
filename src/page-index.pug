@@ -1,8 +1,8 @@
-extends pug/layout
+extends pug/layout.pug
 
-include components/uikit-header/uikit-header
+include components/uikit-header/uikit-header.pug
 
-include components/logo/logo
+include components/logo/logo.pug
 
 block header
   +uikit-header({ headerLink: "#"})
@@ -59,4 +59,3 @@ block content
               a(href="#")
                 | Registration &amp; Sign in
                 | ❌
-

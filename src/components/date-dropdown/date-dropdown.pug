@@ -1,4 +1,4 @@
-include ../labeled/labeled
+include ../labeled/labeled.pug
 
 mixin date-dropdown(dateDropdownObj)
   -
@@ -16,8 +16,8 @@ mixin date-dropdown(dateDropdownObj)
     rightLabel: rightLabel
   })
     input.visually-hidden.visually-hidden--always(
-      name=name,
-      value=startValue
-    )
+      type="date"
+      name=name
+      value=startValue)
     p.date-dropdown__text
       | #{ startValue || "ДД.ММ.ГГГГ" }

@@ -1,7 +1,11 @@
-import $ from "jquery";
-
 export default class Dropdown {
-  init() {
+  constructor (node, options) {
+    this.node = node;
+    this.nodeText = this.node;
+    this.options = options;
+  }
+
+  init () {
     const options = {
       header: ".dropdown__label",
       collapsible: true,
@@ -10,22 +14,14 @@ export default class Dropdown {
       autoHeight: false,
       clearStyle: true,
 
-      ...this.options,
+      ...this.options
     };
 
     this.node
       .accordion(options);
   }
 
-  constructor(node, options) {
-    this.node = node;
-    this.nodeText = this.node;
-    this.options = options;
-
-    this.init();
-  }
-
-  setText(text) {
+  setText (text) {
     this.node
       .find(".dropdown__label")
       .text(text);

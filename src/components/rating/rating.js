@@ -1,16 +1,19 @@
+import $ from "jquery";
+
 export default class Rating {
-  constructor(node) {
+  constructor (node) {
     this.node = node;
     this.labels = this.node
       .find(".rating__item");
     this.inputs = this.node
       .find("input");
     this._activeClassname = "rating__item--active";
-
-    this.init();
   }
 
-  init() {
+  init () {
+    this._resetHighlightToIndex(0, 5);
+    this._highlightToIndex(this._findCheckedIndex());
+
     $(this.labels).each((idx, label) => {
       $(label).hover(() => {
         this._resetHighlightToIndex(0, 5);
@@ -24,14 +27,14 @@ export default class Rating {
         this._highlightToIndex(active);
       });
 
-      $(label).click(evt => {
+      $(label).click(() => {
         this._resetHighlightToIndex(0, 5);
         this._highlightToIndex(idx);
       });
     });
   }
 
-  _highlightToIndex(idx) {
+  _highlightToIndex (idx) {
     if (idx >= 0) {
       $(this.labels)
         .slice(0, idx + 1)
@@ -41,7 +44,7 @@ export default class Rating {
     }
   }
 
-  _resetHighlightToIndex(from, to) {
+  _resetHighlightToIndex (from, to) {
     $(this.labels)
       .slice(from, to)
       .each((_, label) => {
@@ -50,11 +53,10 @@ export default class Rating {
       });
   }
 
-  _findCheckedIndex() {
+  _findCheckedIndex () {
     return this.inputs
       .get()
-      .findIndex((input, index) =>
-        $(input).is(":checked")
-      );
+      .findIndex(input =>
+        $(input).is(":checked"));
   }
 }
