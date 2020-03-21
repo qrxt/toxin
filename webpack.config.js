@@ -1,5 +1,6 @@
 const path = require("path");
 const webpack = require("webpack");
+const autoprefixer = require("autoprefixer");
 
 const CssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlPlugin = require("html-webpack-plugin");
@@ -9,6 +10,12 @@ const TerserPlugin = require("terser-webpack-plugin");
 const PugPlugin = require("html-webpack-pug-plugin");
 const SpriteLoader = require("svg-sprite-loader/plugin");
 const Copy = require("copy-webpack-plugin");
+
+const getHtmlPlugin = (input, output) =>
+  new HtmlPlugin({
+    filename: output,
+    template: input
+  });
 
 module.exports = (_, options) => {
   const isDev = options.mode === "development";
@@ -30,7 +37,7 @@ module.exports = (_, options) => {
     };
 
     if (isProd) {
-      return prodOptimizations
+      return prodOptimizations;
     }
 
     return {
@@ -50,6 +57,15 @@ module.exports = (_, options) => {
         }
       },
       "css-loader",
+      {
+        loader: "postcss-loader",
+        options: {
+          plugins: [
+            autoprefixer()
+          ],
+          sourceMap: true
+        }
+      }
     ];
 
     return extra && extra.length > 0
@@ -72,12 +88,6 @@ module.exports = (_, options) => {
       : loaders;
   };
 
-  const getHtmlPlugin = (input, output) =>
-    new HtmlPlugin({
-      filename: output,
-      template: input
-    });
-
   const conf = {
     context: path.resolve(__dirname, "src"),
     mode: "development",
@@ -91,7 +101,7 @@ module.exports = (_, options) => {
 
     output: {
       path: path.resolve(__dirname, "dist"),
-      filename: getFileName("js"),
+      filename: getFileName("js")
     },
 
     resolve: {
@@ -125,7 +135,7 @@ module.exports = (_, options) => {
     module: {
       rules: [
         {
-          test: /\.ts$/,
+          test: /\.ts$/u,
           exclude: "/node-mocules/",
           loader: {
             loader: "babel-loader",
@@ -137,32 +147,29 @@ module.exports = (_, options) => {
           }
         },
         {
-          test: /\.js$/,
+          test: /\.js$/u,
           loader: "babel-loader"
         },
 
         {
-          test: /\.css$/,
+          test: /\.css$/u,
           use: getStyleLoaders()
         },
         {
-          test: /\.scss$/,
-          use: getStyleLoaders(["sass-loader"])
+          test: /\.scss$/u,
+          use: getStyleLoaders([ "sass-loader" ])
         },
 
         {
-          test: /\.(png|jpg|gif)$/,
+          test: /\.(?:png|jpg|gif)$/u,
           loader: "file-loader",
           options: {
             name: "[path][name].[ext]"
           }
         },
-        // {
-        //   test: /\.svg
-        // },
         {
-          test: /\.(woff2|woff|eot|ttf|svg)$/,
-          include: /fonts/,
+          test: /\.(?:woff2|woff|eot|ttf|svg)$/u,
+          include: /fonts/u,
           loader: "file-loader",
           options: {
             name: "[path][name].[ext]"
@@ -170,13 +177,13 @@ module.exports = (_, options) => {
         },
 
         {
-          test: /\.pug$/,
-          use: getHypertextLoaders(["raw-loader"])
+          test: /\.pug$/u,
+          use: getHypertextLoaders([ "raw-loader" ])
         },
 
         {
-          test: /\.svg(\?.*)?$/, // /\.svg$/,
-          exclude: /fonts/,
+          test: /\.svg(?:\?.*)?$/u,
+          exclude: /fonts/u,
           use: [
             {
               loader: "svg-sprite-loader",
@@ -194,12 +201,15 @@ module.exports = (_, options) => {
                   // { collapseGroups: true },
                   { removeUselessDefs: false },
                   { cleanupIDs: false },
-                  { removeAttrs: { attrs: "(fill|stroke|fill-opacity)" } },
+                  { removeAttrs:
+                    {
+                      attrs: "(fill|stroke|fill-opacity)"
+                    }}
                 ]
               }
             }
           ]
-        },
+        }
       ]
     },
 
@@ -224,8 +234,8 @@ module.exports = (_, options) => {
       }),
 
       new webpack.ProvidePlugin({
-        "$": "jquery",
-        "jQuery": "jquery",
+        $: "jquery",
+        jQuery: "jquery",
         "window.jQuery": "jquery"
       }),
 
