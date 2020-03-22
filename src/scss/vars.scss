@@ -8,8 +8,8 @@ $retina-dppx: 1.5dppx;
 
 // fonts
 
-$font-primary: "Montserrat", Arial, sans-serif;
-$font-secondary: "Quicksand", Arial, sans-serif;
+$font-primary: "Montserrat", "Arial", sans-serif;
+$font-secondary: "Quicksand", "Arial", sans-serif;
 
 // colors
 
@@ -19,29 +19,23 @@ $white: #ffffff;
 $blue: #8ba4f9;
 $purple: #bc9cff;
 
-$dark-shade: rgba($color: $black, $alpha: 1.0);
-$dark-shade-75: rgba($color: $black, $alpha: 0.75);
-$dark-shade-50: rgba($color: $black, $alpha: 0.5);
-$dark-shade-25: rgba($color: $black, $alpha: 0.25);
-$dark-shade-5: rgba($color: $black, $alpha: 0.05);
+$dark-shade: rgba($color: $black, $alpha: 1);
+$dark-shade--75: rgba($color: $black, $alpha: 0.75);
+$dark-shade--50: rgba($color: $black, $alpha: 0.5);
+$dark-shade--25: rgba($color: $black, $alpha: 0.25);
+$dark-shade--5: rgba($color: $black, $alpha: 0.05);
 
-$text-field-border-color: $dark-shade-25;
-$text-field-border-color--dark: $dark-shade-50;
+$text-field-border-color: $dark-shade--25;
+$text-field-border-color--dark: $dark-shade--50;
 
 $selection-color: rgba($color: $blue, $alpha: 0.5);
 
-$gradient-purple-blue: linear-gradient(
-  180deg,
-  rgba(188,156,255,1) 0%,
-  rgba(139,164,249,1) 100%
-);
-$gradient-gray: linear-gradient(
-  180deg,
-  $dark-shade-25,
-  $dark-shade-25
-);
+// gradients
+
+$gradient-purple-blue: linear-gradient(180deg, $purple 0%, $blue 100%);
+$gradient-gray: linear-gradient(180deg, $dark-shade--25, $dark-shade--25);
 
 // animations
 
 $transition-delay: 200ms;
-$transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1.000)
+$transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);

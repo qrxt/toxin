@@ -3,7 +3,7 @@
   padding-left: 30px;
   position: relative;
 
-  color: $dark-shade-50;
+  color: $dark-shade--50;
   font-family: $font-primary;
   font-size: 14px;
   line-height: 18px;
@@ -13,7 +13,7 @@
   @include transition(color);
 
   &:focus-within {
-    color: $dark-shade-75;
+    color: $dark-shade--75;
   }
 }
 
@@ -28,7 +28,7 @@
   bottom: 0;
   left: 0;
 
-  border: 1px solid $dark-shade-25;
+  border: 1px solid $dark-shade--25;
   border-radius: 4px;
 
   @include transition(border);

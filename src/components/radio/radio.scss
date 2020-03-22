@@ -2,7 +2,7 @@
   position: relative;
   padding-left: 30px;
 
-  color: $dark-shade-50;
+  color: $dark-shade--50;
   font-family: $font-primary;
   font-size: 14px;
 
@@ -19,7 +19,7 @@
   top: 0;
   left: 0;
 
-  border: 1px solid $dark-shade-25;
+  border: 1px solid $dark-shade--25;
   border-radius: 50%;
 
   &::before {
@@ -52,5 +52,5 @@
 }
 
 .radio input:checked ~ .radio__text {
-  color: $dark-shade-75;
+  color: $dark-shade--75;
 }
