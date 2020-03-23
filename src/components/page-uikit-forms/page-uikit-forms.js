@@ -2,8 +2,8 @@ import $ from "jquery";
 
 import DateDropdown from "@components/date-dropdown/date-dropdown";
 import Dropdown from "@components/dropdown/dropdown";
-import DropdownRooms from "@components/dropdown-rooms/dropdown-rooms";
 import DropdownGuests from "@components/dropdown-guests/dropdown-guests";
+import DropdownRooms from "@components/dropdown-rooms/dropdown-rooms";
 import ExpandableList from "@components/expandable-list/expandable-list";
 import InputQuantity from "@components/input-quantity/input-quantity";
 import LikeButton from "@components/btn/btn-like";
@@ -167,7 +167,7 @@ const dropdownGuestsElem = $(".js-uikit-forms-dropdown-guests");
 
 if (dropdownGuestsElem.length > 0) {
   const dropdownGuests = new DropdownGuests(dropdownGuestsElem, {
-    collapsible: true
+    active: 0
   });
 
   dropdownGuests.init();

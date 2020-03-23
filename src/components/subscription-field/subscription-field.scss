@@ -3,8 +3,6 @@
 }
 
 .subscription-field input {
-  margin-top: 4px;
-
   @include transition(border);
 
   &:hover,
