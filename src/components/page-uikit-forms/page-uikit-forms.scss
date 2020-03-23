@@ -157,6 +157,8 @@
   height: em(24);
   padding-left: 2px;
   width: 120px;
+
+  margin-bottom: 180px;
 }
 
 .uikit-forms__rating:not(:last-child) {
@@ -169,4 +171,8 @@
 
 .uikit-forms__ratings-wrapper {
   display: flex;
+}
+
+.uikit-forms__guests {
+  margin-bottom: 20px;
 }

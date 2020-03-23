@@ -1,20 +1,17 @@
+include ../dropdown/dropdown.pug
+
 mixin dropdown-guests(dropdownGuestsObj)
   -
     const {
       className,
       label,
-      rightlabel,
-      name
+      rightLabel,
+      header,
+      title
     } = dropdownGuestsObj
 
-  +labeled({
-    className: `guests-dropdown ${ className }`,
-    label: label,
-    rightLabel: rightLabel
-  })
-    input.visually-hidden.visually-hidden--always(
-      type="text"
-      name=name
-      value=startValue)
-    p.date-dropdown__text
-      | #{ startValue || "ДД.ММ.ГГГГ" }
+  +dropdown(dropdownGuestsObj)
+    .dropdown__inputs-wrapper
+      block
+    button.dropdown__btn-submit.js-dropdown-submit(type="button")
+      | Применить

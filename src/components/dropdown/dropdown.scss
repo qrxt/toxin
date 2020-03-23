@@ -63,3 +63,37 @@
 .dropdown__accordion .ui-accordion-header.ui-state-active .ui-icon {
   transform: rotate(-180deg);
 }
+
+.dropdown.ui-widget .dropdown__btn-submit {
+  display: block;
+  margin-left: auto;
+  padding: 0;
+
+  background-color: transparent;
+  border: none;
+
+  color: $purple;
+  font-family: $font-primary;
+  font-size: em(12);
+  text-transform: uppercase;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  @include transition(opacity);
+
+  &:hover,
+  &:focus {
+    outline: none;
+
+    opacity: 0.6;
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
+}
+
+.dropdown__inputs-wrapper {
+  margin-bottom: 25px;
+}

@@ -5,6 +5,7 @@ include ../date-dropdown/date-dropdown.pug
 include ../subscription-field/subscription-field.pug
 include ../input-quantity/input-quantity.pug
 include ../dropdown-rooms/dropdown-rooms.pug
+include ../dropdown-guests/dropdown-guests.pug
 include ../checkbox/checkbox.pug
 include ../expandable-list/expandable-list.pug
 include ../feature/feature.pug
@@ -367,6 +368,34 @@ mixin second-column()
               initialValue: 5,
               name: "rating-example-again"
             })
+      .uikit-forms__input.uikit-forms__guests
+        +dropdown-guests({
+          className: "js-uikit-forms-dropdown-guests",
+          title: "Сколько гостей",
+          label: "Dropdown"
+        })
+          +input-quantity({
+            className: "uikit-forms__quantity-input",
+            label: "Взрослые",
+            initialValue: 0,
+            min: 0,
+            max: 4
+          })
+          +input-quantity({
+            className: "uikit-forms__quantity-input",
+            label: "Дети",
+            initialValue: 0,
+            min: 0,
+            max: 4
+          })
+          +input-quantity({
+            className: "uikit-forms__quantity-input",
+            label: "Младенцы",
+            initialValue: 0,
+            min: 0,
+            max: 4
+          })
+
 
 mixin third-column()
   .uikit-forms__column

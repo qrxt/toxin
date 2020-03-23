@@ -3,6 +3,7 @@ import $ from "jquery";
 import DateDropdown from "@components/date-dropdown/date-dropdown";
 import Dropdown from "@components/dropdown/dropdown";
 import DropdownRooms from "@components/dropdown-rooms/dropdown-rooms";
+import DropdownGuests from "@components/dropdown-guests/dropdown-guests";
 import ExpandableList from "@components/expandable-list/expandable-list";
 import InputQuantity from "@components/input-quantity/input-quantity";
 import LikeButton from "@components/btn/btn-like";
@@ -160,4 +161,24 @@ if (starRatingElem.length > 0 && starRatingFullElem.length > 0) {
 
   starRating.init();
   starRatingAgain.init();
+}
+
+const dropdownGuestsElem = $(".js-uikit-forms-dropdown-guests");
+
+if (dropdownGuestsElem.length > 0) {
+  const dropdownGuests = new DropdownGuests(dropdownGuestsElem, {
+    collapsible: true
+  });
+
+  dropdownGuests.init();
+
+  const inputs = dropdownGuestsElem.find(".input-quantity");
+
+  if (inputs.length > 0) {
+    inputs.each((_, input) => {
+      const inputQuantity = new InputQuantity($(input));
+
+      inputQuantity.init();
+    });
+  }
 }
