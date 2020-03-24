@@ -10,11 +10,19 @@
 
 .uikit-forms__column {
   width: 27.8%;
+
+  &--first {
+    margin-right: 125px;
+  }
+
+  &--third {
+    margin-left: auto;
+  }
 }
 
-.uikit-forms__column:not(:last-child) {
-  margin-right: 125px;
-}
+// .uikit-forms__column:not(:last-child) {
+//   margin-right: 125px;
+// }
 
 .uikit-forms__input {
   width: 320px;
@@ -179,4 +187,14 @@
 
 .uikit-forms__rich-checkbox-label {
   margin: 0;
+}
+
+.uikit-forms__range {
+  height: 45px;
+  margin-bottom: 40px;
+  background-color: red;
+}
+
+.uikit-forms__btns-label {
+  margin: 0 0 8px;
 }

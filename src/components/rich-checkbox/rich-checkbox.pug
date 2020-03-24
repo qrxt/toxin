@@ -1,0 +1,23 @@
+include ../../pug/mixins.pug
+
+mixin rich-checkbox(richCheckboxObj)
+  -
+    const {
+      className,
+      labelText,
+      description,
+      checked,
+      name
+    } = richCheckboxObj
+
+  label.rich-checkbox.checkbox(class=className)
+    span.rich-checkbox__label-text
+      | #{ labelText }
+    span.rich-checkbox__description
+      | #{ description }
+    input.visually-hidden--always(
+      type="checkbox"
+      checked=checked || false
+      name=className)
+    span.rich-checkbox__box.checkbox__box
+      +svg("checkbox-tick", 15, 15)

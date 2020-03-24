@@ -7,6 +7,7 @@ include ../input-quantity/input-quantity.pug
 include ../dropdown-rooms/dropdown-rooms.pug
 include ../dropdown-guests/dropdown-guests.pug
 include ../checkbox/checkbox.pug
+include ../rich-checkbox/rich-checkbox.pug
 include ../expandable-list/expandable-list.pug
 include ../feature/feature.pug
 include ../radio/radio.pug
@@ -302,10 +303,24 @@ include ../rating/rating.pug
       initialValue: 5,
       name: "rating-example-again"
     }
+  ];
+
+  const richCheckboxes = [
+    {
+      labelText: "Широкий коридор",
+      description: "Ширина коридоров в номере не\u00A0менее 91 см.",
+      name: "hotel-corridor"
+    },
+
+    {
+      labelText: "Помощник для инвалидов",
+      description: "На 1 этаже вас встретит специалист и проводит до номера.",
+      name: "hotel-helper"
+    }
   ]
 
 mixin first-column()
-  .uikit-forms__column
+  .uikit-forms__column.uikit-forms__column--first
     +text-field(emailTextField)
 
     +text-field(textFieldfocused)
@@ -350,7 +365,7 @@ mixin first-column()
         +feature(feature)
 
 mixin second-column()
-  .uikit-forms__column
+  .uikit-forms__column.uikit-forms__column--second
     .uikit-forms__input-75.uikit-forms__check-buttons
       +labeled({
         className: "uikit-forms__check-buttons-label",
@@ -415,14 +430,19 @@ mixin second-column()
           label: "Rich Checkbox Buttons",
           tagName: "p"
         })
-          //- +checkbox({
-          //-   labelText: "Широкий коридор",
-          //-   description: "Ширина коридоров в номере не менее 91 см.",
-          //-   name: "hotel-corridor"
-          //- })
+          each richCheckbox in richCheckboxes
+            +rich-checkbox(richCheckbox)
 
 mixin third-column()
-  .uikit-forms__column
+  .uikit-forms__column.uikit-forms__column--third
+    .uikit-forms__input.uikit-forms__range
+
+    .uikit-forms__input.uikit-forms__btns
+      +labeled({
+        className: "uikit-forms__btns-label",
+        label: "Buttons",
+        tagName: "p"
+      })
 
 main.page-main
   section.uikit-forms
