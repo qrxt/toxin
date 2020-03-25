@@ -17,9 +17,23 @@
 
   cursor: pointer;
 
+  @include transition(opacity);
+
   &:hover,
   &:focus {
     outline: none;
+
+    opacity: 0.6;
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
+
+  &:disabled {
+    opacity: 0.5;
+
+    cursor: not-allowed;
   }
 }
 
@@ -43,7 +57,29 @@
     background: $gradient-purple-blue;
 
     z-index: -1;
+
+    @include transition(opacity);
   }
+
+  &:disabled,
+  &:hover,
+  &:focus {
+    opacity: 1;
+  }
+}
+
+.btn--bordered:hover::before,
+.btn--bordered:focus::before {
+  opacity: 0.6;
+}
+
+.btn--bordered:active::before {
+  opacity: 0.3;
+}
+
+
+.btn--bordered:disabled::before {
+  opacity: 0.5;
 }
 
 .btn--like {
@@ -93,4 +129,18 @@
 .btn--like.btn--active svg {
   fill: $purple;
   stroke: none;
+}
+
+.btn--transparent {
+  padding: 0;
+
+  color: $purple;
+  font-size: em(12);
+  background: none;
+
+  &:disabled {
+    opacity: 1;
+
+    color: $dark-shade--50;
+  }
 }

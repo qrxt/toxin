@@ -317,7 +317,42 @@ include ../rating/rating.pug
       description: "На 1 этаже вас встретит специалист и проводит до номера.",
       name: "hotel-helper"
     }
-  ]
+  ];
+
+  const btns = [
+    {
+      className: "uikit-forms__btn",
+      type: "button"
+    },
+
+    {
+      className: "uikit-forms__btn",
+      type: "button",
+      isDisabled: true
+    },
+
+    {
+      className: "btn--bordered uikit-forms__btn",
+      type: "button"
+    },
+
+    {
+      className: "btn--bordered uikit-forms__btn",
+      type: "button",
+      isDisabled: true
+    },
+
+    {
+      className: "btn--transparent uikit-forms__btn-narrow",
+      type: "button"
+    },
+
+    {
+      className: "btn--transparent uikit-forms__btn-narrow",
+      type: "button",
+      isDisabled: true
+    }
+  ];
 
 mixin first-column()
   .uikit-forms__column.uikit-forms__column--first
@@ -443,6 +478,17 @@ mixin third-column()
         label: "Buttons",
         tagName: "p"
       })
+      .uikit-forms__btns-wrapper
+        each btn in btns
+          +btn(btn)
+            | Click Me
+    .uikit-forms__input
+      +btn({
+        className: "uikit-forms__btn-100",
+        type: "button"
+      })
+        | Перейти к оплате
+        +svg("arrow_forward", 15, 15)
 
 main.page-main
   section.uikit-forms

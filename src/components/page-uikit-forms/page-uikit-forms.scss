@@ -191,10 +191,62 @@
 
 .uikit-forms__range {
   height: 45px;
-  margin-bottom: 40px;
+  margin-bottom: 44px;
   background-color: red;
 }
 
+.uikit-forms__btns {
+  width: 68%;
+  margin-bottom: 29px;
+}
+
+.uikit-forms__btns-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  padding-left: 3px;
+}
+
+.uikit-forms__btn {
+  width: 99px;
+  padding: 12px 20px 12px 17px;
+  line-height: 21px;
+
+  margin-bottom: 31px;
+}
+
+.uikit-forms__btn.btn--bordered {
+  width: calc(99px - 4px);
+  padding: 10px 17px;
+
+  color: $purple;
+}
+
 .uikit-forms__btns-label {
-  margin: 0 0 8px;
+  margin: 0 0 10px;
+}
+
+.uikit-forms__btn-narrow:last-child {
+  margin-left: 20px;
+  margin-right: auto;
+}
+
+.uikit-forms__btn-100 {
+  width: 100%;
+  position: relative;
+  margin-bottom: 42px;
+
+  font-size: em(12);
+  font-weight: 700;
+}
+
+.uikit-forms__btn-100 svg {
+  width: 17px;
+  height: 17px;
+  position: absolute;
+  right: 12px;
+  top: calc(50% - 8px);
+
+  fill: $white;
 }

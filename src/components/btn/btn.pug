@@ -8,19 +8,22 @@ mixin btn(btnObj)
       isLink,
       type,
       href,
+      isDisabled
     } = btnObj
 
   if isLink
     a.btn(
       class=className
-      href=href
-    )
+      href=href)
+
       block
+
   if !isLink
     button.btn(
       class=className
       type=type
-    )
+      disabled=isDisabled)
+
       block
 
 mixin btn-like(btnLikeObj)
