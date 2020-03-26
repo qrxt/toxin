@@ -7,6 +7,7 @@ import DropdownRooms from "@components/dropdown-rooms/dropdown-rooms";
 import ExpandableList from "@components/expandable-list/expandable-list";
 import InputQuantity from "@components/input-quantity/input-quantity";
 import LikeButton from "@components/btn/btn-like";
+import Range from "@components/range/range";
 import Rating from "@components/rating/rating";
 import TextFieldMasked from "@components/text-field/text-field-masked";
 
@@ -181,4 +182,14 @@ if (dropdownGuestsElem.length > 0) {
       inputQuantity.init();
     });
   }
+}
+
+const rangeElem = $(".js-uikit-forms-range");
+
+if (rangeElem.length > 0) {
+  const range = new Range(rangeElem, {
+    range: "true"
+  });
+
+  range.init();
 }

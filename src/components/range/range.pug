@@ -1,0 +1,18 @@
+mixin range(rangeObj)
+  -
+    const {
+      className,
+      min: 0,
+      max: 10000,
+
+      leftValue: 0,
+      rightValue: 10000
+
+    } = rangeObj;
+
+  .range(
+    class=className
+    data-min=min
+    data-max=max
+    data-left=leftValue
+    data-right=rightValue)

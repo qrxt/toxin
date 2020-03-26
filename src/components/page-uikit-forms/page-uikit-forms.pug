@@ -14,6 +14,7 @@ include ../radio/radio.pug
 include ../toggle/toggle.pug
 include ../btn/btn.pug
 include ../rating/rating.pug
+include ../range/range.pug
 
 -
   const expandableCheckboxList = [
@@ -471,8 +472,17 @@ mixin second-column()
 mixin third-column()
   .uikit-forms__column.uikit-forms__column--third
     .uikit-forms__input.uikit-forms__range
+      +labeled({
+        className: "uikit-forms__range-label",
+        label: "Range Slider",
+        tagName: "p"
+      })
+      +range({
+        className: "js-uikit-forms-range"
+      })
 
     .uikit-forms__input.uikit-forms__btns
+
       +labeled({
         className: "uikit-forms__btns-label",
         label: "Buttons",
@@ -482,6 +492,7 @@ mixin third-column()
         each btn in btns
           +btn(btn)
             | Click Me
+
     .uikit-forms__input
       +btn({
         className: "uikit-forms__btn-100",

@@ -192,7 +192,6 @@
 .uikit-forms__range {
   height: 45px;
   margin-bottom: 44px;
-  background-color: red;
 }
 
 .uikit-forms__btns {
@@ -249,4 +248,8 @@
   top: calc(50% - 8px);
 
   fill: $white;
+}
+
+.uikit-forms__range-label {
+  margin: 0 0 15px;
 }
