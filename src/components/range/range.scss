@@ -1,2 +1,17 @@
 .range {
+  height: em(5);
+}
+
+.range .ui-slider-handle {
+  transform: scale(0.8);
+
+  border: 2px solid $white;
+  border-radius: 50%;
+  background-color: $green;
+
+  top: -0.5em;
+}
+
+.range .ui-widget-header {
+  background-color: $green;
 }

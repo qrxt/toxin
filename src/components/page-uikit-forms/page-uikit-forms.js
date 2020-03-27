@@ -188,7 +188,9 @@ const rangeElem = $(".js-uikit-forms-range");
 
 if (rangeElem.length > 0) {
   const range = new Range(rangeElem, {
-    range: "true"
+    min: 0,
+    max: 10,
+    values: [ 0, 5 ]
   });
 
   range.init();
