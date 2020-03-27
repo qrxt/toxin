@@ -19,6 +19,7 @@ $white: #ffffff;
 $blue: #8ba4f9;
 $purple: #bc9cff;
 $green: #6fcf97;
+$cyan: #66d2ea;
 
 $dark-shade: rgba($color: $black, $alpha: 1);
 $dark-shade--75: rgba($color: $black, $alpha: 0.75);
@@ -34,6 +35,7 @@ $selection-color: rgba($color: $blue, $alpha: 0.5);
 // gradients
 
 $gradient-purple-blue: linear-gradient(180deg, $purple 0%, $blue 100%);
+$gradient-green-cyan: linear-gradient(180deg, $green 0%, $cyan 100%);
 $gradient-gray: linear-gradient(180deg, $dark-shade--25, $dark-shade--25);
 
 // animations

@@ -1,17 +1,35 @@
-.range {
+.range__slider {
   height: em(5);
+
+  cursor: pointer;
 }
 
-.range .ui-slider-handle {
+.range__slider .ui-slider-handle {
   transform: scale(0.8);
 
   border: 2px solid $white;
   border-radius: 50%;
-  background-color: $green;
+  background: $gradient-green-cyan;
 
   top: -0.5em;
+
+  cursor: pointer;
 }
 
-.range .ui-widget-header {
-  background-color: $green;
+.range__slider .ui-slider-handle.ui-state-focus,
+.range__slider .ui-slider-handle:hover {
+  outline: none;
+
+  background: $gradient-purple-blue;
+}
+
+// slider active bar area
+.range__slider .ui-widget-header {
+  top: -1px;
+  height: em(8);
+  background: $gradient-green-cyan;
+}
+
+.range__slider.ui-widget-content {
+  border: 1px solid $dark-shade--25;
 }

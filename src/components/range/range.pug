@@ -11,8 +11,17 @@ mixin range(rangeObj)
     } = rangeObj;
 
   .range(
-    class=className
-    data-min=min
-    data-max=max
-    data-left=leftValue
-    data-right=rightValue)
+    class=className)
+
+    +labeled({
+      className: "uikit-forms__range-label",
+      label: "Range Slider",
+      rightLabel: `${ leftValue }₽ - ${ rightValue }₽`,
+      tagName: "p"
+    })
+    .range__slider(
+
+      data-min=min
+      data-max=max
+      data-left=leftValue
+      data-right=rightValue)
