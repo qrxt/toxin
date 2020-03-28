@@ -1,9 +1,11 @@
 export default class Range {
   constructor (node, options) {
     this.node = node;
+    this.sliderNode = this.node.find(".range__slider")
+      .slider(this.options);
 
-    this.rangeLabel = this.node.find(".labeled__status");
-    this.sliderNode = this.node.find(".range__slider");
+    this.leftInput = this.node.find("input[data-side='left']");
+    this.rightInput = this.node.find("input[data-side='right']");
 
     this.options = {
       range: true,
@@ -11,6 +13,7 @@ export default class Range {
       animate: true,
 
       unit: "",
+      step: 500,
 
       min: this.node.attr("data-min"),
       max: this.node.attr("data-max"),
@@ -23,7 +26,8 @@ export default class Range {
       slide: (_, { values }) => {
         const [ left, right ] = values;
 
-        this.setRangeLabel(left, right);
+        this.setLeftInputValue(left);
+        this.setRightInputValue(right);
       },
 
       ...options
@@ -34,15 +38,22 @@ export default class Range {
     const { values } = this.options;
     const [ left, right ] = values;
 
-    this.sliderNode.slider(this.options);
+    this.setLeftInputValue(left);
+    this.setRightInputValue(right);
 
-    this.setRangeLabel(left, right);
+    this.leftInput.change(evt => {
+      const LEFT = 0;
+
+      this.sliderNode.slider
+        .values(LEFT, evt.target.value);
+    });
   }
 
-  setRangeLabel (left, right) {
-    const { unit } = this.options;
-    const rangeLabelText = `${ left }${ unit } - ${ right }${ unit }`;
+  setLeftInputValue (value) {
+    this.leftInput.val(value);
+  }
 
-    this.rangeLabel.text(rangeLabelText);
+  setRightInputValue (value) {
+    this.rightInput.val(value);
   }
 }

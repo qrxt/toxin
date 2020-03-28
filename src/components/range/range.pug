@@ -2,23 +2,40 @@ mixin range(rangeObj)
   -
     const {
       className,
+
+      labelText = "Range Slider",
+
       min = 0,
       max = 10000,
 
       leftValue = 0,
       rightValue = 10000
-
     } = rangeObj;
 
   .range(
     class=className)
 
-    +labeled({
-      className: "uikit-forms__range-label",
-      label: "Range Slider",
-      rightLabel: `${ leftValue }₽ - ${ rightValue }₽`,
-      tagName: "p"
-    })
+    .range__header
+      p.cta.range__label(
+        class=`${ className }__label`)
+        | #{ labelText }
+
+      .range__inputs
+        input(
+          type="number"
+          placeholder=min
+          data-side="left")
+        span.range__input-unit
+          | ₽
+        span.range__separator
+          | -
+        input(
+          type="number"
+          placeholder=max
+          data-side="right")
+        span.range__input-unit
+          | ₽
+
     .range__slider(
 
       data-min=min
