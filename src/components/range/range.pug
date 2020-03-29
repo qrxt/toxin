@@ -24,7 +24,9 @@ mixin range(rangeObj)
         input(
           type="number"
           placeholder=min
-          data-side="left")
+          data-side="left"
+          min=min
+          max=rightValue)
         span.range__input-unit
           | ₽
         span.range__separator
@@ -32,7 +34,9 @@ mixin range(rangeObj)
         input(
           type="number"
           placeholder=max
-          data-side="right")
+          data-side="right"
+          min=leftValue
+          max=max)
         span.range__input-unit
           | ₽
 

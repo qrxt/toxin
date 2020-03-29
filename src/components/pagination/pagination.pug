@@ -1,0 +1,47 @@
+include ../../pug/mixins.pug
+
+mixin pagination(paginationObj)
+  -
+    const {
+      className,
+
+      perPage = 12,
+      totalItems = 100,
+
+      current = 1,
+      last = 15
+    } = paginationObj
+
+    const currentPageItemsRangeStart = (current - 1) * perPage + 1;
+    const currentPageItemsRangeEnd = (current - 1) * perPage + perPage;
+
+  .pagination
+    ui.pagination__list
+      li.pagination__item
+        a.pagination__link.pagination__link--active(href="#")
+          | 1
+
+      li.pagination__item
+        a.pagination__link(href="#")
+          | 2
+
+      li.pagination__item
+        a.pagination__link(href="#")
+          | 3
+
+      li.pagination__item
+        span.pagination__rest
+          | ...
+
+      li.pagination__item
+        a.pagination__link(href="#")
+          | #{ last }
+
+      li.pagination__item
+        a.pagination__link.pagination__link--last(href="#")
+          +svg("arrow_forward", 15, 15)
+    p.pagination__summary
+      | #{ currentPageItemsRangeStart }
+      | -
+      | #{ currentPageItemsRangeEnd }
+      | из #{ totalItems }+ вариантов аренды

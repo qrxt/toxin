@@ -9,7 +9,7 @@ export default class DropdownGuests extends Dropdown {
     this.label = this.node
       .find(".dropdown__label");
     this.inputQuantities = this.node
-      .find(".input-quantity");
+      .find(".input-quantity input");
     this.labelText = this.label
       .find(".dropdown__label-text");
 
@@ -17,6 +17,7 @@ export default class DropdownGuests extends Dropdown {
     this.inputs = this.node.find("input");
     this.inputLabels = this.node.find(".input-quantity__label");
     this.submitBtn = this.node.find(".js-dropdown-submit");
+    this.resetBtn = this.node.find(".js-dropdown-reset");
   }
 
   init () {
@@ -28,12 +29,36 @@ export default class DropdownGuests extends Dropdown {
       ...this.options
     };
 
+    const getGuestsQuantityString = () =>
+      `${ this._getInputValuesSum() } гостя`;
+
     this.node
       .accordion(options);
 
     this.submitBtn.on("click", () => {
-      this._setLabelText(`${ this._getInputValuesSum() } гостя`);
+      this._setLabelText(getGuestsQuantityString());
+
+      if (this._getInputValuesSum() > 0) {
+        this.resetBtn.addClass("dropdown__btn-reset--active");
+      }
     });
+
+    this.resetBtn.on("click", () => {
+      this.inputQuantities.each((_, input) => {
+        $(input).val(0);
+      });
+
+      this._setLabelText(getGuestsQuantityString());
+      this.resetBtn.removeClass("dropdown__btn-reset--active");
+    });
+
+    if (this._getInputValuesSum() > 0) {
+      this._setLabelText(getGuestsQuantityString);
+    }
+
+    if (this._getInputValuesSum() > 0) {
+      this.resetBtn.addClass("dropdown__btn-reset--active");
+    }
   }
 
   _getInputValues () {

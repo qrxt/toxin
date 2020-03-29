@@ -15,6 +15,8 @@ include ../toggle/toggle.pug
 include ../btn/btn.pug
 include ../rating/rating.pug
 include ../range/range.pug
+include ../pagination/pagination.pug
+include ../bullet/bullet.pug
 
 -
   const expandableCheckboxList = [
@@ -292,6 +294,32 @@ include ../range/range.pug
     }
   ];
 
+  const inputQuantitiesGuestsWithActive = [
+    {
+      className: "uikit-forms__quantity-input",
+      label: "Взрослые",
+      initialValue: 2,
+      min: 0,
+      max: 4
+    },
+
+    {
+      className: "uikit-forms__quantity-input",
+      label: "Дети",
+      initialValue: 1,
+      min: 0,
+      max: 4
+    },
+
+    {
+      className: "uikit-forms__quantity-input",
+      label: "Младенцы",
+      initialValue: 0,
+      min: 0,
+      max: 4
+    }
+  ];
+
   const ratings = [
     {
       className: "uikit-forms__rating js-uikit-forms-rating",
@@ -488,13 +516,55 @@ mixin third-column()
           +btn(btn)
             | Click Me
 
-    .uikit-forms__input
+    .uikit-forms__input.uikit-forms__rest-btns
       +btn({
         className: "uikit-forms__btn-100",
         type: "button"
       })
         | Перейти к оплате
         +svg("arrow_forward", 15, 15)
+
+    .uikit-forms__input.uikit-forms__paginations
+      +labeled({
+        className: "uikit-forms__pagination-label",
+        label: "Pagination",
+        tagName: "p"
+      })
+      +pagination({
+        className: "uikit-forms__pagination"
+      })
+
+    .uikit-forms__input.uikit-forms__guests-opened
+      +dropdown-guests({
+        className: "js-uikit-forms-dropdown-guests-with-active",
+        title: "Сколько гостей",
+        label: "Dropdown"
+      })
+        each inputQuantity in inputQuantitiesGuestsWithActive
+          +input-quantity(inputQuantity)
+
+    .uikit-forms__input-75.uikit-forms__bullets
+      +labeled({
+        className: "uikit-forms__bullets-label",
+        label: "Bullet List",
+        tagName: "p"
+      })
+      ul.uikit-forms__bullet-list
+        li.uikit-forms__bullet-item
+          +bullet({
+            className: "uikit-forms__bullet"
+          })
+            | Нельзя с питомцами
+        li.uikit-forms__bullet-item
+          +bullet({
+            className: "uikit-forms__bullet"
+          })
+            | Без вечеринок и мероприятий
+        li.uikit-forms__bullet-item
+          +bullet({
+            className: "uikit-forms__bullet"
+          })
+            | Время прибытия — после 13:00, а выезд до 12:00
 
 main.page-main
   section.uikit-forms

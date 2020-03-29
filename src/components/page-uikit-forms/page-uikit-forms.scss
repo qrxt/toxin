@@ -234,7 +234,6 @@
 .uikit-forms__btn-100 {
   width: 100%;
   position: relative;
-  margin-bottom: 42px;
 
   font-size: em(12);
   font-weight: 700;
@@ -252,4 +251,38 @@
 
 .uikit-forms__range-label {
   margin: 0 0 19px;
+}
+
+.uikit-forms__rest-btns {
+  margin-bottom: 42px;
+}
+
+.uikit-forms__pagination-label {
+  margin: 0 0 10px;
+}
+
+.uikit-forms__paginations {
+  margin-bottom: 233px;
+}
+
+.uikit-forms__guests-opened {
+  margin-bottom: 100px;
+}
+
+.uikit-forms__bullet-list {
+  @include drop-list();
+
+  width: 97%;
+}
+
+.uikit-forms__bullets-label {
+  margin: 0 0 8px;
+}
+
+.uikit-forms__bullet {
+  font-size: em(14);
+}
+
+.uikit-forms__bullet-item:not(:last-child) {
+  margin-bottom: 12px;
 }

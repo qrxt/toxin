@@ -13,5 +13,8 @@ mixin dropdown-guests(dropdownGuestsObj)
   +dropdown(dropdownGuestsObj)
     .dropdown__inputs-wrapper
       block
-    button.dropdown__btn-submit.js-dropdown-submit(type="button")
-      | Применить
+    .dropdown__btns-wrapper
+      button.btn.btn--transparent.dropdown__btn-submit.js-dropdown-submit(type="button")
+        | Применить
+      button.btn.btn--transparent.dropdown__btn-reset.js-dropdown-reset(type="button")
+        | Очистить

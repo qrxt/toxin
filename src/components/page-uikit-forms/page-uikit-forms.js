@@ -196,3 +196,23 @@ if (rangeElem.length > 0) {
 
   range.init();
 }
+
+const dropdownGuestsWithActiveElem = $(".js-uikit-forms-dropdown-guests-with-active");
+
+if (dropdownGuestsWithActiveElem.length > 0) {
+  const dropdownGuests = new DropdownGuests(dropdownGuestsWithActiveElem, {
+    active: 0
+  });
+
+  dropdownGuests.init();
+
+  const inputs = dropdownGuestsWithActiveElem.find(".input-quantity");
+
+  if (inputs.length > 0) {
+    inputs.each((_, input) => {
+      const inputQuantity = new InputQuantity($(input));
+
+      inputQuantity.init();
+    });
+  }
+}
