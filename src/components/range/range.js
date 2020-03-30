@@ -37,6 +37,9 @@ export default class Range {
 
         this.setLeftInputValue(left);
         this.setRightInputValue(right);
+
+        this.leftInput.attr("max", right);
+        this.rightInput.attr("min", left);
       },
 
       ...options
@@ -52,22 +55,37 @@ export default class Range {
     this.setLeftInputValue(left);
     this.setRightInputValue(right);
 
-    this.leftInput.change(evt => {
+    this.leftInput.attr("min", min);
+    this.rightInput.attr("max", max);
+
+    this.leftInput.change(() => {
       const LEFT = 0;
-      const normalizedValue = normalizeInputValue(min, this.rightInput.val(), evt.target.value);
+
+      const value = Number(this.leftInput.val());
+      const minInputValue = Number(this.leftInput.attr("min"));
+      const maxInputValue = Number(this.leftInput.attr("max"));
+      const normalizedValue = normalizeInputValue(
+        minInputValue, maxInputValue, value
+      );
 
       this.leftInput.val(normalizedValue);
-      this.rightInput.attr("max", normalizedValue);
-      this.sliderNode.slider("values", LEFT, evt.target.value);
+      this.rightInput.attr("min", normalizedValue);
+      this.sliderNode.slider("values", LEFT, normalizedValue);
     });
 
-    this.rightInput.change(evt => {
+    this.rightInput.change(() => {
       const RIGHT = 1;
-      const normalizedValue = normalizeInputValue(this.leftInput.val(), max, evt.target.value);
+
+      const val = Number(this.rightInput.val());
+      const minInputValue = Number(this.rightInput.attr("min"));
+      const maxInputValue = Number(this.rightInput.attr("max"));
+      const normalizedValue = normalizeInputValue(
+        minInputValue, maxInputValue, val
+      );
 
       this.rightInput.val(normalizedValue);
       this.leftInput.attr("max", normalizedValue);
-      this.sliderNode.slider("values", RIGHT, evt.target.value);
+      this.sliderNode.slider("values", RIGHT, normalizedValue);
     });
   }
 

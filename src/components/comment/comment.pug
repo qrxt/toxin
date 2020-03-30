@@ -1,0 +1,35 @@
+include ../btn/btn.pug
+
+mixin comment(commentObj)
+  -
+    const {
+      className,
+      userName = "Admin",
+      when = "Только что",
+      likes = 0,
+      toggled = false
+    } = commentObj
+
+  article.comment(class=className)
+    header.comment__header
+      img(
+        src="./assets/img/sample-avatar.jpg"
+        width=48
+        height=48
+        alt=`Аватар пользователя ${userName}`)
+
+      .comment__header-wrapper
+        h3.comment__user-name
+          | #{ userName }
+        p.comment__when
+          | #{ when }
+
+    .comment__body
+      +btn-like({
+        className: "comment__like js-like-btn",
+        initialValue: 12,
+        toggled
+      })
+
+      p.comment__text
+        block

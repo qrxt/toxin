@@ -1,0 +1,38 @@
+.comment__header {
+  display: flex;
+  margin-bottom: 13px;
+  padding-top: 10px;
+}
+
+.comment__header img {
+  width: 46px;
+  height: 46px;
+
+  margin-right: 10px;
+}
+
+.comment__user-name {
+  margin: 0 0 5px;
+
+  font-size: em(14);
+  line-height: 16px;
+}
+
+.comment__when {
+  margin: 0;
+
+  font-size: em(14);
+  line-height: 16px;
+}
+
+.comment__body {
+  display: flex;
+  padding-left: 3px;
+}
+
+.comment__text {
+  margin: 0;
+
+  font-size: em(14);
+  line-height: 16px;
+}

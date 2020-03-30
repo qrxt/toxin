@@ -286,3 +286,12 @@
 .uikit-forms__bullet-item:not(:last-child) {
   margin-bottom: 12px;
 }
+
+.uikit-forms__static {
+  display: flex;
+  justify-content: space-between;
+}
+
+.uikit-forms__comment {
+  width: 61.5%;
+}

@@ -17,6 +17,7 @@ include ../rating/rating.pug
 include ../range/range.pug
 include ../pagination/pagination.pug
 include ../bullet/bullet.pug
+include ../comment/comment.pug
 
 -
   const expandableCheckboxList = [
@@ -424,10 +425,6 @@ mixin first-column()
         each checkbox in expandableCheckboxList
           +checkbox(checkbox)
 
-    .uikit-forms__input-75
-      each feature in features
-        +feature(feature)
-
 mixin second-column()
   .uikit-forms__column.uikit-forms__column--second
     .uikit-forms__input-75.uikit-forms__check-buttons
@@ -578,6 +575,23 @@ main.page-main
         +first-column()
         +second-column()
         +third-column()
+
+      .uikit-forms__static
+        .uikit-forms__input-75.uikit-forms__features
+          each feature in features
+            +feature(feature)
+
+        +comment({
+          className: "uikit-forms__comment",
+          userName: "Мурад Сарафанов",
+          when: "5 дней назад",
+          likes: 12,
+          toggled: true
+        })
+          | Великолепный матрас на кровати в основной спальне!
+          | А пуфик вообще потрясающий.
+          | И стены, действительно, шумоподавляющие.
+          | Выкрикивал комплименты повару — никто не жаловался из соседей.
 
           //- button(type="submit")
           //-   | go go go
