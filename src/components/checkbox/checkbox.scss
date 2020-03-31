@@ -12,8 +12,13 @@
 
   @include transition(color);
 
-  &:focus-within {
+  &:focus-within,
+  &:hover {
     color: $dark-shade--75;
+  }
+
+  &::selection {
+    background-color: $selection-color;
   }
 }
 

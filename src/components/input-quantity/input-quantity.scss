@@ -39,6 +39,10 @@
   font-weight: 700;
   color: $black;
   text-transform: uppercase;
+
+  &::selection {
+    background-color: $selection-color;
+  }
 }
 
 .input-quantity__wrapper {

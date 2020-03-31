@@ -1,3 +1,9 @@
+.expandable-list__title {
+  &::selection {
+    background-color: $selection-color;
+  }
+}
+
 .expandable-list .ui-accordion-header .ui-icon {
   width: 15px;
   height: 7px;

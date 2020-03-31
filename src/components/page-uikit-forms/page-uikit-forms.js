@@ -50,7 +50,9 @@ const dateDropdownElemFirst = $(".js-uikit-forms-date-dropdown-first");
 const dateDropdownElemSecond = $(".js-uikit-forms-date-dropdown-second");
 
 if (dateDropdownElemFirst.length > 0 && dateDropdownElemSecond.length > 0) {
-  const dropdownExampleFirst = new DateDropdown(dateDropdownElemFirst, {});
+  const dropdownExampleFirst = new DateDropdown(dateDropdownElemFirst, {
+    dateFormat: "dd.mm.yyyy"
+  });
   const dropdownExampleSecond = new DateDropdown(dateDropdownElemSecond, {
     startDate: new Date("August 19, 2019")
   });

@@ -35,6 +35,10 @@
 
     cursor: not-allowed;
   }
+
+  &::selection {
+    background-color: $selection-color;
+  }
 }
 
 .btn--bordered {

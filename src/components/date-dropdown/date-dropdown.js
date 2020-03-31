@@ -12,6 +12,8 @@ export default class DateDropdown {
     const yOffset = this.node.get(0).scrollHeight + 7;
     const { startDate, startDateRange } = this.options;
 
+    this.nodeInput.prop("type", "text");
+
     if (startDate) {
       const currentDay = startDate.getDate();
       const currentMonth = String(startDate.getMonth()).length < 2
@@ -33,7 +35,7 @@ export default class DateDropdown {
 
         offset: yOffset,
         onSelect: formattedDate => {
-          this.nodeText.text(formattedDate.toLowerCase())
+          this.nodeText.text(formattedDate.toLowerCase());
         }
       });
 

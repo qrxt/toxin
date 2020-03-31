@@ -10,6 +10,10 @@
   line-height: 18px;
 
   cursor: pointer;
+
+  &::selection {
+    background-color: $selection-color;
+  }
 }
 
 .toggle__box {

@@ -54,3 +54,9 @@
 .radio input:checked ~ .radio__text {
   color: $dark-shade--75;
 }
+
+.radio__text {
+  &::selection {
+    background-color: $selection-color;
+  }
+}

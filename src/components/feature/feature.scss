@@ -26,6 +26,10 @@
   font-family: $font-primary;
   font-size: 14px;
   line-height: 16px;
+
+  &::selection {
+    background-color: $selection-color;
+  }
 }
 
 .feature__title {

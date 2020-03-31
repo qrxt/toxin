@@ -7,6 +7,10 @@
 
 .labeled__label-text {
   margin-bottom: 6px;
+
+  &::selection {
+    background-color: $selection-color;
+  }
 }
 
 .labeled__status {
@@ -15,4 +19,8 @@
   line-height: 14px;
   text-transform: uppercase;
   color: rgba($color: $black, $alpha: 0.4);
+
+  &::selection {
+    background-color: $selection-color;
+  }
 }

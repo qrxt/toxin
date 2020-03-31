@@ -7,6 +7,10 @@
 
 .range__label {
   margin: 0;
+
+  &::selection {
+    background-color: $selection-color;
+  }
 }
 
 .range__inputs {
@@ -36,18 +40,30 @@
   &:focus {
     color: $dark-shade;
   }
+
+  &::selection {
+    background-color: $selection-color;
+  }
 }
 
 .range__separator {
   color: $dark-shade--50;
   font-size: em(12);
   line-height: 15px;
+
+  &::selection {
+    background-color: $selection-color;
+  }
 }
 
 .range__input-unit {
   color: $dark-shade--50;
   font-size: em(12);
   line-height: 15px;
+
+  &::selection {
+    background-color: $selection-color;
+  }
 }
 
 .range__input-unit:not(:last-child) {

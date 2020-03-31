@@ -31,6 +31,7 @@
 
   &:hover,
   &:focus {
+    outline: none;
     opacity: 0.6;
 
     color: $white;
@@ -58,6 +59,10 @@
     width: 17px;
     height: 17px;
   }
+
+  &::selection {
+    background-color: $selection-color;
+  }
 }
 
 .pagination__rest {
@@ -68,6 +73,10 @@
   padding: 12px 2px 12px 0;
 
   border-radius: 50%;
+
+  &::selection {
+    background-color: $selection-color;
+  }
 }
 
 .pagination__summary {
@@ -76,4 +85,8 @@
 
   color: $dark-shade--75;
   font-size: em(14);
+
+  &::selection {
+    background-color: $selection-color;
+  }
 }

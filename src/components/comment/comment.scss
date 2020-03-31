@@ -12,10 +12,15 @@
 }
 
 .comment__user-name {
-  margin: 0 0 5px;
+  margin: 0 0 8px;
+  padding-top: 2px;
 
   font-size: em(14);
   line-height: 16px;
+
+  &::selection {
+    background-color: $selection-color;
+  }
 }
 
 .comment__when {
@@ -23,16 +28,32 @@
 
   font-size: em(14);
   line-height: 16px;
+
+  &::selection {
+    background-color: $selection-color;
+  }
 }
 
 .comment__body {
   display: flex;
+  align-items: flex-start;
   padding-left: 3px;
+  position: relative;
 }
 
 .comment__text {
   margin: 0;
+  padding-left: 54px;
 
   font-size: em(14);
-  line-height: 16px;
+  line-height: 23px;
+
+  &::selection {
+    background-color: $selection-color;
+  }
+}
+
+.comment__like {
+  position: absolute;
+  left: 0;
 }

@@ -14,4 +14,8 @@
     border-radius: 50%;
     background-color: $dark-shade--25;
   }
+
+  &::selection {
+    background-color: $selection-color;
+  }
 }
