@@ -1,0 +1,57 @@
+.uikit-cards__inner {
+  display: flex;
+}
+
+.uikit-cards__column {
+  width: 32.7%;
+  padding-top: 8px;
+}
+
+.uikit-cards__hotel {
+  padding: 40px 30px 20px;
+}
+
+.uikit-cards__card-title {
+
+  font-size: em(23);
+  line-height: 30px;
+
+  margin: 0 0 20px;
+}
+
+.uikit-cards__inputs-wrapper {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 19px;
+}
+
+.uikit-cards__input-half {
+  width: 47%;
+}
+
+.test {
+  height: 20px;
+  width: 100%;
+  background-color: red;
+}
+
+.uikit-cards__guests {
+  margin-bottom: 33px;
+}
+
+.uikit-cards__hotel-submit {
+  width: 100%;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.uikit-cards__hotel-submit svg {
+  width: 17px;
+  height: 17px;
+  position: absolute;
+  right: 12px;
+  top: calc(50% - 8px);
+
+  fill: $white;
+}

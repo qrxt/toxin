@@ -1,0 +1,57 @@
+include ../card/card.pug
+include ../date-dropdown/date-dropdown.pug
+include ../dropdown-guests/dropdown-guests.pug
+include ../btn/btn.pug
+include ../input-quantity/input-quantity.pug
+
+mixin first-column()
+  .uikit-cards__column
+    +card({
+      className: "uikit-cards__hotel"
+    })
+      form.uikit-cards__hotel-form(
+        action="https://echo.htmlacademy.ru/"
+        method="POST")
+        h2.uikit-cards__card-title
+          | Найдём номера под ваши пожелания
+        .uikit-cards__inputs-wrapper
+          .uikit-cards__input-half
+            +date-dropdown({
+              className: "uikit-cards__left-date js-uikit-cards-arrival",
+              label: "Прибытие",
+              name: "user-arrival"
+            })
+          .uikit-cards__input-half
+            +date-dropdown({
+              className: "uikit-cards__right-date js-uikit-cards-check-out",
+              label: "Выезд",
+              name: "user-check-out"
+            })
+        .uikit-cards__guests
+          +dropdown-guests({
+            className: "uikit-cards__guests-dropdown js-uikit-cards-hotel-guests",
+            label: "Гости",
+            title: "Сколько гостей"
+          })
+            +input-quantity({
+              className: "uikit-cards__quantity-input",
+              label: "Взрослые",
+              initialValue: 0,
+              min: 0,
+              max: 4,
+              name: "user-guests-adults"
+            })
+        +btn({
+          className: "uikit-cards__hotel-submit",
+          type: "submit"
+        })
+          | Подобрать номер
+          +svg("arrow_forward", 15, 15)
+
+main.page-main
+  section.uikit-cards
+    .wrapper.uikit-cards__inner
+      h1.visually-hidden
+        | UI-Kit Cards
+
+      +first-column()

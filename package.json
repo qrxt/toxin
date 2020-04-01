@@ -61,7 +61,6 @@
     "air-datepicker": "^2.2.3",
     "imask": "^6.0.3",
     "jquery": "^3.4.1",
-    "jquery-date-range-picker": "^1.0.4",
     "jquery-ui-bundle": "^1.12.1-migrate",
     "jquery.maskedinput": "^1.4.1",
     "normalize.css": "^8.0.1"

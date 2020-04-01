@@ -1,6 +1,8 @@
 import "jquery-ui-bundle";
 import "jquery-ui-bundle/jquery-ui.min.css";
 
+import "air-datepicker";
+
 import "./style";
 
 const importAll = req =>

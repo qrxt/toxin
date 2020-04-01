@@ -1,9 +1,11 @@
 import $ from "jquery";
 
+const noConflict = $.noConflict();
+
 export default class DateDropdown {
   constructor (node, options) {
     this.node = node;
-    this.nodeInput = $(node).find("input");
+    this.nodeInput = noConflict(node).find("input");
     this.nodeText = $(node).find(".date-dropdown__text");
     this.options = options;
   }
