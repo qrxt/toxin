@@ -37,6 +37,10 @@ img {
   flex-grow: 1;
   flex-shrink: 0;
   flex-basis: auto;
+
+  &--grey {
+    background-color: $dark-shade--5;
+  }
 }
 
 .wrapper {

@@ -1,0 +1,14 @@
+extends pug/layout.pug
+
+include components/uikit-header/uikit-header.pug
+
+block variables
+  -
+    const pageWrapperClassName = "page-wrapper--grey";
+
+block header
+  +uikit-header({ headerLink: "/" })
+
+block content
+  .test
+    | 123
