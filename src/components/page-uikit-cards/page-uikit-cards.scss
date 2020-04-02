@@ -7,12 +7,16 @@
   padding-top: 8px;
 }
 
+.uikit-cards__column:not(:last-child) {
+  margin-right: 42px;
+}
+
 .uikit-cards__hotel {
+  margin-bottom: 40px;
   padding: 40px 30px 20px;
 }
 
 .uikit-cards__card-title {
-
   font-size: em(23);
   line-height: 30px;
 
@@ -54,4 +58,145 @@
   top: calc(50% - 8px);
 
   fill: $white;
+}
+
+.uikit-cards__register {
+  padding: 44px 30px 20px;
+}
+
+.uikit-cards__register-title {
+  margin: 0 0 23px;
+
+  font-size: em(23);
+}
+
+.uikit-cards__register-first-name {
+  margin-bottom: 10px;
+}
+
+.uikit-cards__register-last-name {
+  margin-bottom: 11px;
+}
+
+.uikit-cards__register-radios {
+  display: flex;
+  margin-bottom: 22px;
+}
+
+.uikit-cards__register-radios label:not(:last-child) {
+  margin-right: 20px;
+}
+
+.uikit-cards__masked-date {
+  margin-bottom: 20px;
+}
+
+.uikit-cards__email {
+  margin-bottom: 10px;
+}
+
+.uikit-cards__password {
+  margin-bottom: 9px;
+}
+
+.uikit-cards__specials {
+  margin-bottom: 25px;
+}
+
+.uikit-cards__submit {
+  position: relative;
+
+  font-size: em(12);
+}
+
+.uikit-cards__submit svg {
+  width: 17px;
+  height: 17px;
+  position: absolute;
+  top: calc(50% - 8px);
+  right: 12px;
+
+  fill: $white;
+}
+
+.uikit-cards__register-submit {
+  width: 100%;
+  margin-bottom: 31px;
+}
+
+.uikit-cards__register-footer-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.uikit-cards__register-text {
+  font-size: em(14);
+  margin: 0;
+}
+
+.uikit-cards__authorize-btn {
+  position: relative;
+  margin-top: 2px;
+  padding: 11px 20px;
+  width: 95px;
+}
+
+.uikit-cards__book {
+  padding: 44px 27px;
+}
+
+.uikit-cards__number {
+  width: 35%;
+  margin: 0;
+
+  font-family: $font-secondary;
+  font-size: em(23);
+  font-weight: 700;
+
+  &::before {
+    content: "№";
+    margin-right: 7px;
+    font-size: em(11);
+    font-weight: 700;
+  }
+}
+
+.uikit-cards__room-category {
+  padding-left: 6px;
+
+  color: $purple;
+  font-family: $font-primary;
+  font-size: em(8);
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.uikit-cards__book-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+
+  margin-bottom: 20px;
+}
+
+.uikit-cards__cost {
+  margin: 0;
+  padding-right: 7px;
+
+  color: $dark-shade--50;
+  font-size: em(14);
+  font-weight: 700;
+
+  &::first-letter {
+    margin-right: 6px;
+  }
+}
+
+.uikit-cards__cost-per {
+  margin-left: 3px;
+  color: $dark-shade--50;
+  font-family: $font-primary;
+  font-size: em(12);
 }

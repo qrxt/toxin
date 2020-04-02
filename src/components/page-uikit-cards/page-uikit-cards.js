@@ -3,6 +3,7 @@ import $ from "jquery";
 import DateDropdown from "@components/date-dropdown/date-dropdown";
 import DropdownGuests from "@components/dropdown-guests/dropdown-guests";
 import InputQuantity from "@components/input-quantity/input-quantity";
+import TextFieldMasked from "@components/text-field/text-field-masked";
 
 const hotelCardArrivalElem = $(".js-uikit-cards-arrival");
 const hotelCardCheckOutElem = $(".js-uikit-cards-check-out");
@@ -31,4 +32,26 @@ if (hotelCardGuestsElem.length > 0) {
       inputQuantity.init();
     });
   }
+}
+
+const maskedDateTextFieldElem = $(".js-uikit-cards-masked-date");
+
+if (maskedDateTextFieldElem.length > 0) {
+  const node = maskedDateTextFieldElem.get(0);
+
+  node.addEventListener("keydown", evt => {
+    if (evt.key === "Enter") {
+      evt.preventDefault();
+    }
+  });
+
+  const maskOptions = {
+    mask: Date
+  };
+
+  const maskedDateTextField = new TextFieldMasked(node, {
+    maskOptions, datepickerOptions: {}
+  });
+
+  maskedDateTextField.init();
 }

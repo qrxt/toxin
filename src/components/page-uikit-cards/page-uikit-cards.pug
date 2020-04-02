@@ -1,8 +1,13 @@
+include ../../pug/mixins.pug
+
 include ../card/card.pug
 include ../date-dropdown/date-dropdown.pug
 include ../dropdown-guests/dropdown-guests.pug
 include ../btn/btn.pug
 include ../input-quantity/input-quantity.pug
+include ../text-field/text-field.pug
+include ../radio/radio.pug
+include ../toggle/toggle.pug
 
 mixin first-column()
   .uikit-cards__column
@@ -48,6 +53,128 @@ mixin first-column()
           | Подобрать номер
           +svg("arrow_forward", 15, 15)
 
+    +card({
+      className: "uikit-cards__register"
+    })
+      form.uikit-cards__register-form(
+        action="https://echo.htmlacademy.ru/"
+        method="POST")
+        h2.uikit-cards__register-title
+          | Регистрация аккаунта
+
+        +text-field({
+          className: "uikit-cards__register-first-name",
+          type: "text",
+          name: "user-register-first-name",
+          placeholder: "Имя",
+          required: true
+        })
+
+        +text-field({
+          className: "uikit-cards__register-last-name",
+          type: "text",
+          name: "user-register-last-name",
+          placeholder: "Фамилия",
+          required: true
+        })
+
+        .uikit-cards__register-radios
+          +radio({
+            className: "uikit-cards__register-radio",
+            name: "user-sex",
+            label: "Мужчина",
+            checked: true,
+            value: "user-sex-male"
+          })
+          +radio({
+            className: "uikit-cards__register-radio",
+            name: "user-sex",
+            label: "Женщина",
+            checked: false,
+            value: "user-sex-female"
+          })
+
+        +text-field({
+          className: "uikit-cards__masked-date js-uikit-cards-masked-date",
+          type: "date",
+          interactLike: "date",
+          label: "Дата Рождения",
+          placeholder: "ДД.ММ.ГГГГ",
+          name: "user-birth-date"
+        })
+
+        +text-field({
+          className: "uikit-cards__email",
+          type: "email",
+          label: "Данные Для Входа В Сервис",
+          placeholder: "Email",
+          name: "user-email"
+        })
+        +text-field({
+          className: "uikit-cards__password",
+          type: "password",
+          placeholder: "Пароль",
+          name: "user-password"
+        })
+
+        +toggle({
+          className: "uikit-cards__specials",
+          labelText: "Получать спецпредложения",
+          name: "user-get-specials"
+        })
+
+        +btn({
+          className: "uikit-cards__submit uikit-cards__register-submit",
+          type: "submit"
+        })
+          | Перейти к оплате
+          +svg("arrow_forward", 17, 17)
+
+        .uikit-cards__register-footer-wrapper
+          p.uikit-cards__register-text
+            | Уже есть аккаунт на Toxin
+          +btn({
+            className: "btn--bordered uikit-cards__authorize-btn",
+            type: "button"
+          })
+            | Войти
+
+mixin second-column()
+  .uikit-cards__column
+    +card({
+      className: "uikit-cards__book"
+    })
+      form.uikit-cards__book-form(
+        action="https://echo.htmlacademy.ru/"
+        method="POST")
+        h2.visually-hidden
+          | Забронировать номер в отеле
+
+        .uikit-cards__book-header
+          p.uikit-cards__number
+            | 888
+            span.uikit-cards__room-category
+              | Люкс
+
+          p.uikit-cards__cost
+            | 9990₽
+            span.uikit-cards__cost-per
+              | в сутки
+
+        .uikit-cards__inputs-wrapper
+          .uikit-cards__input-half
+            +date-dropdown({
+              className: "uikit-cards__left-date",
+              label: "Прибытие",
+              name: "user-arrival"
+            })
+          .uikit-cards__input-half
+            +date-dropdown({
+              className: "uikit-cards__right-date",
+              label: "Выезд",
+              name: "user-check-out"
+            })
+
 main.page-main
   section.uikit-cards
     .wrapper.uikit-cards__inner
@@ -55,3 +182,4 @@ main.page-main
         | UI-Kit Cards
 
       +first-column()
+      +second-column()
