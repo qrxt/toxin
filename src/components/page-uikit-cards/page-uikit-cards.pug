@@ -8,6 +8,8 @@ include ../input-quantity/input-quantity.pug
 include ../text-field/text-field.pug
 include ../radio/radio.pug
 include ../toggle/toggle.pug
+include ../option/option.pug
+include ../bill/bill.pug
 
 mixin first-column()
   .uikit-cards__column
@@ -157,23 +159,51 @@ mixin second-column()
               | Люкс
 
           p.uikit-cards__cost
-            | 9990₽
+            | 9 990₽
             span.uikit-cards__cost-per
               | в сутки
 
         .uikit-cards__inputs-wrapper
           .uikit-cards__input-half
             +date-dropdown({
-              className: "uikit-cards__left-date",
+              className: "uikit-cards__left-date js-uikit-cards-book-arrival",
               label: "Прибытие",
               name: "user-arrival"
             })
           .uikit-cards__input-half
             +date-dropdown({
-              className: "uikit-cards__right-date",
+              className: "uikit-cards__right-date js-uikit-cards-book-check-out",
               label: "Выезд",
               name: "user-check-out"
             })
+
+        .uikit-cards__book-guests
+          +dropdown-guests({
+            className: "uikit-cards__guests-dropdown js-uikit-cards-book-guests",
+            label: "Гости",
+            title: "Сколько гостей"
+          })
+            +input-quantity({
+              className: "uikit-cards__quantity-input",
+              label: "Взрослые",
+              initialValue: 3,
+              min: 0,
+              max: 4,
+              name: "user-guests-adults"
+            })
+
+        +bill({ className: "uikit-cards__bill" })
+          .bill__row.uikit-cards__bill-row
+            dt 9 990₽ х 4 суток
+            dd 39 960₽
+
+          .bill__row.uikit-cards__bill-row
+            dt Сбор за услуги: скидка 2 179₽
+            dd 0₽
+
+          .bill__row.uikit-cards__bill-row
+            dt Сбор за дополнительные услуги
+            dd 300₽
 
 main.page-main
   section.uikit-cards

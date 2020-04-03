@@ -144,7 +144,7 @@
 }
 
 .uikit-cards__book {
-  padding: 44px 27px;
+  padding: 44px 27px 20px;
 }
 
 .uikit-cards__number {
@@ -188,10 +188,6 @@
   color: $dark-shade--50;
   font-size: em(14);
   font-weight: 700;
-
-  &::first-letter {
-    margin-right: 6px;
-  }
 }
 
 .uikit-cards__cost-per {
@@ -199,4 +195,8 @@
   color: $dark-shade--50;
   font-family: $font-primary;
   font-size: em(12);
+}
+
+.uikit-cards__book-guests {
+  margin-bottom: 22px;
 }

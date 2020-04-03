@@ -8,6 +8,7 @@ import TextFieldMasked from "@components/text-field/text-field-masked";
 const hotelCardArrivalElem = $(".js-uikit-cards-arrival");
 const hotelCardCheckOutElem = $(".js-uikit-cards-check-out");
 
+// Карточка "подобрать номер"
 if (hotelCardArrivalElem.length > 0 && hotelCardCheckOutElem.length > 0) {
   const hotelCardArrival = new DateDropdown(hotelCardArrivalElem, {});
   const hotelCardCheckOut = new DateDropdown(hotelCardCheckOutElem, {});
@@ -34,6 +35,7 @@ if (hotelCardGuestsElem.length > 0) {
   }
 }
 
+// Карточка "регистрация аккаунта"
 const maskedDateTextFieldElem = $(".js-uikit-cards-masked-date");
 
 if (maskedDateTextFieldElem.length > 0) {
@@ -55,3 +57,38 @@ if (maskedDateTextFieldElem.length > 0) {
 
   maskedDateTextField.init();
 }
+
+// Карточка "Бронирование номера" (№888)
+const bookCardArrivalElem = $(".js-uikit-cards-book-arrival");
+const bookCardCheckOutElem = $(".js-uikit-cards-book-check-out");
+
+if (bookCardArrivalElem.length > 0 && bookCardCheckOutElem.length > 0) {
+  const bookCardArrival = new DateDropdown(bookCardArrivalElem, {
+    startDate: new Date("August 19, 2019")
+  });
+  const bookCardCheckOut = new DateDropdown(bookCardCheckOutElem, {
+    startDate: new Date("August 23, 2019")
+  });
+
+  bookCardArrival.init();
+  bookCardCheckOut.init();
+}
+
+const bookCardGuestsElem = $(".js-uikit-cards-book-guests");
+
+if (bookCardGuestsElem.length > 0) {
+  const bookCardGuests = new DropdownGuests(bookCardGuestsElem, {});
+
+  bookCardGuests.init();
+
+  const inputs = bookCardGuestsElem.find(".input-quantity");
+
+  if (inputs.length > 0) {
+    inputs.each((_, input) => {
+      const inputQuantity = new InputQuantity($(input));
+
+      inputQuantity.init();
+    });
+  }
+}
+
