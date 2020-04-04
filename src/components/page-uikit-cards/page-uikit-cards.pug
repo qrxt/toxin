@@ -257,7 +257,7 @@ mixin second-column()
           | Войти
           +svg("arrow_forward", 15, 15)
 
-        .uikit-cards__footer-wrapper
+        .uikit-cards__footer-wrapper.uikit-cards__footer-auth-wrapper
           p.uikit-cards__register-text
             | Нет аккаунта на Toxin?
           +btn({
@@ -266,6 +266,14 @@ mixin second-column()
           })
             | Создать
 
+mixin third-column()
+  .uikit-cards__column.uikit-cards__column--narrow
+    +card({
+      className: "uikit-cards__calendar"
+    })
+      input.datepicker-here.uikit-cards__calendar-input(
+        type="text"
+        data-inline="true")
 
 main.page-main
   section.uikit-cards
@@ -275,3 +283,4 @@ main.page-main
 
       +first-column()
       +second-column()
+      +third-column()
