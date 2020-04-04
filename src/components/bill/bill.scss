@@ -1,7 +1,3 @@
-.bill {
-  // background-color: red;
-}
-
 .bill__row {
   display: flex;
   justify-content: space-between;
@@ -16,6 +12,10 @@
 
 .bill__row-key {
   width: 70%;
+}
+
+.bill__row-value {
+  text-align: right;
 }
 
 .bill__row-key--hint {

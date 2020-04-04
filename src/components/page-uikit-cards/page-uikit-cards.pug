@@ -10,6 +10,7 @@ include ../radio/radio.pug
 include ../toggle/toggle.pug
 include ../option/option.pug
 include ../bill/bill.pug
+include ../total/total.pug
 
 mixin first-column()
   .uikit-cards__column
@@ -132,7 +133,7 @@ mixin first-column()
           | Перейти к оплате
           +svg("arrow_forward", 17, 17)
 
-        .uikit-cards__register-footer-wrapper
+        .uikit-cards__footer-wrapper
           p.uikit-cards__register-text
             | Уже есть аккаунт на Toxin
           +btn({
@@ -214,6 +215,57 @@ mixin second-column()
             }
           ]
         })
+        +total({
+          className: "uikit-cards__bill-total",
+          value: "38 081₽"
+        })
+        +btn({
+          className: "uikit-cards__book-submit",
+          type: "submit"
+        })
+          | Забронировать
+          +svg("arrow_forward", 15, 15)
+
+    +card({
+      className: "uikit-cards__auth"
+    })
+      form.uikit-cards__auth-form(
+        action="https://echo.htmlacademy.ru/"
+        method="POST")
+        h2.uikit-cards__auth-title
+          | Войти
+
+        +text-field({
+          className: "uikit-cards__book-input",
+          type: "email",
+          name: "user-auth-email",
+          placeholder: "Email",
+          required: true
+        })
+        +text-field({
+          className: "uikit-cards__book-input",
+          type: "password",
+          name: "user-auth-pass",
+          placeholder: "Пароль",
+          required: true
+        })
+
+        +btn({
+          className: "uikit-cards__auth-submit",
+          type: "submit"
+        })
+          | Войти
+          +svg("arrow_forward", 15, 15)
+
+        .uikit-cards__footer-wrapper
+          p.uikit-cards__register-text
+            | Нет аккаунта на Toxin?
+          +btn({
+            className: "btn--bordered uikit-cards__authorize-btn",
+            type: "button"
+          })
+            | Создать
+
 
 main.page-main
   section.uikit-cards

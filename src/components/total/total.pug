@@ -1,0 +1,13 @@
+mixin total(totalObj)
+  -
+    const {
+      className,
+      key = "Итого",
+      value
+    } = totalObj
+
+  dl.total(class=className)
+    dt.total__key
+      | #{ key }
+    dd.total__value
+      | #{ value }
