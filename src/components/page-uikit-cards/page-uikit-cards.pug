@@ -192,18 +192,28 @@ mixin second-column()
               name: "user-guests-adults"
             })
 
-        +bill({ className: "uikit-cards__bill" })
-          .bill__row.uikit-cards__bill-row
-            dt 9 990₽ х 4 суток
-            dd 39 960₽
+        +bill({
+          className: "uikit-cards__bill",
+          rowsClassName: "uikit-cards__bill-row",
+          rows: [
+            {
+              key: "9 990₽ х 4 суток",
+              value: "39 960₽"
+            },
 
-          .bill__row.uikit-cards__bill-row
-            dt Сбор за услуги: скидка 2 179₽
-            dd 0₽
+            {
+              key: "Сбор за услуги: скидка 2 179₽",
+              value: "0₽",
+              hint: "Текст всплывающей подсказки"
+            },
 
-          .bill__row.uikit-cards__bill-row
-            dt Сбор за дополнительные услуги
-            dd 300₽
+            {
+              key: "Сбор за дополнительные услуги",
+              value: "300₽",
+              hint: "Текст другой всплыващей подсказки"
+            }
+          ]
+        })
 
 main.page-main
   section.uikit-cards

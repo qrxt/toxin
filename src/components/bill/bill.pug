@@ -1,9 +1,44 @@
+mixin bill-row(billRowObj)
+  -
+    const {
+      className,
+      key,
+      value,
+      hint
+    } = billRowObj
+    const hintClass = hint
+      ? "bill__row-key--hint"
+      : "";
+
+  .bill__row(class=className)
+    dt.bill__row-key(
+      title=hint
+      class=hintClass
+      aria-label=hint)
+      | #{ key }
+    dd.bill__row-value
+      | #{ value }
+
 mixin bill(billObj)
   -
     const {
       className,
-      rows
+      rows,
+      rowsClassName
     } = billObj
 
   dl.bill(class=className)
-    block
+    each row in rows
+      -
+        const { key, value, hint } = row;
+        const classes = [ rowsClassName, row.className ];
+        const currentRowClassname = classes
+          .filter(Boolean)
+          .join(" ");
+
+      +bill-row({
+        className: currentRowClassname,
+        key,
+        value,
+        hint
+      })

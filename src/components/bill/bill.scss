@@ -1,0 +1,58 @@
+.bill {
+  // background-color: red;
+}
+
+.bill__row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 13px;
+}
+
+.bill__row-key,
+.bill__row-value {
+  font-family: $font-primary;
+  font-size: em(14);
+}
+
+.bill__row-key {
+  width: 70%;
+}
+
+.bill__row-key--hint {
+  position: relative;
+
+  @include transition(opacity);
+
+  &::after {
+    content: "";
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 0;
+    right: -17px;
+    border-radius: 50%;
+    border: 1px solid $dark-shade--25;
+
+    cursor: pointer;
+
+    @include transition(opacity);
+  }
+
+  &::before {
+    content: "i";
+    display: block;
+    position: absolute;
+    top: 1px;
+    right: -9px;
+
+    color: $dark-shade--25;
+    font-weight: 700;
+
+    @include transition(opacity);
+  }
+}
+
+.bill__row-key--hint:hover::before,
+.bill__row-key--hint:hover::after {
+  opacity: 0.6;
+}
