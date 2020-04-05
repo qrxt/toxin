@@ -92,3 +92,44 @@ if (bookCardGuestsElem.length > 0) {
   }
 }
 
+// Карточка календаря
+
+const calendarInputElem = $(".js-uikit-cards-calendar");
+
+if (calendarInputElem.length > 0) {
+  const node = calendarInputElem.get(0);
+
+  node.addEventListener("keydown", evt => {
+    if (evt.key === "Enter") {
+      evt.preventDefault();
+    }
+  });
+
+  const maskOptions = {
+    mask: Date
+  };
+
+  const arrowSvgHtml = `
+    <svg width="20" height="20" aria-hidden="true">
+      <use xlink:href="assets/img/sprite.svg#arrow_forward"></use>
+    </svg>
+  `;
+
+  const datepickerOptions = {
+    range: true,
+    inline: true,
+    keyboardNav: true,
+    navTitles: {
+      days: "MM yyyy"
+    },
+    startDate: new Date("August 19, 2019"),
+    prevHtml: arrowSvgHtml,
+    nextHtml: arrowSvgHtml
+  };
+
+  const calendar = new TextFieldMasked(node, {
+    maskOptions, datepickerOptions
+  });
+
+  calendar.init();
+}

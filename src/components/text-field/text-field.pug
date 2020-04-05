@@ -11,7 +11,8 @@ mixin text-field(textInputObj)
       placeholder,
       inputmode,
       value,
-      required
+      required,
+      inputClass
     } = textInputObj
 
   p.text-field(class=className)
@@ -26,5 +27,6 @@ mixin text-field(textInputObj)
         placeholder=placeholder
         inputmode=inputmode
         value=value
-        required=required)
+        required=required
+        class=inputClass)
       block

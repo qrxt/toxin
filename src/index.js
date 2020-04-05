@@ -2,7 +2,6 @@ import "jquery-ui-bundle";
 import "jquery-ui-bundle/jquery-ui.min.css";
 
 import "air-datepicker";
-import "air-datepicker/dist/css/datepicker.css";
 
 import "./style";
 

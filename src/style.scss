@@ -1,4 +1,4 @@
-// vendors
+// vendors node_modules
 
 @import "~normalize.css";
 
@@ -11,6 +11,10 @@
 @import "./scss/type";
 @import "./scss/parts";
 @import "./scss/animations";
+
+// vendors custom
+
+@import "./scss/vendors/datepicker";
 
 // components
 

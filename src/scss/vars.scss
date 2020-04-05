@@ -17,9 +17,16 @@ $black: #000000;
 $white: #ffffff;
 
 $blue: #8ba4f9;
+$blue--25: rgba($color: $blue, $alpha: 0.25);
+
 $purple: #bc9cff;
+$purple--25: rgba($color: $purple, $alpha: 0.25);
+
 $green: #6fcf97;
+$green--25: rgba($color: $green, $alpha: 0.25);
+
 $cyan: #66d2ea;
+$cyan--25: rgba($color: $cyan, $alpha: 0.25);
 
 $dark-shade: rgba($color: $black, $alpha: 1);
 $dark-shade--75: rgba($color: $black, $alpha: 0.75);
@@ -35,7 +42,11 @@ $selection-color: rgba($color: $blue, $alpha: 0.5);
 // gradients
 
 $gradient-purple-blue: linear-gradient(180deg, $purple 0%, $blue 100%);
+$gradient-purple-blue--transparent: linear-gradient(180deg, $purple--25 0%, $blue--25 100%);
+
 $gradient-green-cyan: linear-gradient(180deg, $green 0%, $cyan 100%);
+$gradient-green-cyan--transparent: linear-gradient(180deg, $green--25 0%, $cyan--25 100%);
+
 $gradient-gray: linear-gradient(180deg, $dark-shade--25, $dark-shade--25);
 
 // animations

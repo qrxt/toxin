@@ -271,9 +271,14 @@ mixin third-column()
     +card({
       className: "uikit-cards__calendar"
     })
-      input.datepicker-here.uikit-cards__calendar-input(
-        type="text"
-        data-inline="true")
+      +text-field({
+          className: "uikit-cards__calendar-input js-uikit-cards-calendar",
+          type: "date",
+          interactLike: "date",
+          placeholder: "ДД.ММ.ГГГГ",
+          name: "user-date",
+          inputClass: "visually-hidden--always"
+        })
 
 main.page-main
   section.uikit-cards

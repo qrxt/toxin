@@ -267,7 +267,11 @@
   padding-right: 5px;
 }
 
-.uikit-cards__calendar-input {
-  position: absolute;
-  visibility: hidden;
+.uikit-cards__calendar-input input ~ .datepicker-inline {
+  width: 320px;
+}
+
+.uikit-cards__calendar-input input ~ .datepicker-inline .datepicker {
+  width: 100%;
+  border: none;
 }
