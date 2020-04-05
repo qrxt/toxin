@@ -275,3 +275,14 @@
   width: 100%;
   border: none;
 }
+
+.uikit-cards__calendar-footer {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  padding: 14px 20px 15px;
+}
+
+.uikit-cards__calendar-reset {
+  color: $dark-shade--25;
+}

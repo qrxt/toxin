@@ -279,6 +279,18 @@ mixin third-column()
           name: "user-date",
           inputClass: "visually-hidden--always"
         })
+      .uikit-cards__calendar-footer
+        +btn({
+          className: "btn--transparent uikit-cards__calendar-submit",
+          type: "button"
+        })
+          | Применить
+
+        +btn({
+          className: "btn--transparent uikit-cards__calendar-reset",
+          type: "button"
+        })
+          | Очистить
 
 main.page-main
   section.uikit-cards
