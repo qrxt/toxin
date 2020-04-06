@@ -3,9 +3,6 @@ import IMask from "imask";
 
 import TextField from "./text-field";
 
-import "air-datepicker/dist/css/datepicker.min.css";
-import "air-datepicker/dist/js/datepicker";
-
 export default class TextFieldMasked extends TextField {
   constructor (node, options) {
     super(node, options);

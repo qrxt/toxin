@@ -1,3 +1,7 @@
+.datepicker { // Popup calendar on active
+  width: 320px;
+}
+
 .datepicker--day-name {
   font-family: $font-primary;
   font-size: em(12);
@@ -69,23 +73,24 @@
   height: 40px;
   border-radius: 50%;
   z-index: 10;
+}
 
-  &:hover,
-  &:focus {
-    background: $gradient-green-cyan;
-    color: $white;
-  }
+.datepicker--cell-day.-selected-,
+.datepicker--cell-day.-selected-:hover,
+.datepicker--cell-day.-selected-.-focus- {
+  background: $gradient-green-cyan;
+}
+
+.datepicker--cell-day:hover,
+.datepicker--cell-day.-focus- {
+  background: $gradient-green-cyan;
+  color: $white;
 }
 
 .datepicker--cell-day.-range-from-,
 .datepicker--cell-day.-range-to- {
   border-radius: 50%;
   background: $gradient-purple-blue;
-
-  &:hover,
-  &:focus {
-    background: $gradient-green-cyan;
-  }
 
   &::before {
     content: "";
@@ -110,14 +115,20 @@
     border-radius: 50%;
     opacity: 0;
   }
+}
 
-  &:hover::before {
-    background: $gradient-purple-blue--transparent;
-  }
+.datepicker--cell-day.-range-from-:hover::before,
+.datepicker--cell-day.-range-from-.-focus-::before,
+.datepicker--cell-day.-range-to-:hover::before,
+.datepicker--cell-day.-range-to-.-focus-::before {
+  background: $gradient-purple-blue--transparent;
+}
 
-  &:hover::after {
-    opacity: 1;
-  }
+.datepicker--cell-day.-range-from-:hover::after,
+.datepicker--cell-day.-range-from-.-focus-::after,
+.datepicker--cell-day.-range-to-:hover::after,
+.datepicker--cell-day.-range-to-.-focus-::after {
+  opacity: 1;
 }
 
 .datepicker--cell-day.-range-from- {
@@ -154,12 +165,12 @@
 
 .datepicker--cell-day.-in-range- {
   background: $gradient-purple-blue--transparent;
+}
 
-  &:hover,
-  &:focus {
-    color: $dark-shade;
-    background: $gradient-green-cyan--transparent;
-  }
+.datepicker--cell-day.-in-range-:hover,
+.datepicker--cell-day.-in-range-.-focus- {
+  color: $dark-shade;
+  background: $gradient-green-cyan--transparent;
 }
 
 .datepicker--cell-month:hover,
