@@ -65,7 +65,7 @@
   margin-bottom: 13px;
 }
 
-.datepicker--cell {
+.datepicker--cell-day {
   height: 40px;
   border-radius: 50%;
   z-index: 10;
@@ -77,8 +77,8 @@
   }
 }
 
-.datepicker--cell.-range-from-,
-.datepicker--cell.-range-to- {
+.datepicker--cell-day.-range-from-,
+.datepicker--cell-day.-range-to- {
   border-radius: 50%;
   background: $gradient-purple-blue;
 
@@ -120,7 +120,7 @@
   }
 }
 
-.datepicker--cell.-range-from- {
+.datepicker--cell-day.-range-from- {
   &::before {
     height: 105%;
     right: -1px;
@@ -128,7 +128,7 @@
   }
 }
 
-.datepicker--cell.-range-to- {
+.datepicker--cell-day.-range-to- {
   &::before {
     height: 105%;
     top: -1px;
@@ -136,7 +136,7 @@
   }
 }
 
-.datepicker--cell.-range-to-.-selected- {
+.datepicker--cell-day.-range-to-.-selected- {
   &::before {
     height: 100%;
     top: 0;
@@ -144,7 +144,7 @@
   }
 }
 
-.datepicker--cell.-range-from-.-selected- {
+.datepicker--cell-day.-range-from-.-selected- {
   &::before {
     height: 100%;
     right: 0;
@@ -152,7 +152,7 @@
   }
 }
 
-.datepicker--cell.-in-range- {
+.datepicker--cell-day.-in-range- {
   background: $gradient-purple-blue--transparent;
 
   &:hover,
@@ -160,4 +160,34 @@
     color: $dark-shade;
     background: $gradient-green-cyan--transparent;
   }
+}
+
+.datepicker--cell-month:hover,
+.datepicker--cell-month.-focus- {
+  background: $gradient-green-cyan;
+  color: $white;
+}
+
+.datepicker--cell-month.-selected- {
+  background: $gradient-purple-blue;
+}
+
+.datepicker--cell-month.-selected-:hover,
+.datepicker--cell-month.-selected-.-focus- {
+  background: $gradient-green-cyan;
+}
+
+.datepicker--cell-year:hover,
+.datepicker--cell-year.-focus- {
+  background: $gradient-green-cyan;
+  color: $white;
+}
+
+.datepicker--cell-year.-selected- {
+  background: $gradient-purple-blue;
+}
+
+.datepicker--cell-year.-selected-:hover,
+.datepicker--cell-year.-selected-.-focus- {
+  background: $gradient-green-cyan;
 }
