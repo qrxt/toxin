@@ -12,10 +12,6 @@
 @import "./scss/parts";
 @import "./scss/animations";
 
-// vendors custom
-
-@import "./scss/vendors/datepicker";
-
 // components
 
 @import "./components/svg-gradients/svg-gradients";
@@ -42,6 +38,7 @@
 @import "./components/card/card";
 @import "./components/bill/bill";
 @import "./components/total/total";
+@import "./components/calendar/calendar";
 
 // layouts
 @import "./components/uikit-header/uikit-header";

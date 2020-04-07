@@ -202,3 +202,18 @@
 .datepicker--cell-year.-selected-.-focus- {
   background: $gradient-green-cyan;
 }
+
+.datepicker__footer {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  padding: 14px 20px 15px;
+}
+
+.datepicker__custom-btn {
+  font-size: em(14);
+}
+
+.datepicker__btn-reset {
+  color: $dark-shade--50;
+}
