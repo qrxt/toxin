@@ -62,19 +62,10 @@ export default class Calendar {
 
   init () {
     const datepicker = this.nodeInput.datepicker(this.options);
-    const submitBtn = this.node.find(".js-calendar-submit");
-    const resetBtn = this.node.find(".js-calendar-reset");
 
     const isDateSelected = () => this.options.range
-      ? datepicker.data("datepicker").selectedDates.length === 2
-      : datepicker.data("datepicker").selectedDates.length === 1;
-
-    const writeToInput = () => {
-      if (isDateSelected()) {
-        this.nodeInput.val(this.formattedDate);
-        resetBtn.show();
-      }
-    };
+      ? datepicker.data("datepicker").selectedDates.length >= 2
+      : datepicker.data("datepicker").selectedDates.length >= 1;
 
     // Select start dates from options
     datepicker.data("datepicker")
@@ -83,14 +74,22 @@ export default class Calendar {
     this.node.find(".datepicker")
       .append(calendarFooterTemplate);
 
+    const submitBtn = this.node.find(".js-calendar-submit");
+    const resetBtn = this.node.find(".js-calendar-reset");
+
     this.nodeInput.get(0).type = "text";
 
-    // Write selected dates to associated input
-    writeToInput();
+    // Write selected dates to associated input on calendar init
+    if (isDateSelected()) {
+      this.nodeInput.val(this.formattedDate);
+      resetBtn.show();
+    }
 
     submitBtn.on("click", () => {
-      alert();
-      writeToInput();
+      if (isDateSelected()) {
+        this.nodeInput.val(this.formattedDate);
+        resetBtn.show();
+      }
     });
 
     resetBtn.on("click", () => {
