@@ -1,0 +1,204 @@
+// .datepicker {
+//   width: 320px;
+// }
+
+// .datepicker--day-name {
+//   font-family: $font-primary;
+//   font-size: em(12);
+//   line-height: 15px;
+//   font-weight: 700;
+//   color: $purple;
+//   text-transform: capitalize;
+// }
+
+// .datepicker--nav {
+//   display: flex;
+//   align-items: center;
+//   margin-bottom: 18px;
+//   padding: 8px 22px;
+//   border: none;
+// }
+
+// .datepicker--nav-action {
+//   @include transition(opacity);
+
+//   &[data-action="prev"] {
+//     transform: rotate(180deg);
+//   }
+
+//   &[data-action="prev"],
+//   &[data-action="next"] {
+//     width: 20px;
+//     height: 20px;
+//     fill: $purple;
+//   }
+
+//   &:hover {
+//     opacity: 0.6;
+//     background: none;
+//   }
+
+//   &:active {
+//     opacity: 0.3;
+//     background: none;
+//   }
+// }
+
+// .datepicker--nav-title {
+//   padding: 0;
+
+//   font-family: $font-secondary;
+//   font-size: em(22);
+//   line-height: 24px;
+//   font-weight: 700;
+//   color: $dark-shade;
+
+//   @include transition(opacity);
+
+//   &:hover {
+//     background: none;
+//     opacity: 0.3;
+//   }
+// }
+
+// .datepicker--content {
+//   padding: 5px 20px;
+// }
+
+// .datepicker--days-names {
+//   margin-bottom: 13px;
+// }
+
+// .datepicker--cell-day {
+//   height: 40px;
+//   border-radius: 50%;
+//   z-index: 10;
+// }
+
+// .datepicker--cell-day.-selected-,
+// .datepicker--cell-day.-selected-:hover,
+// .datepicker--cell-day.-selected-.-focus- {
+//   background: $gradient-green-cyan;
+// }
+
+// .datepicker--cell-day:hover,
+// .datepicker--cell-day.-focus- {
+//   background: $gradient-green-cyan;
+//   color: $white;
+// }
+
+// .datepicker--cell-day.-range-from-,
+// .datepicker--cell-day.-range-to- {
+//   border-radius: 50%;
+//   background: $gradient-purple-blue;
+
+//   &::before {
+//     content: "";
+//     display: block;
+//     width: 50%;
+//     height: 100%;
+//     position: absolute;
+//     background: $gradient-purple-blue--transparent;
+//     z-index: -1;
+//   }
+
+//   &::after {
+//     content: "";
+//     display: block;
+//     width: 100%;
+//     height: 100%;
+//     position: absolute;
+//     left: 0;
+//     top: 0;
+//     z-index: -1;
+//     background: $gradient-green-cyan;
+//     border-radius: 50%;
+//     opacity: 0;
+//   }
+// }
+
+// .datepicker--cell-day.-range-from-:hover::before,
+// .datepicker--cell-day.-range-from-.-focus-::before,
+// .datepicker--cell-day.-range-to-:hover::before,
+// .datepicker--cell-day.-range-to-.-focus-::before {
+//   background: $gradient-purple-blue--transparent;
+// }
+
+// .datepicker--cell-day.-range-from-:hover::after,
+// .datepicker--cell-day.-range-from-.-focus-::after,
+// .datepicker--cell-day.-range-to-:hover::after,
+// .datepicker--cell-day.-range-to-.-focus-::after {
+//   opacity: 1;
+// }
+
+// .datepicker--cell-day.-range-from- {
+//   &::before {
+//     height: 105%;
+//     right: -1px;
+//     top: -1px;
+//   }
+// }
+
+// .datepicker--cell-day.-range-to- {
+//   &::before {
+//     height: 105%;
+//     top: -1px;
+//     left: -1px;
+//   }
+// }
+
+// .datepicker--cell-day.-range-to-.-selected- {
+//   &::before {
+//     height: 100%;
+//     top: 0;
+//     left: 0;
+//   }
+// }
+
+// .datepicker--cell-day.-range-from-.-selected- {
+//   &::before {
+//     height: 100%;
+//     right: 0;
+//     top: 0;
+//   }
+// }
+
+// .datepicker--cell-day.-in-range- {
+//   background: $gradient-purple-blue--transparent;
+// }
+
+// .datepicker--cell-day.-in-range-:hover,
+// .datepicker--cell-day.-in-range-.-focus- {
+//   color: $dark-shade;
+//   background: $gradient-green-cyan--transparent;
+// }
+
+// .datepicker--cell-month:hover,
+// .datepicker--cell-month.-focus- {
+//   background: $gradient-green-cyan;
+//   color: $white;
+// }
+
+// .datepicker--cell-month.-selected- {
+//   background: $gradient-purple-blue;
+// }
+
+// .datepicker--cell-month.-selected-:hover,
+// .datepicker--cell-month.-selected-.-focus- {
+//   background: $gradient-green-cyan;
+// }
+
+// .datepicker--cell-year:hover,
+// .datepicker--cell-year.-focus- {
+//   background: $gradient-green-cyan;
+//   color: $white;
+// }
+
+// .datepicker--cell-year.-selected- {
+//   background: $gradient-purple-blue;
+// }
+
+// .datepicker--cell-year.-selected-:hover,
+// .datepicker--cell-year.-selected-.-focus- {
+//   background: $gradient-green-cyan;
+// }

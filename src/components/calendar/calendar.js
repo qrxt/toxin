@@ -6,7 +6,7 @@ const arrowSvgHtml = `
   </svg>
 `;
 
-const submitBtn = $("<button />", {
+const submitBtnTemplate = $("<button />", {
   class: [
     "btn",
     "btn--transparent",
@@ -18,7 +18,7 @@ const submitBtn = $("<button />", {
   append: "Применить"
 });
 
-const resetBtn = $("<button />", {
+const resetBtnTemplate = $("<button />", {
   class: [
     "btn",
     "btn--transparent",
@@ -30,11 +30,11 @@ const resetBtn = $("<button />", {
   append: "Очистить"
 });
 
-const calendarFooter = $("<div >", {
+const calendarFooterTemplate = $("<div >", {
   class: "datepicker__footer",
   append: [
-    submitBtn,
-    resetBtn
+    submitBtnTemplate,
+    resetBtnTemplate
   ]
 });
 
@@ -51,7 +51,10 @@ export default class Calendar {
       prevHtml: arrowSvgHtml,
       nextHtml: arrowSvgHtml,
 
-      dateFormat: "_",
+      onSelect: formattedDate => {
+        this.nodeInput.val("");
+        this.formattedDate = formattedDate;
+      },
 
       ...options
     };
@@ -59,25 +62,40 @@ export default class Calendar {
 
   init () {
     const datepicker = this.nodeInput.datepicker(this.options);
+    const submitBtn = this.node.find(".js-calendar-submit");
+    const resetBtn = this.node.find(".js-calendar-reset");
 
+    const isDateSelected = () => this.options.range
+      ? datepicker.data("datepicker").selectedDates.length === 2
+      : datepicker.data("datepicker").selectedDates.length === 1;
+
+    const writeToInput = () => {
+      if (isDateSelected()) {
+        this.nodeInput.val(this.formattedDate);
+        resetBtn.show();
+      }
+    };
+
+    // Select start dates from options
     datepicker.data("datepicker")
       .selectDate(this.options.startDates);
 
     this.node.find(".datepicker")
-      .append(calendarFooter);
+      .append(calendarFooterTemplate);
 
     this.nodeInput.get(0).type = "text";
 
-    const submitBtn = this.node.find(".js-calendar-submit");
-    const resetBtn = this.node.find(".js-calendar-reset");
+    // Write selected dates to associated input
+    writeToInput();
 
-    // submitBtn.on("click", () => {
-
-    // });
+    submitBtn.on("click", () => {
+      alert();
+      writeToInput();
+    });
 
     resetBtn.on("click", () => {
-      datepicker.data("datepicker")
-        .clear();
+      datepicker.data("datepicker").clear();
+      resetBtn.hide();
     });
   }
 }
