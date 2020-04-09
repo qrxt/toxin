@@ -1,9 +1,15 @@
 import "jquery-ui-bundle";
 import "jquery-ui-bundle/jquery-ui.min.css";
 
+// Datepicker
 import "air-datepicker";
 import "air-datepicker/dist/css/datepicker.min.css";
 import "air-datepicker/dist/js/datepicker";
+
+// Carousel
+import "owl.carousel";
+import "owl.carousel/dist/assets/owl.carousel.css";
+import "owl.carousel/dist/assets/owl.theme.default.css";
 
 import "./style";
 

@@ -267,6 +267,10 @@
   padding-right: 5px;
 }
 
+.uikit-cards__calendar {
+  margin-bottom: 42px;
+}
+
 .uikit-cards__calendar-input input ~ .datepicker-inline {
   width: 320px;
 }
@@ -285,4 +289,9 @@
 
 .uikit-cards__calendar-reset {
   color: $dark-shade--25;
+}
+
+.uikit-cards__room {
+  width: 84.5%;
+  padding: 0;
 }

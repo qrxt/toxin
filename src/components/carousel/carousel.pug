@@ -1,0 +1,19 @@
+mixin carousel(carouselObj)
+  -
+    const {
+      className,
+      roomImages
+    } = carouselObj
+
+  .carousel.owl-carousel.owl-theme(class=className)
+    each roomImage in roomImages
+      -
+        const {
+          src,
+          alt
+        } = roomImage
+
+      .item
+        img(
+          src=src
+          alt=alt)

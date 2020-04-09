@@ -1,6 +1,7 @@
 import $ from "jquery";
 
 import Calendar from "@components/calendar/calendar";
+import Carousel from "@components/carousel/carousel";
 import DateDropdown from "@components/date-dropdown/date-dropdown";
 import DropdownGuests from "@components/dropdown-guests/dropdown-guests";
 import InputQuantity from "@components/input-quantity/input-quantity";
@@ -111,4 +112,14 @@ if (calendarInputElem.length > 0) {
   });
 
   calendar.init();
+}
+
+// Первая карточка номера отеля
+
+const hotelRoomCarouselElem = $(".js-uikit-room-first-carousel");
+
+if (hotelRoomCarouselElem.length > 0) {
+  const carousel = new Carousel(hotelRoomCarouselElem, {});
+
+  carousel.init();
 }

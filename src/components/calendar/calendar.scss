@@ -75,6 +75,10 @@
   z-index: 10;
 }
 
+.datepicker--cell-day.-current- {
+  color: $green;
+}
+
 .datepicker--cell-day.-selected-,
 .datepicker--cell-day.-selected-:hover,
 .datepicker--cell-day.-selected-.-focus- {

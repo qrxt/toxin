@@ -68,6 +68,8 @@ export default class Calendar {
     const datepickerData = datepicker.data("datepicker");
     const datepickerElem = datepickerData.$datepicker;
 
+    this.datepicker = datepicker;
+
     const isDateSelected = () => this.options.range
       ? datepicker.data("datepicker").selectedDates.length >= 2
       : datepicker.data("datepicker").selectedDates.length >= 1;
