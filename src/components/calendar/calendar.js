@@ -6,7 +6,7 @@ const arrowSvgHtml = `
   </svg>
 `;
 
-const submitBtnTemplate = $("<button />", {
+const getSubmitBtnTemplate = () => $("<button />", {
   class: [
     "btn",
     "btn--transparent",
@@ -18,7 +18,7 @@ const submitBtnTemplate = $("<button />", {
   append: "Применить"
 });
 
-const resetBtnTemplate = $("<button />", {
+const getResetBtnTemplate = () => $("<button />", {
   class: [
     "btn",
     "btn--transparent",
@@ -30,18 +30,21 @@ const resetBtnTemplate = $("<button />", {
   append: "Очистить"
 });
 
-const calendarFooterTemplate = $("<div >", {
+const getCalendarFooterTemplate = () => $("<div >", {
   class: "datepicker__footer",
   append: [
-    submitBtnTemplate,
-    resetBtnTemplate
+    getSubmitBtnTemplate(),
+    getResetBtnTemplate()
   ]
 });
 
 export default class Calendar {
-  constructor (node, options) {
+  constructor (nodes, options) {
+    const { node, output } = nodes;
+
     this.node = node;
     this.nodeInput = this.node.find("input");
+    this.output = output;
 
     this.options = {
       keyboardNav: true,
@@ -62,20 +65,20 @@ export default class Calendar {
 
   init () {
     const datepicker = this.nodeInput.datepicker(this.options);
+    const datepickerData = datepicker.data("datepicker");
+    const datepickerElem = datepickerData.$datepicker;
 
     const isDateSelected = () => this.options.range
       ? datepicker.data("datepicker").selectedDates.length >= 2
       : datepicker.data("datepicker").selectedDates.length >= 1;
 
     // Select start dates from options
-    datepicker.data("datepicker")
-      .selectDate(this.options.startDates);
+    datepickerData.selectDate(this.options.startDates);
 
-    this.node.find(".datepicker")
-      .append(calendarFooterTemplate);
+    datepickerElem.append(getCalendarFooterTemplate());
 
-    const submitBtn = this.node.find(".js-calendar-submit");
-    const resetBtn = this.node.find(".js-calendar-reset");
+    const submitBtn = datepickerElem.find(".js-calendar-submit");
+    const resetBtn = datepickerElem.find(".js-calendar-reset");
 
     this.nodeInput.get(0).type = "text";
 
@@ -90,11 +93,19 @@ export default class Calendar {
         this.nodeInput.val(this.formattedDate);
         resetBtn.show();
       }
+
+      if (this.output) {
+        this.output.text(this.formattedDate);
+      }
     });
 
     resetBtn.on("click", () => {
       datepicker.data("datepicker").clear();
       resetBtn.hide();
+
+      if (this.output) {
+        this.output.text("ДД.ММ.ГГГГ");
+      }
     });
   }
 }

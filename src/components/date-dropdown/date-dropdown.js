@@ -1,11 +1,11 @@
 import $ from "jquery";
 
-const noConflict = $.noConflict();
+import Calendar from "@components/calendar/calendar";
 
 export default class DateDropdown {
   constructor (node, options) {
     this.node = node;
-    this.nodeInput = noConflict(node).find("input");
+    this.nodeInput = this.node.find("input");
     this.nodeText = $(node).find(".date-dropdown__text");
     this.options = options;
   }
@@ -31,15 +31,17 @@ export default class DateDropdown {
       this._setDate(startDateRange);
     }
 
-    this.nodeInput
-      .datepicker({
-        ...this.options,
+    const calendar = new Calendar({
+      node: this.node,
+      output: this.nodeText
+    }, {
+      offset: yOffset,
+      outputNode: this.nodeText,
 
-        offset: yOffset,
-        onSelect: formattedDate => {
-          this.nodeText.text(formattedDate.toLowerCase());
-        }
-      });
+      ...this.options
+    });
+
+    calendar.init();
 
     this.nodeInput
       .get(0)

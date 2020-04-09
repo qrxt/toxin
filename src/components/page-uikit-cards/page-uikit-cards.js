@@ -98,7 +98,10 @@ if (bookCardGuestsElem.length > 0) {
 const calendarInputElem = $(".js-uikit-cards-calendar");
 
 if (calendarInputElem.length > 0) {
-  const calendar = new Calendar(calendarInputElem, {
+  const calendar = new Calendar({
+    node: calendarInputElem,
+    output: null
+  }, {
     range: true,
     inline: true,
     startDates: [
