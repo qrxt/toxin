@@ -5,6 +5,7 @@
 .uikit-cards__column {
   width: 32.7%;
   padding-top: 8px;
+  margin-bottom: 100px;
 
   &--narrow {
     width: 320px;
@@ -184,7 +185,7 @@
 
 .uikit-cards__cost {
   margin: 0;
-  padding-right: 7px;
+  padding-right: 2px;
 
   color: $dark-shade--50;
   font-size: em(14);
@@ -193,9 +194,11 @@
 
 .uikit-cards__cost-per {
   margin-left: 3px;
+  padding-left: 7px;
   color: $dark-shade--50;
   font-family: $font-primary;
   font-size: em(12);
+  font-weight: 400;
 }
 
 .uikit-cards__book-guests {
@@ -292,6 +295,81 @@
 }
 
 .uikit-cards__room {
-  width: 84.5%;
+  width: 84.4%;
   padding: 0;
+  border: none;
+}
+
+.uikit-cards__room-first {
+  margin-bottom: 40px;
+}
+
+.uikit-cards__room-first-carousel {
+  margin-bottom: 20px;
+}
+
+.uikit-cards__room-number {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 0 20px;
+  padding: 0 16px 0 20px;
+  position: relative;
+
+  &::before {
+    content: "";
+    display: block;
+    width: 84%;
+    height: 1px;
+    position: absolute;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    bottom: -10px;
+    background-color: $dark-shade--5;
+  }
+}
+
+.uikit-cards__room-inner {
+  font-size: em(20);
+}
+
+.uikit-cards__room-cost {
+  margin: 0 3px 0 0;
+
+  color: $dark-shade--50;
+  font-size: em(15);
+  font-weight: 700;
+}
+
+.uikit-cards__room-cost-per {
+  margin-left: 3px;
+  color: $dark-shade--50;
+  font-family: $font-primary;
+  font-size: em(13);
+  font-weight: 400;
+}
+
+.uikit-cards__room-rating-wrapper {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  padding: 0 16px 17px 22px;
+}
+
+.uikit-cards__rating {
+  width: 50%;
+}
+
+.uikit-cards__room-reviews {
+  margin: 0;
+}
+
+.uikit-cards__room-reviews,
+.uikit-cards__room-reviews-quantity {
+  color: $dark-shade--50;
+  font-size: em(15);
+}
+
+.uikit-cards__room-reviews-quantity {
+  font-weight: 700;
 }

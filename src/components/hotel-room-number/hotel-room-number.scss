@@ -1,0 +1,25 @@
+.hotel-room-number__number {
+  width: 35%;
+  margin: 0;
+
+  font-family: $font-secondary;
+  font-size: em(23);
+  font-weight: 700;
+
+  &::before {
+    content: "№";
+    margin-right: 7px;
+    font-size: em(11);
+    font-weight: 700;
+  }
+}
+
+.hotel-room-number__category {
+  padding-left: 6px;
+
+  color: $purple;
+  font-family: $font-primary;
+  font-size: em(8);
+  font-weight: 700;
+  text-transform: uppercase;
+}

@@ -1,0 +1,16 @@
+mixin hotel-room-number(hotelRoomHumberObj)
+  -
+    const {
+      className,
+      roomNumber,
+      roomNumberClassName,
+      roomCategory
+    } = hotelRoomHumberObj
+
+  .hotel-room-number(class=className)
+    p.hotel-room-number__number(class=roomNumberClassName)
+      | #{ roomNumber }
+      span.hotel-room-number__category
+        | #{ roomCategory }
+
+    block

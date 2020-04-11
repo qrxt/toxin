@@ -1,19 +1,26 @@
+const arrowSvgHtml = `
+  <svg width="20" height="20" aria-hidden="true">
+    <use xlink:href="assets/img/sprite.svg#expand-more"></use>
+  </svg>
+`;
+
 export default class Carousel {
   constructor (node, options) {
     this.node = node;
     this.options = {
       loop: false,
-      nav: false,
+      nav: true,
       dots: true,
       items: 1,
+      autoWidth: true,
+      lazyLoad: true,
+      navText: [ arrowSvgHtml, arrowSvgHtml ],
 
       ...options
     };
   }
 
   init () {
-    console.log(this.options);
-
     this.node
       .owlCarousel(this.options);
   }

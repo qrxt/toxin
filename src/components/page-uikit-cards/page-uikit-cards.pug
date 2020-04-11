@@ -12,6 +12,8 @@ include ../option/option.pug
 include ../bill/bill.pug
 include ../total/total.pug
 include ../carousel/carousel.pug
+include ../hotel-room-number/hotel-room-number.pug
+include ../rating/rating.pug
 
 mixin first-column()
   .uikit-cards__column
@@ -154,12 +156,11 @@ mixin second-column()
         h2.visually-hidden
           | Забронировать номер в отеле
 
-        .uikit-cards__book-header
-          p.uikit-cards__number
-            | 888
-            span.uikit-cards__room-category
-              | Люкс
-
+        +hotel-room-number({
+          className: "uikit-cards__book-header",
+          roomNumber: "888",
+          roomCategory: "Люкс"
+        })
           p.uikit-cards__cost
             | 9 990₽
             span.uikit-cards__cost-per
@@ -295,9 +296,92 @@ mixin third-column()
           {
             src: "./assets/img/hotel-room-2.png",
             alt: "Другая спальня"
+          },
+
+          {
+            src: "./assets/img/hotel-room-2.png",
+            alt: "Еще спальня"
+          },
+
+          {
+            src: "./assets/img/hotel-room-2.png",
+            alt: "Опять спальня"
           }
         ]
       })
+
+      +hotel-room-number({
+        className: "uikit-cards__room-number",
+        roomNumberClassName: "uikit-cards__room-inner",
+        roomNumber: "888",
+        roomCategory: "Люкс"
+      })
+        p.uikit-cards__room-cost
+          | 9 990₽
+          span.uikit-cards__room-cost-per
+            | в сутки
+
+      .uikit-cards__room-rating-wrapper
+        +rating({
+          className: "uikit-cards__rating js-uikit-cards-rating-first",
+          initialValue: 5,
+          name: "room-rating-first"
+        })
+        p.uikit-cards__room-reviews
+          span.uikit-cards__room-reviews-quantity
+            | #{ 145 }
+          |
+          | Отзывов
+
+    +card({
+      className: "uikit-cards__room uikit-cards__room-second"
+    })
+      +carousel({
+        className: "uikit-cards__room-first-carousel js-uikit-room-second-carousel",
+        roomImages: [
+          {
+            src: "./assets/img/hotel-room-2.png",
+            alt: "Просторная спальня"
+          },
+
+          {
+            src: "./assets/img/hotel-room-1.png",
+            alt: "Другая спальня"
+          },
+
+          {
+            src: "./assets/img/hotel-room-2.png",
+            alt: "Еще спальня"
+          },
+
+          {
+            src: "./assets/img/hotel-room-2.png",
+            alt: "Опять спальня"
+          }
+        ]
+      })
+
+      +hotel-room-number({
+        className: "uikit-cards__room-number",
+        roomNumberClassName: "uikit-cards__room-inner",
+        roomNumber: "840"
+      })
+        p.uikit-cards__room-cost
+          | 9 900₽
+          span.uikit-cards__room-cost-per
+            | в сутки
+
+      .uikit-cards__room-rating-wrapper
+        +rating({
+          className: "uikit-cards__rating js-uikit-cards-rating-second",
+          initialValue: 4,
+          name: "room-rating-second"
+        })
+        p.uikit-cards__room-reviews
+          span.uikit-cards__room-reviews-quantity
+            | #{ 65 }
+          |
+          | Отзывов
 
 main.page-main
   section.uikit-cards

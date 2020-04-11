@@ -5,6 +5,7 @@ import Carousel from "@components/carousel/carousel";
 import DateDropdown from "@components/date-dropdown/date-dropdown";
 import DropdownGuests from "@components/dropdown-guests/dropdown-guests";
 import InputQuantity from "@components/input-quantity/input-quantity";
+import Rating from "@components/rating/rating";
 import TextFieldMasked from "@components/text-field/text-field-masked";
 
 const hotelCardArrivalElem = $(".js-uikit-cards-arrival");
@@ -121,5 +122,37 @@ const hotelRoomCarouselElem = $(".js-uikit-room-first-carousel");
 if (hotelRoomCarouselElem.length > 0) {
   const carousel = new Carousel(hotelRoomCarouselElem, {});
 
-  carousel.init();
+  $(document).ready(() => {
+    carousel.init();
+  });
+}
+
+const ratingFirstElem = $(".js-uikit-cards-rating-first");
+
+if (ratingFirstElem.length > 0) {
+  const ratingFirst = new Rating(ratingFirstElem);
+
+  ratingFirst.init();
+}
+
+// Вторая карточка номера отеля
+
+const hotelRoomCarouselSecondElem = $(".js-uikit-room-second-carousel");
+
+if (hotelRoomCarouselSecondElem.length > 0) {
+  const carousel = new Carousel(hotelRoomCarouselSecondElem, {
+    nav: false
+  });
+
+  $(document).ready(() => {
+    carousel.init();
+  });
+}
+
+const ratingSecondElem = $(".js-uikit-cards-rating-second");
+
+if (ratingSecondElem.length > 0) {
+  const ratingSecond = new Rating(ratingSecondElem);
+
+  ratingSecond.init();
 }
