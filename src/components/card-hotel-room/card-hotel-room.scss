@@ -3,6 +3,10 @@
   border: none;
 }
 
+.card-hotel-room__carousel {
+  margin-bottom: 20px;
+}
+
 .card-hotel-room__first {
   margin-bottom: 40px;
 }
@@ -34,11 +38,19 @@
 
 .card-hotel-room__inner {
   font-size: em(20);
+
+  &::before {
+    margin-right: 5px;
+  }
+}
+
+.card-hotel-room__inner > span {
+  font-size: em(10);
+  padding-left: 3px;
 }
 
 .card-hotel-room__cost {
-  margin: 0 3px 0 0;
-
+  margin: 0;
   color: $dark-shade--50;
   font-size: em(15);
   font-weight: 700;
@@ -50,13 +62,14 @@
   font-family: $font-primary;
   font-size: em(13);
   font-weight: 400;
+  text-transform: lowercase;
 }
 
 .card-hotel-room__rating-wrapper {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 20px;
-  padding: 0 16px 17px 22px;
+  margin-bottom: 17px;
+  padding: 0 16px 0 22px;
 }
 
 .card-hotel-room__rating {

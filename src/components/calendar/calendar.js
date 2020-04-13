@@ -57,6 +57,8 @@ export default class Calendar {
       onSelect: formattedDate => {
         this.nodeInput.val("");
         this.formattedDate = formattedDate;
+
+        return formattedDate;
       },
 
       ...options
@@ -67,6 +69,7 @@ export default class Calendar {
     const datepicker = this.nodeInput.datepicker(this.options);
     const datepickerData = datepicker.data("datepicker");
     const datepickerElem = datepickerData.$datepicker;
+    const placeholder = "ДД.ММ.ГГГГ";
 
     this.datepicker = datepicker;
 
@@ -106,7 +109,26 @@ export default class Calendar {
       resetBtn.hide();
 
       if (this.output) {
-        this.output.text("ДД.ММ.ГГГГ");
+        this.output.text(placeholder);
+      }
+    });
+
+    datepicker.on("keypress", evt => {
+      const IS_SPACEBAR = evt.keyCode === 32;
+
+      if (IS_SPACEBAR) {
+        evt.preventDefault();
+
+        const focusedElems = datepickerElem.find(".datepicker--cell.-focus-");
+
+        focusedElems.each((_, focused) => {
+          if ($(focused).hasClass("-selected-")) {
+            resetBtn.click();
+          } else {
+            focused.click();
+            submitBtn.click();
+          }
+        });
       }
     });
   }
