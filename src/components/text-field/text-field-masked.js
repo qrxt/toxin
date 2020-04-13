@@ -1,6 +1,5 @@
 import $ from "jquery";
 import IMask from "imask";
-
 import TextField from "./text-field";
 
 export default class TextFieldMasked extends TextField {
