@@ -1,11 +1,12 @@
 import $ from "jquery";
 
 import Calendar from "@components/calendar/calendar";
-import Carousel from "@components/carousel/carousel";
+// import Carousel  from "@components/carousel/carousel";
+import CardHotelRoom from "@components/card-hotel-room/card-hotel-room";
 import DateDropdown from "@components/date-dropdown/date-dropdown";
 import DropdownGuests from "@components/dropdown-guests/dropdown-guests";
 import InputQuantity from "@components/input-quantity/input-quantity";
-import Rating from "@components/rating/rating";
+// import Rating from "@components/rating/rating";
 import TextFieldMasked from "@components/text-field/text-field-masked";
 
 const hotelCardArrivalElem = $(".js-uikit-cards-arrival");
@@ -117,42 +118,24 @@ if (calendarInputElem.length > 0) {
 
 // Первая карточка номера отеля
 
-const hotelRoomCarouselElem = $(".js-uikit-room-first-carousel");
+const cardHotelRoomFirstElem = $(".js-uikit-room-first");
 
-if (hotelRoomCarouselElem.length > 0) {
-  const carousel = new Carousel(hotelRoomCarouselElem, {});
+if (cardHotelRoomFirstElem.length > 0) {
+  const cardHotelRoom = new CardHotelRoom(cardHotelRoomFirstElem, {});
 
-  $(document).ready(() => {
-    carousel.init();
-  });
-}
-
-const ratingFirstElem = $(".js-uikit-cards-rating-first");
-
-if (ratingFirstElem.length > 0) {
-  const ratingFirst = new Rating(ratingFirstElem);
-
-  ratingFirst.init();
+  cardHotelRoom.init();
 }
 
 // Вторая карточка номера отеля
 
-const hotelRoomCarouselSecondElem = $(".js-uikit-room-second-carousel");
+const cardHotelRoomSecondElem = $(".js-uikit-room-second");
 
-if (hotelRoomCarouselSecondElem.length > 0) {
-  const carousel = new Carousel(hotelRoomCarouselSecondElem, {
-    nav: false
+if (cardHotelRoomSecondElem.length > 0) {
+  const cardHotelRoom = new CardHotelRoom(cardHotelRoomSecondElem, {
+    carousel: {
+      nav: false
+    }
   });
 
-  $(document).ready(() => {
-    carousel.init();
-  });
-}
-
-const ratingSecondElem = $(".js-uikit-cards-rating-second");
-
-if (ratingSecondElem.length > 0) {
-  const ratingSecond = new Rating(ratingSecondElem);
-
-  ratingSecond.init();
+  cardHotelRoom.init();
 }

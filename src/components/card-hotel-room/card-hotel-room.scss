@@ -1,0 +1,78 @@
+.card-hotel-room {
+  padding: 0;
+  border: none;
+}
+
+.card-hotel-room__first {
+  margin-bottom: 40px;
+}
+
+.card-hotel-room__first-carousel {
+  margin-bottom: 20px;
+}
+
+.card-hotel-room__number {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 0 20px;
+  padding: 0 16px 0 20px;
+  position: relative;
+
+  &::before {
+    content: "";
+    display: block;
+    width: 84%;
+    height: 1px;
+    position: absolute;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    bottom: -10px;
+    background-color: $dark-shade--5;
+  }
+}
+
+.card-hotel-room__inner {
+  font-size: em(20);
+}
+
+.card-hotel-room__cost {
+  margin: 0 3px 0 0;
+
+  color: $dark-shade--50;
+  font-size: em(15);
+  font-weight: 700;
+}
+
+.card-hotel-room__cost-per {
+  margin-left: 3px;
+  color: $dark-shade--50;
+  font-family: $font-primary;
+  font-size: em(13);
+  font-weight: 400;
+}
+
+.card-hotel-room__rating-wrapper {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  padding: 0 16px 17px 22px;
+}
+
+.card-hotel-room__rating {
+  width: 50%;
+}
+
+.card-hotel-room__reviews {
+  margin: 0;
+}
+
+.card-hotel-room__reviews,
+.card-hotel-room__reviews-quantity {
+  color: $dark-shade--50;
+  font-size: em(15);
+}
+
+.card-hotel-room__reviews-quantity {
+  font-weight: 700;
+}

@@ -14,6 +14,7 @@ include ../total/total.pug
 include ../carousel/carousel.pug
 include ../hotel-room-number/hotel-room-number.pug
 include ../rating/rating.pug
+include ../card-hotel-room/card-hotel-room.pug
 
 mixin first-column()
   .uikit-cards__column
@@ -282,106 +283,71 @@ mixin third-column()
         inputClass: "visually-hidden--always"
       })
 
-    +card({
-      className: "uikit-cards__room uikit-cards__room-first"
+    +card-hotel-room({
+      className: "uikit-cards__hotel-room js-uikit-room-first",
+      roomImages: [
+        {
+          src: "./assets/img/hotel-room-1.png",
+          alt: "Просторная спальня"
+        },
+
+        {
+          src: "./assets/img/hotel-room-2.png",
+          alt: "Другая спальня"
+        },
+
+        {
+          src: "./assets/img/hotel-room-2.png",
+          alt: "Еще спальня"
+        },
+
+        {
+          src: "./assets/img/hotel-room-2.png",
+          alt: "Опять спальня"
+        }
+      ],
+
+      roomNumber: "123",
+      roomCategory: "Люкс",
+      roomCost: "9 990",
+      roomCostPer: "В сутки",
+      initialRating: 3,
+      ratingName: "rating-room-first",
+      reviewsQuantity: "143"
     })
-      +carousel({
-        className: "uikit-cards__room-first-carousel js-uikit-room-first-carousel",
-        roomImages: [
-          {
-            src: "./assets/img/hotel-room-1.png",
-            alt: "Просторная спальня"
-          },
 
-          {
-            src: "./assets/img/hotel-room-2.png",
-            alt: "Другая спальня"
-          },
+    +card-hotel-room({
+      className: "uikit-cards__hotel-room js-uikit-room-second",
+      roomImages: [
+        {
+          src: "./assets/img/hotel-room-1.png",
+          alt: "Просторная спальня"
+        },
 
-          {
-            src: "./assets/img/hotel-room-2.png",
-            alt: "Еще спальня"
-          },
+        {
+          src: "./assets/img/hotel-room-2.png",
+          alt: "Другая спальня"
+        },
 
-          {
-            src: "./assets/img/hotel-room-2.png",
-            alt: "Опять спальня"
-          }
-        ]
-      })
+        {
+          src: "./assets/img/hotel-room-2.png",
+          alt: "Еще спальня"
+        },
 
-      +hotel-room-number({
-        className: "uikit-cards__room-number",
-        roomNumberClassName: "uikit-cards__room-inner",
-        roomNumber: "888",
-        roomCategory: "Люкс"
-      })
-        p.uikit-cards__room-cost
-          | 9 990₽
-          span.uikit-cards__room-cost-per
-            | в сутки
+        {
+          src: "./assets/img/hotel-room-2.png",
+          alt: "Опять спальня"
+        }
+      ],
 
-      .uikit-cards__room-rating-wrapper
-        +rating({
-          className: "uikit-cards__rating js-uikit-cards-rating-first",
-          initialValue: 5,
-          name: "room-rating-first"
-        })
-        p.uikit-cards__room-reviews
-          span.uikit-cards__room-reviews-quantity
-            | #{ 145 }
-          |
-          | Отзывов
-
-    +card({
-      className: "uikit-cards__room uikit-cards__room-second"
+      roomNumber: "321",
+      roomCategory: "АнтиЛюкс",
+      roomCost: "9 090",
+      roomCostPer: "В сутки",
+      initialRating: 2,
+      ratingName: "rating-room-second",
+      reviewsQuantity: "214"
     })
-      +carousel({
-        className: "uikit-cards__room-first-carousel js-uikit-room-second-carousel",
-        roomImages: [
-          {
-            src: "./assets/img/hotel-room-2.png",
-            alt: "Просторная спальня"
-          },
-
-          {
-            src: "./assets/img/hotel-room-1.png",
-            alt: "Другая спальня"
-          },
-
-          {
-            src: "./assets/img/hotel-room-2.png",
-            alt: "Еще спальня"
-          },
-
-          {
-            src: "./assets/img/hotel-room-2.png",
-            alt: "Опять спальня"
-          }
-        ]
-      })
-
-      +hotel-room-number({
-        className: "uikit-cards__room-number",
-        roomNumberClassName: "uikit-cards__room-inner",
-        roomNumber: "840"
-      })
-        p.uikit-cards__room-cost
-          | 9 900₽
-          span.uikit-cards__room-cost-per
-            | в сутки
-
-      .uikit-cards__room-rating-wrapper
-        +rating({
-          className: "uikit-cards__rating js-uikit-cards-rating-second",
-          initialValue: 4,
-          name: "room-rating-second"
-        })
-        p.uikit-cards__room-reviews
-          span.uikit-cards__room-reviews-quantity
-            | #{ 65 }
-          |
-          | Отзывов
 
 main.page-main
   section.uikit-cards

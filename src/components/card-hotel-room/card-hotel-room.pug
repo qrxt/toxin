@@ -1,0 +1,51 @@
+include ../card/card.pug
+include ../carousel/carousel.pug
+include ../hotel-room-number/hotel-room-number.pug
+include ../rating/rating.pug
+
+
+mixin card-hotel-room(cardHotelRoomObj)
+  -
+    const {
+      className,
+      carouselClassName,
+      roomImages,
+      roomNumber,
+      roomCategory,
+      roomCost,
+      roomCostPer,
+      initialRating,
+      ratingName,
+      reviewsQuantity
+    } = cardHotelRoomObj
+
+  +card({
+    className: className
+  })
+    +carousel({
+      className: "card-hotel-room__carousel js-carousel",
+      roomImages: roomImages
+    })
+
+    +hotel-room-number({
+      className: "card-hotel-room__number",
+      roomNumberClassName: "card-hotel-room__inner",
+      roomNumber: roomNumber,
+      roomCategory: roomCategory
+    })
+      p.card-hotel-room__cost
+        | #{ roomCost }
+        span.card-hotel-room__cost-per
+          | #{ roomCostPer }
+
+    .card-hotel-room__rating-wrapper
+      +rating({
+        className: "card-hotel-room__rating js-rating",
+        initialValue: initialRating,
+        name: ratingName
+      })
+      p.card-hotel-room__reviews
+        span.card-hotel-room__reviews-quantity
+          | #{ reviewsQuantity }
+        |
+        | Отзывов
