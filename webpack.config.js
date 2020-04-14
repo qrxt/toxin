@@ -218,6 +218,10 @@ module.exports = (_, options) => {
       getHtmlPlugin("./page-uikit-colors.pug", "uikit-colors.html"),
       getHtmlPlugin("./page-uikit-forms.pug", "uikit-forms.html"),
       getHtmlPlugin("./page-uikit-cards.pug", "uikit-cards.html"),
+      getHtmlPlugin(
+        "./page-uikit-header-footer.pug",
+        "uikit-header-footer.html"
+      ),
 
       new PugPlugin(),
 

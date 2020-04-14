@@ -1,0 +1,10 @@
+include ../logo/logo.pug
+
+mixin header(className="")
+  header.header(class=className)
+    .wrapper.header__inner
+      +logo({
+        className: "header__logo",
+        isFull: true,
+        link: "#"
+      })

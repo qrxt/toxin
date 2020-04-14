@@ -1,15 +1,13 @@
 include ../../pug/mixins.pug
 
-block variables
-  -
-    const defaultLogoObj = {
-      className: "",
-      isFull: false,
-      link: "/"
-    }
-
 mixin logo(logoObj)
-  - const { className, isFull, link } = logoObj
+  -
+    const {
+      className,
+      isFull,
+      link
+    } = logoObj
+
   if isFull
     a.logo(class=className, href=link)
       img(

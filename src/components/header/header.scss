@@ -1,0 +1,13 @@
+.header {
+  background-color: $white;
+}
+
+.header__inner {
+  display: flex;
+  justify-content: space-between;
+  padding: 14px 0 11px;
+}
+
+.header__logo {
+  display: block;
+}
