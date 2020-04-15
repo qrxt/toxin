@@ -1,6 +1,20 @@
 .logo {
+  @include transition(opacity);
+
   &:focus {
     outline: none;
+  }
+}
+
+.logo--full {
+  &:hover,
+  &:focus {
+    outline: none;
+    opacity: 0.6;
+  }
+
+  &:active {
+    opacity: 0.3;
   }
 }
 

@@ -8,4 +8,11 @@ main.page-main
       h1.visually-hidden
         | UI-Kit Header, Footer and stuff
 
-      +header("uikit-header-footer__header")
+      +header({
+        className: "uikit-header-footer__header"
+      })
+
+      +header({
+        className: "uikit-header-footer__header",
+        authorization: "Cosmin Negoita"
+      })

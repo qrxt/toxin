@@ -3,11 +3,23 @@
 }
 
 .header__inner {
-  display: flex;
-  justify-content: space-between;
-  padding: 14px 0 11px;
+  position: relative;
+  z-index: 0;
+  padding: 13px 0 12px;
 }
 
 .header__logo {
   display: block;
+  padding-top: 1px;
+}
+
+.header__nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header__site-list {
+  display: flex;
+  align-items: center;
 }

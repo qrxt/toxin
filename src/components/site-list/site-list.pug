@@ -1,0 +1,63 @@
+include ../btn/btn.pug
+
+mixin site-list(siteListObj)
+  -
+    const {
+      className,
+      authorization
+    } = siteListObj
+
+  ul.site-list(class=className)
+    li.site-list__item
+      a.site-list__link.site-list__link--active(href="#")
+        | Home
+
+    li.site-list__item
+      a.site-list__link(href="#")
+        | About us
+
+    li.site-list__item
+      a.site-list__link.site-list__link--submenu(href="#")
+        | Services
+
+      ul.site-list__submenu
+        li.site-list__item
+          a.site-list__link(href="#")
+            | Lorem ipsum
+
+        li.site-list__item
+          a.site-list__link(href="#")
+            | Sample text
+
+    li.site-list__item
+      a.site-list__link(href="#")
+        | Careers
+
+    li.site-list__item
+      a.site-list__link(href="#")
+        | News
+
+    li.site-list__item
+      a.site-list__link(href="#")
+        | Documentation
+
+    if !authorization
+      li.site-list__item.site-list__item--unauthorized
+        +btn({
+          className: "btn--bordered site-list__btn",
+          isLink: true,
+          href: "#"
+        })
+          | Login
+
+      li.site-list__item.site-list__item--unauthorized
+        +btn({
+          className: "site-list__btn",
+          isLink: true,
+          href: "#"
+        })
+          | Register
+    else
+      li.site-list__item.site-list__item--authorized
+        a.site-list__link(href="#")
+          | #{ authorization }

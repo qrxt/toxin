@@ -1,10 +1,22 @@
 include ../logo/logo.pug
+include ../site-list/site-list.pug
 
-mixin header(className="")
+mixin header(headerObj)
+  -
+    const {
+      className,
+      authorization
+    } = headerObj
   header.header(class=className)
     .wrapper.header__inner
-      +logo({
-        className: "header__logo",
-        isFull: true,
-        link: "#"
-      })
+      nav.header__nav
+        +logo({
+          className: "header__logo",
+          isFull: true,
+          link: "#"
+        })
+
+        +site-list({
+          className: "header__site-list",
+          authorization
+        })

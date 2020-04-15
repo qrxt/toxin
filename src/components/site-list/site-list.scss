@@ -1,0 +1,135 @@
+.site-list {
+  @include drop-list();
+}
+
+.site-list__item {
+  position: relative;
+}
+
+.site-list__item:not(:last-child) {
+  margin-right: 29px;
+}
+
+.site-list__item--unauthorized:not(:last-child) {
+  margin-right: 23px;
+}
+
+.site-list__item--authorized {
+  padding-left: 30px;
+  border-left: 1px solid rgba($color: $black, $alpha: 0.1);
+}
+
+.site-list__link {
+  color: $dark-shade--50;
+  font-size: em(14);
+  line-height: 24px;
+  text-decoration: none;
+  text-transform: capitalize;
+
+  @include transition(opacity);
+
+  &--active {
+    color: $dark-shade--75;
+    font-weight: 700;
+  }
+
+  &:hover,
+  &:focus {
+    outline: none;
+    opacity: 0.6;
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
+}
+
+.site-list__link--submenu {
+  position: relative;
+  padding-right: 15px;
+
+  &::before,
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+  }
+
+  &::before {
+    width: 18px;
+    height: 15px;
+    background-color: $white;
+    right: -6px;
+    top: -8px;
+    z-index: 3;
+  }
+
+  &::after {
+    width: 12px;
+    height: 12px;
+    right: -3px;
+    top: calc(50% - 10px);
+    border: 2px solid $dark-shade--50;
+    transform: rotate(45deg);
+    z-index: 1;
+  }
+}
+
+.site-list__submenu {
+  @include drop-list();
+  @include transition(opacity);
+
+  display: block;
+  width: 150px;
+  padding: 10px 15px;
+  position: absolute;
+  top: calc(100% + 5px);
+  left: 0;
+  z-index: -1;
+  opacity: 0;
+  background-color: $white;
+  border: 1px solid $dark-shade--25;
+  border-radius: 5px;
+
+  &::before {
+    content: "";
+    display: block;
+    width: 60%;
+    height: 16px;
+    position: absolute;
+    top: -12px;
+    left: 0;
+  }
+}
+
+.site-list__submenu > .site-list__item {
+  width: 100%;
+}
+
+.site-list__submenu > .site-list__link {
+  width: 100%;
+}
+
+.site-list__submenu > .site-list__item:not(:last-child) {
+  margin-bottom: 5px;
+}
+
+.site-list__link--submenu:hover + .site-list__submenu,
+.site-list__link--submenu:focus + .site-list__submenu,
+.site-list__submenu:hover,
+.site-list__submenu:focus-within {
+  opacity: 1;
+  z-index: 100;
+}
+
+.site-list__btn {
+  text-decoration: none;
+  padding: 9px 20px;
+  font-size: em(12);
+}
+
+.site-list__btn.btn--bordered {
+  color: $purple;
+  padding: 7px 19px;
+  font-size: em(11);
+}
