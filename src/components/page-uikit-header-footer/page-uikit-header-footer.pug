@@ -2,6 +2,7 @@ include ../../pug/mixins.pug
 
 include ../header/header.pug
 include ../footer/footer.pug
+include ../footer-minimal/footer-minimal.pug
 
 main.page-main
   section.uikit-header-footer
@@ -20,6 +21,13 @@ main.page-main
 
       +footer({
         className: "uikit-header-footer__footer"
+      })
+        | Lorem ipsum dolor sit amet consectetur
+        | adipiscing elit aliquam eget nullam pellentesque
+        | aliquam curabitur cociis.
+
+      +footer-minimal({
+        className: "uikit-header-footer__footer-minimal"
       })
         | Lorem ipsum dolor sit amet consectetur
         | adipiscing elit aliquam eget nullam pellentesque

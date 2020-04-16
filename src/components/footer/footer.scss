@@ -1,11 +1,14 @@
 .footer {
   padding-top: 100px;
-  padding-bottom: 60px;
+  padding-bottom: 20px;
 
   background-color: $white;
+  box-shadow: 0 10px 20px $dark-shade--5;
 }
 
 .footer__bottom {
+  padding-top: 27px;
+
   border-top: 1px solid $dark-shade--25;
 }
 
@@ -67,6 +70,8 @@
 
   &:hover,
   &:focus {
+    outline: none;
+
     opacity: 0.6;
   }
 
@@ -91,4 +96,50 @@
 
   font-size: em(13.8);
   line-height: 22px;
+}
+
+.footer__copyright {
+  margin: 0;
+  padding-top: 3px;
+
+  font-size: em(13.8);
+  line-height: 22px;
+}
+
+.footer__bottom-inner {
+  display: flex;
+}
+
+.footer__logos {
+  @include drop-list();
+
+  display: flex;
+  padding-bottom: 2px;
+  margin-left: auto;
+}
+
+.footer__logo-item:not(:last-child) {
+  margin-right: 22px;
+}
+
+.footer__logo-link {
+  @include transition(opacity);
+
+  &:hover,
+  &:focus {
+    outline: none;
+
+    opacity: 0.6;
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
+}
+
+.footer__logo-link svg {
+  width: 22px;
+  height: 22px;
+
+  fill: url("#gradient-purple");
 }

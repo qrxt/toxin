@@ -1,3 +1,4 @@
+include ../../pug/mixins.pug
 include ../logo/logo.pug
 include ../subscription-field/subscription-field.pug
 
@@ -94,4 +95,19 @@ mixin footer(footerObj)
         })
 
     .footer__bottom
-      .wrapper.footer__inner
+      .wrapper.footer__bottom-inner
+        p.footer__copyright
+          | Copyright © 2018 Toxin UI Kit. All rights reserved.
+
+        ul.footer__logos
+          li.footer__logo-item
+            a.footer__logo-link(href="#")
+              +svg("logo-twitter", 15, 15)
+
+          li.footer__logo-item
+            a.footer__logo-link(href="#")
+              +svg("logo-facebook", 15, 15)
+
+          li.footer__logo-item
+            a.footer__logo-link(href="#")
+              +svg("logo-instagram", 15, 15)

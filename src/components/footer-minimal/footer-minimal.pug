@@ -1,0 +1,32 @@
+include ../logo/logo.pug
+
+mixin footer-minimal(footerMinimalObj)
+  -
+    const {
+      className
+    } = footerMinimalObj
+
+  .footer-minimal(class=className)
+    .wrapper.footer-minimal__inner
+      +logo({
+        className: "footer-minimal__logo",
+        isFull: true,
+        link: "#"
+      })
+
+      p.footer-minimal__description
+        block
+
+      ul.footer-minimal__logos
+        li.footer-minimal__logo-item
+          a.footer-minimal__logo-link(href="#")
+            +svg("logo-twitter", 15, 15)
+
+        li.footer-minimal__logo-item
+          a.footer-minimal__logo-link(href="#")
+            +svg("logo-facebook", 15, 15)
+
+        li.footer-minimal__logo-item
+          a.footer-minimal__logo-link(href="#")
+            +svg("logo-instagram", 15, 15)
+
