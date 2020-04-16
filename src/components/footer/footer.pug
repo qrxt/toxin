@@ -1,0 +1,97 @@
+include ../logo/logo.pug
+include ../subscription-field/subscription-field.pug
+
+mixin footer(footerObj)
+  -
+    const {
+      className
+    } = footerObj
+
+  footer.footer(class=className)
+    .wrapper.footer__inner
+      .footer__description-column
+        +logo({
+          className: "footer__logo",
+          isFull: true,
+          link: "#"
+        })
+
+        p.footer__description
+          block
+
+      .footer__navigation-column
+        .footer__navigation-block
+          h3.h3.footer__navigation-title
+            | Navigation
+          ul.footer__navigation-list
+
+            li.footer__navigation-item
+              a.footer__navigation-link(href="#")
+                | About Us
+
+            li.footer__navigation-item
+              a.footer__navigation-link(href="#")
+                | News
+
+            li.footer__navigation-item
+              a.footer__navigation-link(href="#")
+                | Support
+
+            li.footer__navigation-item
+              a.footer__navigation-link(href="#")
+                | Products
+
+        .footer__navigation-block
+          h3.h3.footer__navigation-title
+            | About Us
+          ul.footer__navigation-list
+
+            li.footer__navigation-item
+              a.footer__navigation-link(href="#")
+                | Who we are
+
+            li.footer__navigation-item
+              a.footer__navigation-link(href="#")
+                | Our team
+
+            li.footer__navigation-item
+              a.footer__navigation-link(href="#")
+                | Careers
+
+            li.footer__navigation-item
+              a.footer__navigation-link(href="#")
+                | Investors
+
+        .footer__navigation-block
+          h3.h3.footer__navigation-title
+            | Support
+          ul.footer__navigation-list
+
+            li.footer__navigation-item
+              a.footer__navigation-link(href="#")
+                | Documentation
+
+            li.footer__navigation-item
+              a.footer__navigation-link(href="#")
+                | Community
+
+            li.footer__navigation-item
+              a.footer__navigation-link(href="#")
+                | Get In Touch
+
+      .footer__subscribe-column
+        h3.h3.footer__subscribe-title
+          | Subscribe to our newsletter
+
+        p.footer__subscribe-description
+          | Receive our latest news and
+          | promotions in your inbox!
+
+        +subscription-field({
+          className: "footer__subscribe-input",
+          placeholder: "Your email address",
+          name: "user-footer-email"
+        })
+
+    .footer__bottom
+      .wrapper.footer__inner

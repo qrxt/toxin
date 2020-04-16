@@ -1,6 +1,7 @@
 include ../../pug/mixins.pug
 
 include ../header/header.pug
+include ../footer/footer.pug
 
 main.page-main
   section.uikit-header-footer
@@ -16,3 +17,10 @@ main.page-main
         className: "uikit-header-footer__header",
         authorization: "Cosmin Negoita"
       })
+
+      +footer({
+        className: "uikit-header-footer__footer"
+      })
+        | Lorem ipsum dolor sit amet consectetur
+        | adipiscing elit aliquam eget nullam pellentesque
+        | aliquam curabitur cociis.
