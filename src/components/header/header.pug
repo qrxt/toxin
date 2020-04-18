@@ -1,10 +1,12 @@
 include ../logo/logo.pug
 include ../site-list/site-list.pug
+include ../btn-burger/btn-burger.pug
 
 mixin header(headerObj)
   -
     const {
       className,
+      btnBurgerClassName,
       authorization
     } = headerObj
   header.header(class=className)
@@ -14,6 +16,12 @@ mixin header(headerObj)
           className: "header__logo",
           isFull: true,
           link: "#"
+        })
+
+        - const btnBurgerClasses = [ "header__burger-btn", btnBurgerClassName ];
+        - const btnBurgerClassString = btnBurgerClasses.filter(Boolean).join(" ");
+        +btn-burger({
+          className: btnBurgerClassString
         })
 
         +site-list({

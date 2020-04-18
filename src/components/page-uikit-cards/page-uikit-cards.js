@@ -1,12 +1,10 @@
 import $ from "jquery";
 
 import Calendar from "@components/calendar/calendar";
-// import Carousel  from "@components/carousel/carousel";
 import CardHotelRoom from "@components/card-hotel-room/card-hotel-room";
 import DateDropdown from "@components/date-dropdown/date-dropdown";
 import DropdownGuests from "@components/dropdown-guests/dropdown-guests";
 import InputQuantity from "@components/input-quantity/input-quantity";
-// import Rating from "@components/rating/rating";
 import TextFieldMasked from "@components/text-field/text-field-masked";
 
 const hotelCardArrivalElem = $(".js-uikit-cards-arrival");
