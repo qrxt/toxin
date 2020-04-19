@@ -6,15 +6,22 @@
   border: none;
   background-color: transparent;
 
+  @include transition(transform);
+
   &::before,
   &::after {
     content: "";
     display: block;
     width: 100%;
     height: 2px;
-    background-color: $dark-shade--50;
+    background-color: $black;
     position: absolute;
     left: 0;
+
+    transform: rotate(0deg);
+    transition:
+      top $transition-delay $transition-timing-function,
+      transform $transition-delay $transition-timing-function;
   }
 
   &::before {
@@ -22,15 +29,11 @@
   }
 
   &::after {
-    bottom: 0;
+    top: calc(100% - 1px);
   }
 
   &:focus {
     outline: none;
-  }
-
-  &--active {
-    background-color: red;
   }
 
   @include tablet {
@@ -42,8 +45,26 @@
   display: block;
   width: 100%;
   height: 2px;
-  background-color: $dark-shade--50;
+  background-color: $black;
   position: absolute;
   top: calc(50% - 1px);
   left: 0;
+}
+
+.btn-burger--active {
+  transform: rotate(45deg);
+
+  &::before {
+    top: calc(50% - 1px);
+    transform: rotate(90deg);
+  }
+
+  &::after {
+    top: calc(50% - 1px);
+    transform: rotate(0deg);
+  }
+}
+
+.btn-burger--active .btn-burger__middle {
+
 }

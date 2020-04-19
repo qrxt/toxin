@@ -125,7 +125,9 @@ module.exports = (_, options) => {
     optimization: getOptimisations(),
     devServer: {
       overlay: true,
-      hot: isDev
+      hot: isDev,
+      port: 3000,
+      host: "192.168.1.60"
     },
 
     devtool: isDev

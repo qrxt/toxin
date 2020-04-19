@@ -1,12 +1,16 @@
 .header {
+  position: relative;
+  z-index: 0;
   background-color: $white;
 
   box-shadow: 0 10px 20px $dark-shade--5;
+
+  @include tablet {
+    z-index: 100;
+  }
 }
 
 .header__inner {
-  position: relative;
-  z-index: 0;
   padding: 13px 0 12px;
 
   @include tablet-landscape {
@@ -29,15 +33,26 @@
   display: flex;
   align-items: center;
 
-  &--show {
-    display: block;
-  }
-
   @include tablet {
-    display: none;
+    flex-direction: column;
+    width: 100%;
+    position: absolute;
+    top: calc(100% - 1px);
+    left: 0;
+    background-color: $white;
+    opacity: 0;
+    box-shadow: 0 10px 20px $dark-shade--5;
+    z-index: -1;
+    visibility: hidden;
   }
 }
 
+.header__burger-btn {
+  z-index: 1;
+}
+
 .header__burger-btn.btn-burger--active ~ .header__site-list {
-  display: block;
+  opacity: 1;
+  z-index: 100;
+  visibility: visible;
 }

@@ -20,11 +20,11 @@
   }
 }
 
-// @mixin mobile {
-//   @media (max-width: 767px) {
-//     @content;
-//   }
-// }
+@mixin mobile {
+  @media (max-width: 767px) {
+    @content;
+  }
+}
 
 // em
 

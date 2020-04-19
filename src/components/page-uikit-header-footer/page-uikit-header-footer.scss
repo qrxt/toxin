@@ -1,5 +1,13 @@
 .uikit-header-footer__header {
   margin-top: 68px;
+
+  &--top {
+    z-index: 200;
+  }
+
+  &--bottom {
+    z-index: 100;
+  }
 }
 
 .uikit-header-footer__header:last-of-type {

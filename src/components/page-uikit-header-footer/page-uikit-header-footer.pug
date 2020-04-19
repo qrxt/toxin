@@ -11,13 +11,14 @@ main.page-main
         | UI-Kit Header, Footer and stuff
 
       +header({
-        className: "uikit-header-footer__header",
+        className: "uikit-header-footer__header uikit-header-footer__header--top",
         btnBurgerClassName: "js-uikit-header-widgets"
       })
 
       +header({
-        className: "uikit-header-footer__header",
-        authorization: "Cosmin Negoita"
+        className: "uikit-header-footer__header uikit-header-footer__header--bottom",
+        authorization: "Cosmin Negoita",
+        btnBurgerClassName: "js-uikit-header-minimal"
       })
 
       +footer({

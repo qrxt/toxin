@@ -4,28 +4,34 @@
 
   background-color: $white;
   box-shadow: 0 10px 20px $dark-shade--5;
+
+  @include tablet {
+    padding-top: 40px;
+    padding-bottom: 20px;
+  }
 }
 
 .footer__bottom {
   padding-top: 27px;
 
   border-top: 1px solid $dark-shade--25;
-
-  // @include tablet-landscape {
-  //   padding: 27px 20px 0;
-  // }
 }
 
 .footer__inner {
   display: flex;
+  flex-wrap: wrap;
 
-  // @include tablet-landscape {
-  //   padding: 0 20px;
-  // }
+  @include mobile {
+    flex-direction: column;
+  }
 }
 
 .footer__inner:not(:last-child) {
   margin-bottom: 97px;
+
+  @include tablet {
+    margin-bottom: 40px;
+  }
 }
 
 .footer__description-column {
@@ -34,6 +40,17 @@
 
   @include tablet-landscape {
     margin-right: auto;
+  }
+
+  @include tablet {
+    width: 40%;
+    order: 0;
+    margin-bottom: 50px;
+  }
+
+  @include mobile {
+    width: 100%;
+    margin-bottom: 30px;
   }
 }
 
@@ -51,10 +68,24 @@
 
 .footer__navigation-column {
   display: flex;
+  flex-wrap: wrap;
+
+  @include tablet {
+    width: 100%;
+    order: 2;
+    justify-content: space-between;
+  }
+
+  @include mobile {
+  }
 }
 
 .footer__navigation-block {
   padding-top: 4px;
+
+  @include mobile {
+    width: 40%;
+  }
 }
 
 .footer__navigation-block:not(:last-child) {
@@ -62,6 +93,14 @@
 
   @include tablet-landscape {
     margin-right: 60px;
+  }
+
+  @include tablet {
+    margin-right: 0;
+  }
+
+  @include mobile {
+    margin-bottom: 40px;
   }
 }
 
@@ -100,11 +139,25 @@
   padding-top: 4px;
   margin-left: auto;
   width: 22.3%;
+
+  @include tablet {
+    width: 40%;
+    order: 1;
+  }
+
+  @include mobile {
+    width: 100%;
+    margin-bottom: 20px;
+  }
 }
 
 .footer__subscribe-title {
   margin: 0 0 19px;
   font-size: em(11.5);
+
+  @include mobile {
+    margin: 0 0 5px;
+  }
 }
 
 .footer__subscribe-description {
@@ -112,6 +165,10 @@
 
   font-size: em(13.8);
   line-height: 22px;
+
+  @include mobile {
+    margin: 0 0 15px;
+  }
 }
 
 .footer__copyright {
@@ -120,10 +177,22 @@
 
   font-size: em(13.8);
   line-height: 22px;
+
+  @include mobile {
+    margin-bottom: 20px;
+    text-align: center;
+  }
 }
 
 .footer__bottom-inner {
   display: flex;
+  flex-wrap: wrap;
+
+  @include mobile {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
 }
 
 .footer__logos {
@@ -132,6 +201,11 @@
   display: flex;
   padding-bottom: 2px;
   margin-left: auto;
+
+  @include mobile {
+    justify-content: center;
+    margin: 0;
+  }
 }
 
 .footer__logo-item:not(:last-child) {
