@@ -1,18 +1,28 @@
 .uikit-colors__content {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
+  padding-bottom: 30px;
 }
 
 .uikit-colors__list {
   @include drop-list();
 
   padding-left: 10px;
+
+  @include mobile {
+    margin-bottom: 40px;
+  }
 }
 
 .uikit-colors__type {
   width: 41%;
 
   padding-left: 18px;
+
+  @include mobile {
+    width: 100%;
+  }
 }
 
 .uikit-colors__types {

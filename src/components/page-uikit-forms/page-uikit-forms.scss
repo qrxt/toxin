@@ -6,6 +6,11 @@
   display: flex;
   flex-wrap: wrap;
   width: 100%;
+
+  @include tablet-landscape {
+    justify-content: center;
+    margin-bottom: 40px;
+  }
 }
 
 .uikit-forms__column {
@@ -18,15 +23,31 @@
   &--third {
     margin-left: auto;
   }
-}
 
-// .uikit-forms__column:not(:last-child) {
-//   margin-right: 125px;
-// }
+  @include tablet-landscape {
+    width: 60%;
+
+    &--first {
+      margin-right: 0;
+    }
+
+    &--third {
+      margin-left: 0;
+    }
+  }
+
+  @include mobile {
+    width: 100%;
+  }
+}
 
 .uikit-forms__input {
   width: 320px;
   margin-bottom: 20px;
+
+  @include tablet-landscape {
+    width: 100%;
+  }
 }
 
 .uikit-forms__double {
@@ -35,15 +56,31 @@
 
 .uikit-forms__input-half {
   width: 150px;
+
+  @include tablet-landscape {
+    width: 49%;
+  }
 }
 
-.uikit-forms__input-75 {
+.uikit-forms__input-narrow {
   width: 266px;
+
+  @include tablet-landscape {
+    width: 75%;
+  }
+
+  @include mobile {
+    width: 100%;
+  }
 }
 
 .uikit-forms__select {
   width: 320px;
   margin-bottom: 24px;
+
+  @include tablet-landscape {
+    width: 100%;
+  }
 }
 
 .uikit-forms__masked-date {
@@ -56,6 +93,10 @@
 
 .uikit-forms__email-subscription {
   margin-bottom: 100px;
+
+  @include tablet-landscape {
+    margin-bottom: 40px;
+  }
 }
 
 .uikit-forms__dropdown-rooms {
@@ -84,6 +125,17 @@
 
 .uikit-forms__expandable-checkbox-list-item:not(:last-child) {
   margin-bottom: 10px;
+}
+
+.uikit-forms__features {
+  @include tablet-landscape {
+    width: 60%;
+    margin-bottom: 40px;
+  }
+
+  @include mobile {
+    width: 100%;
+  }
 }
 
 .uikit-forms__feature:not(:last-child) {
@@ -120,6 +172,10 @@
 
 .uikit-forms__radio-button:not(:last-child) {
   margin-right: 20px;
+
+  @include mobile {
+    margin-bottom: 20px;
+  }
 }
 
 .uikit-forms__radios {
@@ -167,6 +223,10 @@
   width: 120px;
 
   margin-bottom: 178px;
+
+  @include tablet-landscape {
+    margin-bottom: 10px;
+  }
 }
 
 .uikit-forms__rating:not(:last-child) {
@@ -183,6 +243,10 @@
 
 .uikit-forms__guests {
   margin-bottom: 100px;
+
+  @include tablet-landscape {
+    margin-bottom: 40px;
+  }
 }
 
 .uikit-forms__rich-checkbox-label {
@@ -197,6 +261,10 @@
 .uikit-forms__btns {
   width: 68%;
   margin-bottom: 29px;
+
+  @include tablet-landscape {
+    width: 100%;
+  }
 }
 
 .uikit-forms__btns-wrapper {
@@ -205,6 +273,14 @@
   justify-content: space-between;
 
   padding-left: 3px;
+
+  @include tablet-landscape {
+    padding-left: 0;
+  }
+
+  @include mobile {
+    flex-direction: column;
+  }
 }
 
 .uikit-forms__btn {
@@ -213,6 +289,24 @@
   line-height: 21px;
 
   margin-bottom: 31px;
+
+  @include tablet-landscape {
+    margin-bottom: 0;
+  }
+
+  @include mobile {
+    width: 100%;
+  }
+}
+
+.uikit-forms__btn:not(:last-child) {
+  @include tablet-landscape {
+    margin-right: 20px;
+  }
+
+  @include mobile {
+    margin-bottom: 20px;
+  }
 }
 
 .uikit-forms__btn.btn--bordered {
@@ -220,15 +314,36 @@
   padding: 10px 17px;
 
   color: $purple;
+
+  @include mobile {
+    width: 100%;
+  }
 }
 
 .uikit-forms__btns-label {
   margin: 0 0 10px;
 }
 
+.uikit-forms__btn-narrow {
+  @include mobile {
+    align-self: flex-start;
+  }
+}
+
+.uikit-forms__btn-narrow:not(:last-child) {
+  @include mobile {
+    margin-bottom: 10px;
+  }
+}
+
 .uikit-forms__btn-narrow:last-child {
   margin-left: 20px;
   margin-right: auto;
+
+  @include mobile {
+    margin-left: 0;
+    margin-right: 0;
+  }
 }
 
 .uikit-forms__btn-100 {
@@ -263,6 +378,10 @@
 
 .uikit-forms__paginations {
   margin-bottom: 233px;
+
+  @include tablet-landscape {
+    margin-bottom: 40px;
+  }
 }
 
 .uikit-forms__guests-opened {
@@ -290,8 +409,19 @@
 .uikit-forms__static {
   display: flex;
   justify-content: space-between;
+
+  @include tablet-landscape {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 40px;
+  }
 }
 
 .uikit-forms__comment {
   width: 61.3%;
+
+  @include mobile {
+    width: 100%;
+  }
 }

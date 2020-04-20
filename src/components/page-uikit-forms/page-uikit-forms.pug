@@ -415,19 +415,19 @@ mixin first-column()
       each inputQuantity in inputQuantitiesRooms
         +input-quantity(inputQuantity)
 
-    .uikit-forms__input-75
+    .uikit-forms__input-narrow
       +expandable-list(expandableList)
         each checkbox in expandableCheckboxList
           +checkbox(checkbox)
 
-    .uikit-forms__input-75
+    .uikit-forms__input-narrow
       +expandable-list(expandableListExpanded)
         each checkbox in expandableCheckboxList
           +checkbox(checkbox)
 
 mixin second-column()
   .uikit-forms__column.uikit-forms__column--second
-    .uikit-forms__input-75.uikit-forms__check-buttons
+    .uikit-forms__input-narrow.uikit-forms__check-buttons
       +labeled({
         className: "uikit-forms__check-buttons-label",
         label: "Checkbox Buttons",
@@ -437,7 +437,7 @@ mixin second-column()
         each checkboxButton in checkboxButtonsList
           +checkbox(checkboxButton)
 
-    .uikit-forms__input-75.uikit-forms__radios
+    .uikit-forms__input-narrow.uikit-forms__radios
       +labeled({
         className: "uikit-forms__radio-buttons-label",
         label: "Radio Buttons",
@@ -447,7 +447,7 @@ mixin second-column()
         each radio in radios
           +radio(radio)
 
-    .uikit-forms__input-75.uikit-forms__toggles
+    .uikit-forms__input-narrow.uikit-forms__toggles
       +labeled({
         className: "uikit-forms__radio-buttons-label",
         label: "Toggle",
@@ -456,7 +456,7 @@ mixin second-column()
       each toggle in toggles
         +toggle(toggle)
 
-    .uikit-forms__input-75.uikit-forms__like-buttons
+    .uikit-forms__input-narrow.uikit-forms__like-buttons
       +labeled({
         className: "uikit-forms__like-buttons-label",
         label: "Like Button",
@@ -466,7 +466,7 @@ mixin second-column()
           each likeBtn in likeBtns
             +btn-like(likeBtn)
 
-      .uikit-forms__input-75.uikit-forms__ratings
+      .uikit-forms__input-narrow.uikit-forms__ratings
         +labeled({
           className: "uikit-forms__rating-label",
           label: "Rate Button",
@@ -485,7 +485,7 @@ mixin second-column()
           each inputQuantity in inputQuantitiesGuests
             +input-quantity(inputQuantity)
 
-      .uikit-forms__input-75.uikit-forms__rich-checkboxes
+      .uikit-forms__input-narrow.uikit-forms__rich-checkboxes
         +labeled({
           className: "uikit-forms__rich-checkbox-label",
           label: "Rich Checkbox Buttons",
@@ -496,7 +496,7 @@ mixin second-column()
 
 mixin third-column()
   .uikit-forms__column.uikit-forms__column--third
-    .uikit-forms__input-75.uikit-forms__range
+    .uikit-forms__input-narrow.uikit-forms__range
       +range({
         className: "js-uikit-forms-range"
       })
@@ -540,7 +540,7 @@ mixin third-column()
         each inputQuantity in inputQuantitiesGuestsWithActive
           +input-quantity(inputQuantity)
 
-    .uikit-forms__input-75.uikit-forms__bullets
+    .uikit-forms__input-narrow.uikit-forms__bullets
       +labeled({
         className: "uikit-forms__bullets-label",
         label: "Bullet List",
@@ -577,7 +577,7 @@ main.page-main
         +third-column()
 
       .uikit-forms__static
-        .uikit-forms__input-75.uikit-forms__features
+        .uikit-forms__input-narrow.uikit-forms__features
           each feature in features
             +feature(feature)
 
