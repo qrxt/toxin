@@ -217,6 +217,7 @@ module.exports = (_, options) => {
 
     plugins: [
       getHtmlPlugin("./page-index.pug", "index.html"),
+
       getHtmlPlugin("./page-uikit-colors.pug", "uikit-colors.html"),
       getHtmlPlugin("./page-uikit-forms.pug", "uikit-forms.html"),
       getHtmlPlugin("./page-uikit-cards.pug", "uikit-cards.html"),
@@ -224,6 +225,8 @@ module.exports = (_, options) => {
         "./page-uikit-header-footer.pug",
         "uikit-header-footer.html"
       ),
+
+      getHtmlPlugin("./page-landing.pug", "landing.html"),
 
       new PugPlugin(),
 
