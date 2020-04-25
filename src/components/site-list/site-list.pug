@@ -4,42 +4,70 @@ mixin site-list(siteListObj)
   -
     const {
       className,
-      authorization
+      authorization,
+      siteListLinks,
+      lang = "en"
     } = siteListObj
 
+    const langObj = {
+      "en": {
+        "login": "Login",
+        "register": "Register"
+      },
+
+      "ru": {
+        "login": "Войти",
+        "register": "Зарегистрироваться"
+      }
+    }
+
   ul.site-list(class=className)
-    li.site-list__item
-      a.site-list__link.site-list__link--active(href="#")
-        | Home
+    each siteListLink in siteListLinks
+      -
+        const {
+          itemClassName,
+          linkClassName,
+          href = "#",
+          text,
+          isActive = false,
+          submenuLinks
+        } = siteListLink
 
-    li.site-list__item
-      a.site-list__link(href="#")
-        | About us
+        const linkActiveClass = isActive
+          ? "site-list__link--active"
+          : null
 
-    li.site-list__item
-      a.site-list__link.site-list__link--submenu(href="#")
-        | Services
+        const linkSubmenuClass = submenuLinks
+          ? "site-list__link--submenu"
+          : null
 
-      ul.site-list__submenu
-        li.site-list__item
-          a.site-list__link(href="#")
-            | Lorem ipsum
+        const linkClassString = [
+          linkActiveClass,
+          linkSubmenuClass,
+          linkClassName
+        ]
+          .filter(Boolean)
+          .join(" ")
 
-        li.site-list__item
-          a.site-list__link(href="#")
-            | Sample text
+      li.site-list__item(class=itemClassName)
+        a.site-list__link(
+          class=linkClassString
+          href=href)
+          | #{ text }
 
-    li.site-list__item
-      a.site-list__link(href="#")
-        | Careers
+        if submenuLinks
+          ul.site-list__submenu
+            each submenuLink in submenuLinks
+              -
+                const {
+                  className,
+                  text,
+                  href = "#"
+                } = submenuLink
 
-    li.site-list__item
-      a.site-list__link(href="#")
-        | News
-
-    li.site-list__item
-      a.site-list__link(href="#")
-        | Documentation
+              li.site-list__item
+                a.site-list__link(href=href)
+                  | #{ text }
 
     if !authorization
       li.site-list__item.site-list__item--unauthorized
@@ -48,7 +76,7 @@ mixin site-list(siteListObj)
           isLink: true,
           href: "#"
         })
-          | Login
+          | #{ langObj[lang]["login"] }
 
       li.site-list__item.site-list__item--unauthorized
         +btn({
@@ -56,7 +84,7 @@ mixin site-list(siteListObj)
           isLink: true,
           href: "#"
         })
-          | Register
+          | #{ langObj[lang]["register"] }
     else
       li.site-list__item.site-list__item--authorized
         a.site-list__link(href="#")

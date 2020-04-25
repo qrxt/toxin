@@ -10,15 +10,62 @@ main.page-main
       h1.visually-hidden
         | UI-Kit Header, Footer and stuff
 
+      -
+        const siteListLinks = [
+          {
+            href: "#",
+            text: "Home",
+            isActive: true
+          },
+
+          {
+            href: "#",
+            text: "About us"
+          },
+
+          {
+            href: "#",
+            text: "Services",
+            submenuLinks: [
+              {
+                text: "Lorem ipsum",
+                href: "#"
+              },
+
+              {
+                text: "Dolor",
+                href: "#"
+              }
+            ]
+          },
+
+          {
+            href: "#",
+            text: "Careers"
+          },
+
+          {
+            href: "#",
+            text: "News"
+          },
+
+          {
+            href: "#",
+            text: "Documentation"
+          },
+        ]
+
       +header({
         className: "uikit-header-footer__header uikit-header-footer__header--top",
-        btnBurgerClassName: "js-uikit-header-widgets"
+        btnBurgerClassName: "js-uikit-header-widgets",
+        siteListLinks: siteListLinks
       })
 
       +header({
         className: "uikit-header-footer__header uikit-header-footer__header--bottom",
         authorization: "Cosmin Negoita",
-        btnBurgerClassName: "js-uikit-header-minimal"
+        btnBurgerClassName: "js-uikit-header-minimal",
+        siteListLinks: siteListLinks
       })
 
       +footer({

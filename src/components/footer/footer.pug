@@ -5,8 +5,79 @@ include ../subscription-field/subscription-field.pug
 mixin footer(footerObj)
   -
     const {
-      className
+      className,
+      lang = "en"
     } = footerObj
+
+    const langObj = {
+      "en": {
+        "navigation": {
+          "navigation": "Navigation",
+          "about-us": "About Us",
+          "news": "News",
+          "support": "Support",
+          "products": "Products"
+        },
+
+        "about": {
+          "about-us": "About Us",
+          "who-we-are": "Who we are",
+          "our-team": "Our team",
+          "careers": "Careers",
+          "investors": "Investors"
+        },
+
+        "support": {
+          "support": "Support",
+          "documentation": "Documentation",
+          "community": "Community",
+          "get-in-touch": "Get in Touch"
+        },
+
+        "subscribe": {
+          "title": "Subscribe To Our Newsletter",
+          "description": `Receive our latest news
+            and promotions in your inbox!`
+        },
+
+        "copyright": `Copyright © 2018 Toxin UI
+          Kit. All\u00A0rights\u00A0reserved.`
+      },
+
+      "ru": {
+        "navigation": {
+          "navigation": "Навигация",
+          "about-us": "О нас",
+          "news": "Новости",
+          "support": "Служба поддержки",
+          "products": "Услуги"
+        },
+
+        "about": {
+          "about-us": "О нас",
+          "who-we-are": "О сервисе",
+          "our-team": "Наша команда",
+          "careers": "Вакансии",
+          "investors": "Инвесторы"
+        },
+
+        "support": {
+          "support": "Служба поддержки",
+          "documentation": "Соглашения",
+          "community": "Сообщества",
+          "get-in-touch": "Связь с нами"
+        },
+
+        "subscribe": {
+          "title": "Подписка",
+          "description": `Получайте специальные предложения
+            и новости сервиса`
+        },
+
+        "copyright": `Copyright © 2018 Toxin отель
+          Все\u00A0права\u00A0защищены.`
+      }
+    }
 
   footer.footer(class=className)
     .wrapper.footer__inner
@@ -23,70 +94,69 @@ mixin footer(footerObj)
       .footer__navigation-column
         .footer__navigation-block
           h3.h3.footer__navigation-title
-            | Navigation
+            | #{ langObj[lang]["navigation"]["navigation"] }
           ul.footer__navigation-list
 
             li.footer__navigation-item
               a.footer__navigation-link(href="#")
-                | About Us
+                | #{ langObj[lang]["navigation"]["about-us"] }
 
             li.footer__navigation-item
               a.footer__navigation-link(href="#")
-                | News
+                | #{ langObj[lang]["navigation"]["news"] }
 
             li.footer__navigation-item
               a.footer__navigation-link(href="#")
-                | Support
+                | #{ langObj[lang]["navigation"]["support"] }
 
             li.footer__navigation-item
               a.footer__navigation-link(href="#")
-                | Products
+                | #{ langObj[lang]["navigation"]["products"] }
 
         .footer__navigation-block
           h3.h3.footer__navigation-title
-            | About Us
+            | #{ langObj[lang]["about"]["about-us"] }
           ul.footer__navigation-list
 
             li.footer__navigation-item
               a.footer__navigation-link(href="#")
-                | Who we are
+                | #{ langObj[lang]["about"]["who-we-are"] }
 
             li.footer__navigation-item
               a.footer__navigation-link(href="#")
-                | Our team
+                | #{ langObj[lang]["about"]["our-team"] }
 
             li.footer__navigation-item
               a.footer__navigation-link(href="#")
-                | Careers
+                | #{ langObj[lang]["about"]["careers"] }
 
             li.footer__navigation-item
               a.footer__navigation-link(href="#")
-                | Investors
+                | #{ langObj[lang]["about"]["investors"] }
 
         .footer__navigation-block
           h3.h3.footer__navigation-title
-            | Support
+            | #{ langObj[lang]["support"]["support"] }
           ul.footer__navigation-list
 
             li.footer__navigation-item
               a.footer__navigation-link(href="#")
-                | Documentation
+                | #{ langObj[lang]["support"]["documentation"] }
 
             li.footer__navigation-item
               a.footer__navigation-link(href="#")
-                | Community
+                | #{ langObj[lang]["support"]["community"] }
 
             li.footer__navigation-item
               a.footer__navigation-link(href="#")
-                | Get In Touch
+                | #{ langObj[lang]["support"]["get-in-touch"] }
 
       .footer__subscribe-column
         h3.h3.footer__subscribe-title
-          | Subscribe to our newsletter
+          | #{ langObj[lang]["subscribe"]["title"] }
 
         p.footer__subscribe-description
-          | Receive our latest news and
-          | promotions in your inbox!
+          | #{ langObj[lang]["subscribe"]["description"] }
 
         +subscription-field({
           className: "footer__subscribe-input",
@@ -97,7 +167,7 @@ mixin footer(footerObj)
     .footer__bottom
       .wrapper.footer__bottom-inner
         p.footer__copyright
-          | Copyright © 2018 Toxin UI Kit. All&nbsp;rights&nbsp;reserved.
+          | #{ langObj[lang]["copyright"] }
 
         ul.footer__logos
           li.footer__logo-item

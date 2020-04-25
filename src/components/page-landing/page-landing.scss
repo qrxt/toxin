@@ -1,0 +1,73 @@
+.page-landing__promo {
+  padding-top: 70px;
+  padding-bottom: 20px;
+
+  background-image: url("./assets/img/landing-bg-1@1x.jpg");
+  background-repeat: no-repeat;
+  background-position: center top;
+}
+
+.page-landing__card-form {
+  display: flex;
+  flex-direction: column;
+
+  width: 32.7%;
+  margin-bottom: 318px;
+  padding: 41px 28px 30px;
+}
+
+.page-landing__card-title {
+  font-size: em(23.5);
+  line-height: 28px;
+
+  margin: 0 0 20px;
+}
+
+.page-landing__inputs-wrapper {
+  display: flex;
+
+  margin-bottom: 21px;
+}
+
+.page-landing__input-narrow {
+  width: 47%;
+}
+
+.page-landing__input-narrow:not(:last-child) {
+  margin-right: 20px;
+}
+
+.page-landing__guests-dropdown {
+  margin-bottom: 33px;
+}
+
+.page-landing__hotel-submit {
+  width: 100%;
+  font-size: em(12);
+}
+
+.page-landing__hotel-submit svg {
+  position: absolute;
+  right: 15px;
+  top: calc(50% - 7px);
+  fill: $white;
+}
+
+.page-landing__promo-description {
+  width: 25%;
+  align-self: flex-end;
+  margin: 0 0 0 auto;
+
+  font-size: em(13.7);
+  line-height: 24px;
+  text-align: right;
+  color: $dark-shade--75;
+}
+
+.page-landing__footer .footer__navigation-block:not(:last-child) {
+  margin-right: 60px;
+}
+
+.page-landing__footer .footer__navigation-block:last-child {
+  padding-left: 30px;
+}
