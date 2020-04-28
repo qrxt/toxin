@@ -1,6 +1,7 @@
 include ../logo/logo.pug
 include ../site-list/site-list.pug
 include ../btn-burger/btn-burger.pug
+include ../svg-gradients/svg-gradients.pug
 
 mixin header(headerObj)
   -
@@ -12,6 +13,7 @@ mixin header(headerObj)
       lang
     } = headerObj
   header.header(class=className)
+    +svg-gradients()
     .wrapper.header__inner
       nav.header__nav
         +logo({

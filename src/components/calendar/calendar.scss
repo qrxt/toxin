@@ -1,5 +1,9 @@
 .datepicker { // Popup calendar on active
   width: 320px;
+
+  @include mobile {
+    width: 220px;
+  }
 }
 
 .datepicker--day-name {
@@ -17,6 +21,10 @@
   margin-bottom: 18px;
   padding: 8px 22px;
   border: none;
+
+  @include mobile {
+    padding: 5px 10px;
+  }
 }
 
 .datepicker--nav-action {
@@ -59,10 +67,18 @@
     background: none;
     opacity: 0.3;
   }
+
+  @include mobile {
+    font-size: em(18);
+  }
 }
 
 .datepicker--content {
   padding: 5px 20px;
+
+  @include mobile {
+    padding: 5px 10px;
+  }
 }
 
 .datepicker--days-names {
@@ -73,6 +89,10 @@
   height: 40px;
   border-radius: 50%;
   z-index: 10;
+
+  @include mobile {
+    height: 28px;
+  }
 }
 
 .datepicker--cell-day.-current- {

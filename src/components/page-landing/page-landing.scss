@@ -7,13 +7,37 @@
   background-position: center top;
 }
 
+.page-landing__promo-inner {
+  padding-top: 690px;
+  position: relative;
+
+  @include mobile {
+    padding-top: 580px;
+  }
+}
+
 .page-landing__card-form {
   display: flex;
   flex-direction: column;
-
   width: 32.7%;
-  margin-bottom: 318px;
   padding: 41px 28px 30px;
+  position: absolute;
+  top: -1px;
+
+  @include tablet-landscape {
+    width: 40%;
+  }
+
+  @include tablet {
+    width: 50%;
+  }
+
+  @include mobile {
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 87.5%;
+  }
 }
 
 .page-landing__card-title {
@@ -25,16 +49,38 @@
 
 .page-landing__inputs-wrapper {
   display: flex;
+  flex-wrap: wrap;
 
   margin-bottom: 21px;
 }
 
 .page-landing__input-narrow {
   width: 47%;
+
+  @include tablet {
+    width: 47%;
+  }
+
+  @include mobile {
+    width: 100%;
+  }
 }
 
 .page-landing__input-narrow:not(:last-child) {
-  margin-right: 20px;
+  margin-right: 15px;
+
+  @include tablet {
+    margin-right: 15px;
+  }
+
+  @include mobile {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+}
+
+.page-landing__input-narrow:last-child {
+  margin-left: auto;
 }
 
 .page-landing__guests-dropdown {
@@ -62,12 +108,24 @@
   line-height: 24px;
   text-align: right;
   color: $dark-shade--75;
+
+  @include tablet-landscape {
+    width: 50%;
+  }
+
+  @include mobile {
+    width: 75%;
+  }
 }
 
 .page-landing__footer .footer__navigation-block:not(:last-child) {
   margin-right: 60px;
+
+  @include mobile {
+    margin-right: 20px;
+  }
 }
 
-.page-landing__footer .footer__navigation-block:last-child {
-  padding-left: 30px;
-}
+// .page-landing__footer .footer__navigation-block:last-child {
+//   padding-left: 30px;
+// }
