@@ -1,0 +1,103 @@
+include ../../pug/mixins.pug
+
+include ../header/header.pug
+include ../card/card.pug
+include ../text-field/text-field.pug
+include ../btn/btn.pug
+
++header({
+  className: "page-header",
+  btnBurgerClassName: ".js-page-sign-in-header-burger-btn",
+  siteListLinks: [
+    {
+      itemClassName: "page-header__site-item",
+      href: "#",
+      text: "О нас"
+    },
+
+    {
+      itemClassName: "page-header__site-item",
+      href: "#",
+      text: "Услуги",
+      submenuLinks: [
+        {
+          text: "Lorem ipsum",
+          href: "#"
+        },
+
+        {
+          text: "Dolor",
+          href: "#"
+        }
+      ]
+    },
+
+    {
+      itemClassName: "page-header__site-item",
+      href: "#",
+      text: "Вакансии"
+    },
+
+    {
+      itemClassName: "page-header__site-item",
+      href: "#",
+      text: "Новости"
+    },
+
+    {
+      itemClassName: "page-header__site-item",
+      href: "#",
+      text: "Соглашения",
+      submenuLinks: [
+        {
+          text: "Sample Text",
+          href: "#"
+        },
+
+        {
+          text: "Again",
+          href: "#"
+        }
+      ]
+    }
+  ],
+  lang: "ru"
+})
+
+main.page-sign-in
+  h1.visually-hidden
+    | Главная страница Toxin
+
+  section.page-sign-in__promo
+    .wrapper.page-sign-in__promo-inner
+      +card({
+        className: "page-sign-in__card-form"
+      })
+        form.page-sign-in__hotel-form(
+          action="https://echo.htmlacademy.ru/"
+          method="POST")
+          h2.page-sign-in__card-title
+            | Войти
+
+          +text-field({
+            type: "email",
+            name: "user-auth-email",
+            className: "page-sign-in__input",
+            placeholder: "Email",
+            required: true
+          })
+
+          +text-field({
+            className: "page-sign-in__input",
+            type: "password",
+            name: "user-auth-pass",
+            placeholder: "Пароль",
+            required: true
+          })
+
+          +btn({
+            className: "page-sign-in__submit",
+            type: "submit"
+          })
+            | Войти
+            +svg("arrow_forward", 15, 15)

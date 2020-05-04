@@ -1,0 +1,59 @@
+.page-sign-in__promo {
+  padding-top: 162px;
+  padding-bottom: 80px;
+
+  background-image: url("./assets/img/landing-bg-2@1x.jpg");
+  background-repeat: no-repeat;
+  background-position: center top;
+}
+
+.page-sign-in__promo-inner {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.page-sign-in__card-form {
+  display: flex;
+  flex-direction: column;
+  width: 32.7%;
+  padding: 44px 28px 30px;
+
+  @include tablet-landscape {
+    width: 40%;
+  }
+
+  @include tablet {
+    width: 50%;
+  }
+
+  @include mobile {
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 87.5%;
+  }
+}
+
+.page-sign-in__card-title {
+  margin: 0 0 24px;
+}
+
+.page-sign-in__input:not(:last-of-type) {
+  margin-bottom: 10px;
+}
+
+.page-sign-in__input:last-of-type {
+  margin-bottom: 20px;
+}
+
+.page-sign-in__submit {
+  width: 100%;
+}
+
+.page-sign-in__submit svg {
+  position: absolute;
+  right: 15px;
+  top: calc(50% - 7px);
+  fill: $white;
+}

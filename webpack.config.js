@@ -227,6 +227,7 @@ module.exports = (_, options) => {
       ),
 
       getHtmlPlugin("./page-landing.pug", "landing.html"),
+      getHtmlPlugin("./page-sign-in.pug", "sign-in.html"),
 
       new PugPlugin(),
 
