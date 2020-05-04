@@ -77,7 +77,7 @@ main.page-landing
       +card({
         className: "page-landing__card-form"
       })
-        form.page-landing__hotel-form(
+        form.page-landing__hotel-form.js-hotel-room-search-form(
           action="https://echo.htmlacademy.ru/"
           method="POST")
           h2.page-landing__card-title
@@ -87,13 +87,15 @@ main.page-landing
               +date-dropdown({
                 className: "page-landing__left-date js-page-landing-arrival",
                 label: "Прибытие",
-                name: "user-arrival"
+                name: "user-arrival",
+                required: true
               })
             .page-landing__input-narrow
               +date-dropdown({
                 className: "page-landing__right-date js-page-landing-check-out",
                 label: "Выезд",
-                name: "user-check-out"
+                name: "user-check-out",
+                required: true
               })
           .page-landing__guests
             +dropdown-guests({
@@ -105,12 +107,29 @@ main.page-landing
                 className: "page-landing__quantity-input",
                 label: "Взрослые",
                 initialValue: 0,
-                min: 0,
+                min: 1,
                 max: 4,
-                name: "user-guests-adults"
+                name: "user-guests-adults",
+                required: true
+              })
+              +input-quantity({
+                className: "page-landing__quantity-input",
+                label: "Дети",
+                initialValue: 0,
+                min: 0,
+                max: 3,
+                name: "user-guests-children"
+              })
+              +input-quantity({
+                className: "page-landing__quantity-input",
+                label: "Младенцы",
+                initialValue: 0,
+                min: 0,
+                max: 3,
+                name: "user-guests-babies"
               })
           +btn({
-            className: "page-landing__hotel-submit",
+            className: "page-landing__hotel-submit js-hotel-room-search-submit",
             type: "submit"
           })
             | Подобрать номер

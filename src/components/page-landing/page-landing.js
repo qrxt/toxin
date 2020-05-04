@@ -15,24 +15,35 @@ if (burgerBtnElem.length > 0) {
   burgerBtn.init();
 }
 
-// Date Dropdowns
+// Form Hotel Room Search
 
 const arrivalDateDropdownElem = $(".js-page-landing-arrival");
 const checkOutDateDropdownElem = $(".js-page-landing-check-out");
 
-if (arrivalDateDropdownElem.length > 0 && checkOutDateDropdownElem.length > 0) {
+const guestsDropdownElem = $(".js-page-landing-hotel-guests");
+
+const hotelRoomSearchForm = $(".js-hotel-room-search-form");
+const hotelRoomSearchSubmitBtn = $(".js-hotel-room-search-submit");
+
+const formElements = [
+  arrivalDateDropdownElem,
+  checkOutDateDropdownElem,
+  guestsDropdownElem,
+  hotelRoomSearchForm,
+  hotelRoomSearchSubmitBtn
+];
+
+if (formElements.every(el => el.length > 0)) {
+  // Date Dropdowns
+
   const arrivalDateDropdown = new DropdownDate(arrivalDateDropdownElem, {});
   const checkOutDateDropdown = new DropdownDate(checkOutDateDropdownElem, {});
 
   arrivalDateDropdown.init();
   checkOutDateDropdown.init();
-}
 
-// Guests Dropdown
+  // Guests Dropdown
 
-const guestsDropdownElem = $(".js-page-landing-hotel-guests");
-
-if (guestsDropdownElem.length > 0) {
   const guestsDropdown = new DropdownGuests(guestsDropdownElem, {});
 
   guestsDropdown.init();
@@ -46,4 +57,25 @@ if (guestsDropdownElem.length > 0) {
       inputQuantity.init();
     });
   }
+
+  // Submit btn logic
+
+  hotelRoomSearchSubmitBtn.on("click", () => {
+    const arrivalDateDropdownInputElem = $(arrivalDateDropdownElem).find("input");
+    const checkOutDateDropdownInputElem = $(checkOutDateDropdownElem).find("input");
+
+    guestsDropdown.open();
+
+    const arrivalInputValue = arrivalDateDropdownInputElem.val();
+    const checkOutInputValue = checkOutDateDropdownInputElem.val();
+
+    const isInputsFilled = arrivalInputValue.length > 0 && checkOutInputValue.length > 0;
+    const isDatesRangeCorrect = arrivalDateDropdown.selected <= checkOutDateDropdown.selected;
+
+    if (isInputsFilled && isDatesRangeCorrect) {
+      arrivalDateDropdownInputElem.get(0).setCustomValidity("");
+    } else {
+      arrivalDateDropdownInputElem.get(0).setCustomValidity("Дата въезда не может быть позже, чем дата выезда");
+    }
+  });
 }

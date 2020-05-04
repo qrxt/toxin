@@ -43,6 +43,8 @@ export default class DateDropdown {
 
     calendar.init();
 
+    this.datepicker = calendar.datepicker;
+
     this.nodeInput
       .get(0)
       .addEventListener("keydown", evt => {
@@ -55,5 +57,11 @@ export default class DateDropdown {
   _setDate (dateStr) {
     this.nodeInput.val(dateStr);
     this.nodeText.text(dateStr);
+  }
+
+  get selected () {
+    return this.options.range
+      ? this.datepicker.selectedDates
+      : this.datepicker.selectedDates[0];
   }
 }

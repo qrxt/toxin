@@ -26,4 +26,8 @@ export default class Dropdown {
       .find(".dropdown__label")
       .text(text);
   }
+
+  open () {
+    this.node.accordion("option", "active", 0);
+  }
 }

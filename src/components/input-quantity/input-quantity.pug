@@ -8,7 +8,8 @@ mixin input-quantity(inputQuantityObj)
       min,
       max,
       inputmode,
-      type
+      type,
+      required
     } = inputQuantityObj
 
   p.input-quantity(class=className)
@@ -26,7 +27,8 @@ mixin input-quantity(inputQuantityObj)
         max=max || 999
         type=type || "number"
         inputmode=inputmode || "numeric"
-        placeholder=min || 0)
+        placeholder=min || 0
+        required=required)
 
       button.input-quantity__btn.js-btn-inc(type="button")
         | +
