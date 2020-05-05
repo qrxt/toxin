@@ -1,0 +1,100 @@
+include ../../pug/mixins.pug
+
+include ../card/card.pug
+include ../text-field/text-field.pug
+include ../radio/radio.pug
+include ../toggle/toggle.pug
+include ../btn/btn.pug
+
+mixin card-sign-up(cardSignUpObj)
+  -
+    const {
+      className,
+      action = "https://echo.htmlacademy.ru/"
+    } = cardSignUpObj
+
+  +card({
+    className: className
+  })
+    form.sign-up__register-form(
+      action=action
+      method="POST")
+      h2.sign-up__register-title
+        | Регистрация аккаунта
+
+      +text-field({
+        className: "sign-up__register-first-name",
+        type: "text",
+        name: "user-register-first-name",
+        placeholder: "Имя",
+        required: true
+      })
+
+      +text-field({
+        className: "sign-up__register-last-name",
+        type: "text",
+        name: "user-register-last-name",
+        placeholder: "Фамилия",
+        required: true
+      })
+
+      .sign-up__register-radios
+        +radio({
+          className: "sign-up__register-radio",
+          name: "user-sex",
+          label: "Мужчина",
+          checked: true,
+          value: "user-sex-male"
+        })
+        +radio({
+          className: "sign-up__register-radio",
+          name: "user-sex",
+          label: "Женщина",
+          checked: false,
+          value: "user-sex-female"
+        })
+
+      +text-field({
+        className: "sign-up__masked-date js-uikit-cards-masked-date",
+        type: "date",
+        interactLike: "date",
+        label: "Дата Рождения",
+        placeholder: "ДД.ММ.ГГГГ",
+        name: "user-birth-date"
+      })
+
+      +text-field({
+        className: "sign-up__email",
+        type: "email",
+        label: "Данные Для Входа В Сервис",
+        placeholder: "Email",
+        name: "user-email"
+      })
+      +text-field({
+        className: "sign-up__password",
+        type: "password",
+        placeholder: "Пароль",
+        name: "user-password"
+      })
+
+      +toggle({
+        className: "sign-up__specials",
+        labelText: "Получать спецпредложения",
+        name: "user-get-specials"
+      })
+
+      +btn({
+        className: "sign-up__submit sign-up__register-submit",
+        type: "submit"
+      })
+        | Перейти к оплате
+        +svg("arrow_forward", 17, 17)
+
+      .sign-up__footer-wrapper
+        p.sign-up__register-text
+          | Уже есть аккаунт на Toxin
+        +btn({
+          className: "btn--bordered sign-up__authorize-btn",
+          type: "button"
+        })
+          | Войти

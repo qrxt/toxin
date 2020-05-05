@@ -1,0 +1,61 @@
+.card-sign-in__auth-title {
+  margin: 0 0 23px;
+}
+
+.card-sign-in__book-input:not(:last-of-type) {
+  margin-bottom: 10px;
+}
+
+.card-sign-in__book-input:last-of-type {
+  margin-bottom: 20px;
+}
+
+.card-sign-in__auth-submit {
+  width: 100%;
+  margin-bottom: 33px;
+  position: relative;
+  font-size: em(12);
+}
+
+.card-sign-in__auth-submit svg {
+  width: 17px;
+  height: 17px;
+  position: absolute;
+  right: 14px;
+  top: calc(50% - 8px);
+
+  fill: $white;
+}
+
+.card-sign-in__footer-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+
+  @include mobile {
+    flex-direction: column;
+  }
+}
+
+.card-sign-in__register-text {
+  font-size: em(14);
+  margin: 0;
+
+  @include mobile {
+    margin: 0 0 10px;
+  }
+}
+
+.card-sign-in__authorize-btn {
+  position: relative;
+  margin-top: 2px;
+  padding: 11px 20px;
+  width: 95px;
+
+  color: $purple;
+
+  @include mobile {
+    width: 100%;
+  }
+}

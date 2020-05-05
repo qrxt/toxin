@@ -15,6 +15,8 @@ include ../carousel/carousel.pug
 include ../hotel-room-number/hotel-room-number.pug
 include ../rating/rating.pug
 include ../card-hotel-room/card-hotel-room.pug
+include ../card-sign-in/card-sign-in.pug
+include ../card-sign-up/card-sign-up.pug
 
 mixin first-column()
   .uikit-cards__column
@@ -60,91 +62,9 @@ mixin first-column()
           | Подобрать номер
           +svg("arrow_forward", 15, 15)
 
-    +card({
+    +card-sign-up({
       className: "uikit-cards__register"
     })
-      form.uikit-cards__register-form(
-        action="https://echo.htmlacademy.ru/"
-        method="POST")
-        h2.uikit-cards__register-title
-          | Регистрация аккаунта
-
-        +text-field({
-          className: "uikit-cards__register-first-name",
-          type: "text",
-          name: "user-register-first-name",
-          placeholder: "Имя",
-          required: true
-        })
-
-        +text-field({
-          className: "uikit-cards__register-last-name",
-          type: "text",
-          name: "user-register-last-name",
-          placeholder: "Фамилия",
-          required: true
-        })
-
-        .uikit-cards__register-radios
-          +radio({
-            className: "uikit-cards__register-radio",
-            name: "user-sex",
-            label: "Мужчина",
-            checked: true,
-            value: "user-sex-male"
-          })
-          +radio({
-            className: "uikit-cards__register-radio",
-            name: "user-sex",
-            label: "Женщина",
-            checked: false,
-            value: "user-sex-female"
-          })
-
-        +text-field({
-          className: "uikit-cards__masked-date js-uikit-cards-masked-date",
-          type: "date",
-          interactLike: "date",
-          label: "Дата Рождения",
-          placeholder: "ДД.ММ.ГГГГ",
-          name: "user-birth-date"
-        })
-
-        +text-field({
-          className: "uikit-cards__email",
-          type: "email",
-          label: "Данные Для Входа В Сервис",
-          placeholder: "Email",
-          name: "user-email"
-        })
-        +text-field({
-          className: "uikit-cards__password",
-          type: "password",
-          placeholder: "Пароль",
-          name: "user-password"
-        })
-
-        +toggle({
-          className: "uikit-cards__specials",
-          labelText: "Получать спецпредложения",
-          name: "user-get-specials"
-        })
-
-        +btn({
-          className: "uikit-cards__submit uikit-cards__register-submit",
-          type: "submit"
-        })
-          | Перейти к оплате
-          +svg("arrow_forward", 17, 17)
-
-        .uikit-cards__footer-wrapper
-          p.uikit-cards__register-text
-            | Уже есть аккаунт на Toxin
-          +btn({
-            className: "btn--bordered uikit-cards__authorize-btn",
-            type: "button"
-          })
-            | Войти
 
 mixin second-column()
   .uikit-cards__column
@@ -229,45 +149,9 @@ mixin second-column()
           | Забронировать
           +svg("arrow_forward", 15, 15)
 
-    +card({
+    +card-sign-in({
       className: "uikit-cards__auth"
     })
-      form.uikit-cards__auth-form(
-        action="https://echo.htmlacademy.ru/"
-        method="POST")
-        h2.uikit-cards__auth-title
-          | Войти
-
-        +text-field({
-          className: "uikit-cards__book-input",
-          type: "email",
-          name: "user-auth-email",
-          placeholder: "Email",
-          required: true
-        })
-        +text-field({
-          className: "uikit-cards__book-input",
-          type: "password",
-          name: "user-auth-pass",
-          placeholder: "Пароль",
-          required: true
-        })
-
-        +btn({
-          className: "uikit-cards__auth-submit",
-          type: "submit"
-        })
-          | Войти
-          +svg("arrow_forward", 15, 15)
-
-        .uikit-cards__footer-wrapper.uikit-cards__footer-auth-wrapper
-          p.uikit-cards__register-text
-            | Нет аккаунта на Toxin?
-          +btn({
-            className: "btn--bordered uikit-cards__authorize-btn",
-            type: "button"
-          })
-            | Создать
 
 mixin third-column()
   .uikit-cards__column.uikit-cards__column--narrow

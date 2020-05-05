@@ -1,0 +1,47 @@
+mixin card-sign-in(cardSignInObj)
+
+  -
+    const {
+      className,
+      action = "https://echo.htmlacademy.ru/",
+    } = cardSignInObj
+
+  +card({
+    className: className
+  })
+    form.card-sign-in__auth-form(
+      action=action
+      method="POST")
+      h2.card-sign-in__auth-title
+        | Войти
+
+      +text-field({
+        className: "card-sign-in__book-input",
+        type: "email",
+        name: "user-auth-email",
+        placeholder: "Email",
+        required: true
+      })
+      +text-field({
+        className: "card-sign-in__book-input",
+        type: "password",
+        name: "user-auth-pass",
+        placeholder: "Пароль",
+        required: true
+      })
+
+      +btn({
+        className: "card-sign-in__auth-submit",
+        type: "submit"
+      })
+        | Войти
+        +svg("arrow_forward", 15, 15)
+
+      .card-sign-in__footer-wrapper.card-sign-in__footer-auth-wrapper
+        p.card-sign-in__register-text
+          | Нет аккаунта на Toxin?
+        +btn({
+          className: "btn--bordered card-sign-in__authorize-btn",
+          type: "button"
+        })
+          | Создать

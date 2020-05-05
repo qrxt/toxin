@@ -4,6 +4,7 @@ include ../header/header.pug
 include ../card/card.pug
 include ../text-field/text-field.pug
 include ../btn/btn.pug
+include ../card-sign-in/card-sign-in.pug
 
 +header({
   className: "page-header",
@@ -70,34 +71,6 @@ main.page-sign-in
 
   section.page-sign-in__promo
     .wrapper.page-sign-in__promo-inner
-      +card({
-        className: "page-sign-in__card-form"
+      +card-sign-in({
+        className: "uikit-cards__auth"
       })
-        form.page-sign-in__hotel-form(
-          action="https://echo.htmlacademy.ru/"
-          method="POST")
-          h2.page-sign-in__card-title
-            | Войти
-
-          +text-field({
-            type: "email",
-            name: "user-auth-email",
-            className: "page-sign-in__input",
-            placeholder: "Email",
-            required: true
-          })
-
-          +text-field({
-            className: "page-sign-in__input",
-            type: "password",
-            name: "user-auth-pass",
-            placeholder: "Пароль",
-            required: true
-          })
-
-          +btn({
-            className: "page-sign-in__submit",
-            type: "submit"
-          })
-            | Войти
-            +svg("arrow_forward", 15, 15)
