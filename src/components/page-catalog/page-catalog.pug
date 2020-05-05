@@ -1,0 +1,83 @@
+include ../../pug/mixins.pug
+
+include ../header/header.pug
+include ../footer/footer.pug
+include ../btn/btn.pug
+include ../card/card.pug
+include ../date-dropdown/date-dropdown.pug
+include ../dropdown-guests/dropdown-guests.pug
+include ../input-quantity/input-quantity.pug
+
++header({
+  className: "page-header",
+  logoHref: "/landing.html",
+  btnBurgerClassName: "js-page-catalog-header-burger-btn",
+  siteListLinks: [
+    {
+      itemClassName: "page-header__site-item",
+      href: "#",
+      text: "О нас"
+    },
+
+    {
+      itemClassName: "page-header__site-item",
+      href: "#",
+      text: "Услуги",
+      submenuLinks: [
+        {
+          text: "Lorem ipsum",
+          href: "#"
+        },
+
+        {
+          text: "Dolor",
+          href: "#"
+        }
+      ]
+    },
+
+    {
+      itemClassName: "page-header__site-item",
+      href: "#",
+      text: "Вакансии"
+    },
+
+    {
+      itemClassName: "page-header__site-item",
+      href: "#",
+      text: "Новости"
+    },
+
+    {
+      itemClassName: "page-header__site-item",
+      href: "#",
+      text: "Соглашения",
+      submenuLinks: [
+        {
+          text: "Sample Text",
+          href: "#"
+        },
+
+        {
+          text: "Again",
+          href: "#"
+        }
+      ]
+    }
+  ],
+  lang: "ru"
+})
+
+main.page-catalog
+  h1.visually-hidden
+    | Главная страница Toxin
+
+  section.page-catalog__promo
+    .wrapper.page-catalog__promo-inner
+
+  //- +footer({
+  //-   className: "page-catalog__footer",
+  //-   lang: "ru"
+  //- })
+  //-   | Бронирование номеров в лучшем отеле
+  //-   | 2019 года по версии ассоциации «Отельные взгляды»
