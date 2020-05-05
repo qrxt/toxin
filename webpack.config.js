@@ -127,7 +127,7 @@ module.exports = (_, options) => {
       overlay: true,
       hot: isDev,
       port: 3000,
-      host: "192.168.1.52"
+      host: "192.168.1.60"
     },
 
     devtool: isDev
@@ -228,6 +228,7 @@ module.exports = (_, options) => {
 
       getHtmlPlugin("./page-landing.pug", "landing.html"),
       getHtmlPlugin("./page-sign-in.pug", "sign-in.html"),
+      getHtmlPlugin("./page-sign-up.pug", "sign-up.html"),
 
       new PugPlugin(),
 

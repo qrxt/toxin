@@ -10,8 +10,10 @@ mixin header(headerObj)
       btnBurgerClassName,
       authorization,
       siteListLinks,
-      lang
+      lang,
+      logoHref = "#"
     } = headerObj
+
   header.header(class=className)
     +svg-gradients()
     .wrapper.header__inner
@@ -19,7 +21,7 @@ mixin header(headerObj)
         +logo({
           className: "header__logo",
           isFull: true,
-          link: "#"
+          link: logoHref
         })
 
         - const btnBurgerClasses = [ "header__burger-btn", btnBurgerClassName ];

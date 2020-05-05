@@ -74,7 +74,7 @@ mixin site-list(siteListObj)
         +btn({
           className: "btn--bordered site-list__btn",
           isLink: true,
-          href: "#"
+          href: "/sign-in.html"
         })
           | #{ langObj[lang]["login"] }
 
@@ -82,7 +82,7 @@ mixin site-list(siteListObj)
         +btn({
           className: "site-list__btn",
           isLink: true,
-          href: "#"
+          href: "/sign-up.html"
         })
           | #{ langObj[lang]["register"] }
     else

@@ -1,19 +1,20 @@
-.page-sign-in__promo {
-  padding-top: 162px;
-  padding-bottom: 162px;
+.page-sign-up__promo {
+  padding-top: 30px;
+  padding-bottom: 24px;
 
+  background-color: #e2e2e2;
   background-image: url("./assets/img/landing-bg-2@1x.jpg");
   background-repeat: no-repeat;
   background-position: center top;
 }
 
-.page-sign-in__promo-inner {
+.page-sign-up__promo-inner {
   position: relative;
   display: flex;
   justify-content: center;
 }
 
-.page-sign-in__auth {
+.page-sign-up__register {
   display: flex;
   flex-direction: column;
   width: 32.7%;
@@ -33,30 +34,7 @@
   }
 }
 
-.page-sign-in__card-title {
-  margin: 0 0 24px;
-}
-
-.page-sign-in__input:not(:last-of-type) {
-  margin-bottom: 10px;
-}
-
-.page-sign-in__input:last-of-type {
-  margin-bottom: 20px;
-}
-
-.page-sign-in__submit {
-  width: 100%;
-}
-
-.page-sign-in__submit svg {
-  position: absolute;
-  right: 15px;
-  top: calc(50% - 7px);
-  fill: $white;
-}
-
-.page-sign-in__footer .footer__navigation-block:not(:last-child) {
+.page-sign-up__footer .footer__navigation-block:not(:last-child) {
   margin-right: 60px;
 
   @include mobile {
@@ -64,7 +42,7 @@
   }
 }
 
-.page-sign-in__footer .footer__navigation-block:last-child {
+.page-sign-up__footer .footer__navigation-block:last-child {
   padding-left: 30px;
 
   @include tablet-landscape {

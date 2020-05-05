@@ -4,13 +4,13 @@ include ../header/header.pug
 include ../card/card.pug
 include ../text-field/text-field.pug
 include ../btn/btn.pug
-include ../card-sign-in/card-sign-in.pug
+include ../card-sign-up/card-sign-up.pug
 include ../footer/footer.pug
 
 +header({
   className: "page-header",
   logoHref: "/landing.html",
-  btnBurgerClassName: "js-page-sign-in-header-burger-btn",
+  btnBurgerClassName: "js-page-sign-up-header-burger-btn",
   siteListLinks: [
     {
       itemClassName: "page-header__site-item",
@@ -67,18 +67,18 @@ include ../footer/footer.pug
   lang: "ru"
 })
 
-main.page-sign-in
+main.page-sign-up
   h1.visually-hidden
-    | Страница авторизации в Toxin
+    | Страница регистрации в Toxin
 
-  section.page-sign-in__promo
-    .wrapper.page-sign-in__promo-inner
-      +card-sign-in({
-        className: "page-sign-in__auth"
+  section.page-sign-up__promo
+    .wrapper.page-sign-up__promo-inner
+      +card-sign-up({
+        className: "page-sign-up__register"
       })
 
   +footer({
-    className: "page-sign-in__footer",
+    className: "page-sign-up__footer",
     lang: "ru"
   })
     | Бронирование номеров в лучшем отеле
