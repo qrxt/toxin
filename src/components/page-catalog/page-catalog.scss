@@ -65,6 +65,17 @@
   margin-bottom: 30px;
 }
 
-.page-catalog__additional-options {
+.page-catalog__hotel-rooms {
+  width: 71.8%;
+  margin-left: auto;
+}
 
+.page-catalog__hotel-rooms-title {
+  margin: 0 0 20px;
+
+  font-size: em(25);
+}
+
+.page-catalog__hotel-rooms-list {
+  @include drop-list();
 }

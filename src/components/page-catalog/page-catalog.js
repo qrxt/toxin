@@ -1,24 +1,27 @@
 import $ from "jquery";
 
+import CardHotelRoom from "../card-hotel-room/card-hotel-room";
 import DateDropdown from "../date-dropdown/date-dropdown";
+import ExpandableList from "../expandable-list/expandable-list";
 import GuestsDropdown from "../dropdown-guests/dropdown-guests";
 import InputQuantity from "../input-quantity/input-quantity";
 import Range from "../range/range";
 import RoomsDropdown from "../dropdown-rooms/dropdown-rooms";
-import ExpandableList from "../expandable-list/expandable-list"
 
 const datesRangeDropdownElem = $(".js-page-catalog-dates-range");
 const guestsDropdownElem = $(".js-page-catalog-guests");
 const priceRangeElem = $(".js-page-catalog-price-range");
 const roomsDropdownElem = $(".js-catalog-dropdown-rooms");
 const expandableListElem = $(".js-page-catalog-expandable");
+const cardHotelRoomElems = $(".js-page-catalog-card-hotel-room");
 
 const formElems = [
   datesRangeDropdownElem,
   guestsDropdownElem,
   priceRangeElem,
   roomsDropdownElem,
-  expandableListElem
+  expandableListElem,
+  cardHotelRoomElems
 ];
 
 if (formElems.every(formElem => formElem.length > 0)) {
@@ -81,5 +84,15 @@ if (formElems.every(formElem => formElem.length > 0)) {
   const expandableList = new ExpandableList(expandableListElem, {});
 
   expandableList.init();
+
+  // Catalog Hotel Room Cards
+
+  $.map(cardHotelRoomElems, cardElem => {
+    const cardHotelRoom = new CardHotelRoom($(cardElem), {});
+
+    cardHotelRoom.init();
+
+    return cardHotelRoom;
+  });
 }
 

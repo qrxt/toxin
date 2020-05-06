@@ -12,6 +12,7 @@ include ../range/range.pug
 include ../rich-checkbox/rich-checkbox.pug
 include ../dropdown-rooms/dropdown-rooms.pug
 include ../expandable-list/expandable-list.pug
+include ../card-hotel-room/card-hotel-room.pug
 
 +header({
   className: "page-header page-catalog__header",
@@ -247,6 +248,44 @@ main.page-catalog
             name: "hotel-room-additional-shampoo-again"
           })
 
+      .page-catalog__hotel-rooms
+        p.h1.page-catalog__hotel-rooms-title
+          | Номера, который мы для вас подобрали
+
+        ul.page-catalog__hotel-rooms-list
+          li.page-catalog__hotel-rooms-item
+            +card-hotel-room({
+              className: "page-catalog__card-hotel-room js-page-catalog-card-hotel-room",
+              roomImages: [
+                {
+                  src: "./assets/img/hotel-room-1.png",
+                  alt: "Просторная спальня"
+                },
+
+                {
+                  src: "./assets/img/hotel-room-2.png",
+                  alt: "Другая спальня"
+                },
+
+                {
+                  src: "./assets/img/hotel-room-2.png",
+                  alt: "Еще спальня"
+                },
+
+                {
+                  src: "./assets/img/hotel-room-2.png",
+                  alt: "Опять спальня"
+                }
+              ],
+
+              roomNumber: "888",
+              roomCategory: "Люкс",
+              roomCost: "9 990₽",
+              roomCostPer: "В сутки",
+              initialRating: 5,
+              ratingName: "rating-room-first",
+              reviewsQuantity: "145"
+            })
 
   //- +footer({
   //-   className: "page-catalog__footer",
