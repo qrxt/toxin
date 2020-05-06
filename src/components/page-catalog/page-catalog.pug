@@ -9,6 +9,9 @@ include ../date-dropdown/date-dropdown.pug
 include ../dropdown-guests/dropdown-guests.pug
 include ../input-quantity/input-quantity.pug
 include ../range/range.pug
+include ../rich-checkbox/rich-checkbox.pug
+include ../dropdown-rooms/dropdown-rooms.pug
+include ../expandable-list/expandable-list.pug
 
 +header({
   className: "page-header page-catalog__header",
@@ -79,8 +82,7 @@ main.page-catalog
       .page-catalog__side-menu
         form.page-catalog__side-menu-form(
           action="https://echo.htmlacademy.ru/"
-          method="GET"
-        )
+          method="GET")
         +date-dropdown({
           className: "page-catalog__range js-page-catalog-dates-range",
           label: "Даты пребывания в отеле",
@@ -132,8 +134,8 @@ main.page-catalog
         .page-catalog__checkbox-buttons
           +checkbox({
             className: "page-catalog__checkbox",
-            labelText: "Нельзя курить",
-            checked: true,
+            labelText: "Можно курить",
+            checked: false,
             name: "hotel-room-smoking"
           })
           +checkbox({
@@ -148,6 +150,103 @@ main.page-catalog
             checked: true,
             name: "hotel-room-guests"
           })
+
+        +labeled({
+          className: "page-catalog__rich-checks-label",
+          label: "Доступность",
+          tagName: "p"
+        })
+        .page-catalog__checkbox-buttons
+          +rich-checkbox({
+            labelText: "Широкий коридор",
+            description: "Ширина коридоров в номере не\u00A0менее 91 см.",
+            name: "hotel-room-corridor"
+          })
+          +rich-checkbox({
+            labelText: "Помощник для инвалидов",
+            description: "На 1 этаже вас встретит специалист и проводит до номера.",
+            name: "hotel-room-helper"
+          })
+
+        +dropdown-rooms({
+          className: "page-catalog__rooms-dropdown js-catalog-dropdown-rooms",
+          label: "Удобства номера"
+        })
+          +input-quantity({
+            className: "page-catalog__quantity-input",
+            label: "Спальни",
+            initialValue: 2,
+            min: 1,
+            max: 4
+          })
+          +input-quantity({
+            className: "page-catalog__quantity-input",
+            label: "Кровати",
+            initialValue: 2,
+            min: 1,
+            max: 6
+          })
+          +input-quantity({
+            className: "page-catalog__quantity-input",
+            label: "Ванные комнаты",
+            initialValue: 0,
+            min: 0,
+            max: 2
+          })
+
+        +expandable-list({
+          className: "page-catalog__additional-options js-page-catalog-expandable",
+          header: "Дополнительные удобства"
+        })
+          +checkbox({
+            className: "page-catalog__checkbox",
+            labelText: "Завтрак",
+            checked: false,
+            name: "hotel-room-additional-breakfast"
+          })
+          +checkbox({
+            className: "page-catalog__checkbox",
+            labelText: "Письменный стол",
+            checked: true,
+            name: "hotel-room-additional-table"
+          })
+          +checkbox({
+            className: "page-catalog__checkbox",
+            labelText: "Стул для кормления",
+            checked: true,
+            name: "hotel-room-additional-chair"
+          })
+          +checkbox({
+            className: "page-catalog__checkbox",
+            labelText: "Кроватка",
+            checked: true,
+            name: "hotel-room-additional-cot"
+          })
+          +checkbox({
+            className: "page-catalog__checkbox",
+            labelText: "Телевизор",
+            checked: false,
+            name: "hotel-room-additional-tv"
+          })
+          +checkbox({
+            className: "page-catalog__checkbox",
+            labelText: "Шампунь",
+            checked: false,
+            name: "hotel-room-additional-shampoo"
+          })
+          +checkbox({
+            className: "page-catalog__checkbox",
+            labelText: "Телевизор",
+            checked: false,
+            name: "hotel-room-tv-again"
+          })
+          +checkbox({
+            className: "page-catalog__checkbox",
+            labelText: "Шампунь",
+            checked: false,
+            name: "hotel-room-additional-shampoo-again"
+          })
+
 
   //- +footer({
   //-   className: "page-catalog__footer",

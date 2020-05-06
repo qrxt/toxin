@@ -4,15 +4,21 @@ import DateDropdown from "../date-dropdown/date-dropdown";
 import GuestsDropdown from "../dropdown-guests/dropdown-guests";
 import InputQuantity from "../input-quantity/input-quantity";
 import Range from "../range/range";
+import RoomsDropdown from "../dropdown-rooms/dropdown-rooms";
+import ExpandableList from "../expandable-list/expandable-list"
 
 const datesRangeDropdownElem = $(".js-page-catalog-dates-range");
 const guestsDropdownElem = $(".js-page-catalog-guests");
 const priceRangeElem = $(".js-page-catalog-price-range");
+const roomsDropdownElem = $(".js-catalog-dropdown-rooms");
+const expandableListElem = $(".js-page-catalog-expandable");
 
 const formElems = [
   datesRangeDropdownElem,
   guestsDropdownElem,
-  priceRangeElem
+  priceRangeElem,
+  roomsDropdownElem,
+  expandableListElem
 ];
 
 if (formElems.every(formElem => formElem.length > 0)) {
@@ -33,17 +39,17 @@ if (formElems.every(formElem => formElem.length > 0)) {
 
   guestsDropdown.init();
 
-  const inputs = guestsDropdownElem.find(".input-quantity");
+  const guestInputs = guestsDropdownElem.find(".input-quantity");
 
-  if (inputs.length > 0) {
-    inputs.each((_, input) => {
+  if (guestInputs.length > 0) {
+    guestInputs.each((_, input) => {
       const inputQuantity = new InputQuantity($(input));
 
       inputQuantity.init();
     });
   }
 
-  // Price range
+  // Price Range
 
   const priceRange = new Range(priceRangeElem, {
     min: 0,
@@ -53,5 +59,27 @@ if (formElems.every(formElem => formElem.length > 0)) {
   });
 
   priceRange.init();
+
+  // Rooms Dropdown
+
+  const roomsDropdown = new RoomsDropdown(roomsDropdownElem, {});
+
+  roomsDropdown.init();
+
+  const roomInputs = guestsDropdownElem.find(".input-quantity");
+
+  if (roomInputs.length > 0) {
+    roomInputs.each((_, input) => {
+      const inputQuantity = new InputQuantity($(input));
+
+      inputQuantity.init();
+    });
+  }
+
+  // Additional Options Expandable List
+
+  const expandableList = new ExpandableList(expandableListElem, {});
+
+  expandableList.init();
 }
 

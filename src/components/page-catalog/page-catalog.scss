@@ -45,6 +45,8 @@
 .page-catalog__checkbox-buttons {
   display: flex;
   flex-direction: column;
+
+  margin-bottom: 29px;
 }
 
 .page-catalog__checkbox {
@@ -53,4 +55,16 @@
 
 .page-catalog__checkbox:not(:last-child) {
   margin-bottom: 10px;
+}
+
+.page-catalog__rich-checks-label {
+  margin: 0;
+}
+
+.page-catalog__rooms-dropdown {
+  margin-bottom: 30px;
+}
+
+.page-catalog__additional-options {
+
 }
