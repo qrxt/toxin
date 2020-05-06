@@ -1,0 +1,56 @@
+.page-catalog__promo-inner {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.page-catalog__header {
+  margin-bottom: 30px;
+}
+
+.page-catalog__side-menu {
+  display: flex;
+  flex-direction: column;
+  width: 23%;
+}
+
+.page-catalog__range {
+  margin-bottom: 19px;
+}
+
+.page-catalog__guests {
+  margin-bottom: 30px;
+}
+
+.page-catalog__price-range-wrapper {
+  margin-bottom: 30px;
+}
+
+.page-catalog__price-range {
+  margin-bottom: 17px;
+}
+
+.page-catalog__price-range-description {
+  margin: 0;
+
+  color: $dark-shade--25;
+  font-family: $font-primary;
+  font-size: em(12);
+  line-height: em(14);
+}
+
+.page-catalog__check-buttons-label {
+  margin: 0 0 10px;
+}
+
+.page-catalog__checkbox-buttons {
+  display: flex;
+  flex-direction: column;
+}
+
+.page-catalog__checkbox {
+  width: 85%;
+}
+
+.page-catalog__checkbox:not(:last-child) {
+  margin-bottom: 10px;
+}

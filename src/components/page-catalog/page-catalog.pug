@@ -1,5 +1,6 @@
 include ../../pug/mixins.pug
 
+include ../checkbox/checkbox.pug
 include ../header/header.pug
 include ../footer/footer.pug
 include ../btn/btn.pug
@@ -7,9 +8,10 @@ include ../card/card.pug
 include ../date-dropdown/date-dropdown.pug
 include ../dropdown-guests/dropdown-guests.pug
 include ../input-quantity/input-quantity.pug
+include ../range/range.pug
 
 +header({
-  className: "page-header",
+  className: "page-header page-catalog__header",
   logoHref: "/landing.html",
   btnBurgerClassName: "js-page-catalog-header-burger-btn",
   siteListLinks: [
@@ -74,6 +76,78 @@ main.page-catalog
 
   section.page-catalog__promo
     .wrapper.page-catalog__promo-inner
+      .page-catalog__side-menu
+        form.page-catalog__side-menu-form(
+          action="https://echo.htmlacademy.ru/"
+          method="GET"
+        )
+        +date-dropdown({
+          className: "page-catalog__range js-page-catalog-dates-range",
+          label: "Даты пребывания в отеле",
+          name: "user-dates-range",
+          startValue: "19 авг - 23 авг"
+        })
+
+        +dropdown-guests({
+          className: "page-catalog__guests js-page-catalog-guests",
+          label: "Гости"
+        })
+          +input-quantity({
+            className: "page-catalog__quantity-input",
+            label: "Взрослые",
+            initialValue: 2,
+            min: 0,
+            max: 4
+          })
+
+          +input-quantity({
+            className: "page-catalog__quantity-input",
+            label: "Дети",
+            initialValue: 1,
+            min: 0,
+            max: 4
+          })
+
+          +input-quantity({
+            className: "page-catalog__quantity-input",
+            label: "Младенцы",
+            initialValue: 1,
+            min: 0,
+            max: 3
+          })
+
+        .page-catalog__price-range-wrapper
+          +range({
+            className: "page-catalog__price-range js-page-catalog-price-range",
+            labelText: "Диапазон Цены"
+          })
+          p.page-catalog__price-range-description
+            | Стоимость за сутки пребывания в номере
+
+        +labeled({
+          className: "page-catalog__check-buttons-label",
+          label: "Checkbox Buttons",
+          tagName: "p"
+        })
+        .page-catalog__checkbox-buttons
+          +checkbox({
+            className: "page-catalog__checkbox",
+            labelText: "Нельзя курить",
+            checked: true,
+            name: "hotel-room-smoking"
+          })
+          +checkbox({
+            className: "page-catalog__checkbox",
+            labelText: "Можно с питомцами",
+            checked: true,
+            name: "hotel-room-pets"
+          })
+          +checkbox({
+            className: "page-catalog__checkbox",
+            labelText: "Можно пригласить гостей (до 10 человек)",
+            checked: true,
+            name: "hotel-room-guests"
+          })
 
   //- +footer({
   //-   className: "page-catalog__footer",
