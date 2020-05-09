@@ -78,4 +78,12 @@
 
 .page-catalog__hotel-rooms-list {
   @include drop-list();
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.page-catalog__hotel-rooms-item {
+  width: 32.5%;
 }
