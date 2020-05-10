@@ -34,6 +34,19 @@ include ../card-hotel-room/card-hotel-room.pug
     }
   ]
 
+  const getRoomData = (id, alt, data) => Object.assign({
+    ratingName: `hotel-room-${ id }`,
+    roomImages: [
+      {
+        src: `./assets/img/hotel-room-${ id }.png`,
+        alt: alt
+      },
+
+      ...restRoomImages
+    ],
+
+  }, data);
+
   const roomsData = [
     {
       className: "page-catalog__card-hotel-room js-page-catalog-card-hotel-room",
@@ -71,24 +84,6 @@ include ../card-hotel-room/card-hotel-room.pug
       initialRating: 4,
       reviewsQuantity: "65"
     },
-
-    {
-      className: "page-catalog__card-hotel-room js-page-catalog-card-hotel-room",
-      roomImages: [
-        {
-          src: "./assets/img/hotel-room-2.png",
-          alt: "Просторная спальня"
-        },
-
-        ...restRoomImages
-      ],
-
-      roomNumber: "980",
-      roomCost: "8 500₽",
-      roomCostPer: "В сутки",
-      initialRating: 3,
-      reviewsQuantity: "35"
-    }
   ]
 
 //----------------------------------------------------
