@@ -127,7 +127,7 @@ module.exports = (_, options) => {
       overlay: true,
       hot: isDev,
       port: 3000,
-      host: "192.168.1.60"
+      host: "192.168.1.52"
     },
 
     devtool: isDev

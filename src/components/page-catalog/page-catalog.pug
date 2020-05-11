@@ -34,30 +34,9 @@ include ../card-hotel-room/card-hotel-room.pug
     }
   ]
 
-  const getRoomData = (id, alt, data) => Object.assign({
-    ratingName: `hotel-room-${ id }`,
-    roomImages: [
-      {
-        src: `./assets/img/hotel-room-${ id }.png`,
-        alt: alt
-      },
-
-      ...restRoomImages
-    ],
-
-  }, data);
-
   const roomsData = [
     {
       className: "page-catalog__card-hotel-room js-page-catalog-card-hotel-room",
-      roomImages: [
-        {
-          src: "./assets/img/hotel-room-1.png",
-          alt: "Просторная спальня"
-        },
-
-        ...restRoomImages
-      ],
 
       roomNumber: "888",
       roomCategory: "Люкс",
@@ -69,20 +48,112 @@ include ../card-hotel-room/card-hotel-room.pug
 
     {
       className: "page-catalog__card-hotel-room js-page-catalog-card-hotel-room",
-      roomImages: [
-        {
-          src: "./assets/img/hotel-room-2.png",
-          alt: "Просторная спальня"
-        },
-
-        ...restRoomImages
-      ],
 
       roomNumber: "840",
       roomCost: "9 900₽",
       roomCostPer: "В сутки",
       initialRating: 4,
       reviewsQuantity: "65"
+    },
+
+    {
+      className: "page-catalog__card-hotel-room js-page-catalog-card-hotel-room",
+
+      roomNumber: "980",
+      roomCost: "8 500₽",
+      roomCostPer: "В сутки",
+      initialRating: 3,
+      reviewsQuantity: "35"
+    },
+
+    {
+      className: "page-catalog__card-hotel-room js-page-catalog-card-hotel-room",
+
+      roomNumber: "856",
+      roomCost: "7 300₽",
+      roomCostPer: "В сутки",
+      initialRating: 5,
+      reviewsQuantity: "19"
+    },
+
+    {
+      className: "page-catalog__card-hotel-room js-page-catalog-card-hotel-room",
+
+      roomNumber: "740",
+      roomCost: "6 000₽",
+      roomCostPer: "В сутки",
+      initialRating: 4,
+      reviewsQuantity: "44"
+    },
+
+    {
+      className: "page-catalog__card-hotel-room js-page-catalog-card-hotel-room",
+
+      roomNumber: "982",
+      roomCost: "5 800₽",
+      roomCostPer: "В сутки",
+      initialRating: 3,
+      reviewsQuantity: "56"
+    },
+
+    {
+      className: "page-catalog__card-hotel-room js-page-catalog-card-hotel-room",
+
+      roomNumber: "678",
+      roomCost: "5 500₽",
+      roomCostPer: "В сутки",
+      initialRating: 5,
+      reviewsQuantity: "45"
+    },
+
+    {
+      className: "page-catalog__card-hotel-room js-page-catalog-card-hotel-room",
+
+      roomNumber: "450",
+      roomCost: "5 300₽",
+      roomCostPer: "В сутки",
+      initialRating: 4,
+      reviewsQuantity: "39"
+    },
+
+    {
+      className: "page-catalog__card-hotel-room js-page-catalog-card-hotel-room",
+
+      roomNumber: "350",
+      roomCost: "5 000₽",
+      roomCostPer: "В сутки",
+      initialRating: 3,
+      reviewsQuantity: "77"
+    },
+
+    {
+      className: "page-catalog__card-hotel-room js-page-catalog-card-hotel-room",
+
+      roomNumber: "666",
+      roomCost: "5 000₽",
+      roomCostPer: "В сутки",
+      initialRating: 5,
+      reviewsQuantity: "25"
+    },
+
+    {
+      className: "page-catalog__card-hotel-room js-page-catalog-card-hotel-room",
+
+      roomNumber: "444",
+      roomCost: "5 000₽",
+      roomCostPer: "В сутки",
+      initialRating: 3,
+      reviewsQuantity: "15"
+    },
+
+    {
+      className: "page-catalog__card-hotel-room js-page-catalog-card-hotel-room",
+
+      roomNumber: "352",
+      roomCost: "5 000₽",
+      roomCostPer: "В сутки",
+      initialRating: 3,
+      reviewsQuantity: "55"
     },
   ]
 
@@ -329,6 +400,19 @@ main.page-catalog
         ul.page-catalog__hotel-rooms-list
           each roomData, roomIndex in roomsData
             li.page-catalog__hotel-rooms-item
+              -
+                const roomDataWithId = Object.assign(roomData, {
+                  ratingName: `hotel-room-${ roomIndex }`,
+                  roomImages: [
+                    {
+                      src: `./assets/img/hotel-room-${ roomIndex + 1 }@1x.jpg`,
+                      alt: "Просторная спальня"
+                    },
+
+                    ...restRoomImages
+                  ],
+                })
+
               +card-hotel-room(roomData)
 
   //- +footer({
