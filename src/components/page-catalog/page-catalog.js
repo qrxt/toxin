@@ -69,7 +69,7 @@ if (formElems.every(formElem => formElem.length > 0)) {
 
   roomsDropdown.init();
 
-  const roomInputs = guestsDropdownElem.find(".input-quantity");
+  const roomInputs = roomsDropdownElem.find(".input-quantity");
 
   if (roomInputs.length > 0) {
     roomInputs.each((_, input) => {

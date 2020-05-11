@@ -3,6 +3,8 @@
 }
 
 .pagination__list {
+  @include drop-list();
+
   display: flex;
   margin-bottom: 10px;
   padding-left: 3px;

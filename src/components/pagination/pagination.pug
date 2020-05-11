@@ -15,8 +15,8 @@ mixin pagination(paginationObj)
     const currentPageItemsRangeStart = (current - 1) * perPage + 1;
     const currentPageItemsRangeEnd = (current - 1) * perPage + perPage;
 
-  .pagination
-    ui.pagination__list
+  .pagination(class=className)
+    ul.pagination__list
       li.pagination__item
         a.pagination__link.pagination__link--active(href="#")
           | 1
