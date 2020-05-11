@@ -2,6 +2,10 @@
   display: flex;
   flex-wrap: wrap;
   margin-bottom: 72px;
+
+  @include mobile {
+    flex-direction: column;
+  }
 }
 
 .page-catalog__header {
@@ -19,6 +23,11 @@
 
   @include tablet {
     width: 35%;
+  }
+
+  @include mobile {
+    width: 100%;
+    margin-bottom: 30px;
   }
 }
 
@@ -81,6 +90,10 @@
   @include tablet-landscape {
     width: 60%;
   }
+
+  @include mobile {
+    width: 100%;
+  }
 }
 
 .page-catalog__hotel-rooms-title {
@@ -108,6 +121,10 @@
 
   @include tablet {
     width: 93%;
+  }
+
+  @include mobile {
+    width: 100%;
   }
 }
 
@@ -142,4 +159,8 @@
 
 .page-catalog__footer .footer__navigation-block:last-child {
   padding-left: 30px;
+
+  @include mobile {
+    padding-left: 0;
+  }
 }

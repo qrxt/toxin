@@ -16,7 +16,7 @@ export default class Carousel {
       lazyLoad: true,
       navText: [ arrowSvgHtml, arrowSvgHtml ],
       responsive: {
-        768: {
+        0: {
           autoWidth: false
         },
 
