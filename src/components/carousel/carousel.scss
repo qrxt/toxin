@@ -97,3 +97,10 @@
 .owl-carousel .owl-nav button.owl-prev {
   transform: scale(-1, 1);
 }
+
+.owl-carousel .owl-item {
+  @include tablet {
+    width: 100%;
+    height: auto;
+  }
+}

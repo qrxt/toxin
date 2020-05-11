@@ -153,6 +153,7 @@
   @include tablet {
     width: 40%;
     order: 1;
+    margin-bottom: 20px;
   }
 
   @include mobile {

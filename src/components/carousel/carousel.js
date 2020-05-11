@@ -15,6 +15,15 @@ export default class Carousel {
       autoWidth: true,
       lazyLoad: true,
       navText: [ arrowSvgHtml, arrowSvgHtml ],
+      responsive: {
+        768: {
+          autoWidth: false
+        },
+
+        1024: {
+          autoWidth: true
+        }
+      },
 
       ...options
     };
