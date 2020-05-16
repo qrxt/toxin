@@ -145,7 +145,7 @@ if (expandableCheckboxListOpenedElem.length > 0) {
   expandableList.init();
 }
 
-const likeBtnElems = $(".js-like-btn");
+const likeBtnElems = $(".js-uikit-forms-like-btn");
 
 if (likeBtnElems.length > 0) {
   likeBtnElems.each((_, likeBtnElem) => {

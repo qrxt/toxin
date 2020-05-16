@@ -138,6 +138,10 @@
   }
 }
 
+.uikit-forms__feature {
+  border-bottom: 1px solid rgba($color: $black, $alpha: 0.1);
+}
+
 .uikit-forms__feature:not(:last-child) {
   margin-bottom: 20px;
 }

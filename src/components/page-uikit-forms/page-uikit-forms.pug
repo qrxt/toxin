@@ -258,14 +258,14 @@ include ../comment/comment.pug
 
   const likeBtns = [
     {
-      className: "uikit-forms__like-button js-like-btn",
+      className: "uikit-forms__like-button js-uikit-forms-like-btn",
       initialValue: 2,
     },
 
     {
-      className: "uikit-forms__like-button js-like-btn",
+      className: "uikit-forms__like-button js-uikit-forms-like-btn",
       initialValue: 12,
-      toggled: true
+      toggled: true,
     }
   ];
 
@@ -584,6 +584,7 @@ main.page-main
         +comment({
           className: "uikit-forms__comment",
           userName: "Мурад Сарафанов",
+          btnLikeClassName: "js-uikit-forms-like-btn",
           when: "5 дней назад",
           likes: 12,
           toggled: true

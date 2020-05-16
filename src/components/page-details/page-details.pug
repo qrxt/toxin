@@ -1,0 +1,241 @@
+include ../../pug/mixins.pug
+
+include ../header/header.pug
+include ../footer/footer.pug
+include ../feature/feature.pug
+include ../bullet/bullet.pug
+include ../comment/comment.pug
+
+-
+  const features = [
+    {
+      className: "page-details__feature",
+      iconName: "icon-smile",
+      title: "Комфорт",
+      labelText: "Шумопоглощающие стены"
+    },
+
+    {
+      className: "page-details__feature",
+      iconName: "icon-city",
+      title: "Удобство",
+      labelText: "Окно в каждой из спален"
+    },
+
+    {
+      className: "page-details__feature",
+      iconName: "icon-fire",
+      title: "Уют",
+      labelText: "Номер оснащен камином"
+    }
+  ];
+
++header({
+  className: "page-header",
+  logoHref: "/landing.html",
+  btnBurgerClassName: "js-page-details-header-burger-btn",
+  siteListLinks: [
+    {
+      itemClassName: "page-header__site-item",
+      href: "#",
+      text: "О нас"
+    },
+
+    {
+      itemClassName: "page-header__site-item",
+      href: "#",
+      text: "Услуги",
+      submenuLinks: [
+        {
+          text: "Lorem ipsum",
+          href: "#"
+        },
+
+        {
+          text: "Dolor",
+          href: "#"
+        }
+      ]
+    },
+
+    {
+      itemClassName: "page-header__site-item",
+      href: "#",
+      text: "Вакансии"
+    },
+
+    {
+      itemClassName: "page-header__site-item",
+      href: "#",
+      text: "Новости"
+    },
+
+    {
+      itemClassName: "page-header__site-item",
+      href: "#",
+      text: "Соглашения",
+      submenuLinks: [
+        {
+          text: "Sample Text",
+          href: "#"
+        },
+
+        {
+          text: "Again",
+          href: "#"
+        }
+      ]
+    }
+  ],
+  lang: "ru"
+})
+
+main.page-details
+  h1.visually-hidden
+    | Подробности о номере отеля
+
+  section.page-details__promo
+    h2.visually-hidden
+      | Фото номера отеля
+    .page-details__promo-inner
+      a.page-details__promo-image-link(href="#")
+        picture
+          img(
+            src="./assets/img/grid-hotel-room-photo-1@1x.jpg"
+            alt="Фото номера отеля 1"
+            width="981"
+            height="485")
+
+      a.page-details__promo-image-link.page-details__promo-image-link--small(href="#")
+        picture
+          img(
+            src="./assets/img/grid-hotel-room-photo-2@1x.jpg"
+            alt="Фото номера отеля 1"
+            width="461"
+            height="243")
+      a.page-details__promo-image-link.page-details__promo-image-link--small(href="#")
+        picture
+          img(
+            src="./assets/img/grid-hotel-room-photo-3@1x.jpg"
+            alt="Фото номера отеля 1"
+            width="459"
+            height="242")
+
+  .wrapper.page-details__inner
+    .page-details__information-column
+      section.page-details__details
+        h2.visually-hidden
+          | Особенности номера
+        .wrapper.page-details__details-inner
+          .page-details__column
+            .page-details__information-wrapper
+              .page-details__features
+                h3.h2.page-details__title
+                  | Сведения о номере
+                each feature in features
+                  +feature(feature)
+
+              .page-details__impressions
+                h3.h2.page-details__title
+                  | Впечатления от номера
+                .page-details__impressions-wrapper
+                  .page-details__impressions-label
+                    p.page-details__impressions-quantity
+                      | 260
+                    p.page-details__impressions-unit
+                      | голосов
+                  svg.page-details__donut(viewbox="4 4 34 34")
+                    circle.page-details__donut-hole(cx="21", cy="21", r="15.91549430918954")
+                    circle.page-details__donut-ring(cx="21", cy="21", r="15.91549430918954")
+                    circle.page-details__donut-segment.page-details__donut-segment--yellow(cx="21", cy="21", r="15.91549430918954")
+                    circle.page-details__donut-segment.page-details__donut-segment--purple(cx="21", cy="21", r="15.91549430918954")
+                    circle.page-details__donut-segment.page-details__donut-segment--green(cx="21", cy="21", r="15.91549430918954")
+
+                  .page-details__imressions-legend
+                    +bullet({
+                      className: "page-details__legend-bullet page-details__legend-bullet--yellow"
+                    })
+                      | Великолепно
+
+                    +bullet({
+                      className: "page-details__legend-bullet page-details__legend-bullet--green"
+                    })
+                      | Хорошо
+
+                    +bullet({
+                      className: "page-details__legend-bullet page-details__legend-bullet--purple"
+                    })
+                      | Удовлетворительно
+
+                    +bullet({
+                      className: "page-details__legend-bullet page-details__legend-bullet--dark"
+                    })
+                      | Разочарован
+
+      section.page-details__comments
+        .page-details__comment-section-wrapper
+          h2.h2.page-details__comments-title
+            | Отзывы посетителей номера
+          p.page-details__comments-quantity
+            | #{ 2 } отзыва
+        .page-details__comments-list
+          +comment({
+            className: "page-details__comment",
+            btnLikeClassName: "js-page-details-like-btn",
+            userName: "Мурад Сарафанов",
+            when: "5 дней назад",
+            likes: 12,
+            toggled: true
+          })
+            | Великолепный матрас на кровати в основной спальне!
+            | А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие.
+            | Выкрикивал комплименты повару — никто не жаловался из соседей.
+
+          +comment({
+            imgPath: "avatar-1.jpg",
+            className: "page-details__comment",
+            btnLikeClassName: "js-page-details-like-btn",
+            userName: "Патрисия Стёклышкова",
+            when: "Неделю назад",
+            likes: 2
+          })
+            | Обслуживание на высоте! Всё аккуратно, чисто.
+            | Завтраки в номер советую заказать,
+            | каждый день новое блюдо и десерт как комплимент
+
+      section.page-details__additional-info
+        h2.visually-hidden
+          | Дополнительная информация
+
+        .page-details__additional-rules
+          h3.h2.page-details__additional-rules-title
+            | Правила
+          .page-details__additional-rules-bullets
+            +bullet({
+              className: "page-details__rules-bullet"
+            })
+              | Нельзя с питомцами
+            +bullet({
+              className: "page-details__rules-bullet"
+            })
+              | Без вечеринок и мероприятий
+            +bullet({
+              className: "page-details__rules-bullet"
+            })
+              | Время прибытия — после 13:00, а выезд до 12:00
+
+        .page-details__additional-cancellation
+          h3.h2.page-details__additional-cancellation-title
+            | Отмена
+          .page-details__additional-cancellation-text
+            | Бесплатная отмена в течение 48 ч.
+            | После этого при отмене не позднее чем за 5 дн.
+            | до прибытия вы получите полный возврат за вычетом
+            | сбора за услуги.
+
++footer({
+  className: "page-landing__footer",
+  lang: "ru"
+})
+  | Бронирование номеров в лучшем отеле
+  | 2019 года по версии ассоциации «Отельные взгляды»

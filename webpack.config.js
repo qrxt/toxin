@@ -230,6 +230,7 @@ module.exports = (_, options) => {
       getHtmlPlugin("./page-sign-in.pug", "sign-in.html"),
       getHtmlPlugin("./page-sign-up.pug", "sign-up.html"),
       getHtmlPlugin("./page-catalog.pug", "catalog.html"),
+      getHtmlPlugin("./page-details.pug", "details.html"),
 
       new PugPlugin(),
 
