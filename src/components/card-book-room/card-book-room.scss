@@ -1,0 +1,112 @@
+.card-book-room__number {
+  width: 35%;
+  margin: 0;
+
+  font-family: $font-secondary;
+  font-size: em(23);
+  font-weight: 700;
+
+  &::before {
+    content: "№";
+    margin-right: 7px;
+    font-size: em(11);
+    font-weight: 700;
+  }
+}
+
+.card-book-room__room-category {
+  padding-left: 6px;
+
+  color: $purple;
+  font-family: $font-primary;
+  font-size: em(8);
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.card-book-room__book-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+
+  margin-bottom: 20px;
+}
+
+.card-book-room__cost {
+  margin: 0;
+  padding-right: 2px;
+
+  color: $dark-shade--50;
+  font-size: em(14);
+  font-weight: 700;
+}
+
+.card-book-room__cost-per {
+  margin-left: 3px;
+  padding-left: 7px;
+  color: $dark-shade--50;
+  font-family: $font-primary;
+  font-size: em(12);
+  font-weight: 400;
+}
+
+.card-book-room__book-guests {
+  margin-bottom: 20px;
+}
+
+.card-book-room__guests-dropdown {
+  margin-bottom: 20px;
+}
+
+.card-book-room__bill {
+  margin: 0 0 28px;
+  padding-left: 3px;
+  padding-right: 4px;
+}
+
+.card-book-room__bill-total {
+  margin: 0 0 21px;
+  padding: 0 1px 0 3px;
+}
+
+.card-book-room__inputs-wrapper {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 19px;
+
+  @include mobile {
+    flex-direction: column;
+  }
+}
+
+.card-book-room__input-half {
+  width: 47%;
+
+  @include mobile {
+    width: 100%;
+  }
+}
+
+.card-book-room__input-half:not(:last-child) {
+  @include mobile {
+    margin-bottom: 20px;
+  }
+}
+
+.card-book-room__book-submit {
+  width: 100%;
+  margin-bottom: 10px;
+  position: relative;
+  font-size: em(12);
+}
+
+.card-book-room__book-submit svg {
+  width: 17px;
+  height: 17px;
+  position: absolute;
+  right: 14px;
+  top: calc(50% - 8px);
+
+  fill: $white;
+}

@@ -5,6 +5,11 @@ include ../footer/footer.pug
 include ../feature/feature.pug
 include ../bullet/bullet.pug
 include ../comment/comment.pug
+include ../card/card.pug
+include ../date-dropdown/date-dropdown.pug
+include ../dropdown-guests/dropdown-guests.pug
+include ../card-book-room/card-book-room.pug
+include ../btn/btn.pug
 
 -
   const features = [
@@ -144,7 +149,7 @@ main.page-details
                       | 260
                     p.page-details__impressions-unit
                       | голосов
-                  svg.page-details__donut(viewbox="4 4 34 34")
+                  svg.page-details__donut(viewbox="4 4 34 34", width="120", height="120")
                     circle.page-details__donut-hole(cx="21", cy="21", r="15.91549430918954")
                     circle.page-details__donut-ring(cx="21", cy="21", r="15.91549430918954")
                     circle.page-details__donut-segment.page-details__donut-segment--yellow(cx="21", cy="21", r="15.91549430918954")
@@ -233,6 +238,20 @@ main.page-details
             | до прибытия вы получите полный возврат за вычетом
             | сбора за услуги.
 
+    .page-details__form-column
+      +card-book-room({
+      className: "page-details__book",
+      method: "POST",
+      action: "http://echo.htmlacademy.ru",
+
+      roomNumber: "888",
+      roomCategory: "люкс",
+      roomCost: "9 990₽",
+
+      arrivalDropdownClassName: "js-page-details-book-arrival",
+      checkoutDropdownClassName: "js-page-details-book-check-out",
+      guestsDropdownClassName: "js-page-details-book-guests"
+    })
 +footer({
   className: "page-landing__footer",
   lang: "ru"

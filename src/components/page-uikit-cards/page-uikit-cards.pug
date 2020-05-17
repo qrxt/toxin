@@ -16,6 +16,7 @@ include ../rating/rating.pug
 include ../card-hotel-room/card-hotel-room.pug
 include ../card-sign-in/card-sign-in.pug
 include ../card-sign-up/card-sign-up.pug
+include ../card-book-room/card-book-room.pug
 
 mixin first-column()
   .uikit-cards__column
@@ -67,86 +68,19 @@ mixin first-column()
 
 mixin second-column()
   .uikit-cards__column
-    +card({
-      className: "uikit-cards__book"
+    +card-book-room({
+      className: "uikit-cards__book",
+      method: "POST",
+      action: "http://echo.htmlacademy.ru",
+
+      roomNumber: "888",
+      roomCategory: "люкс",
+      roomCost: "9 990₽",
+
+      arrivalDropdownClassName: "js-uikit-cards-book-arrival",
+      checkoutDropdownClassName: "js-uikit-cards-book-check-out",
+      guestsDropdownClassName: "js-uikit-cards-book-guests"
     })
-      form.uikit-cards__book-form(
-        action="https://echo.htmlacademy.ru/"
-        method="POST")
-        h2.visually-hidden
-          | Забронировать номер в отеле
-
-        +hotel-room-number({
-          className: "uikit-cards__book-header",
-          roomNumber: "888",
-          roomCategory: "Люкс"
-        })
-          p.uikit-cards__cost
-            | 9 990₽
-            span.uikit-cards__cost-per
-              | в сутки
-
-        .uikit-cards__inputs-wrapper
-          .uikit-cards__input-half
-            +date-dropdown({
-              className: "uikit-cards__left-date js-uikit-cards-book-arrival",
-              label: "Прибытие",
-              name: "user-arrival"
-            })
-          .uikit-cards__input-half
-            +date-dropdown({
-              className: "uikit-cards__right-date js-uikit-cards-book-check-out",
-              label: "Выезд",
-              name: "user-check-out"
-            })
-
-        .uikit-cards__book-guests
-          +dropdown-guests({
-            className: "uikit-cards__guests-dropdown js-uikit-cards-book-guests",
-            label: "Гости",
-            title: "Сколько гостей"
-          })
-            +input-quantity({
-              className: "uikit-cards__quantity-input",
-              label: "Взрослые",
-              initialValue: 3,
-              min: 0,
-              max: 4,
-              name: "user-guests-adults"
-            })
-
-        +bill({
-          className: "uikit-cards__bill",
-          rowsClassName: "uikit-cards__bill-row",
-          rows: [
-            {
-              key: "9 990₽ х 4 суток",
-              value: "39 960₽"
-            },
-
-            {
-              key: "Сбор за услуги: скидка 2 179₽",
-              value: "0₽",
-              hint: "Текст всплывающей подсказки"
-            },
-
-            {
-              key: "Сбор за дополнительные услуги",
-              value: "300₽",
-              hint: "Текст другой всплыващей подсказки"
-            }
-          ]
-        })
-        +total({
-          className: "uikit-cards__bill-total",
-          value: "38 081₽"
-        })
-        +btn({
-          className: "uikit-cards__book-submit",
-          type: "submit"
-        })
-          | Забронировать
-          +svg("arrow_forward", 15, 15)
 
     +card-sign-in({
       className: "uikit-cards__auth"
@@ -170,22 +104,22 @@ mixin third-column()
       className: "uikit-cards__hotel-room js-uikit-room-first",
       roomImages: [
         {
-          src: "./assets/img/hotel-room-1.png",
+          src: "./assets/img/hotel-room-1@1x.jpg",
           alt: "Просторная спальня"
         },
 
         {
-          src: "./assets/img/hotel-room-2.png",
+          src: "./assets/img/hotel-room-2@1x.jpg",
           alt: "Другая спальня"
         },
 
         {
-          src: "./assets/img/hotel-room-2.png",
+          src: "./assets/img/hotel-room-2@1x.jpg",
           alt: "Еще спальня"
         },
 
         {
-          src: "./assets/img/hotel-room-2.png",
+          src: "./assets/img/hotel-room-2@1x.jpg",
           alt: "Опять спальня"
         }
       ],
@@ -203,22 +137,22 @@ mixin third-column()
       className: "uikit-cards__hotel-room js-uikit-room-second",
       roomImages: [
         {
-          src: "./assets/img/hotel-room-2.png",
+          src: "./assets/img/hotel-room-2@1x.jpg",
           alt: "Просторная спальня"
         },
 
         {
-          src: "./assets/img/hotel-room-1.png",
+          src: "./assets/img/hotel-room-1@1x.jpg",
           alt: "Другая спальня"
         },
 
         {
-          src: "./assets/img/hotel-room-2.png",
+          src: "./assets/img/hotel-room-2@1x.jpg",
           alt: "Еще спальня"
         },
 
         {
-          src: "./assets/img/hotel-room-2.png",
+          src: "./assets/img/hotel-room-2@1x.jpg",
           alt: "Опять спальня"
         }
       ],

@@ -1,0 +1,113 @@
+include ../card/card.pug
+include ../hotel-room-number/hotel-room-number.pug
+include ../date-dropdown/date-dropdown.pug
+include ../dropdown-guests/dropdown-guests.pug
+include ../bill/bill.pug
+include ../total/total.pug
+include ../btn/btn.pug
+include ../input-quantity/input-quantity.pug
+
+mixin card-book-room(cardBookRoomObj)
+  -
+    const {
+      className,
+      method,
+      action,
+
+      roomNumber,
+      roomCategory = "",
+      roomCost,
+      roomCostPer = "в сутки",
+
+      arrivalDropdownName = "user-arrival",
+      arrivalDropdownClassName = "",
+
+      checkoutDropdownName = "user-check-out",
+      checkoutDropdownClassName = "",
+
+      guestsDropdownClassName = "",
+
+      guestsInputQuantity
+    } = cardBookRoomObj
+
+  +card({
+    className: className
+  })
+    form.card-book-room__book-form(
+      action=action
+      method=method)
+      h2.visually-hidden
+        | Забронировать номер в отеле
+
+      +hotel-room-number({
+        className: "card-book-room__book-header",
+        roomNumber: roomNumber,
+        roomCategory: roomCategory
+      })
+        p.card-book-room__cost
+          | #{ roomCost }
+          span.card-book-room__cost-per
+            | #{ roomCostPer }
+
+      .card-book-room__inputs-wrapper
+        .card-book-room__input-half
+          +date-dropdown({
+            className: `card-book-room__left-date ${ arrivalDropdownClassName }`,
+            label: "Прибытие",
+            name: arrivalDropdownName
+          })
+        .card-book-room__input-half
+          +date-dropdown({
+            className: `card-book-room__right-date ${ checkoutDropdownClassName }`,
+            label: "Выезд",
+            name: checkoutDropdownName
+          })
+
+      .card-book-room__book-guests
+        +dropdown-guests({
+          className: `card-book-room__guests-dropdown ${ guestsDropdownClassName }`,
+          label: "Гости",
+          title: "Сколько гостей"
+        })
+          //-
+          +input-quantity({
+            className: "card-book-room__quantity-input",
+            label: "Взрослые",
+            initialValue: 3,
+            min: 0,
+            max: 4,
+            name: "user-guests-adults"
+          })
+
+        +bill({
+        className: "card-book-room__bill",
+        rowsClassName: "card-book-room__bill-row",
+        rows: [
+          {
+            key: "9 990₽ х 4 суток",
+            value: "39 960₽"
+          },
+
+          {
+            key: "Сбор за услуги: скидка 2 179₽",
+            value: "0₽",
+            hint: "Текст всплывающей подсказки"
+          },
+
+          {
+            key: "Сбор за дополнительные услуги",
+            value: "300₽",
+            hint: "Текст другой всплыващей подсказки"
+          }
+        ]
+      })
+      +total({
+        className: "card-book-room__bill-total",
+        value: "38 081₽"
+      })
+      +btn({
+        className: "card-book-room__book-submit",
+        type: "submit"
+      })
+        | Забронировать
+        +svg("arrow_forward", 15, 15)
