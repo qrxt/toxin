@@ -35,31 +35,9 @@ if (elems.every(el => el.length > 0)) {
     likeBtn.init();
   });
 
-  // Date Dropdowns
+  // Card Book Room
 
-  const bookCardArrival = new DropdownDate(formArrivalDateDropdownElem, {
-    startDate: new Date("August 19, 2019")
-  });
-  const bookCardCheckOut = new DropdownDate(formCheckoutDateDropdownElem, {
-    startDate: new Date("August 23, 2019")
-  });
+  // start date 1: new Date("August 19, 2019")
 
-  bookCardArrival.init();
-  bookCardCheckOut.init();
-
-  // Guests Dropdown
-
-  const formGuestsDropdown = new DropdownGuests(formGuestsDropdownElem, {});
-
-  formGuestsDropdown.init();
-
-  const inputs = formGuestsDropdownElem.find(".input-quantity");
-
-  if (inputs.length > 0) {
-    inputs.each((_, input) => {
-      const inputQuantity = new InputQuantity($(input));
-
-      inputQuantity.init();
-    });
-  }
+  // start date 2: new Date("August 23, 2019")
 }
