@@ -52,20 +52,20 @@ mixin card-book-room(cardBookRoomObj)
       .card-book-room__inputs-wrapper
         .card-book-room__input-half
           +date-dropdown({
-            className: `card-book-room__left-date ${ arrivalDropdownClassName }`,
+            className: `card-book-room__left-date js-dropdown-date-arrival`,
             label: "Прибытие",
             name: arrivalDropdownName
           })
         .card-book-room__input-half
           +date-dropdown({
-            className: `card-book-room__right-date ${ checkoutDropdownClassName }`,
+            className: `card-book-room__right-date js-dropdown-date-checkout`,
             label: "Выезд",
             name: checkoutDropdownName
           })
 
       .card-book-room__book-guests
         +dropdown-guests({
-          className: `card-book-room__guests-dropdown ${ guestsDropdownClassName }`,
+          className: `card-book-room__guests-dropdown js-dropdown-guests`,
           label: "Гости",
           title: "Сколько гостей"
         })

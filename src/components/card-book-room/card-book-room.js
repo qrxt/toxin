@@ -7,6 +7,11 @@ import InputQuantity from "../input-quantity/input-quantity";
 export default class CardHotelRoom {
   constructor (node, options) {
     this.node = node;
+
+    this.arrivalNode = this.node.find(".js-dropdown-date-arrival");
+    this.checkoutNode = this.node.find(".js-dropdown-date-checkout");
+    this.guestsDropdownNode = this.node.find(".js-dropdown-guests");
+
     this.options = {
       guestsDropdownOptions: {},
 
@@ -16,34 +21,36 @@ export default class CardHotelRoom {
 
   init () {
     // Date Dropdowns
+    const bookCardArrival = new DropdownDate(this.arrivalNode, {
+      startDate: this.options.startDate
+    });
 
-  //   const bookCardArrival = new DropdownDate(formArrivalDateDropdownElem, {
-  //     startDate: this.options.startDate
-  //   });
+    const bookCardCheckOut = new DropdownDate(this.checkoutNode, {
+      startDate: this.options.startDate
+    });
 
-  //   const bookCardCheckOut = new DropdownDate(formCheckoutDateDropdownElem, {
-  //     startDate: this.options.startDate
-  //   });
+    bookCardArrival.init();
+    bookCardCheckOut.init();
 
-  //   bookCardArrival.init();
-  //   bookCardCheckOut.init();
+    // Guests Dropdown
 
-  //   // Guests Dropdown
+    const formGuestsDropdown = new DropdownGuests(
+      this.guestsDropdownNode,
+      this.options.guestsDropdownOptions
+    );
 
-  //   const formGuestsDropdown = new DropdownGuests(formGuestsDropdownElem, this.options.guestsDropdownOptions);
+    formGuestsDropdown.init();
 
-  //   formGuestsDropdown.init();
+    const inputs = this.guestsDropdownNode.find(".input-quantity");
 
-  //   const inputs = formGuestsDropdownElem.find(".input-quantity");
+    if (inputs.length > 0) {
+      inputs.each((_, input) => {
+        const inputQuantity = new InputQuantity($(input));
 
-  //   if (inputs.length > 0) {
-  //     inputs.each((_, input) => {
-  //       const inputQuantity = new InputQuantity($(input));
-
-  //       inputQuantity.init();
-  //     });
-  //   }
-  // }
+        inputQuantity.init();
+      });
+    }
+  }
 }
 
 // // Submit btn logic

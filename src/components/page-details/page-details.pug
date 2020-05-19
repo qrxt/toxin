@@ -240,17 +240,13 @@ main.page-details
 
     .page-details__form-column
       +card-book-room({
-      className: "page-details__book",
+      className: "page-details__book js-page-details-card-book-room",
       method: "POST",
       action: "http://echo.htmlacademy.ru",
 
       roomNumber: "888",
       roomCategory: "люкс",
-      roomCost: "9 990₽",
-
-      arrivalDropdownClassName: "js-page-details-book-arrival",
-      checkoutDropdownClassName: "js-page-details-book-check-out",
-      guestsDropdownClassName: "js-page-details-book-guests"
+      roomCost: "9 990₽"
     })
 +footer({
   className: "page-landing__footer",
