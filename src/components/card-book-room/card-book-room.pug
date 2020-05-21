@@ -26,8 +26,7 @@ mixin card-book-room(cardBookRoomObj)
       checkoutDropdownClassName = "",
 
       guestsDropdownClassName = "",
-
-      guestsInputQuantity
+      guestsInputQuantities
     } = cardBookRoomObj
 
   +card({
@@ -69,15 +68,23 @@ mixin card-book-room(cardBookRoomObj)
           label: "Гости",
           title: "Сколько гостей"
         })
-          //-
-          +input-quantity({
-            className: "card-book-room__quantity-input",
-            label: "Взрослые",
-            initialValue: 3,
-            min: 0,
-            max: 4,
-            name: "user-guests-adults"
-          })
+          each guestsInputQuantity in guestsInputQuantities
+            -
+              const {
+                label,
+                initialValue,
+                min,
+                max,
+                name
+              } = guestsInputQuantity
+            +input-quantity({
+              className: "card-book-room__quantity-input",
+              label: label,
+              initialValue: initialValue,
+              min: min,
+              max: max,
+              name: name
+            })
 
         +bill({
         className: "card-book-room__bill",
@@ -106,7 +113,7 @@ mixin card-book-room(cardBookRoomObj)
         value: "38 081₽"
       })
       +btn({
-        className: "card-book-room__book-submit",
+        className: "card-book-room__book-submit js-submit-btn",
         type: "submit"
       })
         | Забронировать

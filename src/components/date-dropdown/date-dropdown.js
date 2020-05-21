@@ -12,23 +12,22 @@ export default class DateDropdown {
 
   init () {
     const yOffset = this.node.get(0).scrollHeight + 7;
-    const { startDate, startDateRange } = this.options;
 
     this.nodeInput.prop("type", "text");
 
-    if (startDate) {
-      const currentDay = startDate.getDate();
-      const currentMonth = String(startDate.getMonth()).length < 2
-        ? `0${ startDate.getMonth() + 1 }`
-        : String(startDate.getMonth() + 1);
-      const currentFullYear = startDate.getFullYear();
+    if (this.options.startDate) {
+      const currentDay = this.options.startDate.getDate();
+      const currentMonth = String(this.options.startDate.getMonth()).length < 2
+        ? `0${ this.options.startDate.getMonth() + 1 }`
+        : String(this.options.startDate.getMonth() + 1);
+      const currentFullYear = this.options.startDate.getFullYear();
       const formattedDate = `${ currentDay }.${ currentMonth }.${ currentFullYear }`;
 
       this._setDate(formattedDate);
     }
 
-    if (startDateRange) {
-      this._setDate(startDateRange);
+    if (this.options.startDateRange) {
+      this._setDate(this.options.startDateRange);
     }
 
     const calendar = new Calendar({

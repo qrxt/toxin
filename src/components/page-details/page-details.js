@@ -30,11 +30,15 @@ if (elems.every(el => el.length > 0)) {
 
   // Card Book Room
 
-  const cardBookRoom = new CardBookRoom(cardBookRoomElem, {});
+  const cardBookRoom = new CardBookRoom(cardBookRoomElem, {
+    arrivalDateDropdownOptions: {
+      startDate: new Date("August 19, 2019")
+    },
+
+    checkoutDateDropdownOptions: {
+      startDate: new Date("August 23, 2019")
+    }
+  });
 
   cardBookRoom.init();
-
-  // start date 1: new Date("August 19, 2019")
-
-  // start date 2: new Date("August 23, 2019")
 }

@@ -79,7 +79,17 @@ mixin second-column()
 
       arrivalDropdownClassName: "js-uikit-cards-book-arrival",
       checkoutDropdownClassName: "js-uikit-cards-book-check-out",
-      guestsDropdownClassName: "js-uikit-cards-book-guests"
+      guestsDropdownClassName: "js-uikit-cards-book-guests",
+
+      guestsInputQuantities: [
+        {
+          label: "Взрослые",
+          initialValue: 3,
+          min: 0,
+          max: 4,
+          name: "user-guests-adults"
+        }
+      ]
     })
 
     +card-sign-in({

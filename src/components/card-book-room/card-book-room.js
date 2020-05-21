@@ -11,9 +11,13 @@ export default class CardHotelRoom {
     this.arrivalNode = this.node.find(".js-dropdown-date-arrival");
     this.checkoutNode = this.node.find(".js-dropdown-date-checkout");
     this.guestsDropdownNode = this.node.find(".js-dropdown-guests");
+    this.submitBtn = this.node.find(".js-submit-btn");
 
     this.options = {
       guestsDropdownOptions: {},
+
+      arrivalDateDropdownOptions: {},
+      checkoutDateDropdownOptions: {},
 
       ...options
     };
@@ -21,16 +25,41 @@ export default class CardHotelRoom {
 
   init () {
     // Date Dropdowns
-    const bookCardArrival = new DropdownDate(this.arrivalNode, {
-      startDate: this.options.startDate
-    });
 
-    const bookCardCheckOut = new DropdownDate(this.checkoutNode, {
-      startDate: this.options.startDate
-    });
+    const bookCardArrival = new DropdownDate(
+      this.arrivalNode,
+      this.options.arrivalDateDropdownOptions
+    );
+
+    const bookCardCheckout = new DropdownDate(
+      this.checkoutNode,
+      this.options.checkoutDateDropdownOptions
+    );
 
     bookCardArrival.init();
-    bookCardCheckOut.init();
+    bookCardCheckout.init();
+
+    // Fix Datepickers "Selected"
+
+    const arrivalDay = this.options.arrivalDateDropdownOptions.startDate.getDate();
+    const arrivalMonth = this.options.checkoutDateDropdownOptions.startDate.getMonth();
+
+    const currentArrivalDayDatepickerBtn = bookCardArrival
+      .datepicker
+      .$datepicker
+      .find(`.datepicker--cell.datepicker--cell-day[data-date='${ arrivalDay }'][data-month='${ arrivalMonth }']`);
+
+    currentArrivalDayDatepickerBtn.click();
+
+    const checkoutDay = this.options.checkoutDateDropdownOptions.startDate.getDate();
+    const checkoutMonth = this.options.checkoutDateDropdownOptions.startDate.getMonth();
+
+    const currentCheckoutlDayDatepickerBtn = bookCardCheckout
+      .datepicker
+      .$datepicker
+      .find(`.datepicker--cell.datepicker--cell-day[data-date='${ checkoutDay }'][data-month='${ checkoutMonth }']`);
+
+    currentCheckoutlDayDatepickerBtn.click();
 
     // Guests Dropdown
 
@@ -50,26 +79,26 @@ export default class CardHotelRoom {
         inputQuantity.init();
       });
     }
+
+    // Submit btn logic
+
+    this.submitBtn.on("click", () => {
+      const arrivalDateDropdownInputElem = this.arrivalNode.find("input");
+      const checkOutDateDropdownInputElem = this.checkoutNode.find("input");
+
+      formGuestsDropdown.open();
+
+      const arrivalInputValue = arrivalDateDropdownInputElem.val();
+      const checkOutInputValue = checkOutDateDropdownInputElem.val();
+
+      const isInputsFilled = arrivalInputValue.length > 0 && checkOutInputValue.length > 0;
+      const isDatesRangeCorrect = bookCardArrival.selected <= bookCardCheckout.selected;
+
+      if (isInputsFilled && isDatesRangeCorrect) {
+        arrivalDateDropdownInputElem.get(0).setCustomValidity("");
+      } else {
+        arrivalDateDropdownInputElem.get(0).setCustomValidity("Дата въезда не может быть позже, чем дата выезда");
+      }
+    });
   }
 }
-
-// // Submit btn logic
-
-// hotelRoomSearchSubmitBtn.on("click", () => {
-//   const arrivalDateDropdownInputElem = $(arrivalDateDropdownElem).find("input");
-//   const checkOutDateDropdownInputElem = $(checkOutDateDropdownElem).find("input");
-
-//   guestsDropdown.open();
-
-//   const arrivalInputValue = arrivalDateDropdownInputElem.val();
-//   const checkOutInputValue = checkOutDateDropdownInputElem.val();
-
-//   const isInputsFilled = arrivalInputValue.length > 0 && checkOutInputValue.length > 0;
-//   const isDatesRangeCorrect = arrivalDateDropdown.selected <= checkOutDateDropdown.selected;
-
-//   if (isInputsFilled && isDatesRangeCorrect) {
-//     arrivalDateDropdownInputElem.get(0).setCustomValidity("");
-//   } else {
-//     arrivalDateDropdownInputElem.get(0).setCustomValidity("Дата въезда не может быть позже, чем дата выезда");
-//   }
-// });

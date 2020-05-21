@@ -1,5 +1,9 @@
 .page-details {
   margin-bottom: 75px;
+
+  @include tablet-landscape {
+    margin-bottom: 0;
+  }
 }
 
 .page-details__inner {
@@ -22,7 +26,7 @@
     display: flex;
     flex-wrap: wrap;
     column-count: auto;
-    margin: 0;
+    margin: 0 0 30px;
   }
 
   @media (max-width: 460px) {
@@ -82,19 +86,57 @@
 .page-details__details-inner {
   display: flex;
   flex-wrap: wrap;
+
+  @include tablet-landscape {
+    margin-bottom: 30px;
+  }
+
+  @include tablet {
+    width: 100%;
+  }
+}
+
+.page-details__column {
+  @include tablet {
+    width: 100%;
+  }
 }
 
 .page-details__information-column {
   width: 61.5%;
+
+  @include tablet-landscape {
+    width: 50%;
+  }
+
+  @include tablet {
+    width: 100%;
+    margin-bottom: 40px;
+  }
 }
 
 .page-details__information-wrapper {
   display: flex;
+  flex-wrap: wrap;
   margin-bottom: 15px;
 }
 
 .page-details__features {
   margin-right: 105px;
+
+  @include tablet-landscape {
+    width: 100%;
+
+    margin-right: 0;
+  }
+
+  @include tablet {
+    width: 45%;
+  }
+
+  @include tablet {
+    width: 100%;
+  }
 }
 
 .page-details__title {
@@ -151,6 +193,14 @@
 
 .page-details__impressions {
   position: relative;
+
+  @include tablet {
+    margin-left: auto;
+  }
+
+  @include mobile {
+    display: none; //!
+  }
 }
 
 .page-details__impressions-wrapper {
@@ -161,6 +211,14 @@
   position: absolute;
   left: 10%;
   top: 28%;
+
+  @include tablet-landscape {
+    top: 50%;
+  }
+
+  @include tablet {
+    top: 28%;
+  }
 }
 
 .page-details__impressions-quantity,
@@ -189,6 +247,10 @@
 
   padding-top: 28px;
   padding-left: 28px;
+
+  @include tablet-landscape {
+    padding-top: 15px;
+  }
 }
 
 .page-details__legend-bullet {
@@ -222,8 +284,13 @@
 
 .page-details__comment-section-wrapper {
   display: flex;
+  flex-wrap: wrap;
   align-items: flex-start;
   justify-content: space-between;
+
+  @include mobile {
+
+  }
 }
 
 .page-details__comments {
@@ -256,6 +323,11 @@
 
 .page-details__additional-rules {
   width: 36%;
+
+  @include mobile {
+    width: 100%;
+    margin-bottom: 20px;
+  }
 }
 
 .page-details__additional-rules-title {
@@ -292,6 +364,12 @@
   width: 49.5%;
   padding-right: 20px;
   margin-left: auto;
+
+  @include mobile {
+    width: 100%;
+    padding-right: 0;
+    margin-left: 0;
+  }
 }
 
 .page-details__additional-cancellation-text {
@@ -301,8 +379,17 @@
 
 .page-details__form-column {
   margin-left: auto;
+
+  @include tablet {
+    width: 100%;
+    margin-left: 0;
+  }
 }
 
 .page-details__book {
   padding: 44px 27px 20px;
+
+  @include tablet {
+    margin-bottom: 20px;
+  }
 }

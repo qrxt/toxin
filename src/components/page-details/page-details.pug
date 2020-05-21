@@ -246,7 +246,24 @@ main.page-details
 
       roomNumber: "888",
       roomCategory: "люкс",
-      roomCost: "9 990₽"
+      roomCost: "9 990₽",
+      guestsInputQuantities: [
+        {
+          label: "Взрослые",
+          initialValue: 3,
+          min: 0,
+          max: 4,
+          name: "user-guests-adults"
+        },
+
+        {
+          label: "Дети",
+          initialValue: 0,
+          min: 0,
+          max: 4,
+          name: "user-guests-kids"
+        }
+      ]
     })
 +footer({
   className: "page-landing__footer",
