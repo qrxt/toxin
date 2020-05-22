@@ -13,32 +13,34 @@ const elems = [
   likeBtnElems
 ];
 
-if (elems.every(el => el.length > 0)) {
-  // Burger Btn
+$(window).on("load", () => {
+  if (elems.every(el => el.length > 0)) {
+    // Burger Btn
 
-  const burgerBtn = new BurgerBtn(burgerBtnElem);
+    const burgerBtn = new BurgerBtn(burgerBtnElem);
 
-  burgerBtn.init();
+    burgerBtn.init();
 
-  // Like Btns
+    // Like Btns
 
-  likeBtnElems.each((_, likeBtnElem) => {
-    const likeBtn = new LikeButton(likeBtnElem);
+    likeBtnElems.each((_, likeBtnElem) => {
+      const likeBtn = new LikeButton(likeBtnElem);
 
-    likeBtn.init();
-  });
+      likeBtn.init();
+    });
 
-  // Card Book Room
+    // Card Book Room
 
-  const cardBookRoom = new CardBookRoom(cardBookRoomElem, {
-    arrivalDateDropdownOptions: {
-      startDate: new Date("August 19, 2019")
-    },
+    const cardBookRoom = new CardBookRoom(cardBookRoomElem, {
+      arrivalDateDropdownOptions: {
+        startDate: new Date("August 19, 2019")
+      },
 
-    checkoutDateDropdownOptions: {
-      startDate: new Date("August 23, 2019")
-    }
-  });
+      checkoutDateDropdownOptions: {
+        startDate: new Date("August 23, 2019")
+      }
+    });
 
-  cardBookRoom.init();
-}
+    cardBookRoom.init();
+  }
+});

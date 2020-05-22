@@ -20,6 +20,7 @@ mixin date-dropdown(dateDropdownObj)
       type="date"
       name=name
       value=startValue
-      required=required)
+      required=required
+      autocomplete="off")
     p.date-dropdown__text
       | #{ startValue || "ДД.ММ.ГГГГ" }

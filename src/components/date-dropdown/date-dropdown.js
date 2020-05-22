@@ -15,21 +15,6 @@ export default class DateDropdown {
 
     this.nodeInput.prop("type", "text");
 
-    if (this.options.startDate) {
-      const currentDay = this.options.startDate.getDate();
-      const currentMonth = String(this.options.startDate.getMonth()).length < 2
-        ? `0${ this.options.startDate.getMonth() + 1 }`
-        : String(this.options.startDate.getMonth() + 1);
-      const currentFullYear = this.options.startDate.getFullYear();
-      const formattedDate = `${ currentDay }.${ currentMonth }.${ currentFullYear }`;
-
-      this._setDate(formattedDate);
-    }
-
-    if (this.options.startDateRange) {
-      this._setDate(this.options.startDateRange);
-    }
-
     const calendar = new Calendar({
       node: this.node,
       output: this.nodeText
@@ -40,7 +25,23 @@ export default class DateDropdown {
       ...this.options
     });
 
-    calendar.init();
+    $.when(calendar.init())
+      .then(() => {
+        if (this.options.startDate) {
+          const currentDay = this.options.startDate.getDate();
+          const currentMonth = String(this.options.startDate.getMonth()).length < 2
+            ? `0${ this.options.startDate.getMonth() + 1 }`
+            : String(this.options.startDate.getMonth() + 1);
+          const currentFullYear = this.options.startDate.getFullYear();
+          const formattedDate = `${ currentDay }.${ currentMonth }.${ currentFullYear }`;
+
+          this._setDate(formattedDate);
+        }
+
+        if (this.options.startDateRange) {
+          this._setDate(this.options.startDateRange);
+        }
+      });
 
     this.datepicker = calendar.datepicker;
 
@@ -54,7 +55,7 @@ export default class DateDropdown {
   }
 
   _setDate (dateStr) {
-    this.nodeInput.val(dateStr);
+    this.nodeInput.get(0).value = dateStr;
     this.nodeText.text(dateStr);
   }
 
