@@ -2,10 +2,13 @@
   padding-top: 30px;
   padding-bottom: 24px;
 
-  background-color: #e2e2e2;
   background-image: url("./assets/img/landing-bg-2@1x.jpg");
   background-repeat: no-repeat;
   background-position: center top;
+
+  @include tablet {
+    background-color: #e2e2e2;
+  }
 }
 
 .page-sign-up__promo-inner {

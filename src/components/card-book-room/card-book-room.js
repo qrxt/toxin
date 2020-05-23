@@ -13,6 +13,9 @@ export default class CardHotelRoom {
     this.guestsDropdownNode = this.node.find(".js-dropdown-guests");
     this.submitBtn = this.node.find(".js-submit-btn");
 
+    this.arrivalNodeInput = this.arrivalNode.find("input");
+    this.checkoutNodeInput = this.checkoutNode.find("input");
+
     this.options = {
       guestsDropdownOptions: {},
 
@@ -91,13 +94,19 @@ export default class CardHotelRoom {
       const arrivalInputValue = arrivalDateDropdownInputElem.val();
       const checkOutInputValue = checkOutDateDropdownInputElem.val();
 
+      const isInputsRequired = this.arrivalNodeInput.prop("required") && this.checkoutNodeInput.prop("required");
       const isInputsFilled = arrivalInputValue.length > 0 && checkOutInputValue.length > 0;
       const isDatesRangeCorrect = bookCardArrival.selected <= bookCardCheckout.selected;
 
-      if (isInputsFilled && isDatesRangeCorrect) {
-        arrivalDateDropdownInputElem.get(0).setCustomValidity("");
+      if (isInputsRequired && !isInputsFilled) {
+        arrivalDateDropdownInputElem.get(0)
+          .setCustomValidity("Выбор даты является обязательным");
+      } else if (!isDatesRangeCorrect) {
+        arrivalDateDropdownInputElem.get(0)
+          .setCustomValidity("Дата въезда не может быть позже, чем дата выезда");
       } else {
-        arrivalDateDropdownInputElem.get(0).setCustomValidity("Дата въезда не может быть позже, чем дата выезда");
+        arrivalDateDropdownInputElem.get(0)
+          .setCustomValidity("");
       }
     });
   }

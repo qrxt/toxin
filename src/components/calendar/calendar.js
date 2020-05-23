@@ -45,6 +45,7 @@ export default class Calendar {
     this.node = node;
     this.nodeInput = this.node.find("input");
     this.output = output;
+    this._datePlaceholder = "ДД.ММ.ГГГГ";
 
     this.options = {
       keyboardNav: true,
@@ -58,6 +59,10 @@ export default class Calendar {
         this.nodeInput.val("");
         this.formattedDate = formattedDate;
 
+        if (!formattedDate) {
+          this.output.text(this._datePlaceholder);
+        }
+
         return formattedDate;
       },
 
@@ -69,7 +74,6 @@ export default class Calendar {
     const datepicker = this.nodeInput.datepicker(this.options);
     const datepickerData = datepicker.data("datepicker");
     const datepickerElem = datepickerData.$datepicker;
-    const placeholder = "ДД.ММ.ГГГГ";
 
     this.datepicker = datepickerData;
 
@@ -97,6 +101,10 @@ export default class Calendar {
       if (isDateSelected()) {
         this.nodeInput.val(this.formattedDate);
         resetBtn.show();
+      } else {
+        this.output.text(this._datePlaceholder);
+
+        return;
       }
 
       if (this.output) {
@@ -109,7 +117,7 @@ export default class Calendar {
       resetBtn.hide();
 
       if (this.output) {
-        this.output.text(placeholder);
+        this.output.text(this._datePlaceholder);
       }
     });
 
