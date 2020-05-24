@@ -24,10 +24,8 @@ mixin header(headerObj)
           link: logoHref
         })
 
-        - const btnBurgerClasses = [ "header__burger-btn", btnBurgerClassName ];
-        - const btnBurgerClassString = btnBurgerClasses.filter(Boolean).join(" ");
         +btn-burger({
-          className: btnBurgerClassString
+          className: "js-header-burger-btn header__burger-btn"
         })
 
         +site-list({

@@ -1,18 +1,18 @@
 import $ from "jquery";
 
-import BtnBurger from "@components/btn-burger/btn-burger";
 import DropdownDate from "@components/date-dropdown/date-dropdown";
 import DropdownGuests from "@components/dropdown-guests/dropdown-guests";
+import Header from "@components/header/header";
 import InputQuantity from "@components/input-quantity/input-quantity";
 
-// Burger Btn
+// Page Header
 
-const burgerBtnElem = $(".js-page-landing-header-burger-btn");
+const pageHeaderElem = $(".js-page-landing-header");
 
-if (burgerBtnElem.length > 0) {
-  const burgerBtn = new BtnBurger(burgerBtnElem);
+if (pageHeaderElem.length > 0) {
+  const pageHeader = new Header(pageHeaderElem);
 
-  burgerBtn.init();
+  pageHeader.init();
 }
 
 // Form Hotel Room Search
