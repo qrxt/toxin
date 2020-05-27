@@ -72,7 +72,7 @@ mixin site-list(siteListObj)
     if !authorization
       li.site-list__item.site-list__item--unauthorized
         +btn({
-          className: "btn--bordered site-list__btn",
+          className: "btn--bordered site-list__btn js-header-sign-in-btn",
           isLink: true,
           href: "/sign-in.html"
         })
@@ -80,7 +80,7 @@ mixin site-list(siteListObj)
 
       li.site-list__item.site-list__item--unauthorized
         +btn({
-          className: "site-list__btn",
+          className: "site-list__btn js-header-sign-up-btn",
           isLink: true,
           href: "/sign-up.html"
         })
