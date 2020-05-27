@@ -44,25 +44,30 @@ export default class CardHotelRoom {
 
     // Fix Datepickers "Selected"
 
-    const arrivalDay = this.options.arrivalDateDropdownOptions.startDate.getDate();
-    const arrivalMonth = this.options.checkoutDateDropdownOptions.startDate.getMonth();
+    const isArrivalDateOptionsEmpty = $.isEmptyObject(this.options.arrivalDateDropdownOptions);
+    const isCheckoutDateOptionsEmpty = $.isEmptyObject(this.options.checkoutDateDropdownOptions);
 
-    const currentArrivalDayDatepickerBtn = bookCardArrival
-      .datepicker
-      .$datepicker
-      .find(`.datepicker--cell.datepicker--cell-day[data-date='${ arrivalDay }'][data-month='${ arrivalMonth }']`);
+    if (!isArrivalDateOptionsEmpty && !isCheckoutDateOptionsEmpty) {
+      const arrivalDay = this.options.arrivalDateDropdownOptions.startDate.getDate();
+      const arrivalMonth = this.options.checkoutDateDropdownOptions.startDate.getMonth();
 
-    currentArrivalDayDatepickerBtn.click();
+      const currentArrivalDayDatepickerBtn = bookCardArrival
+        .datepicker
+        .$datepicker
+        .find(`.datepicker--cell.datepicker--cell-day[data-date='${ arrivalDay }'][data-month='${ arrivalMonth }']`);
 
-    const checkoutDay = this.options.checkoutDateDropdownOptions.startDate.getDate();
-    const checkoutMonth = this.options.checkoutDateDropdownOptions.startDate.getMonth();
+      currentArrivalDayDatepickerBtn.click();
 
-    const currentCheckoutlDayDatepickerBtn = bookCardCheckout
-      .datepicker
-      .$datepicker
-      .find(`.datepicker--cell.datepicker--cell-day[data-date='${ checkoutDay }'][data-month='${ checkoutMonth }']`);
+      const checkoutDay = this.options.checkoutDateDropdownOptions.startDate.getDate();
+      const checkoutMonth = this.options.checkoutDateDropdownOptions.startDate.getMonth();
 
-    currentCheckoutlDayDatepickerBtn.click();
+      const currentCheckoutlDayDatepickerBtn = bookCardCheckout
+        .datepicker
+        .$datepicker
+        .find(`.datepicker--cell.datepicker--cell-day[data-date='${ checkoutDay }'][data-month='${ checkoutMonth }']`);
+
+      currentCheckoutlDayDatepickerBtn.click();
+    }
 
     // Guests Dropdown
 

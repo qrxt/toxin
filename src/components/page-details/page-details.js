@@ -1,25 +1,28 @@
 import $ from "jquery";
 
-import BurgerBtn from "@components/btn-burger/btn-burger";
 import CardBookRoom from "@components/card-book-room/card-book-room";
+import Header from "@components/header/header";
 import LikeButton from "@components/btn/btn-like";
 
-const burgerBtnElem = $(".js-page-details-header-burger-btn");
+const pageHeaderElem = $(".js-page-catalog-header");
 const likeBtnElems = $(".js-page-details-like-btn");
 const cardBookRoomElem = $(".js-page-details-card-book-room");
 
 const elems = [
-  burgerBtnElem,
-  likeBtnElems
+  pageHeaderElem,
+  likeBtnElems,
+  cardBookRoomElem
 ];
 
 $(window).on("load", () => {
   if (elems.every(el => el.length > 0)) {
-    // Burger Btn
+    // Page Header
 
-    const burgerBtn = new BurgerBtn(burgerBtnElem);
+    if (pageHeaderElem.length > 0) {
+      const pageHeader = new Header(pageHeaderElem);
 
-    burgerBtn.init();
+      pageHeader.init();
+    }
 
     // Like Btns
 

@@ -6,9 +6,12 @@ include ../text-field/text-field.pug
 include ../btn/btn.pug
 include ../card-sign-up/card-sign-up.pug
 include ../footer/footer.pug
+include ../popup/popup.pug
+include ../card-sign-in/card-sign-in.pug
+include ../card-sign-up/card-sign-up.pug
 
 +header({
-  className: "page-header",
+  className: "page-header js-page-sign-up-header",
   logoHref: "/landing.html",
   btnBurgerClassName: "js-page-sign-up-header-burger-btn",
   siteListLinks: [
@@ -76,6 +79,20 @@ main.page-sign-up
       +card-sign-up({
         className: "page-sign-up__register"
       })
+
+  +popup({
+    className: "page-landing__popup-sign-in js-landing-page-popup-sign-in"
+  })
+    +card-sign-in({
+      className: "page-landing__popup-sign-in-card"
+    })
+
+  +popup({
+    className: "page-landing__popup-sign-up js-landing-page-popup-sign-up"
+  })
+    +card-sign-up({
+      className: "page-landing__popup-sign-up-card"
+    })
 
   +footer({
     className: "page-sign-up__footer",

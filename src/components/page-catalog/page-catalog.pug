@@ -14,6 +14,9 @@ include ../dropdown-rooms/dropdown-rooms.pug
 include ../expandable-list/expandable-list.pug
 include ../card-hotel-room/card-hotel-room.pug
 include ../pagination/pagination.pug
+include ../popup/popup.pug
+include ../card-sign-in/card-sign-in.pug
+include ../card-sign-up/card-sign-up.pug
 
 //----------------------------------------------------
 
@@ -161,7 +164,7 @@ include ../pagination/pagination.pug
 //----------------------------------------------------
 
 +header({
-  className: "page-header page-catalog__header",
+  className: "page-header page-catalog__header js-page-catalog-header",
   logoHref: "/landing.html",
   btnBurgerClassName: "js-page-catalog-header-burger-btn",
   siteListLinks: [
@@ -425,6 +428,20 @@ main.page-catalog
           current: 1,
           last: 15
         })
+
+  +popup({
+    className: "page-landing__popup-sign-in js-landing-page-popup-sign-in"
+  })
+    +card-sign-in({
+      className: "page-landing__popup-sign-in-card"
+    })
+
+  +popup({
+    className: "page-landing__popup-sign-up js-landing-page-popup-sign-up"
+  })
+    +card-sign-up({
+      className: "page-landing__popup-sign-up-card"
+    })
 
   +footer({
     className: "page-catalog__footer",

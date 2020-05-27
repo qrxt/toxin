@@ -1,6 +1,7 @@
 import $ from "jquery";
 
 import Calendar from "@components/calendar/calendar";
+import CardBookRoom from "../card-book-room/card-book-room";
 import CardHotelRoom from "@components/card-hotel-room/card-hotel-room";
 import DateDropdown from "@components/date-dropdown/date-dropdown";
 import DropdownGuests from "@components/dropdown-guests/dropdown-guests";
@@ -76,22 +77,14 @@ if (bookCardArrivalElem.length > 0 && bookCardCheckOutElem.length > 0) {
   bookCardCheckOut.init();
 }
 
-const bookCardGuestsElem = $(".js-uikit-cards-book-guests");
+// Card Book Room
 
-if (bookCardGuestsElem.length > 0) {
-  const bookCardGuests = new DropdownGuests(bookCardGuestsElem, {});
+const cardBookRoomElem = $(".js-page-details-card-book-room");
 
-  bookCardGuests.init();
+if (cardBookRoomElem.length > 0) {
+  const cardBookRoom = new CardBookRoom(cardBookRoomElem, {});
 
-  const inputs = bookCardGuestsElem.find(".input-quantity");
-
-  if (inputs.length > 0) {
-    inputs.each((_, input) => {
-      const inputQuantity = new InputQuantity($(input));
-
-      inputQuantity.init();
-    });
-  }
+  cardBookRoom.init();
 }
 
 // Карточка календаря

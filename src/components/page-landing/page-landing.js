@@ -5,18 +5,9 @@ import DropdownGuests from "@components/dropdown-guests/dropdown-guests";
 import Header from "@components/header/header";
 import InputQuantity from "@components/input-quantity/input-quantity";
 
-// Page Header
-
-const pageHeaderElem = $(".js-page-landing-header");
-
-if (pageHeaderElem.length > 0) {
-  const pageHeader = new Header(pageHeaderElem);
-
-  pageHeader.init();
-}
-
 // Form Hotel Room Search
 
+const pageHeaderElem = $(".js-page-landing-header");
 const arrivalDateDropdownElem = $(".js-page-landing-arrival");
 const checkOutDateDropdownElem = $(".js-page-landing-check-out");
 
@@ -26,6 +17,7 @@ const hotelRoomSearchForm = $(".js-hotel-room-search-form");
 const hotelRoomSearchSubmitBtn = $(".js-hotel-room-search-submit");
 
 const formElements = [
+  pageHeaderElem,
   arrivalDateDropdownElem,
   checkOutDateDropdownElem,
   guestsDropdownElem,
@@ -34,6 +26,14 @@ const formElements = [
 ];
 
 if (formElements.every(el => el.length > 0)) {
+
+  // Page Header
+  if (pageHeaderElem.length > 0) {
+    const pageHeader = new Header(pageHeaderElem);
+
+    pageHeader.init();
+  }
+
   // Date Dropdowns
 
   const arrivalDateDropdown = new DropdownDate(arrivalDateDropdownElem, {});

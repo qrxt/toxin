@@ -2,7 +2,7 @@ import $ from "jquery";
 
 import Header from "@components/header/header";
 
-const pageHeaderElem = $(".js-page-sign-in-header");
+const pageHeaderElem = $(".js-page-sign-up-header");
 
 // Page Header
 
