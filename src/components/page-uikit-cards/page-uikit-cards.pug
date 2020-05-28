@@ -63,13 +63,13 @@ mixin first-column()
           +svg("arrow_forward", 15, 15)
 
     +card-sign-up({
-      className: "uikit-cards__register"
+      className: "uikit-cards__register js-uikit-cards-sign-up"
     })
 
 mixin second-column()
   .uikit-cards__column
     +card-book-room({
-      className: "uikit-cards__book js-page-details-card-book-room",
+      className: "uikit-cards__book js-uikit-cards-card-book-room",
       method: "POST",
       action: "http://echo.htmlacademy.ru",
 

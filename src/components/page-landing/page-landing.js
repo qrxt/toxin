@@ -4,6 +4,7 @@ import DropdownDate from "@components/date-dropdown/date-dropdown";
 import DropdownGuests from "@components/dropdown-guests/dropdown-guests";
 import Header from "@components/header/header";
 import InputQuantity from "@components/input-quantity/input-quantity";
+import CardSignUp from "../card-sign-up/card-sign-up";
 
 // Form Hotel Room Search
 
@@ -16,23 +17,30 @@ const guestsDropdownElem = $(".js-page-landing-hotel-guests");
 const hotelRoomSearchForm = $(".js-hotel-room-search-form");
 const hotelRoomSearchSubmitBtn = $(".js-hotel-room-search-submit");
 
+const cardSignUpElem = $(".js-page-landing-sign-up");
+
 const formElements = [
   pageHeaderElem,
   arrivalDateDropdownElem,
   checkOutDateDropdownElem,
+  cardSignUpElem,
   guestsDropdownElem,
   hotelRoomSearchForm,
   hotelRoomSearchSubmitBtn
 ];
 
 if (formElements.every(el => el.length > 0)) {
-
   // Page Header
-  if (pageHeaderElem.length > 0) {
-    const pageHeader = new Header(pageHeaderElem);
 
-    pageHeader.init();
-  }
+  const pageHeader = new Header(pageHeaderElem);
+
+  pageHeader.init();
+
+  // Card Sign Up
+
+  const cardSignUp = new CardSignUp(cardSignUpElem);
+
+  cardSignUp.init();
 
   // Date Dropdowns
 

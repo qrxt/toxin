@@ -1,8 +1,8 @@
 import $ from "jquery";
 
-// const disableScroll = () => {
-//   window.scrollTo(0, 0);
-// };
+const disableScroll = () => {
+  window.scrollTo(0, 0);
+};
 
 const KEY_ESCAPE = "Escape";
 
@@ -22,14 +22,12 @@ export default class Popup {
   close () {
     this.node.removeClass(this.options.popupShowClassname);
 
-    // document.body.style.position = "static";
-    // document.body.style.height = "auto";
-    // document.body.style.overflow = "visible";
-    // document.removeEventListener("scroll", disableScroll);
+    document.body.style.height = "auto";
+    document.removeEventListener("scroll", disableScroll);
   }
 
   open () {
-    const firstInput = this.node.find("input");
+    const firstInput = this.node.find("input").first();
 
     this.node.addClass(this.options.popupShowClassname);
 
@@ -37,10 +35,8 @@ export default class Popup {
       firstInput.focus();
     }
 
-    // document.body.style.position = "fixed";
-    // document.body.style.height = "100vh";
-    // document.body.style.overflow = "hidden";
-    // document.addEventListener("scroll", disableScroll);
+    document.body.style.height = "100vh";
+    document.addEventListener("scroll", disableScroll);
   }
 
   init () {

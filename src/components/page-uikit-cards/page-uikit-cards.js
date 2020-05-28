@@ -3,13 +3,14 @@ import $ from "jquery";
 import Calendar from "@components/calendar/calendar";
 import CardBookRoom from "../card-book-room/card-book-room";
 import CardHotelRoom from "@components/card-hotel-room/card-hotel-room";
+import CardSignUp from "@components/card-sign-up/card-sign-up";
 import DateDropdown from "@components/date-dropdown/date-dropdown";
 import DropdownGuests from "@components/dropdown-guests/dropdown-guests";
 import InputQuantity from "@components/input-quantity/input-quantity";
-import TextFieldMasked from "@components/text-field/text-field-masked";
 
 const hotelCardArrivalElem = $(".js-uikit-cards-arrival");
 const hotelCardCheckOutElem = $(".js-uikit-cards-check-out");
+const cardSignUpElem = $(".js-uikit-cards-sign-up");
 
 // Карточка "подобрать номер"
 if (hotelCardArrivalElem.length > 0 && hotelCardCheckOutElem.length > 0) {
@@ -39,26 +40,11 @@ if (hotelCardGuestsElem.length > 0) {
 }
 
 // Карточка "регистрация аккаунта"
-const maskedDateTextFieldElem = $(".js-uikit-cards-masked-date");
 
-if (maskedDateTextFieldElem.length > 0) {
-  const node = maskedDateTextFieldElem.get(0);
+if (cardSignUpElem.length > 0) {
+  const cardSignUp = new CardSignUp(cardSignUpElem);
 
-  node.addEventListener("keydown", evt => {
-    if (evt.key === "Enter") {
-      evt.preventDefault();
-    }
-  });
-
-  const maskOptions = {
-    mask: Date
-  };
-
-  const maskedDateTextField = new TextFieldMasked(node, {
-    maskOptions, datepickerOptions: {}
-  });
-
-  maskedDateTextField.init();
+  cardSignUp.init();
 }
 
 // Карточка "Бронирование номера" (№888)
@@ -79,7 +65,7 @@ if (bookCardArrivalElem.length > 0 && bookCardCheckOutElem.length > 0) {
 
 // Card Book Room
 
-const cardBookRoomElem = $(".js-page-details-card-book-room");
+const cardBookRoomElem = $(".js-uikit-cards-card-book-room");
 
 if (cardBookRoomElem.length > 0) {
   const cardBookRoom = new CardBookRoom(cardBookRoomElem, {});

@@ -10,6 +10,9 @@ include ../date-dropdown/date-dropdown.pug
 include ../dropdown-guests/dropdown-guests.pug
 include ../card-book-room/card-book-room.pug
 include ../btn/btn.pug
+include ../popup/popup.pug
+include ../card-sign-in/card-sign-in.pug
+include ../card-sign-up/card-sign-up.pug
 
 -
   const features = [
@@ -36,7 +39,7 @@ include ../btn/btn.pug
   ];
 
 +header({
-  className: "page-header js-page-catalog-header",
+  className: "page-header js-page-details-header",
   logoHref: "/landing.html",
   btnBurgerClassName: "js-page-details-header-burger-btn",
   siteListLinks: [
@@ -265,6 +268,21 @@ main.page-details
         }
       ]
     })
+
++popup({
+  className: "page-landing__popup-sign-in js-landing-page-popup-sign-in"
+})
+  +card-sign-in({
+    className: "page-landing__popup-sign-in-card"
+  })
+
++popup({
+  className: "page-landing__popup-sign-up js-landing-page-popup-sign-up"
+})
+  +card-sign-up({
+    className: "page-landing__popup-sign-up-card"
+  })
+
 +footer({
   className: "page-landing__footer",
   lang: "ru"

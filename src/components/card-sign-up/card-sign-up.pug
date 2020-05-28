@@ -10,7 +10,8 @@ mixin card-sign-up(cardSignUpObj)
   -
     const {
       className,
-      action = "https://echo.htmlacademy.ru/"
+      action = "https://echo.htmlacademy.ru/",
+      maskedDateTextFieldClassName = ""
     } = cardSignUpObj
 
   +card({
@@ -55,7 +56,7 @@ mixin card-sign-up(cardSignUpObj)
         })
 
       +text-field({
-        className: "sign-up__masked-date js-uikit-cards-masked-date",
+        className: `sign-up__masked-date js-masked-date`,
         type: "date",
         interactLike: "date",
         label: "Дата Рождения",

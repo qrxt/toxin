@@ -4,7 +4,7 @@ import CardBookRoom from "@components/card-book-room/card-book-room";
 import Header from "@components/header/header";
 import LikeButton from "@components/btn/btn-like";
 
-const pageHeaderElem = $(".js-page-catalog-header");
+const pageHeaderElem = $(".js-page-details-header");
 const likeBtnElems = $(".js-page-details-like-btn");
 const cardBookRoomElem = $(".js-page-details-card-book-room");
 
@@ -16,6 +16,7 @@ const elems = [
 
 $(window).on("load", () => {
   if (elems.every(el => el.length > 0)) {
+
     // Page Header
 
     if (pageHeaderElem.length > 0) {
