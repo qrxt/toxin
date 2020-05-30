@@ -8,7 +8,6 @@ include ../card-sign-up/card-sign-up.pug
 include ../footer/footer.pug
 include ../popup/popup.pug
 include ../card-sign-in/card-sign-in.pug
-include ../card-sign-up/card-sign-up.pug
 
 +header({
   className: "page-header js-page-sign-up-header",
@@ -77,7 +76,7 @@ main.page-sign-up
   section.page-sign-up__promo
     .wrapper.page-sign-up__promo-inner
       +card-sign-up({
-        className: "page-sign-up__register"
+        className: "page-sign-up__register js-page-sign-up-sign-up"
       })
 
   +popup({
@@ -91,7 +90,7 @@ main.page-sign-up
     className: "page-landing__popup-sign-up js-landing-page-popup-sign-up"
   })
     +card-sign-up({
-      className: "page-landing__popup-sign-up-card"
+      className: "page-landing__popup-sign-up-card js-page-sign-up-sign-up"
     })
 
   +footer({

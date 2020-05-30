@@ -1,6 +1,7 @@
 import $ from "jquery";
 
 import CardHotelRoom from "../card-hotel-room/card-hotel-room";
+import CardSignUp from "../card-sign-up/card-sign-up";
 import DateDropdown from "../date-dropdown/date-dropdown";
 import ExpandableList from "../expandable-list/expandable-list";
 import GuestsDropdown from "../dropdown-guests/dropdown-guests";
@@ -9,6 +10,7 @@ import InputQuantity from "../input-quantity/input-quantity";
 import Range from "../range/range";
 import RoomsDropdown from "../dropdown-rooms/dropdown-rooms";
 
+const cardSignUpElem = $(".js-page-catalog-sign-up");
 const pageHeaderElem = $(".js-page-catalog-header");
 const datesRangeDropdownElem = $(".js-page-catalog-dates-range");
 const guestsDropdownElem = $(".js-page-catalog-guests");
@@ -35,6 +37,12 @@ if (formElems.every(formElem => formElem.length > 0)) {
 
     pageHeader.init();
   }
+
+  // Card Sign Up
+
+  const cardSignUp = new CardSignUp(cardSignUpElem);
+
+  cardSignUp.init();
 
   // Dates Range Dropdown
 

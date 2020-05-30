@@ -13,23 +13,18 @@ export default class Popup {
     this.invokeBtnElems = invokeBtn;
 
     this.options = {
-      popupShowClassname: "popup--show",
+      overlayShowClassname: "popup--show",
+      popupShowClassname: "popup__popup--show",
 
       ...options
     };
   }
 
-  close () {
-    this.node.removeClass(this.options.popupShowClassname);
-
-    document.body.style.height = "auto";
-    document.removeEventListener("scroll", disableScroll);
-  }
-
   open () {
     const firstInput = this.node.find("input").first();
 
-    this.node.addClass(this.options.popupShowClassname);
+    this.node.addClass(this.options.overlayShowClassname);
+    this.popup.addClass(this.options.popupShowClassname);
 
     if (firstInput) {
       firstInput.focus();
@@ -37,6 +32,14 @@ export default class Popup {
 
     document.body.style.height = "100vh";
     document.addEventListener("scroll", disableScroll);
+  }
+
+  close () {
+    this.node.removeClass(this.options.overlayShowClassname);
+    this.popup.removeClass(this.options.popupShowClassname);
+
+    document.body.style.height = "auto";
+    document.removeEventListener("scroll", disableScroll);
   }
 
   init () {
