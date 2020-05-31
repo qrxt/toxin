@@ -16,11 +16,22 @@ mixin text-field(textInputObj)
     } = textInputObj
 
   p.text-field(class=className)
-    +labeled({
-      className: "text-field",
-      label: label,
-      rightLabel: rightLabel
-    })
+    if label
+      +labeled({
+        className: "text-field",
+        label: label,
+        rightLabel: rightLabel
+      })
+        input(
+          type=type || "text"
+          name=name
+          placeholder=placeholder
+          inputmode=inputmode
+          value=value
+          required=required
+          class=inputClass)
+        block
+    else
       input(
         type=type || "text"
         name=name

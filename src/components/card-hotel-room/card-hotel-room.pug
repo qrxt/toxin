@@ -19,7 +19,7 @@ mixin card-hotel-room(cardHotelRoomObj)
     } = cardHotelRoomObj
 
   +card({
-    className: className
+    className: `${ className } card-hotel-room`
   })
     +carousel({
       className: "card-hotel-room__carousel js-carousel",

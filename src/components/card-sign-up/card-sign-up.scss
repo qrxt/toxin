@@ -1,53 +1,49 @@
-.sign-up {
-
-}
-
-.sign-up__register-title {
+.card-sign-up__register-title {
   margin: 0 0 23px;
 
   font-size: em(23);
 }
 
-.sign-up__register-first-name {
+.card-sign-up__register-first-name {
   margin-bottom: 10px;
 }
 
-.sign-up__register-last-name {
+.card-sign-up__register-last-name {
   margin-bottom: 11px;
 }
 
-.sign-up__register-radios {
+.card-sign-up__register-radios {
   display: flex;
   margin-bottom: 22px;
 }
 
-.sign-up__register-radios label:not(:last-child) {
+.card-sign-up__register-radios label:not(:last-child) {
   margin-right: 20px;
 }
 
-.sign-up__masked-date {
+.card-sign-up__masked-date {
   margin-bottom: 20px;
 }
 
-.sign-up__email {
+.card-sign-up__email {
   margin-bottom: 10px;
 }
 
-.sign-up__password {
+.card-sign-up__password {
   margin-bottom: 9px;
 }
 
-.sign-up__specials {
+.card-sign-up__specials {
   margin-bottom: 25px;
 }
 
-.sign-up__submit {
+.card-sign-up__submit {
   position: relative;
 
   font-size: em(12);
 }
 
-.sign-up__submit svg {
+.card-sign-up__submit svg {
   width: 17px;
   height: 17px;
   position: absolute;
@@ -57,12 +53,12 @@
   fill: $white;
 }
 
-.sign-up__register-submit {
+.card-sign-up__register-submit {
   width: 100%;
   margin-bottom: 31px;
 }
 
-.sign-up__footer-wrapper {
+.card-sign-up__footer-wrapper {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -73,7 +69,7 @@
   }
 }
 
-.sign-up__register-text {
+.card-sign-up__register-text {
   font-size: em(14);
   margin: 0;
 
@@ -82,7 +78,7 @@
   }
 }
 
-.sign-up__authorize-btn {
+.card-sign-up__authorize-btn {
   position: relative;
   margin-top: 2px;
   padding: 11px 20px;

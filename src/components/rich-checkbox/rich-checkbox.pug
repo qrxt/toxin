@@ -15,7 +15,7 @@ mixin rich-checkbox(richCheckboxObj)
       | #{ labelText }
     span.rich-checkbox__description
       | #{ description }
-    input.visually-hidden--always(
+    input.visually-hidden.visually-hidden--always(
       type="checkbox"
       checked=checked || false
       name=className)

@@ -7,7 +7,7 @@ mixin card-sign-in(cardSignInObj)
     } = cardSignInObj
 
   +card({
-    className: className
+    className: `card-sign-in ${ className }`
   })
     form.card-sign-in__auth-form(
       action=action

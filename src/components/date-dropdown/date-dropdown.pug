@@ -4,6 +4,7 @@ mixin date-dropdown(dateDropdownObj)
   -
     const {
       className,
+      range,
       label,
       rightlabel,
       name,
@@ -16,11 +17,16 @@ mixin date-dropdown(dateDropdownObj)
     label: label,
     rightLabel: rightLabel
   })
+    -
+      const initialInputType = range
+        ? "text"
+        : "date"
+
     input.visually-hidden.visually-hidden--always(
-      type="date"
+      type=initialInputType
       name=name
       value=startValue
       required=required
       autocomplete="off")
-    p.date-dropdown__text
+    span.date-dropdown__text
       | #{ startValue || "ДД.ММ.ГГГГ" }

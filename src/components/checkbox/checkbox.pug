@@ -11,7 +11,7 @@ mixin checkbox(checkboxObj)
 
   label.checkbox(class=className)
     | #{ labelText }
-    input.visually-hidden--always(
+    input.visually-hidden.visually-hidden--always(
       type="checkbox"
       checked=checked || false
       name=className)

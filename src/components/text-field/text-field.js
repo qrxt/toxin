@@ -11,8 +11,9 @@ export default class TextField {
 
   init () {
     const { datepickerOptions } = this.options;
+    const textFieldInput = this.nodeInput.get(0);
 
-    this.nodeInput.get(0).type = "text";
+    textFieldInput.type = "text";
 
     if (datepickerOptions) {
       const calendar = new Calendar({
@@ -25,6 +26,8 @@ export default class TextField {
       });
 
       calendar.init();
+
+      textFieldInput.placeholder = "ДД.ММ.ГГГГ";
     }
   }
 }

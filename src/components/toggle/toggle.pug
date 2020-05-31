@@ -10,7 +10,7 @@ mixin toggle(toggleObj)
 
   label.toggle(class=className)
     | #{ labelText }
-    input.visually-hidden--always(
+    input.visually-hidden.visually-hidden--always(
       type="checkbox"
       checked=checked || false
       name=name)

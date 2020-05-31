@@ -8,10 +8,6 @@
   }
 }
 
-.page-catalog__header {
-  margin-bottom: 30px;
-}
-
 .page-catalog__side-menu {
   display: flex;
   flex-direction: column;
@@ -163,4 +159,9 @@
   @include mobile {
     padding-left: 0;
   }
+}
+
+.page-catalog__popup-sign-in-card,
+.page-catalog__popup-sign-up-card {
+  padding: 40px 20px 30px;
 }

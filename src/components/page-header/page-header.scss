@@ -1,3 +1,9 @@
+.page-header {
+  &--catalog {
+    margin-bottom: 30px;
+  }
+}
+
 .page-header__site-item:not(.site-list__item--authorized):not(.site-list__item--unauthorized) {
   margin-right: 25px;
 }

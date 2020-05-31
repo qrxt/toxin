@@ -9,7 +9,7 @@ mixin radio(radioObj)
     } = radioObj
 
   label.radio(class=className)
-    input.visually-hidden--always(
+    input.visually-hidden.visually-hidden--always(
       type="radio"
       checked=checked || false
       name=name
