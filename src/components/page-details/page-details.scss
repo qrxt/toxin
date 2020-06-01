@@ -287,10 +287,6 @@
   flex-wrap: wrap;
   align-items: flex-start;
   justify-content: space-between;
-
-  @include mobile {
-
-  }
 }
 
 .page-details__comments {
@@ -392,4 +388,17 @@
   @include tablet {
     margin-bottom: 20px;
   }
+}
+
+.page-details__footer .footer__navigation-block:not(:last-child) {
+  margin-right: 60px;
+
+  @include mobile {
+    margin-right: 20px;
+  }
+}
+
+.page-details__popup-sign-in-card,
+.page-details__popup-sign-up-card {
+  padding: 40px 20px 30px;
 }

@@ -21,11 +21,9 @@ $(window).on("load", () => {
   if (elems.every(el => el.length > 0)) {
     // Page Header
 
-    if (pageHeaderElem.length > 0) {
-      const pageHeader = new Header(pageHeaderElem);
+    const pageHeader = new Header(pageHeaderElem);
 
-      pageHeader.init();
-    }
+    pageHeader.init();
 
     // Card Sign Up
 

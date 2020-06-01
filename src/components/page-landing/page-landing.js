@@ -1,10 +1,10 @@
 import $ from "jquery";
 
+import CardSignUp from "../card-sign-up/card-sign-up";
 import DropdownDate from "@components/date-dropdown/date-dropdown";
 import DropdownGuests from "@components/dropdown-guests/dropdown-guests";
 import Header from "@components/header/header";
 import InputQuantity from "@components/input-quantity/input-quantity";
-import CardSignUp from "../card-sign-up/card-sign-up";
 
 // Form Hotel Room Search
 

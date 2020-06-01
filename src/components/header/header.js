@@ -21,7 +21,7 @@ export default class Header {
 
     const signInBtnElem = this.node.find(".js-header-sign-in-btn");
 
-    const signInPopupElem = $(".js-landing-page-popup-sign-in");
+    const signInPopupElem = $(".js-popup-sign-in");
 
     const signInPopup = new Popup(signInPopupElem, signInBtnElem, {});
 
@@ -37,7 +37,7 @@ export default class Header {
 
     const signUpBtnElem = this.node.find(".js-header-sign-up-btn");
 
-    const signUpPopupElem = $(".js-landing-page-popup-sign-up");
+    const signUpPopupElem = $(".js-popup-sign-up");
 
     const signUpPopup = new Popup(signUpPopupElem, signUpBtnElem, {});
 

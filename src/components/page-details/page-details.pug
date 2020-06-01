@@ -40,7 +40,7 @@ include ../card-sign-up/card-sign-up.pug
 
 +header({
   className: "page-header js-page-details-header",
-  logoHref: "/landing.html",
+  logoHref: "/details.html",
   btnBurgerClassName: "js-page-details-header-burger-btn",
   siteListLinks: [
     {
@@ -269,22 +269,22 @@ main.page-details
       ]
     })
 
-+popup({
-  className: "page-landing__popup-sign-in js-landing-page-popup-sign-in"
-})
-  +card-sign-in({
-    className: "page-landing__popup-sign-in-card"
+  +popup({
+    className: "page-details__popup-sign-in js-popup-sign-in"
   })
+    +card-sign-in({
+      className: "page-details__popup-sign-in-card"
+    })
 
-+popup({
-  className: "page-landing__popup-sign-up js-landing-page-popup-sign-up"
-})
-  +card-sign-up({
-    className: "page-landing__popup-sign-up-card js-page-details-sign-up"
+  +popup({
+    className: "page-details__popup-sign-up js-popup-sign-up"
   })
+    +card-sign-up({
+      className: "page-details__popup-sign-up-card js-page-details-sign-up"
+    })
 
 +footer({
-  className: "page-landing__footer",
+  className: "page-details__footer",
   lang: "ru"
 })
   | Бронирование номеров в лучшем отеле
