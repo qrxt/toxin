@@ -90,6 +90,7 @@ export default class Calendar {
     const resetBtn = datepickerElem.find(".js-calendar-reset");
 
     this.nodeInput.get(0).type = "text";
+    this.nodeInput.addClass("visually-hidden visually-hidden--always");
 
     // Write selected dates to associated input on calendar init
     if (isDateSelected()) {

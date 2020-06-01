@@ -47,7 +47,8 @@ include ../card-sign-up/card-sign-up.pug
       roomCost: "9 990₽",
       roomCostPer: "В сутки",
       initialRating: 5,
-      reviewsQuantity: "145"
+      reviewsQuantity: "145",
+      alt: "Просторная спальня"
     },
 
     {
@@ -57,7 +58,8 @@ include ../card-sign-up/card-sign-up.pug
       roomCost: "9 900₽",
       roomCostPer: "В сутки",
       initialRating: 4,
-      reviewsQuantity: "65"
+      reviewsQuantity: "65",
+      alt: "Другая просторная спальня"
     },
 
     {
@@ -67,7 +69,8 @@ include ../card-sign-up/card-sign-up.pug
       roomCost: "8 500₽",
       roomCostPer: "В сутки",
       initialRating: 3,
-      reviewsQuantity: "35"
+      reviewsQuantity: "35",
+      alt: "Еще одна просторная спальня"
     },
 
     {
@@ -77,7 +80,8 @@ include ../card-sign-up/card-sign-up.pug
       roomCost: "7 300₽",
       roomCostPer: "В сутки",
       initialRating: 5,
-      reviewsQuantity: "19"
+      reviewsQuantity: "19",
+      alt: "Просто спальня"
     },
 
     {
@@ -87,7 +91,8 @@ include ../card-sign-up/card-sign-up.pug
       roomCost: "6 000₽",
       roomCostPer: "В сутки",
       initialRating: 4,
-      reviewsQuantity: "44"
+      reviewsQuantity: "44",
+      alt: "Просто спальня"
     },
 
     {
@@ -97,7 +102,8 @@ include ../card-sign-up/card-sign-up.pug
       roomCost: "5 800₽",
       roomCostPer: "В сутки",
       initialRating: 3,
-      reviewsQuantity: "56"
+      reviewsQuantity: "56",
+      alt: "Просто спальня"
     },
 
     {
@@ -107,7 +113,8 @@ include ../card-sign-up/card-sign-up.pug
       roomCost: "5 500₽",
       roomCostPer: "В сутки",
       initialRating: 5,
-      reviewsQuantity: "45"
+      reviewsQuantity: "45",
+      alt: "Просто спальня"
     },
 
     {
@@ -117,7 +124,8 @@ include ../card-sign-up/card-sign-up.pug
       roomCost: "5 300₽",
       roomCostPer: "В сутки",
       initialRating: 4,
-      reviewsQuantity: "39"
+      reviewsQuantity: "39",
+      alt: "Просто спальня"
     },
 
     {
@@ -127,7 +135,8 @@ include ../card-sign-up/card-sign-up.pug
       roomCost: "5 000₽",
       roomCostPer: "В сутки",
       initialRating: 3,
-      reviewsQuantity: "77"
+      reviewsQuantity: "77",
+      alt: "Просто спальня"
     },
 
     {
@@ -137,7 +146,8 @@ include ../card-sign-up/card-sign-up.pug
       roomCost: "5 000₽",
       roomCostPer: "В сутки",
       initialRating: 5,
-      reviewsQuantity: "25"
+      reviewsQuantity: "25",
+      alt: "Просто спальня"
     },
 
     {
@@ -147,7 +157,8 @@ include ../card-sign-up/card-sign-up.pug
       roomCost: "5 000₽",
       roomCostPer: "В сутки",
       initialRating: 3,
-      reviewsQuantity: "15"
+      reviewsQuantity: "15",
+      alt: "Просто спальня"
     },
 
     {
@@ -157,7 +168,8 @@ include ../card-sign-up/card-sign-up.pug
       roomCost: "5 000₽",
       roomCostPer: "В сутки",
       initialRating: 3,
-      reviewsQuantity: "55"
+      reviewsQuantity: "55",
+      alt: "Просто спальня"
     },
   ]
 
@@ -411,14 +423,14 @@ main.page-catalog
                   roomImages: [
                     {
                       src: `./assets/img/hotel-room-${ roomIndex + 1 }@1x.jpg`,
-                      alt: "Просторная спальня"
+                      alt: roomData.alt
                     },
 
                     ...restRoomImages
                   ],
                 })
 
-              +card-hotel-room(roomData)
+              +card-hotel-room(roomDataWithId)
 
         +pagination({
           className: "page-catalog__pagination",

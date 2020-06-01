@@ -10,9 +10,15 @@
 
   border: none;
 
-  appearance: none;
+  appearance: textfield;
 
   @include transition(color);
+
+  &::-webkit-inner-spin-button,
+  &::-webkit-outer-spin-button {
+    appearance: none;
+    margin: 0;
+  }
 
   &:hover {
     color: rgba($color: $black, $alpha: 0.6);
@@ -24,12 +30,6 @@
 
   &::selection {
     background-color: $selection-color;
-  }
-
-  &::-webkit-outer-spin-button,
-  &::-webkit-inner-spin-button {
-    appearance: none;
-    margin: 0;
   }
 }
 

@@ -22,11 +22,11 @@ mixin date-dropdown(dateDropdownObj)
         ? "text"
         : "date"
 
-    input.visually-hidden.visually-hidden--always(
+    input(
       type=initialInputType
       name=name
       value=startValue
       required=required
       autocomplete="off")
-    span.date-dropdown__text
+    span.date-dropdown__text.visually-hidden.visually-hidden--always
       | #{ startValue || "ДД.ММ.ГГГГ" }

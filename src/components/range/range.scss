@@ -28,6 +28,8 @@
 
   border: none;
 
+  appearance: textfield;
+
   @include transition(color);
 
   &::-webkit-outer-spin-button,

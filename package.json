@@ -6,7 +6,11 @@
   "scripts": {
     "build": "webpack --mode production",
     "build-dev": "webpack --mode development",
-    "watch": "webpack-dev-server --mode development --open"
+
+    "watch": "webpack-dev-server --mode development --open",
+
+    "stylelint": "stylelint \"src/components/**/*.scss\" --syntax scss",
+    "eslint": "eslint ./src/components"
   },
   "browserList": "> 0.25%, not dead",
   "author": "qrx",

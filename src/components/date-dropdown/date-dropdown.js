@@ -27,6 +27,9 @@ export default class DateDropdown {
 
     $.when(calendar.init())
       .then(() => {
+        this.nodeText
+          .removeClass("visually-hidden visually-hidden--always");
+
         if (this.options.startDate) {
           const currentDay = this.options.startDate.getDate();
           const currentMonth = String(this.options.startDate.getMonth()).length < 2

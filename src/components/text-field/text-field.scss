@@ -31,6 +31,10 @@
   &::selection {
     background-color: $selection-color;
   }
+
+  &:invalid {
+    box-shadow: none;
+  }
 }
 
 .text-field--focused input {

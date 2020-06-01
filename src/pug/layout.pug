@@ -4,13 +4,39 @@ block variables
 doctype html
 html(lang="ru")
   head
-    meta(charset="utf-8")
     title #{ mainTitle }
+    meta(charset="utf-8")
+    meta(name="description"
+      content="Официальный сайт Toxin")
     meta(
       name="viewport"
       content="width=device-width, initial-scale=1.0")
+    meta(
+      name="format-detection"
+      content="telephone=no")
+    meta(name="theme-color"
+      content="#BC9CFF")
+
+    meta(name="msapplication-square70x70logo"
+      content="./src/assets/img/browser-stuff/ms-toxin70x70.png")
+    meta(name="msapplication-square150x150logo"
+      content="./src/assets/img/browser-stuff/ms-toxin150x150.png")
+    meta(name="msapplication-wide310x150logo"
+      content="./src/assets/img/browser-stuff/ms-toxin310x150.png")
+    meta(name="msapplication-square310x310logo"
+      content="./src/assets/img/browser-stuff/ms-toxin310x310.png")
+
+    link(rel="shortcut icon"
+      href="./src/assets/img/browser-stuff/favicon.ico"
+      type="image/x-icon")
+    link(rel="icon"
+      href="./src/assets/img/browser-stuff/favicon.ico"
+      type="image/x-icon")
   body
     .page-wrapper(class=pageWrapperClassName)
+      noscript.noscript
+        | В вашем браузере отключен JavaScript.
+        | Некоторые функции сайта могут не работать
       block header
       block content
       block footer
