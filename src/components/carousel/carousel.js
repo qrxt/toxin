@@ -7,6 +7,7 @@ const arrowSvgHtml = `
 export default class Carousel {
   constructor (node, options) {
     this.node = node;
+    this.carouselPreview = this.node.prev();
     this.options = {
       loop: false,
       nav: true,
@@ -14,13 +15,16 @@ export default class Carousel {
       items: 1,
       autoWidth: true,
       lazyLoad: true,
+      lazyLoadEager: 1,
       navText: [ arrowSvgHtml, arrowSvgHtml ],
       responsive: {
         0: {
+          lazyLoad: true,
           autoWidth: false
         },
 
         1024: {
+          lazyLoad: true,
           autoWidth: true
         }
       },
@@ -32,5 +36,7 @@ export default class Carousel {
   init () {
     this.node
       .owlCarousel(this.options);
+
+    this.carouselPreview.hide();
   }
 }

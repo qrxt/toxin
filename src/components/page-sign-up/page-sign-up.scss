@@ -9,6 +9,11 @@
   @include tablet {
     background-color: #e2e2e2;
   }
+
+  @include retina {
+    background-image: url("./assets/img/landing-bg-2@2x.jpg");
+    background-size: contain;
+  }
 }
 
 .page-sign-up__promo-inner {

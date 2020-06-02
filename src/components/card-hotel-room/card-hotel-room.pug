@@ -21,6 +21,11 @@ mixin card-hotel-room(cardHotelRoomObj)
   +card({
     className: `${ className } card-hotel-room`
   })
+    - const firstImage = roomImages[0]
+
+    img.js-carousel-pre-image(
+      src=firstImage.src
+      alt=firstImage.alt)
     +carousel({
       className: "card-hotel-room__carousel js-carousel",
       roomImages: roomImages

@@ -99,6 +99,8 @@
 }
 
 .owl-carousel .owl-item {
+  position: relative;
+
   @include tablet {
     width: 100%;
     height: auto;

@@ -10,11 +10,14 @@ mixin carousel(carouselObj)
       -
         const {
           src,
+          src2x,
           alt
         } = roomImage
 
       .item
-        picture
-          img(
-            src=src
-            alt=alt)
+        img.owl-lazy(
+          data-src=src
+          data-src-retina=src2x
+          alt=alt)
+
+          //- srcset=src2x

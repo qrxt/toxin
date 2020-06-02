@@ -5,6 +5,11 @@
   background-image: url("./assets/img/landing-bg-1@1x.jpg");
   background-repeat: no-repeat;
   background-position: center top;
+
+  @include retina {
+    background-image: url("./assets/img/landing-bg-1@2x.jpg");
+    background-size: contain;
+  }
 }
 
 .page-landing__promo-inner {
