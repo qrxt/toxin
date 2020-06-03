@@ -38,7 +38,7 @@ mixin pagination(paginationObj)
           | #{ last }
 
       li.pagination__item
-        a.pagination__link.pagination__link--last(href="#")
+        a.pagination__link.pagination__link--last(href="#", aria-label="Открыть следующую страницу")
           +svg("arrow_forward", 15, 15)
     p.pagination__summary
       | #{ currentPageItemsRangeStart }

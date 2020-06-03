@@ -9,7 +9,8 @@ mixin input-quantity(inputQuantityObj)
       max,
       inputmode,
       type,
-      required
+      required,
+      ariaLabel = `Количество: ${ inputQuantityObj.label }`
     } = inputQuantityObj
 
   p.input-quantity(class=className)
@@ -28,7 +29,8 @@ mixin input-quantity(inputQuantityObj)
         type=type || "number"
         inputmode=inputmode || "numeric"
         placeholder=min || 0
-        required=required)
+        required=required
+        aria-label=ariaLabel)
 
       button.input-quantity__btn.js-btn-inc(type="button")
         | +

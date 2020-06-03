@@ -8,13 +8,15 @@ mixin btn(btnObj)
       isLink,
       type,
       href,
-      isDisabled
+      isDisabled,
+      ariaLabel
     } = btnObj
 
   if isLink
     a.btn(
       class=className
-      href=href)
+      href=href
+      aria-label=ariaLabel)
 
       block
 
@@ -22,7 +24,8 @@ mixin btn(btnObj)
     button.btn(
       class=className
       type=type
-      disabled=isDisabled)
+      disabled=isDisabled
+      aria-label=ariaLabel)
 
       block
 
@@ -40,7 +43,8 @@ mixin btn-like(btnLikeObj)
 
   +btn({
     className: classList,
-    type: "button"
+    type: "button",
+    ariaLabel: "Мне нравится"
   })
     +svg("icon-favorite", 20, 20)
     span

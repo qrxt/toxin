@@ -28,7 +28,8 @@ mixin card-sign-up(cardSignUpObj)
         type: "text",
         name: "user-register-first-name",
         placeholder: "Имя",
-        required: true
+        required: true,
+        ariaLabel: "Ваше имя"
       })
 
       +text-field({
@@ -36,7 +37,8 @@ mixin card-sign-up(cardSignUpObj)
         type: "text",
         name: "user-register-last-name",
         placeholder: "Фамилия",
-        required: true
+        required: true,
+        ariaLabel: "Ваша фамилия"
       })
 
       .card-sign-up__register-radios
@@ -60,7 +62,8 @@ mixin card-sign-up(cardSignUpObj)
         type: "date",
         interactLike: "date",
         label: "Дата Рождения",
-        name: "user-birth-date"
+        name: "user-birth-date",
+        ariaLabel: "Ваша дата рождения"
       })
 
       +text-field({
@@ -68,13 +71,15 @@ mixin card-sign-up(cardSignUpObj)
         type: "email",
         label: "Данные Для Входа В Сервис",
         placeholder: "Email",
-        name: "user-email"
+        name: "user-email",
+        ariaLabel: "Ваш адрес электронной потчы"
       })
       +text-field({
         className: "card-sign-up__password",
         type: "password",
         placeholder: "Пароль",
-        name: "user-password"
+        name: "user-password",
+        ariaLabel: "Ваш будущий пароль"
       })
 
       +toggle({
@@ -85,7 +90,8 @@ mixin card-sign-up(cardSignUpObj)
 
       +btn({
         className: "card-sign-up__submit card-sign-up__register-submit",
-        type: "submit"
+        type: "submit",
+        ariaLabel: "Зарегистрироваться"
       })
         | Перейти к оплате
         +svg("arrow_forward", 17, 17)

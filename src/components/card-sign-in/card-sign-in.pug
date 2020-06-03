@@ -20,19 +20,22 @@ mixin card-sign-in(cardSignInObj)
         type: "email",
         name: "user-auth-email",
         placeholder: "Email",
-        required: true
+        required: true,
+        ariaLabel: "Ваш адрес электронной почты"
       })
       +text-field({
         className: "card-sign-in__book-input",
         type: "password",
         name: "user-auth-pass",
         placeholder: "Пароль",
-        required: true
+        required: true,
+        ariaLabel: "Ваш пароль"
       })
 
       +btn({
         className: "card-sign-in__auth-submit",
-        type: "submit"
+        type: "submit",
+        ariaLabel: "Войти"
       })
         | Войти
         +svg("arrow_forward", 15, 15)

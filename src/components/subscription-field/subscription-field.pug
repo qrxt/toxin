@@ -16,7 +16,9 @@ mixin subscription-field(subscriptionFieldObj)
     placeholder: placeholder,
     name: name,
     label: label,
-    rightLabel: rightLabel
+    rightLabel: rightLabel,
+    ariaLabel: "Ваш адрес электронной почты",
+    type: "email"
   })
-    button.subscription-field__btn
+    button.subscription-field__btn(aria-label="Подтвердить подписку")
       +svg("arrow_forward", 18, 18)

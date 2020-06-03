@@ -164,10 +164,33 @@ module.exports = (_, options) => {
 
         {
           test: /\.(?:png|jpg|gif)$/u,
-          loader: "file-loader",
-          options: {
-            name: "[path][name].[ext]"
-          }
+          // loader: "file-loader",
+          // options: {
+          //   name: "[path][name].[ext]"
+          // }
+
+          // <
+          // use: [
+          //   {
+          //     loader: "file-loader"
+          //   },
+          //   {
+          //     loader: "image-webpack-loader",
+          //     options: {
+          //       query: {
+          //         mozjpeg: {
+          //           progressive: true,
+          //         },
+          //         gifsicle: {
+          //           interlaced: true,
+          //         },
+          //         optipng: {
+          //           optimizationLevel: 7,
+          //         }
+          //       }
+          //     }
+          //   }]
+            // >
         },
         {
           test: /\.(?:woff2|woff|eot|ttf|svg)$/u,

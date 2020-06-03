@@ -17,6 +17,8 @@ mixin rating(ratingObj)
       - const isChecked = idx + 1 === initialValue
 
       label.rating__item
+        span.visually-hidden.visually-hidden--always
+          | #{ label }
         input(
           type="radio"
           name=name

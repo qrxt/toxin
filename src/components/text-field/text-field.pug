@@ -12,7 +12,8 @@ mixin text-field(textInputObj)
       inputmode,
       value,
       required,
-      inputClass
+      inputClass,
+      ariaLabel
     } = textInputObj
 
   p.text-field(class=className)
@@ -29,7 +30,8 @@ mixin text-field(textInputObj)
           inputmode=inputmode
           value=value
           required=required
-          class=inputClass)
+          class=inputClass
+          aria-label=ariaLabel)
         block
     else
       input(
@@ -39,5 +41,6 @@ mixin text-field(textInputObj)
         inputmode=inputmode
         value=value
         required=required
-        class=inputClass)
+        class=inputClass
+        aria-label=ariaLabel)
       block

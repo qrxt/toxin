@@ -24,7 +24,8 @@ mixin range(rangeObj)
           type="number"
           placeholder=min
           data-side="left"
-          min=min)
+          min=min
+          aria-label="Минимальное значение")
         span.range__input-unit
           | ₽
         span.range__separator
@@ -33,7 +34,8 @@ mixin range(rangeObj)
           type="number"
           placeholder=max
           data-side="right"
-          min=leftValue)
+          min=leftValue
+          aria-label="Максимальное значение")
         span.range__input-unit
           | ₽
 
