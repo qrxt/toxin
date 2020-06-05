@@ -9,7 +9,8 @@ const OptimizeCssAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
 const PugPlugin = require("html-webpack-pug-plugin");
 const SpriteLoader = require("svg-sprite-loader/plugin");
-const Copy = require("copy-webpack-plugin");
+const CompressionPlugin = require("compression-webpack-plugin");
+// const Copy = require("copy-webpack-plugin");
 
 const getHtmlPlugin = (input, output) =>
   new HtmlPlugin({
@@ -32,8 +33,18 @@ module.exports = (_, options) => {
         new TerserPlugin()
       ],
       splitChunks: {
-        chunks: "all"
-      }
+        // chunks: "all"
+        cacheGroups: {
+          vendor: {
+            test: /[\\/]node_modules[\\/]/u,
+            chunks: "initial",
+            name: "vendor",
+            enforce: true
+          }
+        }
+      },
+
+      runtimeChunk: true
     };
 
     if (isProd) {
@@ -125,6 +136,7 @@ module.exports = (_, options) => {
     optimization: getOptimisations(),
     devServer: {
       overlay: true,
+      compress: isProd,
       hot: isDev,
       port: 3000,
       host: "192.168.1.60"
@@ -164,33 +176,30 @@ module.exports = (_, options) => {
 
         {
           test: /\.(?:png|jpg|gif)$/u,
-          // loader: "file-loader",
-          // options: {
-          //   name: "[path][name].[ext]"
-          // }
-
-          // <
-          // use: [
-          //   {
-          //     loader: "file-loader"
-          //   },
-          //   {
-          //     loader: "image-webpack-loader",
-          //     options: {
-          //       query: {
-          //         mozjpeg: {
-          //           progressive: true,
-          //         },
-          //         gifsicle: {
-          //           interlaced: true,
-          //         },
-          //         optipng: {
-          //           optimizationLevel: 7,
-          //         }
-          //       }
-          //     }
-          //   }]
-            // >
+          use: [
+            {
+              loader: "file-loader",
+              options: {
+                name: "[path][name].[ext]"
+              }
+            },
+            {
+              loader: "image-webpack-loader",
+              options: {
+                query: {
+                  mozjpeg: {
+                    progressive: true,
+                    quality: 65
+                  },
+                  gifsicle: {
+                    interlaced: true
+                  },
+                  optipng: {
+                    optimizationLevel: 7
+                  }
+                }
+              }
+            }]
         },
         {
           test: /\.(?:woff2|woff|eot|ttf|svg)$/u,
@@ -276,12 +285,20 @@ module.exports = (_, options) => {
         "window.jQuery": "jquery"
       }),
 
-      new Copy([
-        {
-          from: path.resolve(__dirname, "src/assets/img"),
-          to: path.resolve(__dirname, "dist/assets/img")
-        }
-      ])
+      // new CompressionPlugin({
+      //   filename: "[path].gz[query]",
+      //   algorithm: "gzip",
+      //   test: /\.js$/u,
+      //   threshold: 10240,
+      //   minRatio: 0.8
+      // })
+
+      // new Copy([
+      //   {
+      //     from: path.resolve(__dirname, "src/assets/img"),
+      //     to: path.resolve(__dirname, "dist/assets/img")
+      //   }
+      // ])
     ]
   };
 
