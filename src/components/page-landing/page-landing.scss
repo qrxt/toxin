@@ -104,6 +104,10 @@
   fill: $white;
 }
 
+.page-landing__input-narrow input[type="date"] {
+  width: 100%;
+}
+
 .page-landing__promo-description {
   width: 25%;
   align-self: flex-end;

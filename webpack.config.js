@@ -9,8 +9,7 @@ const OptimizeCssAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
 const PugPlugin = require("html-webpack-pug-plugin");
 const SpriteLoader = require("svg-sprite-loader/plugin");
-const CompressionPlugin = require("compression-webpack-plugin");
-// const Copy = require("copy-webpack-plugin");
+const ImageminWebpPlugin = require("imagemin-webp-webpack-plugin");
 
 const getHtmlPlugin = (input, output) =>
   new HtmlPlugin({
@@ -33,7 +32,6 @@ module.exports = (_, options) => {
         new TerserPlugin()
       ],
       splitChunks: {
-        // chunks: "all"
         cacheGroups: {
           vendor: {
             test: /[\\/]node_modules[\\/]/u,
@@ -74,7 +72,7 @@ module.exports = (_, options) => {
           plugins: [
             autoprefixer()
           ],
-          sourceMap: true
+          sourceMap: isDev
         }
       }
     ];
@@ -135,6 +133,7 @@ module.exports = (_, options) => {
 
     optimization: getOptimisations(),
     devServer: {
+      // - https: true,
       overlay: true,
       compress: isProd,
       hot: isDev,
@@ -285,20 +284,14 @@ module.exports = (_, options) => {
         "window.jQuery": "jquery"
       }),
 
-      // new CompressionPlugin({
-      //   filename: "[path].gz[query]",
-      //   algorithm: "gzip",
-      //   test: /\.js$/u,
-      //   threshold: 10240,
-      //   minRatio: 0.8
-      // })
-
-      // new Copy([
-      //   {
-      //     from: path.resolve(__dirname, "src/assets/img"),
-      //     to: path.resolve(__dirname, "dist/assets/img")
-      //   }
-      // ])
+      new ImageminWebpPlugin({
+        config: [{
+          test: /\.(?:jpe?g|png)/u,
+          options: {
+            quality: 85
+          }
+        }]
+      })
     ]
   };
 

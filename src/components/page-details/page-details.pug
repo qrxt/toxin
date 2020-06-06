@@ -108,6 +108,9 @@ main.page-details
     .page-details__promo-inner
       a.page-details__promo-image-link(href="#")
         picture
+          source(type="image/webp"
+            srcset=`./assets/img/grid-hotel-room-photo-1@1x.webp 1x,
+              ./assets/img/grid-hotel-room-photo-1@2x.webp 2x`)
           source(srcset="./assets/img/grid-hotel-room-photo-1@2x.jpg")
 
           img(
@@ -118,6 +121,9 @@ main.page-details
 
       a.page-details__promo-image-link.page-details__promo-image-link--small(href="#")
         picture
+          source(type="image/webp"
+            srcset=`./assets/img/grid-hotel-room-photo-2@1x.webp 1x,
+              ./assets/img/grid-hotel-room-photo-2@2x.webp 2x`)
           source(srcset="./assets/img/grid-hotel-room-photo-2@2x.jpg")
 
           img(
@@ -127,6 +133,9 @@ main.page-details
             height="243")
       a.page-details__promo-image-link.page-details__promo-image-link--small(href="#")
         picture
+          source(type="image/webp"
+            srcset=`./assets/img/grid-hotel-room-photo-3@1x.webp 1x,
+              ./assets/img/grid-hotel-room-photo-3@2x.webp 2x`)
           source(srcset="./assets/img/grid-hotel-room-photo-3@2x.jpg")
 
           img(
