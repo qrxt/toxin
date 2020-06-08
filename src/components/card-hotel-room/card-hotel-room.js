@@ -1,5 +1,3 @@
-import $ from "jquery";
-
 import Carousel from "@components/carousel/carousel";
 import Rating from "@components/rating/rating";
 
@@ -16,9 +14,7 @@ export default class CardHotelRoom {
     const ratingElem = this.node.find(".js-rating");
     const rating = new Rating(ratingElem);
 
-    $(window).on("load", () => {
-      carousel.init();
-      rating.init();
-    });
+    carousel.init();
+    rating.init();
   }
 }
