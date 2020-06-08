@@ -15,18 +15,15 @@ export default class Carousel {
       nav: true,
       dots: true,
       items: 1,
-      autoWidth: true,
-      lazyLoad: true,
-      lazyLoadEager: 1,
       navText: [ arrowSvgHtml, arrowSvgHtml ],
+
       responsive: {
         0: {
-          lazyLoad: true,
+          items: 1,
           autoWidth: false
         },
 
-        1024: {
-          lazyLoad: true,
+        768: {
           autoWidth: true
         }
       },
@@ -36,7 +33,10 @@ export default class Carousel {
   }
 
   init () {
-    $.when(this.node.owlCarousel(this.options))
+    const owlItems = this.node.find(".owl-item");
+    const imagesQuantity = owlItems.length;
+
+    $.when(this.node.owlCarousel(this.options).trigger("refresh.owl.carousel"))
       .then(() => {
         this.carouselPreview.hide();
 
@@ -46,6 +46,16 @@ export default class Carousel {
         this.node.find(".owl-dot").each((idx, dot) => {
           $(dot).attr("aria-label", `Переключить на ${ idx } фото`);
         });
+
+        owlItems.each((_, item) => {
+          $(item).width(this.node.width());
+        });
+
+        const sumOfImageWidths = this.node.width() * imagesQuantity;
+
+        this.node.find("owl-stage").width(
+          sumOfImageWidths
+        );
       });
   }
 }

@@ -10,7 +10,7 @@ import InputQuantity from "../input-quantity/input-quantity";
 import Range from "../range/range";
 import RoomsDropdown from "../dropdown-rooms/dropdown-rooms";
 
-$(document).ready(() => {
+$(window).on("load", () => {
   const cardSignUpElem = $(".js-page-catalog-sign-up");
   const pageHeaderElem = $(".js-page-catalog-header");
   const datesRangeDropdownElem = $(".js-page-catalog-dates-range");

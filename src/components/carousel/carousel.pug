@@ -10,7 +10,6 @@ mixin carousel(carouselObj)
       -
         const {
           src,
-          src2x,
           alt
         } = roomImage
 
@@ -18,8 +17,6 @@ mixin carousel(carouselObj)
         picture
           source(type="image/webp"
             srcset=`${ src }.webp`)
-          img.owl-lazy(
-            src=`${ src }.jpg`
+          img(
+            src=`${ src }.webp`
             alt=alt)
-
-          //- srcset=src2x

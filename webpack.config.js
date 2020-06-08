@@ -185,20 +185,16 @@ module.exports = (_, options) => {
             {
               loader: "image-webpack-loader",
               options: {
-                query: {
-                  mozjpeg: {
-                    progressive: true,
-                    quality: 65
-                  },
-                  gifsicle: {
-                    interlaced: true
-                  },
-                  optipng: {
-                    optimizationLevel: 7
-                  }
+                mozjpeg: {
+                  progressive: true,
+                  quality: 90
+                },
+                optipng: {
+                  optimizationLevel: 7
                 }
               }
-            }]
+            }
+          ]
         },
         {
           test: /\.(?:woff2|woff|eot|ttf|svg)$/u,
